@@ -1688,7 +1688,7 @@ transition: all 0.4s ease;
     right: 0;
     bottom: 0;
     overflow-x: hidden;
-    
+
     background-color: rgba(0, 0, 0, 0.6);
     z-index: 100
 }
@@ -2029,12 +2029,10 @@ transition: all 0.4s ease;
 #forgotPass_row p {
     margin-bottom: 60px;
 }
-#followMsg {
-    display: none;
-}
+
 #returnButton {
     padding: 12px 120px 12px 120px;
-    display: none;
+
 }
 .middle {
     text-align: center;
@@ -2254,6 +2252,11 @@ transition: all 0.4s ease;
     width: 100%;
     padding-right: 25px;
 }
+.form-item_half .form-item_full {
+    float: left;
+    width: 100%;
+    padding-right: 0;
+}
 .form-item_full.no-padding {
     padding-right: 0;
 }
@@ -2275,6 +2278,9 @@ transition: all 0.4s ease;
 input[type="radio"] {
     margin-top: 20px;
     margin-bottom: 30px;
+}
+#primaryAddress {
+  margin-bottom: 0px;
 }
 .profile-form textarea {
     margin-top: 10px;
@@ -2321,7 +2327,91 @@ input[type="radio"] {
     left: 0;
     right: 0;
     position: absolute;
+    padding-bottom: 20px;
 }
+
+.error-popup {
+  border: 2px solid #C00005;
+  color: #C00005;
+  width: 420px;
+  padding-left: 20px;
+  text-align: left;
+  border-radius: 0;
+  margin-top: 10%;
+}
+.error-popup-left {
+  display: block;
+  float: left;
+  width: 13%;
+  vertical-align: top;
+}
+.error-popup-right {
+  padding-top: 6px;
+  display: block;
+  float: right;
+  width: 87%;
+}
+.error-popup span {
+  font-size: 0.8em;
+  display: block;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.clearBtn {
+  background: none;
+  color: #1b1b1b;
+  border: 1px solid #acacac;
+  float: right;
+  font-size: 0.9em;
+  line-height: 28px;
+}
+.errorIcon-large {
+  background: url("../images/icons/error-lrg.png");
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 27px;
+  height: 27px;
+  float: left;
+}
+.clearBtn:hover {
+  background: none;
+}
+.billing-address {
+  display: none;
+}
+.form-item-email-prefs {
+  float: left;
+  width: 550px;
+  padding-right: 25px;
+  margin-bottom: 20px;
+}
+.email-Prefs-Row {
+  width: 100%;
+}
+.email-prefs-col-1 {
+  width: 200px;
+  display: inline-block;
+}
+.email-prefs-col-2,
+.email-prefs-col-3,
+.email-prefs-col-4,
+.email-prefs-col-5
+  {
+    width: 75px;
+    display: inline-block;
+    text-align: center;
+  }
+
+  .email-prefs-col-2 input[type="radio"],
+  .email-prefs-col-3 input[type="radio"],
+  .email-prefs-col-4 input[type="radio"],
+  .email-prefs-col-5 input[type="radio"]
+    {
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
 
 
 /* CSS FADE IN */
@@ -2552,8 +2642,7 @@ input[type="radio"] {
         width: 345px;
     }
     #returnButton {
-        padding: 6px 120px 6px 120px;
-        display: none;
+        padding: 0px 120px 0px 120px;
     }
     .user-options li>i {
         font-size: 24px;
@@ -3150,6 +3239,294 @@ input[type="radio"] {
     .profile-cover_inner {
         margin-top: 2px;
     }
+    /* ----------------------- user profile page styles ---------------------------------*/
+
+    .profile-cover_wrapper {
+        margin-top: 30px;
+    }
+    .profile-cover {
+        height: 150px;
+    }
+    .profile_top {
+        height: 40px;
+    }
+    .profile_top.right {
+        margin-top: 0;
+        margin-right: 10px;
+        padding-top: 0px;
+    }
+    .userprofile_img {
+        top: -20px;
+        left: 5px;
+        height: 90px;
+        width: 90px;
+    }
+
+    .profile_top span {
+      font-size: 0.8em;
+      display: inline-block;
+      vertical-align: top;
+      margin-top: 10px;
+      margin-left: 120px;
+      text-align: left;
+    }
+    .profile_top.right > label {
+      width: 90px;
+      padding: 0;
+      min-width: 50px;
+    }
+
+    .bin {
+        min-width: 34px;
+        width: 34px;
+        padding: 0 10px;
+    }
+    .bin img {
+        height: 12px;
+        vertical-align: middle;
+    }
+    .camera {
+        min-width: 32px;
+        width: 32px;
+        height: 20px;
+        padding: 0 5px;
+        background: #cecece;
+        border-radius: 3px;
+        position: absolute;
+        top: 50px;
+        left: 75px;
+        cursor: pointer;
+    }
+
+
+    .camera img {
+        height: 15px;
+        width: auto;
+        margin-left: auto;
+        margin-right: auto;
+        vertical-align: middle;
+        margin-top: -5px;
+    }
+
+    .large-padding-top-y {
+        padding-top: 20px;
+    }
+    .large-padding-bottom-y {
+        padding-bottom: 20px;
+    }
+    .userID_img {
+      margin-bottom: 10px;
+    }
+    .id_select_button_wrapper {
+      float: left;
+      margin-left: 20px;
+
+    }
+
+    .id_upload_desc {
+      width: 300px;
+      text-align: justify;
+
+    }
+
+    .id_upload_desc span {
+      width: 100%;
+      display: block;
+      white-space: normal;
+      font-size: 0.9em;
+      line-height: 17px;
+      padding-top: 10px;
+      margin-bottom: 35px;
+    }
+    .profile-form {
+        width: 100%;
+        float: left;
+        text-align: left;
+        margin-left: 10px;
+    }
+    .profile-form .form-row {
+        white-space: nowrap;
+        max-width: 900px;
+        height: 50px;
+    }
+    .profile-form .form-row.birthday {
+        white-space: nowrap;
+        max-width: 100%;
+    }
+    .birthday-visibility {
+        float: none;
+        margin-right: 150px;
+        margin-top: -25px;
+    }
+    .profile-form h3 {
+        padding-top: 15px;
+        padding-bottom: 0;
+        font-size: 1.3em;
+    }
+    .white {
+        background: #fff;
+        border: solid 1px #acacac;
+        margin-bottom: 0;
+    }
+    .profile-form .form-input {
+        height: 30px;
+        border: 1px solid #acacac;
+        border-radius: 3px;
+        padding-left: 10px;
+        line-height: 30px;
+        margin-bottom: 15px;
+        margin-top: 7px;
+        font-size: 0.9em;
+        margin-bottom: 20px;
+    }
+    .form-item_half {
+        width: 100%;
+        float: left;
+        padding-right: 20px;
+    }
+    .form-item_half img {
+        width: 30px;
+        height: 30px;
+        vertical-align: middle;
+        margin-right: 5px;
+    }
+    .form-item_half .form-item_half:nth-last-of-type(1) {
+        padding-right: 0;
+        padding-left: 0;
+    }
+    .form-item_half .form-item_half:nth-of-type(1) {
+        padding-right: 0;
+    }
+    .form-item_full {
+        float: left;
+        width: 100%;
+        padding-right: 20px;
+    }
+    .form-item_full.no-padding {
+        padding-right: 0;
+    }
+    .form-item_third {
+        width: 33.3%;
+        float: left;
+        padding-right: 20px;
+    }
+    .profile-form .form-item_half .form-input {
+        width: 100%;
+    }
+    .profile-form .form-row.social .form-item_half .form-input {
+        width: 473px;
+    }
+    .profile-form .form-item_third .form-input {
+        width: 100%;
+    }
+    .profile-form input[type="checkbox"],
+    input[type="radio"] {
+        margin-top: 10px;
+        margin-bottom: 20px;
+    }
+    .profile-form textarea {
+        margin-top: 10px;
+        width: 100%;
+        margin-bottom: 30px;
+        border: solid 1px #acacac;
+        border-radius: 5px;
+        font-size: 12px;
+        padding: 10px;
+        resize: none;
+    }
+    .profile-form .btn {
+        margin: 10px 10px 20px 10px;
+        cursor: pointer;
+        min-width: 100px;
+        height: 22px;
+    }
+    .btn.blackWhite {
+        background: #fff;
+        color: #000;
+        border: 1px solid #000;
+    }
+    .submit_status {
+        height: 8px;
+        width: 100%;
+        margin-top: 20px;
+        border-top: solid 1px #acacac;
+        background-repeat: repeat-y;
+    }
+    .progress-track {
+        background: #383838;
+        width: 50%;
+        height: 100%;
+        left: 0px;
+        top: 0px;
+        position: relative;
+    }
+    #artistButton {
+        display: inline-block;
+    }
+    #supportButton {
+        display: inline-block;
+    }
+    .ie-popup {
+        left: 0;
+        right: 0;
+        position: absolute;
+        padding-bottom: 20px;
+    }
+
+    .error-popup {
+      border: 2px solid #C00005;
+      color: #C00005;
+      width: 420px;
+      padding-left: 20px;
+      text-align: left;
+      border-radius: 0;
+      margin-top: 10%;
+    }
+    .error-popup-left {
+      display: block;
+      float: left;
+      width: 13%;
+      vertical-align: top;
+    }
+    .error-popup-right {
+      padding-top: 6px;
+      display: block;
+      float: right;
+      width: 87%;
+    }
+    .error-popup span {
+      font-size: 0.8em;
+      display: block;
+      width: 100%;
+      margin-bottom: 20px;
+    }
+
+    .clearBtn {
+      background: none;
+      color: #1b1b1b;
+      border: 1px solid #acacac;
+      float: right;
+      font-size: 0.9em;
+      line-height: 28px;
+    }
+    .errorIcon-large {
+      background: url("../images/icons/error-lrg.png");
+      background-position: center center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      width: 27px;
+      height: 27px;
+      float: left;
+    }
+    .clearBtn:hover {
+      background: none;
+    }
+    .profile-form .btn.dark.mobLeft {
+      margin: 10px 10px 20px 0px;
+    }
+    .form-item-email-prefs {
+        width: 530px;
+    }
 }
 /* Extra Small Devices, Phones */
 
@@ -3624,6 +4001,327 @@ input[type="radio"] {
     .profile-cover_inner {
         margin-top: 2px;
     }
+
+    /* ----------------------- user profile page styles ---------------------------------*/
+    .profile-cover_wrapper {
+        margin-top: 30px;
+    }
+    .profile-cover {
+        height: 150px;
+    }
+    .profile_top {
+        height: 50px;
+    }
+    .profile_top.right {
+        margin-top: 0;
+        margin-right: 10px;
+        padding-top: 20px;
+    }
+    .userprofile_img {
+        top: -20px;
+        left: 5px;
+        height: 90px;
+        width: 90px;
+    }
+
+    .profile_top span {
+      font-size: 0.8em;
+      display: inline-block;
+      vertical-align: top;
+      margin-top: 10px;
+      margin-left: 120px;
+      text-align: left;
+    }
+    .profile_top.right > label {
+      width: 90px;
+      padding: 0;
+      min-width: 50px;
+    }
+
+    .bin {
+        min-width: 34px;
+        width: 34px;
+        padding: 0 10px;
+    }
+    .bin img {
+        height: 12px;
+        vertical-align: middle;
+    }
+    .camera {
+        min-width: 32px;
+        width: 32px;
+        height: 20px;
+        padding: 0 5px;
+        background: #cecece;
+        border-radius: 3px;
+        position: absolute;
+        top: 50px;
+        left: 75px;
+        cursor: pointer;
+    }
+
+
+    .camera img {
+        height: 15px;
+        width: auto;
+        margin-left: auto;
+        margin-right: auto;
+        vertical-align: middle;
+        margin-top: -5px;
+    }
+
+    .large-padding-top-y {
+        padding-top: 20px;
+    }
+    .large-padding-bottom-y {
+        padding-bottom: 20px;
+    }
+    .userID_img {
+      margin-bottom: 10px;
+    }
+    .id_select_button_wrapper {
+      float: left;
+      margin-left: 0;
+
+    }
+
+    .id_upload_desc {
+      width: 100%;
+      text-align: justify;
+    }
+
+    .id_upload_desc span {
+      width: 100%;
+      display: block;
+      white-space: normal;
+      font-size: 0.9em;
+      line-height: 17px;
+      padding-top: 10px;
+
+    }
+    .profile-form {
+        width: 100%;
+        float: left;
+        text-align: left;
+        margin-left: 10px;
+    }
+    .profile-form .form-row {
+        white-space: nowrap;
+        max-width: 900px;
+        height: 50px;
+    }
+    .profile-form .form-row.birthday {
+        white-space: nowrap;
+        max-width: 100%;
+    }
+    .birthday-visibility {
+        float: none;
+        margin-right: 150px;
+        margin-top: -25px;
+    }
+    .profile-form h3 {
+        padding-top: 15px;
+        padding-bottom: 0;
+        font-size: 1.3em;
+    }
+    .white {
+        background: #fff;
+        border: solid 1px #acacac;
+        margin-bottom: 0;
+    }
+    .profile-form .form-input {
+        height: 30px;
+        border: 1px solid #acacac;
+        border-radius: 3px;
+        padding-left: 10px;
+        line-height: 30px;
+        margin-bottom: 15px;
+        margin-top: 7px;
+        font-size: 0.9em;
+        margin-bottom: 20px;
+    }
+    .form-item_half {
+        width: 100%;
+        float: left;
+        padding-right: 20px;
+    }
+    .form-item_half img {
+        width: 30px;
+        height: 30px;
+        vertical-align: middle;
+        margin-right: 5px;
+    }
+    .form-item_half .form-item_half:nth-last-of-type(1) {
+        padding-right: 0;
+        padding-left: 0;
+    }
+    .form-item_half .form-item_half:nth-of-type(1) {
+        padding-right: 0;
+    }
+    .form-item_full {
+        float: left;
+        width: 100%;
+        padding-right: 20px;
+    }
+    .form-item_full.no-padding {
+        padding-right: 0;
+    }
+    .form-item_third {
+        width: 33.3%;
+        float: left;
+        padding-right: 20px;
+    }
+    .profile-form .form-item_half .form-input {
+        width: 100%;
+    }
+    .profile-form .form-row.social .form-item_half .form-input {
+        width: 243px;
+    }
+    .profile-form .form-item_third .form-input {
+        width: 100%;
+    }
+    .profile-form input[type="checkbox"],
+    input[type="radio"] {
+        margin-top: 10px;
+        margin-bottom: 20px;
+    }
+    .profile-form textarea {
+        margin-top: 10px;
+        width: 100%;
+        margin-bottom: 30px;
+        border: solid 1px #acacac;
+        border-radius: 5px;
+        font-size: 12px;
+        padding: 10px;
+        resize: none;
+    }
+    .profile-form .btn {
+        margin: 10px 10px 20px 10px;
+        cursor: pointer;
+        min-width: 100px;
+        height: 22px;
+    }
+    .btn.blackWhite {
+        background: #fff;
+        color: #000;
+        border: 1px solid #000;
+    }
+    .submit_status {
+        height: 8px;
+        width: 100%;
+        margin-top: 20px;
+        border-top: solid 1px #acacac;
+        background-repeat: repeat-y;
+    }
+    .progress-track {
+        background: #383838;
+        width: 50%;
+        height: 100%;
+        left: 0px;
+        top: 0px;
+        position: relative;
+    }
+    #artistButton {
+        display: inline-block;
+    }
+    #supportButton {
+        display: inline-block;
+    }
+    .button-row {
+      text-align: center;
+    }
+
+    .ie-popup {
+        left: 0;
+        right: 0;
+        position: absolute;
+        padding-bottom: 20px;
+    }
+
+    .error-popup {
+      border: 2px solid #C00005;
+      color: #C00005;
+      width: 420px;
+      padding-left: 20px;
+      text-align: left;
+      border-radius: 0;
+      margin-top: 10%;
+    }
+    .error-popup-left {
+      display: block;
+      float: left;
+      width: 13%;
+      vertical-align: top;
+    }
+    .error-popup-right {
+      padding-top: 6px;
+      display: block;
+      float: right;
+      width: 87%;
+    }
+    .error-popup span {
+      font-size: 0.8em;
+      display: block;
+      width: 100%;
+      margin-bottom: 20px;
+    }
+
+    .clearBtn {
+      background: none;
+      color: #1b1b1b;
+      border: 1px solid #acacac;
+      float: right;
+      font-size: 0.9em;
+      line-height: 28px;
+    }
+    .errorIcon-large {
+      background: url("../images/icons/error-lrg.png");
+      background-position: center center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      width: 27px;
+      height: 27px;
+      float: left;
+    }
+    .clearBtn:hover {
+      background: none;
+    }
+    .profile-form .btn.dark.mobLeft {
+      margin: 10px 10px 20px 0px;
+    }
+
+    .form-item-email-prefs {
+      float: left;
+      width: 300px;
+      padding-right: 25px;
+      margin-bottom: 20px;
+      font-size: 0.8em;
+    }
+    .email-Prefs-Row {
+      width: 100%;
+    }
+    .email-prefs-col-1 {
+      width: 100px;
+      display: inline-block;
+    }
+    .email-prefs-col-2,
+    .email-prefs-col-3,
+    .email-prefs-col-4,
+    .email-prefs-col-5
+      {
+        width: 40px;
+        display: inline-block;
+        text-align: center;
+      }
+
+      .email-prefs-col-2 input[type="radio"],
+      .email-prefs-col-3 input[type="radio"],
+      .email-prefs-col-4 input[type="radio"],
+      .email-prefs-col-5 input[type="radio"]
+        {
+          margin-top: 10px;
+          margin-bottom: 10px;
+        }
 }
 /* Custom, iPhone Retina */
 
