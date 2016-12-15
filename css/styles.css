@@ -2067,9 +2067,8 @@ transition: all 0.4s ease;
 }
 .profile-cover_inner {
   display: block;
-  height: 200%;
-  width: 200%;
-  background: url("../images/slider-1.jpg");
+  height: 100%;
+  width: 100%;
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -2096,10 +2095,10 @@ transition: all 0.4s ease;
     border-radius: 100%;
     display: block;
     position: absolute;
-    background: url("../images/morgan1.jpg");
     background-position: center center;
     background-size: cover;
     background-repeat: no-repeat;
+    z-index: 1100;
 }
 .userprofile_img_wrapper {
     position: relative;
@@ -2144,6 +2143,7 @@ transition: all 0.4s ease;
     top: 110px;
     left: 200px;
     cursor: pointer;
+    z-index: 1200;
 }
 .camera:hover {
     background: #c5c5c5;
@@ -2381,6 +2381,9 @@ input[type="radio"] {
 .billing-address {
   display: none;
 }
+.billingCountryState {
+  display: none;
+}
 .form-item-email-prefs {
   float: left;
   width: 550px;
@@ -2422,6 +2425,54 @@ input[type="radio"] {
          -o-animation: fadein 1s;
             animation: fadein 1s;
 }
+
+.loader-mask {
+    display: none;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.80);
+    z-index: 9999;
+}
+.loader {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    border: 16px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 16px solid #cf4331;
+    width: 120px;
+    height: 120px;
+    -webkit-animation: spin 2s linear infinite;
+    -ms-animation: spin 2s linear infinite;
+    animation: spin 2s linear infinite;
+}
+@-webkit-keyframes spin {
+    0% {
+        -webkit-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
 
 @keyframes fadein {
     from { opacity: 0; }
@@ -2665,6 +2716,13 @@ input[type="radio"] {
     .profile-cover {
         height: 330px;
     }
+    #cover-img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        border: 0 none transparent;
+
+    }
     .userprofile_img {
         height: 180px;
         width: 180px;
@@ -2676,7 +2734,8 @@ input[type="radio"] {
     }
     .bin {
         min-width: 34px;
-        width: 34px;
+        width: 50px;
+        margin-left: 5px;
         text-align: center;
     }
     .profile-form .form-row {

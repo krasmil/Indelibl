@@ -5,6 +5,7 @@ $(document).ready(function() {
     openRegPanel();
     mobileMenu();
     initMainSlider();
+    deleteCoverImg();
 });
 
 /******* Run functions when document resize **********/
@@ -148,6 +149,7 @@ var mobileMenu = function() {
         }
     });
 };
+
 /************ setup header slider ***********************/
 var initMainSlider = function() {
     if ($('#header-slide').length) {
@@ -165,3 +167,81 @@ var initMainSlider = function() {
         });
     }
 };
+
+/*---------- PREVIEW PROFILE IMAGE ON SELECT ------------*/
+function showMyProfile(fileInput) {
+    if (fileInput.files && fileInput.files[0]) {
+        var reader = new FileReader();
+        reader.onload = function(e) {
+            $('#profile-image-preview').attr('src', e.target.result);
+        };
+        reader.readAsDataURL(fileInput.files[0]);
+    }
+}
+
+/*---------- PREVIEW ID IMAGE ON SELECT ------------*/
+function showMyID(fileInput) {
+    if (fileInput.files && fileInput.files[0]) {
+        var reader = new FileReader();
+        reader.onload = function(e) {
+            $('#id-image-preview').attr('src', e.target.result);
+        };
+        reader.readAsDataURL(fileInput.files[0]);
+    }
+}
+
+/*---------- PREVIEW COVER IMAGE ON SELECT ------------*/
+function showMyImage(fileInput) {
+    if (fileInput.files && fileInput.files[0]) {
+        var reader = new FileReader();
+        reader.onload = function(e) {
+          if ($(".profile-cover_inner > img").not(":visible")) {
+            $(".profile-cover_inner > img").show();
+          }
+            $('#cover-img').css('transform', 'translate3d(0px, 0px, 0px)');
+            $('#cover-img').attr('src', e.target.result);
+        };
+        reader.readAsDataURL(fileInput.files[0]);
+    }
+}
+
+/*---------- COVER IMAGE DRAGGABLE ------------*/
+$(document).ready(function() {
+  /*--------- DRAG IMAGE -----------*/
+  if ($('.profile-cover_wrapper').length) {
+    Draggable.create("#cover-img", {
+        type: "x,y",
+        bounds: ".profile-cover_wrapper",
+        edgeResistance: 0.0
+    });
+  }
+});
+
+/************ delete cover image on edit profile page ***********************/
+var deleteCoverImg = function() {
+  if ($('#deleteCoverImg').length) {
+    $("#deleteCoverImg").click(function(e) {
+      $(".profile-cover_inner > img").hide();
+        e.preventDefault();
+    });
+  }
+};
+
+/************ show/hide secondary address feilds in edit profile pages ***********************/
+$(document).ready(function() {
+
+  if ($('#primaryAddress').length) {
+    $("#primaryAddress").click(function(e) {
+      if ($("#billingAddressRow").is(":visible")) {
+        $("#billingAddressRow").hide();
+      }
+      if ($("#billingCountryStateRow").is(":visible")) {
+        $("#billingCountryStateRow").hide();
+      }
+    });
+    $("#billingAddress").click(function(e) {
+      $("#billingCountryStateRow").show();
+      $("#billingAddressRow").show();
+    });
+  }
+});
