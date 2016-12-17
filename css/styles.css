@@ -310,7 +310,8 @@ body {
     -moz-osx-font-smoothing: grayscale;
     background-color: #fff;
     -webkit-overflow-scrolling: touch;
-    /* overflow: hidden */
+    overflow-y: hidden;
+
 }
 [data-drop-close] {
     cursor: pointer
@@ -508,6 +509,19 @@ h6 a {
 h6 a:hover {
     opacity: 0.6
 }
+.header-offer {
+  background: #e74c3c;
+  width: 100%;
+  height: 60px;
+  text-align: center;
+}
+.header-offer span {
+  font-size: 22px;
+  color: #fff;
+  font-weight: bold;
+  vertical-align: middle;
+  line-height: 60px;
+}
 .dropdown {
     position: relative
 }
@@ -531,7 +545,7 @@ h6 a:hover {
 }
 .dropdown .drop-content {
     position: absolute;
-    top: 0;
+    top: 30px;
     left: 0;
     visibility: hidden;
     opacity: 0;
@@ -624,6 +638,7 @@ h6 a:hover {
     background-color: #e74c3c
 }
 .main-container {
+  /*  overflow-x: hidden; */
     overflow-x: hidden;
     height: 100vh
 }
@@ -1114,7 +1129,6 @@ ripple.ripple::after {
 .user-options li a {
     color: #313b46;
     display: block;
-    margin-bottom: 5px;
 }
 .user-options li>i {
     font-size: 30px;
@@ -1457,6 +1471,9 @@ transition: all 0.4s ease;
     -webkit-transition: all 0.4s ease;
     transition: all 0.4s ease
 }
+#recentArtists .column-4 {
+    width: calc(25% - 47px);
+}
 .box-artist:hover {
     -webkit-transform: translate(0, -20px);
     -moz-transform: translate(0, -20px);
@@ -1546,6 +1563,7 @@ transition: all 0.4s ease;
     flex-direction: row;
     padding: 50px 0px
 }
+
 .footer-top {
     background-color: #383838;
     font-size: 1em;
@@ -1581,38 +1599,62 @@ transition: all 0.4s ease;
     white-space: nowrap;
     overflow: hidden;
 }
+
 .subscribe-form {
-    display: block;
+    display: none;
     margin-left: auto;
     margin-right: auto;
-    margin-top: -60px;
+}
+.subscribe_container {
+    width: 865px;
+    background: #f5f5f1;
+    position: relative;
+    display: block;
+    text-align: center;
+    padding: 20px;
+    color:#000;
+    font-size: 1.2em;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 30px;
+}
+#showSubscribeFormButton {
+    margin-bottom: 30px;
 }
 .subscribe-form .subscribe-cell {
-    display: table-cell;
     vertical-align: middle;
 }
-.subscribe-form input {
+.subscribe-form input[type="email"] {
     font-size: 14px;
-    height: 30px;
+    height: 38px;
     border: none;
     background: #fff;
     width: 560px;
     color: #333;
-    padding-left: 10px;
-    border-top-left-radius: 5px;
-    border-bottom-left-radius: 5px;
+    text-align: center;
+    border: 1px solid #acacac;
+    border-radius: 3px;
 }
 .subscribe-form button {
-    display: block;
-    border: none;
-    background-color: #f75d4c;
-    height: 30px;
-    vertical-align: top;
-    cursor: pointer;
-    border-top-right-radius: 5px;
-    border-bottom-right-radius: 5px;
-    width: 150px;
-    color: #fff;
+  font-size: 16px;
+}
+.subscribe-form input[type="radio"], input[type="checkbox"] {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    margin-left: 0;
+}
+.subscribe-form input[type="radio"]:last-of-type {
+    margin-left: 30px;
+}
+.subscribe_container a {
+  color: #000;
+}
+.checkBox_privacy_container {
+    margin-bottom: 15px;
+}
+.checkBox_privacy_container input {
+    margin-right: 10px;
 }
 .button-holder {
     background: #383838;
@@ -2074,12 +2116,6 @@ transition: all 0.4s ease;
   background-repeat: no-repeat;
   cursor: move;
 }
-#coverPhoto-select > input {
-  display: none;
-}
-#coverPhoto-select > label {
-  cursor: pointer;
-}
 .profile_top {
     height: 130px;
 }
@@ -2122,16 +2158,27 @@ transition: all 0.4s ease;
     background: #c6c6c6;
     margin: 0;
 }
+#coverPhoto-select > input {
+  display: none;
+}
+.profile_top.right > label {
+  cursor: pointer;
+  line-height: 43px;
+  min-width: 180px;
+}
 .bin {
     min-width: 34px;
-    width: 34px;
+    width: 45px;
     padding: 0 10px;
+    margin-left: 5px;
+    background: #e74c3c;
 }
 .bin img {
-    height: 14px;
+    height: 20px;
     width: auto;
     margin-left: auto;
     margin-right: auto;
+    vertical-align: middle;
 }
 .camera {
     min-width: 55px;
@@ -2528,6 +2575,19 @@ input[type="radio"] {
         margin: 0 auto;
         min-width: 925px;
     }
+    .header-offer {
+        background: #e74c3c;
+        width: 100%;
+        height: 50px;
+        text-align: center;
+    }
+    .header-offer span {
+        font-size: 20px;
+        color: #fff;
+        font-weight: bold;
+        vertical-align: middle;
+        line-height: 50px;
+    }
     .header-top .logo img {
         height: 80px;
         padding: 7px;
@@ -2658,7 +2718,15 @@ input[type="radio"] {
     .popup-registration-content .form-input {
         font-size: 12px;
     }
-
+    .subscribe_container {
+        width: 755px;
+    }
+    .subscribe-form button {
+        font-size: 14px;
+    }
+    .subscribe-form input[type="email"] {
+        height: 30px;
+    }
     .popup-inner {
         margin-top: 2%;
     }
@@ -2732,11 +2800,19 @@ input[type="radio"] {
     .profile-form h3 {
         font-size: 20px;
     }
+    #coverPhoto-select > label {
+      cursor: pointer;
+      line-height: 32px;
+      min-width: 140px;
+    }
     .bin {
-        min-width: 34px;
-        width: 50px;
+        min-width: 35px;
+        width: 35px;
         margin-left: 5px;
         text-align: center;
+    }
+    .bin img {
+      height: 16px;
     }
     .profile-form .form-row {
         max-width: 680px;
@@ -2815,6 +2891,7 @@ input[type="radio"] {
 @media only screen and (min-width: 510px) and (max-width: 999px) {
     body {
         font-size: 12px;
+        overflow-y: visible;
     }
     h1 {
         font-size: 2em
@@ -2826,11 +2903,25 @@ input[type="radio"] {
         width: 530px;
         margin-left: auto;
         margin-right: auto;
+        overflow-x: visible;
     }
     .content-wrapper {
         max-width: 530px;
         margin: 0 auto;
         min-width: 300px;
+    }
+    .header-offer {
+      background: #e74c3c;
+      width: 100%;
+      height: 30px;
+      text-align: center;
+    }
+    .header-offer span {
+      font-size: 14px;
+      color: #fff;
+      font-weight: bold;
+      vertical-align: middle;
+      line-height: 30px;
     }
     .header-top {
         height: 50px;
@@ -3075,6 +3166,9 @@ input[type="radio"] {
     #recentArtists {
         text-align: center;
     }
+    #recentArtists .column-4 {
+        width: calc(50% - 25px);
+    }
     .box-artist .desc {
     display: block;
     padding: 20px;
@@ -3133,21 +3227,27 @@ input[type="radio"] {
         font-size: 1.1em;
         font-weight: bold;
     }
-    .subscribe-form input {
-        font-size: 1em;
-        width: 280px;
-        height: 26px;
-    }
+
     .subscribe-form button {
         width: 120px;
+        font-size: 12px;
+
+    }
+
+    .subscribe-form input {
         font-size: 1em;
-        height: 26px;
+    }
+    .subscribe-form input[type="email"] {
+        width: 100%;
+        height: 30px;
+    }
+
+
+    .subscribe_container {
+      width: 475px;
     }
     .footer .wrapper {
         padding: 20px 0px 30px;
-    }
-    .subscribe-form {
-        margin-top: -35px;
     }
     .footer-icon img {
         height: 18px;
@@ -3165,14 +3265,22 @@ input[type="radio"] {
         -ms-flex: 1 1 50%;
         flex: 1 1 33%;
     }
-    #mob_menu {
-        display: none;
+    .mob_menu {
+      visibility: hidden;
+      opacity: 0;
+      -moz-transition: all 0.4s ease;
+      -webkit-transition: all 0.4s ease;
+      transition: all 0.4s ease;
         width: 100%;
         position: fixed;
         left: 0;
         right: 0;
         z-index: 9;
-        top: 80px;
+        top: 110px;
+    }
+    .mob_menu_active {
+      visibility: visible;
+      opacity: 1;
     }
     .menu .menu-link {
         color: #666;
@@ -3180,7 +3288,7 @@ input[type="radio"] {
         font-size: 0.9em;
         line-height: 1.6em;
         font-weight: bold;
-        border-bottom: 1px solid #acacac;
+
         text-decoration: none;
     }
     .menu .menu-link:nth-of-type(1) {
@@ -3333,8 +3441,10 @@ input[type="radio"] {
       width: 90px;
       padding: 0;
       min-width: 50px;
+      line-height: inherit;
+      height: 20px;
+      font-size: 1em;
     }
-
     .bin {
         min-width: 34px;
         width: 34px;
@@ -3592,6 +3702,7 @@ input[type="radio"] {
 @media only screen and (min-width: 320px) and (max-width: 509px) {
     body {
         font-size: 12px;
+        overflow-y: visible;
     }
     h1 {
         font-size: 2em
@@ -3603,6 +3714,7 @@ input[type="radio"] {
         width: 330px;
         margin-left: auto;
         margin-right: auto;
+        overflow-x: visible;
     }
     .content-wrapper {
         max-width: 320px;
@@ -3611,6 +3723,19 @@ input[type="radio"] {
     }
     .header-top {
         height: 50px;
+    }
+    .header-offer {
+        background: #e74c3c;
+        width: 100%;
+        height: 30px;
+        text-align: center;
+    }
+    .header-offer span {
+        font-size: 12px;
+        color: #fff;
+        font-weight: bold;
+        vertical-align: middle;
+        line-height: 30px;
     }
     .header-top .logo img {
         height: 40px;
@@ -3891,12 +4016,14 @@ input[type="radio"] {
         font-size: 1em;
         white-space: nowrap;
         overflow: hidden;
-
         max-width: 170px;
         text-overflow: ellipsis
     }
 
-
+    .subscribe_container {
+        width: 280px;
+        max-width: 280px;
+    }
 
     .footer {
         margin-top: 0;
@@ -3907,8 +4034,10 @@ input[type="radio"] {
     }
     .subscribe-form input {
         font-size: 1em;
-        width: 200px;
-        height: 26px;
+    }
+    .subscribe-form input[type="email"] {
+        width: 100%;
+        height: 30px;
     }
     .subscribe-form button {
         width: 70px;
@@ -3937,9 +4066,6 @@ input[type="radio"] {
     .footer-right {
         margin-top: 40px
     }
-    .subscribe-form {
-        margin-top: -35px;
-    }
     .footer-icon img {
         height: 18px;
         width: 18px;
@@ -3956,26 +4082,38 @@ input[type="radio"] {
         -ms-flex: 1 1 50%;
         flex: 1 1 33%;
     }
-    #mob_menu {
-      display: none;
-      width: 100%;
-      position: fixed;
-      left: 0;
-      right: 0;
-      z-index: 9;
-      top: 80px;
+    .mob_menu {
+      visibility: hidden;
+      opacity: 0;
+      -moz-transition: all 0.4s ease;
+      -webkit-transition: all 0.4s ease;
+      transition: all 0.4s ease;
+        width: 100%;
+        position: fixed;
+        left: 0;
+        right: 0;
+        z-index: 9;
+        top: 110px;
+    }
+    .mob_menu_active {
+      visibility: visible;
+      opacity: 1;
     }
     .menu .menu-link {
         color: #666;
         display: block;
         font-size: 1em;
         font-weight: bold;
-        border-bottom: 1px solid #acacac;
+
         text-decoration: none;
     }
     .menu .menu-link:nth-of-type(1) {
         border-top: 1px solid #acacac;
         padding-top: 10px;
+    }
+    .menu .menu-link:last-of-type {
+        border-bottom: 1px solid #acacac;
+        padding-bottom: 10px;
     }
     .menu-collection a {
         padding-bottom: 5px;
@@ -4095,12 +4233,16 @@ input[type="radio"] {
       width: 90px;
       padding: 0;
       min-width: 50px;
+      line-height: inherit;
+      height: 20px;
+      font-size: 1em;
     }
 
     .bin {
         min-width: 34px;
         width: 34px;
         padding: 0 10px;
+        height: 20px;
     }
     .bin img {
         height: 12px;

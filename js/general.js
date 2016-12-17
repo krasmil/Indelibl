@@ -119,7 +119,7 @@ var openRegPanel = function() {
             a.click(function(e) {
                 if (e.target === this) {
                     $(this).fadeOut("fast");
-                    $("body, html").attr("style", "");
+                //    $("body, html").attr("style", "");
                 }
             });
         });
@@ -134,18 +134,22 @@ var openRegPanel = function() {
 /************** open/close mobile menu ****************/
 var mobileMenu = function() {
     $(".navigation_toggle").click(function(e) {
-        if ($("#mob_menu").is(":visible")) {
-            $("#mob_menu").hide();
+        if ($(".mob_menu").hasClass("mob_menu_active")) {
+            $(".mob_menu").removeClass("mob_menu_active");
         } else {
-            $("#mob_menu").show();
+            $(".mob_menu").toggleClass("mob_menu_active");
         }
         e.preventDefault();
     });
 
     // hide mobile menu when start scrolling
-    $('.main-container').scroll(function() {
-        if ($("#mob_menu").is(":visible")) {
-            $('#mob_menu').hide($('.main-container').scrollTop() > 2);
+
+    $(window).on("scroll", function() {
+    //$('body').scroll(function() {
+      if ($(window).scrollTop() > 2) {
+        if ($(".mob_menu").hasClass("mob_menu_active")) {
+            $('.mob_menu').removeClass("mob_menu_active");
+          }
         }
     });
 };
@@ -167,6 +171,15 @@ var initMainSlider = function() {
         });
     }
 };
+/************ show subscribe form on click ***********************/
+function showSubscribeForm() {
+  if ($('#showSubscribeFormButton').length) {
+    $('#showSubscribeFormButton').hide();
+    $('.subscribe-form').slideDown( "slow", function() {
+      $this.show();
+  });
+  }
+}
 
 /*---------- PREVIEW PROFILE IMAGE ON SELECT ------------*/
 function showMyProfile(fileInput) {

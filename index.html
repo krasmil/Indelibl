@@ -38,6 +38,9 @@
 	</head>
 	<body>
 		<div class="main-container">
+			<div class="header-offer">
+				<span>Get 10% off on all orders in Ghana and Nigeria.</span>
+			</div>
 			<header class="header-top">
 				<div class="content-wrapper clearfix">
 					<div class="left">
@@ -101,7 +104,9 @@
 								<a href="javascript:;" data-popup="registration" data-tab="login">Login / Register</a>
 							</li>
 							<li class="dropdown">
-								<img src="images/icons/profile_placeholder.png" alt=""/>
+								<a href="javascript:;" data-popup="registration" data-tab="login">
+									<img src="images/icons/profile_placeholder.png" alt=""/>
+								</a>
 							</li>
 
 							<!-- html for logged in user header
@@ -192,7 +197,7 @@
 							</svg>
 						</div>
 						<!-- mobile menu -->
-						<menu id="mob_menu" class="menu clearfix bg-light">
+						<menu class="menu clearfix bg-light mob_menu">
 							<div class="menu-collection">
 								<a href="javascript:;" class="menu-link">Original Art</a>
 								<a href="javascript:;" class="menu-link">Art Prints</a>
@@ -276,6 +281,9 @@
 							Apply now!
 						</button>
 					</div>
+				</div>
+				<div class="slide" bg-img>
+					<img class="hidden-img" src="images/slider-3.jpg" alt=""/>
 				</div>
 			</section>
 			<!-- end main slider -->
@@ -610,20 +618,42 @@
 								Sign up for our newsletter and stay up to date for the latest on Indelibl!
 							</h3>
 						</div>
-						<div class="wrapper">
+
+							<div class="subscribe-cell-button-holder">
+								<button type="submit" class="btn wide" onclick="showSubscribeForm()" id="showSubscribeFormButton">
+										Subscribe
+								</button>
+							</div>
+
+
 							<div class="subscribe-form">
-								<div class="subscribe-cell">
-									<input type="text" name="q"/>
-								</div>
-								<div class="subscribe-cell button-holder">
-									<button type="submit">
-										<span>
+								<div class="subscribe_container">
+										<input type="email" name="subscriberMail" placeholder="Email address"/>
+										<div class="errorMsg">
+											<div class="errorIcon"></div>
+										</div>
+									<div class="form-item form-item_full">
+										<input type="radio" name="gender" value="male" id="ml"><label for="ml">Male</label>
+		  							<input type="radio" name="gender" value="female" id="fml"><label for="fml">Female</label>
+									</div>
+									<div class="checkBox_privacy_container">
+										<input type="checkbox" name="privacyPolicy" value="privacyPolicy" id="ppCheck">
+										<label for="ppCheck">I accept the <a href="javascript:;">Privacy Policy</a></label>
+									</div>
+									<button type="submit" class="btn wide">
 											Subscribe
-										</span>
 									</button>
 								</div>
+								<!-- Pojavi se prouka kada korisnik posalje email za subscription -->
+								<!--
+								<div class="wrapper subscribe_thanks">
+									<h3>
+										Thank you for subscribing!
+									</h3>
+								</div>
+							-->
 							</div>
-						</div>
+
 					</div>
 					<hr class="separator-footer"/>
 					<div class="footer-bottom">
