@@ -2596,6 +2596,15 @@ input[type="radio"] {
         height: 80px;
         padding-top: 30px;
     }
+    .user-options .cart-count {
+
+        font-size: 10px;
+
+        min-width: 16px;
+        line-height: 16px;
+        border-radius: 100%;
+
+    }
     .main-menu ul li a {
         display: block;
         line-height: 100px;
@@ -2690,7 +2699,7 @@ input[type="radio"] {
         min-width: 280px;
     }
     .right {
-        margin-top: 10px;
+        margin-top: 7px;
     }
     .profile_top.right {
         padding-top: 30px;
@@ -3000,7 +3009,7 @@ input[type="radio"] {
     }
     .right {
         float: right;
-        margin-top: -12px;
+        margin-top: -18px;
         font-size: 0.8em;
     }
     .dropdown .drop-content ul li {
@@ -3077,6 +3086,9 @@ input[type="radio"] {
     }
     .btn.wide {
         width: 180px;
+    }
+    #egBtn {
+      width: 270px;
     }
     .header-wishlist-nav .btn.wide {
         width: 140px;
@@ -3266,21 +3278,13 @@ input[type="radio"] {
         flex: 1 1 33%;
     }
     .mob_menu {
-      visibility: hidden;
-      opacity: 0;
-      -moz-transition: all 0.4s ease;
-      -webkit-transition: all 0.4s ease;
-      transition: all 0.4s ease;
+        display: none;
         width: 100%;
-        position: fixed;
+        position: absolute;
         left: 0;
         right: 0;
         z-index: 9;
-        top: 110px;
-    }
-    .mob_menu_active {
-      visibility: visible;
-      opacity: 1;
+        top: 80px;
     }
     .menu .menu-link {
         color: #666;
@@ -3809,7 +3813,7 @@ input[type="radio"] {
     }
     .right {
         float: right;
-        margin-top: -12px;
+        margin-top: -18px;
         font-size: 0.8em;
     }
     .dropdown .drop-content ul li {
@@ -3892,6 +3896,9 @@ input[type="radio"] {
     }
     .btn.wide {
         width: 180px;
+    }
+    #egBtn {
+      width: 270px;
     }
     .header-wishlist-nav .btn.wide {
         width: 140px;
@@ -4083,21 +4090,13 @@ input[type="radio"] {
         flex: 1 1 33%;
     }
     .mob_menu {
-      visibility: hidden;
-      opacity: 0;
-      -moz-transition: all 0.4s ease;
-      -webkit-transition: all 0.4s ease;
-      transition: all 0.4s ease;
+      display: none;
         width: 100%;
-        position: fixed;
+        position: absolute;
         left: 0;
         right: 0;
         z-index: 9;
-        top: 110px;
-    }
-    .mob_menu_active {
-      visibility: visible;
-      opacity: 1;
+        top: 80px;
     }
     .menu .menu-link {
         color: #666;

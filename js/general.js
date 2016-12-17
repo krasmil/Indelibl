@@ -24,6 +24,10 @@ var dropMenu = function() {
     var $drop = $('[dropdown]');
     // on click on dropdown icon in header
     $trigger.on('click', function(e) {
+        // because of previous line, mobile menu doesn't close on click so the below has been added
+        if ($(".mob_menu").hasClass("mob_menu_active")) {
+            $('.mob_menu').removeClass("mob_menu_active");
+          }
 
         // remove active styling of other triggers and dropdowns
         var $data = $(this).attr("trigger");
@@ -40,6 +44,12 @@ var dropMenu = function() {
             $(this).toggleClass("active");
         }
         return false;
+    });
+
+    // hide drop down on screen click
+     $('html').click(function() {
+        $(".drop-content").removeClass("active");
+        $(".drop-trigger").removeClass("active");
     });
 };
 
@@ -128,29 +138,23 @@ var openRegPanel = function() {
     var closeIcon = $("#closeLoginPopup");
     closeIcon.click(function() {
         $("[data-popup-id]").hide();
-    });
-};
+      });
+    };
 
 /************** open/close mobile menu ****************/
 var mobileMenu = function() {
     $(".navigation_toggle").click(function(e) {
-        if ($(".mob_menu").hasClass("mob_menu_active")) {
-            $(".mob_menu").removeClass("mob_menu_active");
-        } else {
-            $(".mob_menu").toggleClass("mob_menu_active");
-        }
-        e.preventDefault();
+        $(".mob_menu").slideToggle( "slow");
     });
 
-    // hide mobile menu when start scrolling
 
+    // hide mobile menu when start scrolling
     $(window).on("scroll", function() {
-    //$('body').scroll(function() {
       if ($(window).scrollTop() > 2) {
-        if ($(".mob_menu").hasClass("mob_menu_active")) {
-            $('.mob_menu').removeClass("mob_menu_active");
-          }
+        if ($(".mob_menu").not(":hidden")) {
+              $(".mob_menu").slideUp( "fast");
         }
+      }
     });
 };
 
@@ -158,7 +162,6 @@ var mobileMenu = function() {
 var initMainSlider = function() {
     if ($('#header-slide').length) {
         $("#header-slide").owlCarousel({
-
             slideSpeed: 300,
             paginationSpeed: 400,
             singleItem: true,
@@ -176,7 +179,7 @@ function showSubscribeForm() {
   if ($('#showSubscribeFormButton').length) {
     $('#showSubscribeFormButton').hide();
     $('.subscribe-form').slideDown( "slow", function() {
-      $this.show();
+      $(this).show();
   });
   }
 }
