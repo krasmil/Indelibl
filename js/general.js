@@ -6,6 +6,7 @@ $(document).ready(function() {
     mobileMenu();
     initMainSlider();
     deleteCoverImg();
+    bounceOffer();
 });
 
 /******* Run functions when document resize **********/
@@ -18,6 +19,17 @@ $(window).resize(function() {
 /******************* FUNCTIONS ***********************/
 /*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
 
+/**************** Offer bounced effect ***************/
+var bounceOffer = function() {
+    if ($('.header-offer').length) {
+        setInterval(function() {
+            $(".header-offer span").effect("bounce", {
+                distance: 10,
+                times: 3
+            }, "slow");
+        }, 5000);
+    }
+};
 /************ drop menu ******************************/
 var dropMenu = function() {
     var $trigger = $('[trigger]');
@@ -189,7 +201,7 @@ function showMyProfile(fileInput) {
     if (fileInput.files && fileInput.files[0]) {
         var reader = new FileReader();
         reader.onload = function(e) {
-            $('#profile-image-preview').attr('src', e.target.result);
+            $('#profile-image-preview').css("background-image", "url(" + e.target.result + ")");
         };
         reader.readAsDataURL(fileInput.files[0]);
     }
@@ -200,7 +212,7 @@ function showMyID(fileInput) {
     if (fileInput.files && fileInput.files[0]) {
         var reader = new FileReader();
         reader.onload = function(e) {
-            $('#id-image-preview').attr('src', e.target.result);
+            $('#id-image-preview').css("background-image", "url(" + e.target.result + ")");
         };
         reader.readAsDataURL(fileInput.files[0]);
     }
@@ -218,6 +230,7 @@ function showMyImage(fileInput) {
             $('#cover-img').attr('src', e.target.result);
         };
         reader.readAsDataURL(fileInput.files[0]);
+        $('.profile-cover_inner').css("background-image", "none");
     }
 }
 

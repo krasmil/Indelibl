@@ -512,15 +512,16 @@ h6 a:hover {
 .header-offer {
   background: #e74c3c;
   width: 100%;
-  height: 60px;
+  height: 50px;
   text-align: center;
 }
 .header-offer span {
-  font-size: 22px;
+  font-size: 20px;
   color: #fff;
   font-weight: bold;
   vertical-align: middle;
-  line-height: 60px;
+  line-height: 50px;
+  text-transform: uppercase;
 }
 .dropdown {
     position: relative
@@ -641,6 +642,9 @@ h6 a:hover {
   /*  overflow-x: hidden; */
     overflow-x: hidden;
     height: 100vh
+}
+.main-container.grey {
+  background: #f5f5f1;
 }
 .content-wrapper {
     max-width: 1302px;
@@ -1084,6 +1088,9 @@ ripple.ripple::after {
 .btn.wide {
     width: 480px
 }
+.btn.wide.galleryAppThanks {
+  margin-top: 60px;
+}
 .btn.dark {
     background: #232324
 }
@@ -1096,6 +1103,9 @@ ripple.ripple::after {
 }
 .btn.light:hover {
     background: #ededed
+}
+.gallery_application a {
+  color: #acacac;
 }
 .header-top {
     height: 100px;
@@ -1152,6 +1162,7 @@ ripple.ripple::after {
     cursor: pointer;
     margin: 0 10px
 }
+
 .user-options .cart-count {
     position: absolute;
     top: 0;
@@ -1207,22 +1218,25 @@ ripple.ripple::after {
 .main-menu {
     border-bottom: solid 1px #acacac
 }
+.main-menu .content-wrapper {
+  max-width: 1400px;
+}
 .main-menu ul {
-    display: table;
-    width: 100%;
-    white-space: nowrap;
+  display: table;
+  width: 100%;
 }
 .main-menu ul li {
-    display: inline-block;
-    overflow: hidden;
-    height: 100px;
-    position: relative;
-    padding: 0 2.05%
+  display: inline-block;
+  overflow: hidden;
+  height: 50px;
+  position: relative;
+  padding: 0 1.95%
 }
 .main-menu ul li a {
     display: block;
-    line-height: 100px;
+    line-height: 50px;
     font-size: 1.15em;
+    font-weight: bold;
     color: #313b46;
 }
 .main-menu ul li a:hover {
@@ -1648,7 +1662,7 @@ transition: all 0.4s ease;
     margin-left: 30px;
 }
 .subscribe_container a {
-  color: #000;
+  color: #acacac;
 }
 .checkBox_privacy_container {
     margin-bottom: 15px;
@@ -1679,6 +1693,16 @@ transition: all 0.4s ease;
 }
 .footer-bottom ul {
     text-align: left;
+    width: auto;
+    max-width: 300px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.footer-bottom ul li {
+    max-width: 200px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 .footer-right {
     text-align: left;
@@ -2108,13 +2132,17 @@ transition: all 0.4s ease;
     overflow: hidden;
 }
 .profile-cover_inner {
-  display: block;
-  height: 100%;
-  width: 100%;
-  background-position: center center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  cursor: move;
+    display: block;
+    height: 100%;
+    width: 100%;
+    background-image: url("../images/slider-1.jpg");
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+#cover-img {
+    display: none;
+    cursor: move;
 }
 .profile_top {
     height: 130px;
@@ -2131,10 +2159,12 @@ transition: all 0.4s ease;
     border-radius: 100%;
     display: block;
     position: absolute;
+    background-image: url("../images/kanye1.jpg");
     background-position: center center;
     background-size: cover;
     background-repeat: no-repeat;
     z-index: 1100;
+
 }
 .userprofile_img_wrapper {
     position: relative;
@@ -2212,6 +2242,7 @@ transition: all 0.4s ease;
   width: 180px;
   height: 135px;
   border: 1px solid #acacac;
+  background-image: url("../images/icons/id.png");
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -2348,6 +2379,10 @@ input[type="radio"] {
     color: #000;
     border: 1px solid #000;
 }
+.btn.mid {
+    width: 270px;
+    margin-bottom: 60px;
+}
 .submit_status {
     height: 8px;
     width: 100%;
@@ -2463,6 +2498,46 @@ input[type="radio"] {
       margin-bottom: 10px;
     }
 
+.appForm_row1 {
+  margin-top: 20px;
+}
+.profile-form .appForm_row1 .form-input {
+    height: 30px;
+    border: 1px solid #acacac;
+    border-radius: 3px;
+    padding-left: 10px;
+    line-height: 30px;
+    margin-bottom: 30px;
+    margin-top: 7px;
+    font-size: 14px;
+    width: 315px;
+}
+.gallery_application h3 {
+  padding-bottom: 20px;
+  padding-top: 0;
+}
+.gallery_app_header {
+  padding: 30px;
+  background: #f5f5f1;
+  text-align: left;
+}
+.app_form h2 {
+  font-size: 25px;
+  text-align: left;
+  margin-top: 30px;
+  margin-bottom: 45px;
+}
+.gallery_app_header button {
+    background-color: #161307;
+    font-size: 18px;
+    text-align: center;
+    width: 320px;
+    height: 40px;
+    line-height: 40px;
+    border-radius: 3px;
+    z-index: 5;
+}
+
 
 /* CSS FADE IN */
 .popup-inner{
@@ -2570,6 +2645,9 @@ input[type="radio"] {
     body {
         font-size: 14px
     }
+    .main-menu .content-wrapper {
+      max-width: 940px;
+    }
     .content-wrapper {
         max-width: 925px;
         margin: 0 auto;
@@ -2578,15 +2656,16 @@ input[type="radio"] {
     .header-offer {
         background: #e74c3c;
         width: 100%;
-        height: 50px;
+        height: 40px;
         text-align: center;
     }
     .header-offer span {
-        font-size: 20px;
+        font-size: 18px;
         color: #fff;
         font-weight: bold;
         vertical-align: middle;
-        line-height: 50px;
+        line-height: 40px;
+        text-transform: uppercase;
     }
     .header-top .logo img {
         height: 80px;
@@ -2607,7 +2686,7 @@ input[type="radio"] {
     }
     .main-menu ul li a {
         display: block;
-        line-height: 100px;
+        line-height: 50px;
         font-size: 1em;
         color: #313b46;
     }
@@ -2749,6 +2828,22 @@ input[type="radio"] {
         margin-left: auto;
         margin-right: auto;
     }
+    .galleryApp_logo {
+        display: block;
+        width: 95px;
+        height: auto;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 60px;
+    }
+    .galleryApp_logo {
+        display: block;
+        width: 95px;
+        height: auto;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 60px;
+    }
     #forgotPass_row {
         padding-top: 7%;
     }
@@ -2792,13 +2887,6 @@ input[type="radio"] {
     }
     .profile-cover {
         height: 330px;
-    }
-    #cover-img {
-        position: absolute;
-        top: 0;
-        left: 0;
-        border: 0 none transparent;
-
     }
     .userprofile_img {
         height: 180px;
@@ -2931,6 +3019,7 @@ input[type="radio"] {
       font-weight: bold;
       vertical-align: middle;
       line-height: 30px;
+      text-transform: uppercase;
     }
     .header-top {
         height: 50px;
@@ -2992,8 +3081,6 @@ input[type="radio"] {
         background-size: 12px 12px;
         background-repeat: no-repeat;
     }
-
-
     .navigation_toggle {
         z-index: 50;
         border: 0;
@@ -3009,7 +3096,7 @@ input[type="radio"] {
     }
     .right {
         float: right;
-        margin-top: -18px;
+        margin-top: -13px;
         font-size: 0.8em;
     }
     .dropdown .drop-content ul li {
@@ -3050,6 +3137,11 @@ input[type="radio"] {
         margin-right: 0;
     }
     .user-options li>img {
+        width: 20px;
+        height: 20px;
+        margin: 0;
+    }
+    .user-options li>a>img {
         width: 20px;
         height: 20px;
         margin: 0;
@@ -3575,6 +3667,20 @@ input[type="radio"] {
         width: 100%;
         padding-right: 20px;
     }
+    .app_form h2 {
+        font-size: 18px;
+        text-align: left;
+        margin-top: 20px;
+        margin-bottom: 25px;
+    }
+    .form-item_full.organisation {
+        float: left;
+        width: 100%;
+        padding-right: 0;
+    }
+    .profile-form .appForm_row1 .form-input {
+        width: 100%;
+    }
     .form-item_full.no-padding {
         padding-right: 0;
     }
@@ -3740,6 +3846,7 @@ input[type="radio"] {
         font-weight: bold;
         vertical-align: middle;
         line-height: 30px;
+        text-transform: uppercase;
     }
     .header-top .logo img {
         height: 40px;
@@ -3813,7 +3920,7 @@ input[type="radio"] {
     }
     .right {
         float: right;
-        margin-top: -18px;
+        margin-top: -13px;
         font-size: 0.8em;
     }
     .dropdown .drop-content ul li {
@@ -3854,6 +3961,11 @@ input[type="radio"] {
         margin-right: 0;
     }
     .user-options li>img {
+        width: 20px;
+        height: 20px;
+        margin: 0;
+    }
+    .user-options li>a>img {
         width: 20px;
         height: 20px;
         margin: 0;
@@ -4200,26 +4312,25 @@ input[type="radio"] {
 
     /* ----------------------- user profile page styles ---------------------------------*/
     .profile-cover_wrapper {
-        margin-top: 30px;
+      margin-top: 30px;
     }
     .profile-cover {
-        height: 150px;
+      height: 150px;
     }
     .profile_top {
-        height: 50px;
+      height: 50px;
     }
     .profile_top.right {
-        margin-top: 0;
-        margin-right: 10px;
-        padding-top: 20px;
+      margin-top: 0;
+      margin-right: 10px;
+      padding-top: 20px;
     }
     .userprofile_img {
-        top: -20px;
-        left: 5px;
-        height: 90px;
-        width: 90px;
+      top: -20px;
+      left: 5px;
+      height: 90px;
+      width: 90px;
     }
-
     .profile_top span {
       font-size: 0.8em;
       display: inline-block;
@@ -4236,45 +4347,44 @@ input[type="radio"] {
       height: 20px;
       font-size: 1em;
     }
-
     .bin {
-        min-width: 34px;
-        width: 34px;
-        padding: 0 10px;
-        height: 20px;
+      min-width: 34px;
+      width: 34px;
+      padding: 0 10px;
+      height: 20px;
     }
     .bin img {
-        height: 12px;
-        vertical-align: middle;
+      height: 12px;
+      vertical-align: middle;
     }
     .camera {
-        min-width: 32px;
-        width: 32px;
-        height: 20px;
-        padding: 0 5px;
-        background: #cecece;
-        border-radius: 3px;
-        position: absolute;
-        top: 50px;
-        left: 75px;
-        cursor: pointer;
+      min-width: 32px;
+      width: 32px;
+      height: 20px;
+      padding: 0 5px;
+      background: #cecece;
+      border-radius: 3px;
+      position: absolute;
+      top: 50px;
+      left: 75px;
+      cursor: pointer;
     }
-
-
+    .profile-form .appForm_row1 .form-input {
+      width: 100%;
+    }
     .camera img {
-        height: 15px;
-        width: auto;
-        margin-left: auto;
-        margin-right: auto;
-        vertical-align: middle;
-        margin-top: -5px;
+      height: 15px;
+      width: auto;
+      margin-left: auto;
+      margin-right: auto;
+      vertical-align: middle;
+      margin-top: -5px;
     }
-
     .large-padding-top-y {
-        padding-top: 20px;
+      padding-top: 20px;
     }
     .large-padding-bottom-y {
-        padding-bottom: 20px;
+      padding-bottom: 20px;
     }
     .userID_img {
       margin-bottom: 10px;
@@ -4282,14 +4392,11 @@ input[type="radio"] {
     .id_select_button_wrapper {
       float: left;
       margin-left: 0;
-
     }
-
     .id_upload_desc {
       width: 100%;
       text-align: justify;
     }
-
     .id_upload_desc span {
       width: 100%;
       display: block;
@@ -4363,6 +4470,17 @@ input[type="radio"] {
         width: 100%;
         padding-right: 20px;
     }
+    .form-item_full.organisation {
+        float: left;
+        width: 100%;
+        padding-right: 0;
+    }
+    .app_form h2 {
+        font-size: 16px;
+        text-align: left;
+        margin-top: 20px;
+        margin-bottom: 25px;
+    }
     .form-item_full.no-padding {
         padding-right: 0;
     }
@@ -4407,37 +4525,35 @@ input[type="radio"] {
         border: 1px solid #000;
     }
     .submit_status {
-        height: 8px;
-        width: 100%;
-        margin-top: 20px;
-        border-top: solid 1px #acacac;
-        background-repeat: repeat-y;
+      height: 8px;
+      width: 100%;
+      margin-top: 20px;
+      border-top: solid 1px #acacac;
+      background-repeat: repeat-y;
     }
     .progress-track {
-        background: #383838;
-        width: 50%;
-        height: 100%;
-        left: 0px;
-        top: 0px;
-        position: relative;
+      background: #383838;
+      width: 50%;
+      height: 100%;
+      left: 0px;
+      top: 0px;
+      position: relative;
     }
     #artistButton {
-        display: inline-block;
+      display: inline-block;
     }
     #supportButton {
-        display: inline-block;
+      display: inline-block;
     }
     .button-row {
       text-align: center;
     }
-
     .ie-popup {
-        left: 0;
-        right: 0;
-        position: absolute;
-        padding-bottom: 20px;
+      left: 0;
+      right: 0;
+      position: absolute;
+      padding-bottom: 20px;
     }
-
     .error-popup {
       border: 2px solid #C00005;
       color: #C00005;
@@ -4465,7 +4581,6 @@ input[type="radio"] {
       width: 100%;
       margin-bottom: 20px;
     }
-
     .clearBtn {
       background: none;
       color: #1b1b1b;
@@ -4489,7 +4604,6 @@ input[type="radio"] {
     .profile-form .btn.dark.mobLeft {
       margin: 10px 10px 20px 0px;
     }
-
     .form-item-email-prefs {
       float: left;
       width: 300px;
