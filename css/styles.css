@@ -1235,7 +1235,7 @@ ripple.ripple::after {
 .main-menu ul li a {
     display: block;
     line-height: 50px;
-    font-size: 1.15em;
+    font-size: 1em;
     font-weight: bold;
     color: #313b46;
 }
@@ -1701,8 +1701,7 @@ transition: all 0.4s ease;
 .footer-bottom ul li {
     max-width: 200px;
     overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
+    word-wrap: break-word;
 }
 .footer-right {
     text-align: left;
@@ -2500,6 +2499,9 @@ input[type="radio"] {
 
 .appForm_row1 {
   margin-top: 20px;
+}
+.app_form.white {
+  margin-bottom: 0;
 }
 .profile-form .appForm_row1 .form-input {
     height: 30px;
