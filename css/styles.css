@@ -1999,6 +1999,9 @@ transition: all 0.4s ease;
     font-size: 0.9em;
     margin-top: -18px;
 }
+.gallery_application .errorMsg {
+  margin-top: -24px;
+}
 #registerForm {
     width: calc(50% - 30px);
 }
