@@ -2000,7 +2000,7 @@ transition: all 0.4s ease;
     margin-top: -18px;
 }
 .gallery_application .errorMsg {
-  margin-top: -24px;
+  margin-top: -22px;
 }
 #registerForm {
     width: calc(50% - 30px);
@@ -2279,7 +2279,8 @@ transition: all 0.4s ease;
 .profile-form .form-row {
     white-space: nowrap;
     max-width: 900px;
-    height: 50px;
+    min-height: 50px;
+    height: 90px;
 }
 .profile-form .form-row.birthday {
     white-space: nowrap;
