@@ -1996,11 +1996,11 @@ transition: all 0.4s ease;
 .errorMsg {
     display: none;
     color: #C00005;
-    font-size: 0.9em;
+    font-size: 0.8em;
     margin-top: -18px;
 }
 .gallery_application .errorMsg {
-  margin-top: -22px;
+  margin-top: -28px;
 }
 #registerForm {
     width: calc(50% - 30px);
@@ -2280,7 +2280,7 @@ transition: all 0.4s ease;
     white-space: nowrap;
     max-width: 900px;
     min-height: 50px;
-    height: 90px;
+    height: 100px;
 }
 .profile-form .form-row.birthday {
     white-space: nowrap;
@@ -2919,6 +2919,8 @@ input[type="radio"] {
     }
     .profile-form .form-row {
         max-width: 680px;
+        min-height: 50px;
+        height: 90px;
     }
     .profile-form .form-input {
         font-size: 12px;
@@ -3620,6 +3622,9 @@ input[type="radio"] {
         max-width: 900px;
         height: 50px;
     }
+    .gallery_application .errorMsg {
+        margin-top: -18px;
+    }
     .profile-form .form-row.birthday {
         white-space: nowrap;
         max-width: 100%;
@@ -3934,6 +3939,9 @@ input[type="radio"] {
         margin-bottom: 10px;
         font-size: .8em;
         line-height: 1.2em;
+    }
+    .gallery_application .errorMsg {
+        margin-top: -18px;
     }
     .user-options .cart-count {
         position: absolute;
