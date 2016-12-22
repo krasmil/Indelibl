@@ -512,15 +512,15 @@ h6 a:hover {
 .header-offer {
   background: #e74c3c;
   width: 100%;
-  height: 50px;
+  height: 40px;
   text-align: center;
 }
 .header-offer span {
-  font-size: 20px;
+  font-size: 18px;
   color: #fff;
-  font-weight: bold;
+  font-weight: normal;
   vertical-align: middle;
-  line-height: 50px;
+  line-height: 30px;
   text-transform: uppercase;
 }
 .dropdown {
@@ -1997,7 +1997,7 @@ transition: all 0.4s ease;
     display: none;
     color: #C00005;
     font-size: 0.8em;
-    margin-top: -18px;
+    margin-top: -28px;
 }
 .gallery_application .errorMsg {
   margin-top: -28px;
@@ -2125,6 +2125,7 @@ transition: all 0.4s ease;
     position: relative;
 }
 .profile-cover {
+    display:none;
     position: relative;
     height: 500px;
     color: #fff;
@@ -2133,18 +2134,44 @@ transition: all 0.4s ease;
     background-repeat: no-repeat;
     overflow: hidden;
 }
-.profile-cover_inner {
-    display: block;
-    height: 100%;
+.profile-cover-save {
+    position: relative;
+    top: 0;
+    left: 0;
     width: 100%;
-    background-image: url("../images/slider-1.jpg");
-    background-position: center center;
-    background-size: cover;
-    background-repeat: no-repeat;
+    height: 500px;
+    color: #fff;
+}
+.profile-cover_inner {
+    position: relative;
+}
+.profile-cover_inner-save {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
 }
 #cover-img {
-    display: none;
     cursor: move;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+#cover-img-save {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: auto;
+    height: auto;
+    max-height: none;
+    max-width: none;
+    min-height: 100%;
+    min-width: 100%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
 }
 .profile_top {
     height: 130px;
@@ -2288,8 +2315,11 @@ transition: all 0.4s ease;
 }
 .birthday-visibility {
     float: right;
-    margin-right: 150px;
-    margin-top: -25px;
+    margin-right: 140px;
+    margin-top: -100px;
+}
+.birthday-visibility input[type="radio"] {
+    margin-top: 15px;
 }
 .profile-form h3 {
     padding-top: 35px;
@@ -2359,6 +2389,21 @@ transition: all 0.4s ease;
 input[type="radio"] {
     margin-top: 20px;
     margin-bottom: 30px;
+    margin-left: 20px;
+    margin-right: 10px;
+}
+.profile-form input[type="radio"]:nth-of-type(1) {
+    margin-left: 0;
+}
+
+.email-Prefs-Row input[type="radio"] {
+    margin-top: 20px;
+    margin-bottom: 30px;
+    margin-left: 0;
+    margin-right: 0;
+}
+#billingAddress {
+    margin-left: 0;
 }
 #primaryAddress {
   margin-bottom: 0px;
@@ -2652,7 +2697,7 @@ input[type="radio"] {
         font-size: 14px
     }
     .main-menu .content-wrapper {
-      max-width: 940px;
+      max-width: 1000px;
     }
     .content-wrapper {
         max-width: 925px;
@@ -2662,15 +2707,15 @@ input[type="radio"] {
     .header-offer {
         background: #e74c3c;
         width: 100%;
-        height: 40px;
+        height: 30px;
         text-align: center;
     }
     .header-offer span {
-        font-size: 18px;
+        font-size: 14px;
         color: #fff;
-        font-weight: bold;
+        font-weight: normal;
         vertical-align: middle;
-        line-height: 40px;
+        line-height: 30px;
         text-transform: uppercase;
     }
     .header-top .logo img {
@@ -2894,6 +2939,9 @@ input[type="radio"] {
     .profile-cover {
         height: 330px;
     }
+    .profile-cover-save {
+      height: 330px;
+    }
     .userprofile_img {
         height: 180px;
         width: 180px;
@@ -2937,6 +2985,7 @@ input[type="radio"] {
     .birthday-visibility {
       width: 100px;
       margin-right: 140px;
+      margin-top: -90px;
     }
     .userID_img {
       margin-top: 10px;
@@ -2950,7 +2999,7 @@ input[type="radio"] {
       float: left;
     }
     .id_upload_desc {
-      width: 250px;
+      width: 260px;
       text-align: justify;
     }
     .id_upload_desc span {
@@ -3015,18 +3064,21 @@ input[type="radio"] {
         margin: 0 auto;
         min-width: 300px;
     }
+    .errorIcon {
+      margin-top: 2px;
+    }
     .header-offer {
       background: #e74c3c;
       width: 100%;
-      height: 30px;
+      height: 25px;
       text-align: center;
     }
     .header-offer span {
-      font-size: 14px;
+      font-size: 11px;
       color: #fff;
-      font-weight: bold;
+      font-weight: normal;
       vertical-align: middle;
-      line-height: 30px;
+      line-height: 25px;
       text-transform: uppercase;
     }
     .header-top {
@@ -3515,7 +3567,14 @@ input[type="radio"] {
     .profile-cover_wrapper {
         margin-top: 30px;
     }
+    #cover-img-save {
+        width: auto;
+        height: 100%;
+    }
     .profile-cover {
+        height: 150px;
+    }
+    .profile-cover-save {
         height: 150px;
     }
     .profile_top {
@@ -3531,6 +3590,7 @@ input[type="radio"] {
         left: 5px;
         height: 90px;
         width: 90px;
+
     }
 
     .profile_top span {
@@ -3569,6 +3629,7 @@ input[type="radio"] {
         top: 50px;
         left: 75px;
         cursor: pointer;
+
     }
 
 
@@ -3579,6 +3640,7 @@ input[type="radio"] {
         margin-right: auto;
         vertical-align: middle;
         margin-top: -5px;
+
     }
 
     .large-padding-top-y {
@@ -3622,6 +3684,9 @@ input[type="radio"] {
         max-width: 900px;
         height: 50px;
     }
+    .errorMsg {
+        margin-top: -18px;
+    }
     .gallery_application .errorMsg {
         margin-top: -18px;
     }
@@ -3633,6 +3698,9 @@ input[type="radio"] {
         float: none;
         margin-right: 150px;
         margin-top: -25px;
+    }
+    .birthday-visibility input[type="radio"] {
+        margin-top: 10px;
     }
     .profile-form h3 {
         padding-top: 15px;
@@ -3650,7 +3718,6 @@ input[type="radio"] {
         border-radius: 3px;
         padding-left: 10px;
         line-height: 30px;
-        margin-bottom: 15px;
         margin-top: 7px;
         font-size: 0.9em;
         margin-bottom: 20px;
@@ -3842,21 +3909,24 @@ input[type="radio"] {
         margin: 0 auto;
         min-width: 300px;
     }
+    .errorIcon {
+      margin-top: 2px;
+    }
     .header-top {
         height: 50px;
     }
     .header-offer {
         background: #e74c3c;
         width: 100%;
-        height: 30px;
+        height: 25px;
         text-align: center;
     }
     .header-offer span {
-        font-size: 12px;
+        font-size: 11px;
         color: #fff;
-        font-weight: bold;
+        font-weight: normal;
         vertical-align: middle;
-        line-height: 30px;
+        line-height: 25px;
         text-transform: uppercase;
     }
     .header-top .logo img {
@@ -3943,6 +4013,9 @@ input[type="radio"] {
     .gallery_application .errorMsg {
         margin-top: -18px;
     }
+    .errorMsg {
+        margin-top: -18px;
+    }
     .user-options .cart-count {
         position: absolute;
         top: 0;
@@ -4020,6 +4093,7 @@ input[type="radio"] {
         transform: translate(-50%, 0);
         font-size: 1em;
     }
+
     .btn.wide {
         width: 180px;
     }
@@ -4328,7 +4402,14 @@ input[type="radio"] {
     .profile-cover_wrapper {
       margin-top: 30px;
     }
+    #cover-img-save {
+        width: auto;
+        height: 100%;
+    }
     .profile-cover {
+      height: 150px;
+    }
+    .profile-cover-save {
       height: 150px;
     }
     .profile_top {
@@ -4344,6 +4425,7 @@ input[type="radio"] {
       left: 5px;
       height: 90px;
       width: 90px;
+
     }
     .profile_top span {
       font-size: 0.8em;
@@ -4382,6 +4464,7 @@ input[type="radio"] {
       top: 50px;
       left: 75px;
       cursor: pointer;
+
     }
     .profile-form .appForm_row1 .form-input {
       width: 100%;
@@ -4393,6 +4476,7 @@ input[type="radio"] {
       margin-right: auto;
       vertical-align: middle;
       margin-top: -5px;
+
     }
     .large-padding-top-y {
       padding-top: 20px;
@@ -4440,6 +4524,9 @@ input[type="radio"] {
         margin-right: 150px;
         margin-top: -25px;
     }
+    .birthday-visibility input[type="radio"] {
+        margin-top: 10px;
+    }
     .profile-form h3 {
         padding-top: 15px;
         padding-bottom: 0;
@@ -4456,7 +4543,6 @@ input[type="radio"] {
         border-radius: 3px;
         padding-left: 10px;
         line-height: 30px;
-        margin-bottom: 15px;
         margin-top: 7px;
         font-size: 0.9em;
         margin-bottom: 20px;

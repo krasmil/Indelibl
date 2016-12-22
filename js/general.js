@@ -7,6 +7,7 @@ $(document).ready(function() {
     initMainSlider();
     deleteCoverImg();
     bounceOffer();
+    saveNewCoverPic();
 });
 
 /******* Run functions when document resize **********/
@@ -156,6 +157,16 @@ var openRegPanel = function() {
 /************** open/close mobile menu ****************/
 var mobileMenu = function() {
     $(".navigation_toggle").click(function(e) {
+      if ($(".mob_menu").is(":visible")) {
+        setTimeout(function(){
+          $(".camera").css("z-index" , "1200");
+            $(".userprofile_img").css("z-index" , "1100");
+        },600);
+      }
+      else {
+        $(".camera").css("z-index" , "0");
+        $(".userprofile_img").css("z-index" , "0");
+      }
         $(".mob_menu").slideToggle( "slow");
     });
 
@@ -165,6 +176,10 @@ var mobileMenu = function() {
       if ($(window).scrollTop() > 2) {
         if ($(".mob_menu").not(":hidden")) {
               $(".mob_menu").slideUp( "fast");
+              setTimeout(function(){
+                $(".camera").css("z-index" , "1200");
+                  $(".userprofile_img").css("z-index" , "1100");
+              },600);
         }
       }
     });
@@ -201,7 +216,29 @@ function showMyProfile(fileInput) {
     if (fileInput.files && fileInput.files[0]) {
         var reader = new FileReader();
         reader.onload = function(e) {
-            $('#profile-image-preview').css("background-image", "url(" + e.target.result + ")");
+
+          // get orientation
+          binImg = e.target.result;
+          input = document.getElementById('profile-img-file-input');
+          getOrientation(input.files[0], function(orientation) {
+              console.log(orientation);
+              if ([5, 6, 7, 8].indexOf(orientation) > -1) {
+                  $('#profileRotator').attr('src', binImg);
+                  var c = document.getElementById("profile-Photo-Slice");
+                  c.width = $('#profileRotator').height();
+                  c.height = $('#profileRotator').width();
+                  var ctx = c.getContext("2d");
+                  ctx.transform(0, 1, -1, 0, $('#profileRotator').height(), 0);
+                  ctx.drawImage(document.getElementById('profileRotator'), 0, 0);
+                  urlRot = c.toDataURL();
+                  // set Base64 string in src of positioner
+                  $('#profile-image-preview').css("background-image", "url(" + urlRot + ")");
+              } else {
+                  // set Base64 string in src of positioner
+                  $('#profile-image-preview').css("background-image", "url(" + binImg + ")");
+              }
+          });
+
         };
         reader.readAsDataURL(fileInput.files[0]);
     }
@@ -223,14 +260,34 @@ function showMyImage(fileInput) {
     if (fileInput.files && fileInput.files[0]) {
         var reader = new FileReader();
         reader.onload = function(e) {
-          if ($(".profile-cover_inner > img").not(":visible")) {
+          // get orientation
+          binImg = e.target.result;
+          input = document.getElementById('cover-img-file-input');
+          getOrientation(input.files[0], function(orientation) {
+              console.log(orientation);
+              if ([5, 6, 7, 8].indexOf(orientation) > -1) {
+                  $('#rotator').attr('src', binImg);
+                  var c = document.getElementById("cover-Photo-Slice");
+                  c.width = $('#rotator').height();
+                  c.height = $('#rotator').width();
+                  var ctx = c.getContext("2d");
+                  ctx.transform(0, 1, -1, 0, $('#rotator').height(), 0);
+                  ctx.drawImage(document.getElementById('rotator'), 0, 0);
+                  urlRot = c.toDataURL();
+                  // set Base64 string in src of positioner
+                  $('#cover-img').attr('src', urlRot);
+              } else {
+                  // set Base64 string in src of positioner
+                  $('#cover-img').attr('src', binImg);
+              }
+          });
+            $(".profile-cover").show();
             $(".profile-cover_inner > img").show();
-          }
+            $(".profile-cover-save").hide();
             $('#cover-img').css('transform', 'translate3d(0px, 0px, 0px)');
             $('#cover-img').attr('src', e.target.result);
         };
         reader.readAsDataURL(fileInput.files[0]);
-        $('.profile-cover_inner').css("background-image", "none");
     }
 }
 
@@ -251,9 +308,90 @@ var deleteCoverImg = function() {
   if ($('#deleteCoverImg').length) {
     $("#deleteCoverImg").click(function(e) {
       $(".profile-cover_inner > img").hide();
+      $(".profile-cover_inner-save > img").hide();
         e.preventDefault();
     });
   }
+};
+/************ save croppped repositioned cover photo ***********************/
+var saveNewCoverPic = function() {
+  if ($('#saveProfile').length) {
+    // save on click
+    $('#saveProfile').click(function() {
+        // check if cover img not empty
+        if ($("#cover-img").attr("src") !== "") {
+
+            // get cover img position in wrapping div
+            var coverImg = document.getElementById('cover-img');
+            var slice = coverImg.getBoundingClientRect();
+            var sliceTop = slice.top;
+            var sliceBottom = slice.bottom;
+            var sliceLeft = slice.left;
+            var sliceRight = slice.right;
+
+            // get original cover image size
+            var imgWidth = $("#cover-img").width();
+            var imgHeight = $("#cover-img").height();
+
+            // get transform matrix
+            var imgTrans = $("#cover-img").css("transform");
+            var matrix = new CSSMatrix(imgTrans);
+
+            // get size of cover image parent element
+            var wrapWidth = $('.profile-cover').width();
+            var wrapHeight = $('.profile-cover').height();
+
+            // clone visible part of cover image in invisible CANVAS
+            var cover_canvas = document.getElementById("cover-Photo-Slice");
+            cover_canvas.width = wrapWidth;
+            cover_canvas.height = wrapHeight;
+            var ctx = cover_canvas.getContext("2d");
+
+            // the top parameter is defined by the y translate3d value (matrix.m42) after positioning new cover image
+            ctx.drawImage(coverImg, sliceLeft, matrix.m42, imgWidth, imgHeight);
+
+            // decode Canvas image to Base64 string and parse in src of visible image element
+            var url = cover_canvas.toDataURL();
+            $("#cover-img-save").attr("src", url);
+
+            // show positioned and cropped cover image after save
+            $('.profile-cover-save').show();
+            // hide draggable image
+            $('.profile-cover').hide();
+            // delete cover image src
+            $("#cover-img").attr("src", "");
+        }
+    });
+  }
+};
+
+// get image orientation
+var getOrientation = function(file, callback) {
+    var reader = new FileReader();
+    reader.onload = function(e) {
+
+        var view = new DataView(e.target.result);
+        if (view.getUint16(0, false) != 0xFFD8) return callback(-2);
+        var length = view.byteLength,
+            offset = 2;
+        while (offset < length) {
+            var marker = view.getUint16(offset, false);
+            offset += 2;
+            if (marker == 0xFFE1) {
+                if (view.getUint32(offset += 2, false) != 0x45786966) return callback(-1);
+                var little = view.getUint16(offset += 6, false) == 0x4949;
+                offset += view.getUint32(offset + 4, little);
+                var tags = view.getUint16(offset, little);
+                offset += 2;
+                for (var i = 0; i < tags; i++)
+                    if (view.getUint16(offset + (i * 12), little) == 0x0112)
+                        return callback(view.getUint16(offset + (i * 12) + 8, little));
+            } else if ((marker & 0xFF00) != 0xFF00) break;
+            else offset += view.getUint16(offset, false);
+        }
+        return callback(-1);
+    };
+    reader.readAsArrayBuffer(file);
 };
 
 /************ show/hide secondary address feilds in edit profile pages ***********************/

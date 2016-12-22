@@ -39,6 +39,9 @@
 	</head>
 	<body>
 		<div class="main-container">
+			<div class="header-offer">
+				<span>Get 10% off on all orders in Ghana and Nigeria.</span>
+			</div>
 			<header class="header-top">
 				<div class="content-wrapper clearfix">
 					<div class="left">
@@ -183,7 +186,7 @@
 							</svg>
 						</div>
 						<!-- mobile menu -->
-						<menu id="mob_menu" class="menu clearfix bg-light">
+						<menu class="menu clearfix bg-light mob_menu">
 							<div class="menu-collection">
 								<a href="javascript:;" class="menu-link">Original Art</a>
 								<a href="javascript:;" class="menu-link">Art Prints</a>
@@ -247,17 +250,22 @@
 
 			<!-- start user cover photo -->
 			<section class="profile-cover_wrapper" id="draggable_wrapper">
+				<canvas id="cover-Photo-Slice" style="display: none;"></canvas>
+				<img id="rotator" src="" style="display: none;">
+				<!-- draggable cover picture which is visible when being changed -->
 				<div class="profile-cover">
 					<div class="profile-cover_inner" id="cover-image-preview">
-						<img id="cover-img" src="images/slider-1.jpg">
+						<img id="cover-img" src="">
 					</div>
 				</div>
-
+				<!-- cover picture which is visible by default and responsive -->
+				<div class="profile-cover-save">
+					<div class="profile-cover_inner-save" id="cover-image-preview">
+						<img id="cover-img-save" src="images/slider-1.jpg">
+					</div>
+				</div>
 			</section>
-
 			<!-- end user cover photo -->
-
-
 
 		<!-- start user profile form -->
 		<section class="bg-lightest">
@@ -267,14 +275,16 @@
 					<div class="profile_top left">
 						<!-- user profile image -->
 						<div class="userprofile_img_wrapper">
-							<img class="userprofile_img" id="profile-image-preview" src="images/morgan1.jpg">
+							<canvas id="profile-Photo-Slice" style="display: none;"></canvas>
+							<img id="profileRotator" src="" style="display: none;">
+							<div class="userprofile_img" id="profile-image-preview"></div>
 						</div>
 						<!-- user profile image selector -->
 						<div class="camera_icon_wrapper">
 							<label for="profile-img-file-input" class="btn camera">
 									<img src="images/icons/camera.png">
 							</label>
-							<input id="profile-img-file-input" type="file" onchange="showMyProfile(this)"/>
+							<input id="profile-img-file-input" type="file" accept="image/*" onchange="showMyProfile(this)"/>
 						</div>
 						<div class="">
 							<span>Maximum upload file size: 5MB. JPG, PNG and GIF files only.</span>
@@ -284,7 +294,7 @@
 						<label for="cover-img-file-input" class="btn dark">
 								Choose cover
 						</label>
-						<input id="cover-img-file-input" type="file" onchange="showMyImage(this)"/>
+						<input id="cover-img-file-input" type="file" accept="image/*" onchange="showMyImage(this)"/>
 						<button class="btn bin" id="deleteCoverImg">
 							<img src="images/icons/waste_bin.png">
 						</button>
@@ -383,8 +393,7 @@
 							</div>
 
 							<div class="form-item form-item_full">
-								<img class="userID_img" id="id-image-preview" src="images/icons/profile_placeholder.png" />
-
+								<div class="userID_img" id="id-image-preview"></div>
 								<div class="id_select_button_wrapper">
 									<div class="id_upload_desc">
 										<span>
@@ -397,7 +406,7 @@
 									<label for="id-img-file-input" class="btn dark mobLeft">
 											Choose
 									</label>
-									<input id="id-img-file-input" type="file" onchange="showMyID(this)"/>
+									<input id="id-img-file-input" type="file" accept="image/*" onchange="showMyID(this)"/>
 								</div>
 							</div>
 						</div>
@@ -497,9 +506,9 @@
 								</label>
 							</div>
 							<div class="form-item form-item_full">
-								<input type="radio" name="primaryAddress" value="primaryAddress" id="primaryAddress"> Use this address as a billing address
+								<input type="radio" name="primaryAddress" value="primaryAddress" id="primaryAddress"><label for="primaryAddress">Use Billing address as Shipping address</label>
 								<br />
-								<input type="radio" name="primaryAddress" value="billingAddress" id="billingAddress"> Provide another address
+								<input type="radio" name="primaryAddress" value="billingAddress" id="billingAddress"><label for="billingAddress">Provide another address</label>
 							</div>
 						</div>
 
@@ -587,7 +596,7 @@
 
 						<div class="form-row">
 							<div class="form-item form-item_full button-row">
-								<a href="javascript:;" class="btn dark">Save</a>
+								<button class="btn dark" id="saveProfile" >Save</button>
 								<a href="javascript:;" class="btn blackWhite">Cancel</a>
 							</div>
 						</div>
@@ -692,20 +701,42 @@
 							Sign up for our newsletter and stay up to date for the latest on Indelibl!
 						</h3>
 					</div>
-					<div class="wrapper">
+
+						<div class="subscribe-cell-button-holder">
+							<button type="submit" class="btn wide" onclick="showSubscribeForm()" id="showSubscribeFormButton">
+									Subscribe
+							</button>
+						</div>
+
+
 						<div class="subscribe-form">
-							<div class="subscribe-cell">
-								<input type="text" name="q"/>
-							</div>
-							<div class="subscribe-cell button-holder">
-								<button type="submit">
-									<span>
+							<div class="subscribe_container">
+									<input type="email" name="subscriberMail" placeholder="Email address"/>
+									<div class="errorMsg">
+										<div class="errorIcon"></div>
+									</div>
+								<div class="form-item form-item_full">
+									<input type="radio" name="gender" value="male" id="ml"><label for="ml">Male</label>
+									<input type="radio" name="gender" value="female" id="fml"><label for="fml">Female</label>
+								</div>
+								<div class="checkBox_privacy_container">
+									<input type="checkbox" name="privacyPolicy" value="privacyPolicy" id="ppCheck">
+									<label for="ppCheck">I accept the <a href="javascript:;">Privacy Policy</a></label>
+								</div>
+								<button type="submit" class="btn wide">
 										Subscribe
-									</span>
 								</button>
 							</div>
+							<!-- Pojavi se prouka kada korisnik posalje email za subscription -->
+							<!--
+							<div class="wrapper subscribe_thanks">
+								<h3>
+									Thank you for subscribing!
+								</h3>
+							</div>
+						-->
 						</div>
-					</div>
+
 				</div>
 				<hr class="separator-footer"/>
 				<div class="footer-bottom">
@@ -827,12 +858,15 @@
 	</div>
 
 	<!--Custom Scripts-->
-	
+
 	<!-- TWEEN MAX -->
 	<script src="js/tm.js">
 	</script>
 	<!-- TWEEN MAX DRAGGABLE-->
 	<script src="js/draggable.js">
+	</script>
+	<!-- CSS Matrix library for all browsers to be able to use WebKitCSSMatrix functionality -->
+	<script src="js/CSSMatrix.js">
 	</script>
 	<script src="js/general.js">
 	</script>
