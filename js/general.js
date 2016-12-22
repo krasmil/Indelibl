@@ -5,6 +5,8 @@ $(document).ready(function() {
     openRegPanel();
     mobileMenu();
     initMainSlider();
+    dragCoverImg();
+    showAdditionalAddress();
     deleteCoverImg();
     bounceOffer();
     saveNewCoverPic();
@@ -292,7 +294,7 @@ function showMyImage(fileInput) {
 }
 
 /*---------- COVER IMAGE DRAGGABLE ------------*/
-$(document).ready(function() {
+var dragCoverImg = function() {
   /*--------- DRAG IMAGE -----------*/
   if ($('.profile-cover_wrapper').length) {
     Draggable.create("#cover-img", {
@@ -301,7 +303,7 @@ $(document).ready(function() {
         edgeResistance: 0.0
     });
   }
-});
+};
 
 /************ delete cover image on edit profile page ***********************/
 var deleteCoverImg = function() {
@@ -395,7 +397,7 @@ var getOrientation = function(file, callback) {
 };
 
 /************ show/hide secondary address feilds in edit profile pages ***********************/
-$(document).ready(function() {
+var showAdditionalAddress = function() {
 
   if ($('#primaryAddress').length) {
     $("#primaryAddress").click(function(e) {
@@ -411,4 +413,4 @@ $(document).ready(function() {
       $("#billingAddressRow").show();
     });
   }
-});
+};
