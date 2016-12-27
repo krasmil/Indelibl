@@ -2603,7 +2603,7 @@ input[type="radio"] {
   margin-top: 20px;
 }
 .userprofile-info ul {
-  width: 300px;
+  width: 1050px;
 }
 .userprofile-info li {
   display: block;
@@ -2619,16 +2619,16 @@ input[type="radio"] {
   margin-top: 0;
   margin-left: 10px;
   color: #acacac;
-  max-width: 200px;
-  width: 225px;
+  max-width: 1000px;
+  width: 1000px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 .userprofile-info h5 {
   font-size: 1.1em;
-  width: 250px;
-  max-width: 300px;
+  width: 1000px;
+  max-width: 1000px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -3264,7 +3264,7 @@ input[type="radio"] {
       margin-top: 10px;
     }
     .userprofile-info ul {
-      width: 300px;
+      width: 700px;
     }
     .userprofile-info li {
       display: block;
@@ -3280,9 +3280,13 @@ input[type="radio"] {
       margin-top: 0;
       margin-left: 10px;
       color: #acacac;
+      width: 650px;
+      max-width: 700px;
     }
     .userprofile-info h5 {
       font-size: 1.1em;
+      width: 700px;
+      max-width: 700px;
     }
     .userprofile-info-icon {
       height: 14px;
@@ -4220,8 +4224,8 @@ input[type="radio"] {
           margin-top: 5px;
         }
         .userprofile-info ul {
-          width: 180px;
-          max-width: 200px;
+          width: 400px;
+          max-width: 400px;
         }
         .userprofile-info li {
           display: block;
@@ -4237,11 +4241,13 @@ input[type="radio"] {
           margin-top: 0;
           margin-left: 10px;
           color: #acacac;
-          width: 150px;
+          width: 360px;
+          max-width: 360px;
         }
         .userprofile-info h5 {
           font-size: 0.95em;
-          width: 170px;
+          width: 360px;
+          max-width: 360px;
           margin-bottom: 0;
           line-height: 15px;
         }
