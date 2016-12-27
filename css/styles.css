@@ -411,6 +411,9 @@ textarea {
 .large-padding {
     padding: 40px
 }
+.xtra-large-padding {
+    padding: 200px 0 200px 0;
+}
 .large-padding-x {
     padding-left: 40px;
     padding-right: 40px
@@ -420,7 +423,10 @@ textarea {
     padding-bottom: 40px
 }
 .large-padding-top-y {
-    padding-top: 80px;
+    padding-top: 100px;
+}
+.mid-padding-top-y {
+    padding-top: 60px;
 }
 .large-padding-bottom-y {
     padding-bottom: 80px;
@@ -1531,10 +1537,7 @@ transition: all 0.4s ease;
 
     overflow: hidden
 }
-.box-artist .desc a:not(.btn) {
-    display: block;
-    text-align: left
-}
+
 .box-artist h4,
 .box-artist h5 {
     line-height: 25px;
@@ -2176,6 +2179,10 @@ transition: all 0.4s ease;
 .profile_top {
     height: 130px;
 }
+.profile_top.addProd {
+    height: 170px;
+}
+
 .profile_top.right {
     float: right;
     margin-top: 40px;
@@ -2440,7 +2447,7 @@ input[type="radio"] {
 }
 .progress-track {
     background: #383838;
-    width: 50%;
+    width: 0;
     height: 100%;
     left: 0px;
     top: 0px;
@@ -2589,6 +2596,212 @@ input[type="radio"] {
     z-index: 5;
 }
 
+/*--------- add product specific styles----------*/
+.userprofile-info {
+  margin-left: 300px;
+  text-align: left;
+  margin-top: 20px;
+}
+.userprofile-info ul {
+  width: 300px;
+}
+.userprofile-info li {
+  display: block;
+  width: 100%;
+  height: 20px;
+  margin-bottom: 3px;
+
+}
+.userprofile-info span {
+  font-size: 0.9em;
+  margin-top: 0;
+  margin-left: 10px;
+  color: #acacac;
+  max-width: 200px;
+  width: 160px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.userprofile-info h5 {
+  font-size: 1.1em;
+  width: 185px;
+  max-width: 200px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 1.2em;
+}
+.userprofile-info-icon {
+  height: 18px;
+  width: 18px;
+}
+.myProducts {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  float: right;
+}
+.artist-menu-wrapper {
+  position: relative;
+}
+.artist_menu {
+  position:absolute;
+  top: 0;
+  left: 0;
+  background: #fefefe;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 4px 6px 0 rgba(0, 0, 0, 0.19);
+}
+.artist_menu ul {
+  padding: 0 15px 0 15px;
+}
+.artist_menu ul li {
+  border-bottom: 1px solid #acacac;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  cursor: pointer;
+}
+.artist_menu ul li:nth-of-type(1) {
+  border-top: 1px solid #acacac;
+}
+.userprofile-menu-icon {
+  height: 22px;
+  width: 22px;
+}
+.userprofile-menu-popup {
+  position: absolute;
+  top: 30px;
+  visibility: hidden;
+  opacity: 0;
+  left: 40px;
+  padding: 2px 10px 2px 10px;
+  min-width: 10px;
+  max-width: 200px;
+  width: auto;
+  text-align: left;
+  font-size: 0.75em;
+  border-radius: 5px;
+  white-space: nowrap;
+  background: #fefefe;
+  border: solid 1px #d6d6d6;
+    -moz-transition: all 0.4s ease;
+    -webkit-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+}
+.userprofile-menu-popup.active {
+  visibility: visible;
+  opacity: 1;
+  left: 65px;
+}
+.userprofile-menu-popup:before {
+    content: '';
+    position: absolute;
+    top: 9px;
+    left: -19px;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 4px 9px 4px 9px;
+    border-color: transparent #d6d6d6 transparent  transparent;
+}
+.userprofile-menu-popup:after {
+  content: '';
+  position: absolute;
+  top: 8px;
+  left: -18px;
+  border-style: solid;
+  border-width: 5px 10px 5px 10px;
+  border-color: transparent #fff transparent transparent;
+}
+.userprofile-menu-popup.myProfileLink {
+  top: 15px;
+}
+.userprofile-menu-popup.addProductLink {
+  top: 55px;
+}
+.userprofile-menu-popup.supportersLink {
+  top: 93px;
+}
+.userprofile-menu-popup.paymentLink {
+  top: 132px;
+}
+.userprofile-menu-popup.eventsLink {
+  top: 173px;
+}
+.userprofile-menu-link {
+  color: #292929;
+}
+.ap_page_title {
+  text-align: left;
+  float: left;
+  margin-top: 30px;
+}
+#productTemplates {
+  margin-top: 50px;
+  margin-bottom: 20px;
+  margin-left: 0;
+}
+.product_template_box {
+    position: relative;
+    height: 370px;
+    overflow: hidden;
+    border: solid 1px #acacac;
+    -moz-transition: all 0.4s ease;
+    -webkit-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+    width: calc(33% - 36px);
+    margin-right: 30px;
+    float: left;
+    margin-bottom: 30px;
+
+}
+.product_template_box .product-img {
+    background-color: #fff;
+    height: 370px;
+    width: 100%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.product_template_box:nth-of-type(3n) {
+  margin-right: 0;
+}
+.product_template_box:nth-of-type(3n+1) {
+  margin-left: 30px;
+}
+.overlay_product {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 370px;
+  width: 100%;
+  background-color:rgba(0,0,0,0.4);
+  display: none;
+}
+.overlay_product h4 {
+  margin-top: 60px;
+  color: #fff;
+  margin-bottom: 40px;
+  font-size: 1.7em;
+}
+.overlay_product_btn_container {
+  width: 200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.overlay_product_btn_container .btn {
+  margin-bottom: 20px;
+  width: 130px;
+}
+#productTemplates_notAvail {
+  display: none;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  text-align: center;
+}
+
 
 /* CSS FADE IN */
 .popup-inner{
@@ -2695,6 +2908,9 @@ input[type="radio"] {
 @media only screen and (min-width: 1000px) and (max-width: 1600px) {
     body {
         font-size: 14px
+    }
+    .large-padding-top-y {
+        padding-top: 80px;
     }
     .main-menu .content-wrapper {
       max-width: 1000px;
@@ -3037,6 +3253,111 @@ input[type="radio"] {
         height: 18px;
         margin-top: -5px;
     }
+    .profile_top.addProd {
+        height: 130px;
+    }
+    .userprofile-info {
+      margin-left: 220px;
+      text-align: left;
+      margin-top: 20px;
+    }
+    .userprofile-info ul {
+      width: 300px;
+    }
+    .userprofile-info li {
+      display: block;
+      width: 100%;
+      height: 20px;
+    }
+    .userprofile-info span {
+      font-size: 0.9em;
+      margin-top: 0;
+      margin-left: 10px;
+      color: #acacac;
+    }
+    .userprofile-info h5 {
+      font-size: 1.1em;
+    }
+    .userprofile-info-icon {
+      height: 14px;
+      width: 14px;
+    }
+    .userprofile-menu-icon {
+      height: 18px;
+      width: 18px;
+    }
+    .userprofile-info li {
+      margin-bottom: 0;
+    }
+    .userprofile-menu-popup.active {
+      left: 60px;
+    }
+    .userprofile-menu-popup.myProfileLink {
+      top: 13px;
+    }
+    .userprofile-menu-popup.addProductLink {
+      top: 48px;
+    }
+    .userprofile-menu-popup.supportersLink {
+      top: 81px;
+    }
+    .userprofile-menu-popup.paymentLink {
+      top: 116px;
+    }
+    .userprofile-menu-popup.eventsLink {
+      top: 151px;
+    }
+    .product_template_box {
+        position: relative;
+        height: 270px;
+        overflow: hidden;
+        border: solid 1px #acacac;
+        -moz-transition: all 0.4s ease;
+        -webkit-transition: all 0.4s ease;
+        transition: all 0.4s ease;
+        width: calc(33% - 36px);
+        margin-right: 30px;
+        float: left;
+        margin-bottom: 30px;
+    }
+    .product_template_box .product-img {
+        background-color: #fff;
+        height: 270px;
+        width: 100%;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
+    .product_template_box:nth-of-type(3n) {
+      margin-right: 0;
+    }
+    .product_template_box:nth-of-type(3n+1) {
+      margin-left: 30px;
+    }
+    .overlay_product {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 270px;
+      width: 100%;
+      background-color:rgba(0,0,0,0.4);
+      display: none;
+    }
+    .overlay_product h4 {
+      margin-top: 40px;
+      color: #fff;
+      margin-bottom: 40px;
+    }
+    .overlay_product_btn_container {
+      width: 200px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .overlay_product_btn_container .btn {
+      margin-bottom: 20px;
+      width: 130px;
+    }
+
 
 }
 /* Medium Devices, Desktops
@@ -3811,7 +4132,7 @@ input[type="radio"] {
     }
     .progress-track {
         background: #383838;
-        width: 50%;
+        width: 0;
         height: 100%;
         left: 0px;
         top: 0px;
@@ -3884,6 +4205,102 @@ input[type="radio"] {
     .form-item-email-prefs {
         width: 530px;
     }
+
+
+    /***************** add products pages **************/
+        .profile_top.addProd {
+          height: 90px;
+        }
+        .userprofile-info {
+          margin-left: 110px;
+          text-align: left;
+          margin-top: 10px;
+        }
+        .userprofile-info ul {
+          width: 150px;
+          max-width: 200px;
+        }
+        .userprofile-info li {
+          display: block;
+          width: 100%;
+          height: 16px;
+          margin-bottom: 0;
+        }
+        .userprofile-info span {
+          font-size: 0.9em;
+          margin-top: 0;
+          margin-left: 10px;
+          color: #acacac;
+          width: 120px;
+        }
+        .userprofile-info h5 {
+          font-size: 1em;
+          width: 150px;
+        }
+        .userprofile-info-icon {
+          height: 14px;
+          width: 14px;
+        }
+        .myProducts {
+          margin-top: -1px;
+          margin-bottom: 10px;
+          float: right;
+          margin-right: 10px;
+        }
+        .artist_menu {
+          display: none;
+        }
+        .profile-cover_wrapper {
+          margin-top: 30px;
+        }
+        .profile-cover-save.dashboard {
+          margin-top: 30px;
+        }
+        .menuDot:after {
+          content: '\2807';
+          font-size: 18px;
+          color: #000;
+        }
+        .navigation_toggle_dots {
+            z-index: 50;
+            border: 0;
+            width: 16px;
+            float: right;
+            cursor: pointer;
+            margin-right: 0;
+            margin-bottom: 5px;
+
+        }
+        #searchMob_dashboard {
+          display: block;
+          width: 185px;
+          float: left;
+          margin-top: -2px;
+          margin-left: 280px;
+        }
+        .dashboard_menu {
+          display: none;
+          width: 100%;
+          position: absolute;
+          left: 0;
+          right: 0;
+          z-index: 9;
+          top: 80px;
+        }
+        .ap_page_title {
+          margin-top: 0;
+          margin-left: 10px;
+        }
+        #productTemplates {
+          display: none;
+        }
+        #productTemplates_notAvail {
+          display: block;
+        }
+        #productTemplates_notAvail h3 {
+          font-size: 1em;
+          font-weight: normal;
+        }
 }
 /* Extra Small Devices, Phones */
 
@@ -4398,7 +4815,7 @@ input[type="radio"] {
         margin-top: 2px;
     }
 
-    /* ----------------------- user profile page styles ---------------------------------*/
+      /* ----------------------- user profile page styles ---------------------------------*/
     .profile-cover_wrapper {
       margin-top: 30px;
     }
@@ -4633,7 +5050,7 @@ input[type="radio"] {
     }
     .progress-track {
       background: #383838;
-      width: 50%;
+      width: 0;
       height: 100%;
       left: 0px;
       top: 0px;
@@ -4736,6 +5153,104 @@ input[type="radio"] {
           margin-top: 10px;
           margin-bottom: 10px;
         }
+        /***************** add products pages **************/
+    .profile_top.addProd {
+      height: 90px;
+    }
+    .userprofile-info {
+      margin-left: 110px;
+      text-align: left;
+      margin-top: 10px;
+    }
+    .userprofile-info ul {
+      width: 150px;
+      max-width: 200px;
+    }
+    .userprofile-info li {
+      display: block;
+      width: 100%;
+      height: 16px;
+      margin-bottom: 0;
+    }
+    .userprofile-info span {
+      font-size: 0.9em;
+      margin-top: 0;
+      margin-left: 10px;
+      color: #acacac;
+      width: 120px;
+    }
+    .userprofile-info h5 {
+      font-size: 1em;
+      width: 150px;
+    }
+    .userprofile-info-icon {
+      height: 14px;
+      width: 14px;
+    }
+    .myProducts {
+      margin-top: -3px;
+      margin-bottom: 15px;
+      float: right;
+      width: 135px;
+      min-width: 120px;
+    }
+    .artist_menu {
+      display: none;
+    }
+    .profile-cover_wrapper {
+      margin-top: 30px;
+    }
+    .profile-cover-save.dashboard {
+      margin-top: 30px;
+    }
+    .menuDot:after {
+      content: '\2807';
+      font-size: 18px;
+      color: #000;
+    }
+    .navigation_toggle_dots {
+        z-index: 50;
+        border: 0;
+        width: 16px;
+        float: right;
+        cursor: pointer;
+        margin-right: 0;
+        margin-bottom: 5px;
+
+    }
+    #searchMob_dashboard {
+      display: block;
+      width: 185px;
+      float: left;
+      margin-top: -2px;
+      margin-left: 60px;
+    }
+    .dashboard_menu {
+      display: none;
+      width: 100%;
+      position: absolute;
+      left: 0;
+      right: 0;
+      z-index: 9;
+      top: 80px;
+    }
+    .ap_page_title {
+      margin-top: 0;
+    }
+    .ap_page_title h3 {
+      font-size: 1.2em;
+    }
+    #productTemplates {
+      display: none;
+    }
+    #productTemplates_notAvail {
+      display: block;
+    }
+    #productTemplates_notAvail h3 {
+      font-size: 1em;
+      font-weight: normal;
+    }
+
 }
 /* Custom, iPhone Retina */
 

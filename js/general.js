@@ -1,23 +1,42 @@
 /******* Run functions when document is ready ********/
 $(document).ready(function() {
     dropMenu();
+    checkDeviceForAddProducts();
     $('[bg-img]').bgImage();
     openRegPanel();
     mobileMenu();
+    dashMenu();
     initMainSlider();
     dragCoverImg();
     showAdditionalAddress();
     deleteCoverImg();
     bounceOffer();
     saveNewCoverPic();
+    artistMenu();
+    productTemplateOverlay();
 });
 
 /******* Run functions when document resize **********/
 $(window).resize(function() {
-
+    if ($('#productTemplates').length) {
+      if ($(window).width() <= 1000 ) {
+        $('#productTemplates').hide();
+        $('#productTemplates_notAvail').show();
+      }
+      else if ($(window).width() > 1000 ) {
+        $('#productTemplates').show();
+        $('#productTemplates_notAvail').hide();
+      }
+  }
 });
 
+var checkDeviceForAddProducts = function() {
+  if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
 
+    $('#productTemplates').html("");
+    $('#productTemplates_notAvail').show();
+  }
+};
 /*****************************************************/
 /******************* FUNCTIONS ***********************/
 /*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
@@ -37,12 +56,14 @@ var bounceOffer = function() {
 var dropMenu = function() {
     var $trigger = $('[trigger]');
     var $drop = $('[dropdown]');
+
     // on click on dropdown icon in header
     $trigger.on('click', function(e) {
+
         // because of previous line, mobile menu doesn't close on click so the below has been added
         if ($(".mob_menu").hasClass("mob_menu_active")) {
             $('.mob_menu').removeClass("mob_menu_active");
-          }
+        }
 
         // remove active styling of other triggers and dropdowns
         var $data = $(this).attr("trigger");
@@ -62,7 +83,7 @@ var dropMenu = function() {
     });
 
     // hide drop down on screen click
-     $('html').click(function() {
+    $('html').click(function() {
         $(".drop-content").removeClass("active");
         $(".drop-trigger").removeClass("active");
     });
@@ -138,13 +159,13 @@ var openRegPanel = function() {
             a = $('[data-popup-id="' + t + '"]');
             $("[data-popup-id]").hide();
             a.show();
-          /*  $("body, html").css({
-                overflow: "hidden"
-            }); */
+            /*  $("body, html").css({
+                  overflow: "hidden"
+              }); */
             a.click(function(e) {
                 if (e.target === this) {
                     $(this).fadeOut("fast");
-                //    $("body, html").attr("style", "");
+                    //    $("body, html").attr("style", "");
                 }
             });
         });
@@ -153,37 +174,71 @@ var openRegPanel = function() {
     var closeIcon = $("#closeLoginPopup");
     closeIcon.click(function() {
         $("[data-popup-id]").hide();
-      });
-    };
+    });
+};
+
+/************** open/close dashboard mobile menu ****************/
+var dashMenu = function() {
+  if ($('.navigation_toggle_dots').length) {
+    $(".navigation_toggle_dots").click(function(e) {
+      // hide main menu if it is open
+      if ($(".mob_menu").is(":visible")) {
+        $(".mob_menu").slideUp("fast");
+      }
+      // set z-index of profile pic so that it doesn't cover menu
+      if ($(".dashboard_menu").is(":visible")) {
+          setTimeout(function() {
+              $(".userprofile_img").css("z-index", "1100");
+          }, 600);
+      } else {
+          $(".userprofile_img").css("z-index", "0");
+      }
+
+      $(".dashboard_menu").slideToggle("slow");
+    });
+  }
+};
 
 /************** open/close mobile menu ****************/
 var mobileMenu = function() {
     $(".navigation_toggle").click(function(e) {
-      if ($(".mob_menu").is(":visible")) {
-        setTimeout(function(){
-          $(".camera").css("z-index" , "1200");
-            $(".userprofile_img").css("z-index" , "1100");
-        },600);
-      }
-      else {
-        $(".camera").css("z-index" , "0");
-        $(".userprofile_img").css("z-index" , "0");
-      }
-        $(".mob_menu").slideToggle( "slow");
+        // hide dashboard menu if it is open
+        if ($(".dashboard_menu").is(":visible")) {
+          $(".dashboard_menu").slideUp("fast");
+        }
+        // set z-index of profile pic and camera so that they don't cover menu
+        if ($(".mob_menu").is(":visible")) {
+            setTimeout(function() {
+                $(".camera").css("z-index", "1200");
+                $(".userprofile_img").css("z-index", "1100");
+            }, 600);
+        } else {
+            $(".camera").css("z-index", "0");
+            $(".userprofile_img").css("z-index", "0");
+        }
+        $(".mob_menu").slideToggle("slow");
     });
 
 
-    // hide mobile menu when start scrolling
+    // hide mobile menus when start scrolling
     $(window).on("scroll", function() {
-      if ($(window).scrollTop() > 2) {
-        if ($(".mob_menu").not(":hidden")) {
-              $(".mob_menu").slideUp( "fast");
-              setTimeout(function(){
-                $(".camera").css("z-index" , "1200");
-                  $(".userprofile_img").css("z-index" , "1100");
-              },600);
+        if ($(window).scrollTop() > 2) {
+          // hide dashboard menu on scroll and restore cover img z-index
+          if ($(".dashboard_menu").not(":hidden")) {
+              $(".dashboard_menu").slideUp("fast");
+              setTimeout(function() {
+                  $(".userprofile_img").css("z-index", "1100");
+              }, 600);
+            }
+
+            if ($(".mob_menu").not(":hidden")) {
+                $(".mob_menu").slideUp("fast");
+                setTimeout(function() {
+                    $(".camera").css("z-index", "1200");
+                    $(".userprofile_img").css("z-index", "1100");
+                }, 600);
+            }
         }
-      }
     });
 };
 
@@ -205,42 +260,59 @@ var initMainSlider = function() {
 };
 /************ show subscribe form on click ***********************/
 function showSubscribeForm() {
-  if ($('#showSubscribeFormButton').length) {
-    $('#showSubscribeFormButton').hide();
-    $('.subscribe-form').slideDown( "slow", function() {
-      $(this).show();
-  });
-  }
+    if ($('#showSubscribeFormButton').length) {
+        $('#showSubscribeFormButton').hide();
+        $('.subscribe-form').slideDown("slow", function() {
+            $(this).show();
+        });
+    }
 }
 
 /*---------- PREVIEW PROFILE IMAGE ON SELECT ------------*/
 function showMyProfile(fileInput) {
     if (fileInput.files && fileInput.files[0]) {
+        // DODAO Zoran za proveru velicine i extenzije slike START
+        var imgSize = Math.round((fileInput.files[0].size / 1024) / 1024);
+        var imgExtSplit = fileInput.files[0].type.split("/");
+        var imgExt = imgExtSplit[1];
+        if (imgExt === 'jpeg') {
+            imgExt = 'jpg';
+        }
+        if (imgSize > 5) {
+            $('#size-error').show();
+            $('#' + fileInput.id).val('');
+            return false;
+        }
+        if (imgExt !== 'jpg' && imgExt !== 'png' && imgExt !== 'gif') {
+            $('#ext-error').show();
+            $('#' + fileInput.id).val('');
+            return false;
+        }
+        // DODAO Zoran END
         var reader = new FileReader();
         reader.onload = function(e) {
 
-          // get orientation
-          binImg = e.target.result;
-          input = document.getElementById('profile-img-file-input');
-          getOrientation(input.files[0], function(orientation) {
-              console.log(orientation);
-              if ([5, 6, 7, 8].indexOf(orientation) > -1) {
-                  $('#profileRotator').attr('src', binImg);
-                  var c = document.getElementById("profile-Photo-Slice");
-                  c.width = $('#profileRotator').height();
-                  c.height = $('#profileRotator').width();
-                  var ctx = c.getContext("2d");
-                  ctx.transform(0, 1, -1, 0, $('#profileRotator').height(), 0);
-                  ctx.drawImage(document.getElementById('profileRotator'), 0, 0);
-                  urlRot = c.toDataURL();
-                  // set Base64 string in src of positioner
-                  $('#profile-image-preview').css("background-image", "url(" + urlRot + ")");
-              } else {
-                  // set Base64 string in src of positioner
-                  $('#profile-image-preview').css("background-image", "url(" + binImg + ")");
-              }
-          });
-
+            // get orientation
+            binImg = e.target.result;
+            input = document.getElementById('profile-img-file-input');
+            getOrientation(input.files[0], function(orientation) {
+                console.log(orientation);
+                if ([5, 6, 7, 8].indexOf(orientation) > -1) {
+                    $('#profileRotator').attr('src', binImg);
+                    var c = document.getElementById("profile-Photo-Slice");
+                    c.width = $('#profileRotator').height();
+                    c.height = $('#profileRotator').width();
+                    var ctx = c.getContext("2d");
+                    ctx.transform(0, 1, -1, 0, $('#profileRotator').height(), 0);
+                    ctx.drawImage(document.getElementById('profileRotator'), 0, 0);
+                    urlRot = c.toDataURL();
+                    // set Base64 string in src of positioner
+                    $('#profile-image-preview').css("background-image", "url(" + urlRot + ")");
+                } else {
+                    // set Base64 string in src of positioner
+                    $('#profile-image-preview').css("background-image", "url(" + binImg + ")");
+                }
+            });
         };
         reader.readAsDataURL(fileInput.files[0]);
     }
@@ -249,6 +321,24 @@ function showMyProfile(fileInput) {
 /*---------- PREVIEW ID IMAGE ON SELECT ------------*/
 function showMyID(fileInput) {
     if (fileInput.files && fileInput.files[0]) {
+        // DODAO Zoran za proveru velicine i extenzije slike START
+        var imgSize = Math.round((fileInput.files[0].size / 1024) / 1024);
+        var imgExtSplit = fileInput.files[0].type.split("/");
+        var imgExt = imgExtSplit[1];
+        if (imgExt === 'jpeg') {
+            imgExt = 'jpg';
+        }
+        if (imgSize > 5) {
+            $('#size-error').show();
+            $('#' + fileInput.id).val('');
+            return false;
+        }
+        if (imgExt !== 'jpg' && imgExt !== 'png' && imgExt !== 'gif') {
+            $('#ext-error').show();
+            $('#' + fileInput.id).val('');
+            return false;
+        }
+        // DODAO Zoran END
         var reader = new FileReader();
         reader.onload = function(e) {
             $('#id-image-preview').css("background-image", "url(" + e.target.result + ")");
@@ -260,29 +350,47 @@ function showMyID(fileInput) {
 /*---------- PREVIEW COVER IMAGE ON SELECT ------------*/
 function showMyImage(fileInput) {
     if (fileInput.files && fileInput.files[0]) {
+        // DODAO Zoran za proveru velicine i extenzije slike START
+        var imgSize = Math.round((fileInput.files[0].size / 1024) / 1024);
+        var imgExtSplit = fileInput.files[0].type.split("/");
+        var imgExt = imgExtSplit[1];
+        if (imgExt === 'jpeg') {
+            imgExt = 'jpg';
+        }
+        if (imgSize > 5) {
+            $('#size-error').show();
+            $('#' + fileInput.id).val('');
+            return false;
+        }
+        if (imgExt !== 'jpg' && imgExt !== 'png' && imgExt !== 'gif') {
+            $('#ext-error').show();
+            $('#' + fileInput.id).val('');
+            return false;
+        }
+        // DODAO Zoran END
         var reader = new FileReader();
         reader.onload = function(e) {
-          // get orientation
-          binImg = e.target.result;
-          input = document.getElementById('cover-img-file-input');
-          getOrientation(input.files[0], function(orientation) {
-              console.log(orientation);
-              if ([5, 6, 7, 8].indexOf(orientation) > -1) {
-                  $('#rotator').attr('src', binImg);
-                  var c = document.getElementById("cover-Photo-Slice");
-                  c.width = $('#rotator').height();
-                  c.height = $('#rotator').width();
-                  var ctx = c.getContext("2d");
-                  ctx.transform(0, 1, -1, 0, $('#rotator').height(), 0);
-                  ctx.drawImage(document.getElementById('rotator'), 0, 0);
-                  urlRot = c.toDataURL();
-                  // set Base64 string in src of positioner
-                  $('#cover-img').attr('src', urlRot);
-              } else {
-                  // set Base64 string in src of positioner
-                  $('#cover-img').attr('src', binImg);
-              }
-          });
+            // get orientation
+            binImg = e.target.result;
+            input = document.getElementById('cover-img-file-input');
+            getOrientation(input.files[0], function(orientation) {
+                console.log(orientation);
+                if ([5, 6, 7, 8].indexOf(orientation) > -1) {
+                    $('#rotator').attr('src', binImg);
+                    var c = document.getElementById("cover-Photo-Slice");
+                    c.width = $('#rotator').height();
+                    c.height = $('#rotator').width();
+                    var ctx = c.getContext("2d");
+                    ctx.transform(0, 1, -1, 0, $('#rotator').height(), 0);
+                    ctx.drawImage(document.getElementById('rotator'), 0, 0);
+                    urlRot = c.toDataURL();
+                    // set Base64 string in src of positioner
+                    $('#cover-img').attr('src', urlRot);
+                } else {
+                    // set Base64 string in src of positioner
+                    $('#cover-img').attr('src', binImg);
+                }
+            });
             $(".profile-cover").show();
             $(".profile-cover_inner > img").show();
             $(".profile-cover-save").hide();
@@ -295,31 +403,34 @@ function showMyImage(fileInput) {
 
 /*---------- COVER IMAGE DRAGGABLE ------------*/
 var dragCoverImg = function() {
-  /*--------- DRAG IMAGE -----------*/
-  if ($('.profile-cover_wrapper').length) {
-    Draggable.create("#cover-img", {
-        type: "x,y",
-        bounds: ".profile-cover_wrapper",
-        edgeResistance: 0.0
-    });
-  }
+    /*--------- DRAG IMAGE -----------*/
+    if ($('.profile-cover_wrapper').length) {
+        Draggable.create("#cover-img", {
+            type: "x,y",
+            bounds: ".profile-cover_wrapper",
+            edgeResistance: 0.0
+        });
+    }
 };
 
 /************ delete cover image on edit profile page ***********************/
 var deleteCoverImg = function() {
-  if ($('#deleteCoverImg').length) {
-    $("#deleteCoverImg").click(function(e) {
-      $(".profile-cover_inner > img").hide();
-      $(".profile-cover_inner-save > img").hide();
-        e.preventDefault();
-    });
-  }
+    if ($('#deleteCoverImg').length) {
+        $("#deleteCoverImg").click(function(e) {
+            $.post('php/page/delete_cover.php', {
+                uid: $('#jsuid').val(),
+                cover: 'images/cover_blank.png'
+            }).done(function(data) {
+                if (data === 'ok') {
+                    location.reload();
+                }
+            });
+        });
+    }
 };
 /************ save croppped repositioned cover photo ***********************/
 var saveNewCoverPic = function() {
-  if ($('#saveProfile').length) {
-    // save on click
-    $('#saveProfile').click(function() {
+    if ($('#saveProfile').length) {
         // check if cover img not empty
         if ($("#cover-img").attr("src") !== "") {
 
@@ -360,11 +471,8 @@ var saveNewCoverPic = function() {
             $('.profile-cover-save').show();
             // hide draggable image
             $('.profile-cover').hide();
-            // delete cover image src
-            $("#cover-img").attr("src", "");
         }
-    });
-  }
+    }
 };
 
 // get image orientation
@@ -399,18 +507,42 @@ var getOrientation = function(file, callback) {
 /************ show/hide secondary address feilds in edit profile pages ***********************/
 var showAdditionalAddress = function() {
 
-  if ($('#primaryAddress').length) {
-    $("#primaryAddress").click(function(e) {
-      if ($("#billingAddressRow").is(":visible")) {
-        $("#billingAddressRow").hide();
-      }
-      if ($("#billingCountryStateRow").is(":visible")) {
-        $("#billingCountryStateRow").hide();
-      }
-    });
-    $("#billingAddress").click(function(e) {
-      $("#billingCountryStateRow").show();
-      $("#billingAddressRow").show();
-    });
-  }
+    if ($('#primaryAddress').length) {
+        $("#primaryAddress").click(function(e) {
+            if ($("#billingAddressRow").is(":visible")) {
+                $("#billingAddressRow").hide();
+            }
+            if ($("#billingCountryStateRow").is(":visible")) {
+                $("#billingCountryStateRow").hide();
+            }
+        });
+        $("#billingAddress").click(function(e) {
+            $("#billingCountryStateRow").show();
+            $("#billingAddressRow").show();
+        });
+    }
+};
+
+/************ artist dashboard menu ******************************/
+var artistMenu = function() {
+    var $trigger = $('[triggerLink]');
+    // on hover menu item in dashboard menu
+    $trigger.hover(function() {
+      var $data = $(this).attr("triggerLink");
+      var $popupLink =   $(document).find('[popLink= ' + $data + ']');
+      $popupLink.toggleClass("active");
+
+  });
+};
+
+/************ product template overlays ******************************/
+var productTemplateOverlay = function() {
+    var $trigger = $('[triggerOL]');
+    // on hover over product template selection box
+    $trigger.hover(function() {
+      var $data = $(this).attr("triggerOL");
+      var $overlay =   $(document).find('[overlay= ' + $data + ']');
+    //  $overlay.fadeToggle( 400, "ease" );
+      $overlay.fadeToggle(350);
+  });
 };
