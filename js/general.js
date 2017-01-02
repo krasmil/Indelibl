@@ -86,6 +86,7 @@ var dropMenu = function() {
     $('html').click(function() {
         $(".drop-content").removeClass("active");
         $(".drop-trigger").removeClass("active");
+        $(".share-content").removeClass("active");
     });
 };
 

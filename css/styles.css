@@ -2337,6 +2337,9 @@ transition: all 0.4s ease;
     border: solid 1px #acacac;
     margin-bottom: 40px;
 }
+.about {
+  margin-bottom: 0px;
+}
 .profile-form .form-input {
     height: 30px;
     border: 1px solid #acacac;
@@ -2503,6 +2506,13 @@ input[type="radio"] {
   font-size: 0.9em;
   line-height: 28px;
 }
+.clearBtnTop.left {
+  color: #1b1b1b;
+  border: 1px solid #acacac;
+  float: left;
+  margin-right: 10px;
+  background: #fff;
+}
 .errorIcon-large {
   background: url("../images/icons/error-lrg.png");
   background-position: center center;
@@ -2601,6 +2611,7 @@ input[type="radio"] {
   margin-left: 300px;
   text-align: left;
   margin-top: 20px;
+  position: relative;
 }
 .userprofile-info ul {
   width: 1050px;
@@ -2664,6 +2675,7 @@ input[type="radio"] {
   padding-top: 5px;
   padding-bottom: 5px;
   cursor: pointer;
+  position: relative;
 }
 .artist_menu ul li:nth-of-type(1) {
   border-top: 1px solid #acacac;
@@ -2674,7 +2686,7 @@ input[type="radio"] {
 }
 .userprofile-menu-popup {
   position: absolute;
-  top: 30px;
+  top: 3px;
   visibility: hidden;
   opacity: 0;
   left: 40px;
@@ -2695,7 +2707,7 @@ input[type="radio"] {
 .userprofile-menu-popup.active {
   visibility: visible;
   opacity: 1;
-  left: 65px;
+  left: 50px;
 }
 .userprofile-menu-popup:before {
     content: '';
@@ -2716,21 +2728,6 @@ input[type="radio"] {
   border-style: solid;
   border-width: 5px 10px 5px 10px;
   border-color: transparent #fff transparent transparent;
-}
-.userprofile-menu-popup.myProfileLink {
-  top: 15px;
-}
-.userprofile-menu-popup.addProductLink {
-  top: 55px;
-}
-.userprofile-menu-popup.supportersLink {
-  top: 93px;
-}
-.userprofile-menu-popup.paymentLink {
-  top: 132px;
-}
-.userprofile-menu-popup.eventsLink {
-  top: 173px;
 }
 .userprofile-menu-link {
   color: #292929;
@@ -2803,8 +2800,274 @@ input[type="radio"] {
   padding-bottom: 50px;
   text-align: center;
 }
+#editProfileBtn {
+  position: absolute;
+  bottom: 5px;
+  right: 0;
+}
+#ptb-row {
+  margin-left: 0;
+}
+.profile_top_btns {
+  height: 60px;
+  float:left;
+  margin-top: 50px;
+  margin-bottom: 15px;
+}
+.header-soc-icons {
+  float: right;
+  height: auto;
+  margin-top: 60px;
+  margin-bottom: 15px;
+}
+.header-soc-icons ul {
+  vertical-align: middle;
+  list-style: none;
+  display: inline-block;
+  float: left;
+}
+.header-soc-icons ul li{
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0 3px;
+}
+.dropdown .share-content {
+    position: absolute;
+    top: 40px;
+    left: -40px;
+    visibility: hidden;
+    opacity: 0;
+    padding: 10px;
+    border: solid 1px #d6d6d6;;
+    min-width: 80px;
+    text-align: center;;
+    font-size: 0.75em;
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.06), 0 2px 5px rgba(0, 0, 0, 0.1);
+    -moz-transition: all 0.4s ease;
+    -webkit-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+    color: #000;
+}
+.dropdown .share-content:after {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: 46px;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 10px 10px 10px;
+    border-color: transparent transparent #fff transparent
+}
+.dropdown .share-content:before {
+    content: '';
+    position: absolute;
+    top: -12px;
+    left: 44px;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 12px 12px 12px;
+    border-color: transparent transparent #d6d6d6 transparent
+}
+.dropdown .share-content.active {
+    visibility: visible;
+    opacity: 1;
+    z-index: 100;
+    top: 55px;
+}
+.headerSoc-icon img {
+  height: 40px;
+  width: 40px;
+}
+.share-content .headerSoc-icon img {
+  height: 20px;
+  width: 20px;
+}
+.profile-about {
+    width: 100%;
+    float: left;
+    text-align: left;
+    padding: 40px;
+    position: relative;
+}
+.followBtn {
+  position: absolute;
+  top: 30px;
+  right: 40px;
+}
+.followBtnLower {
+  position: absolute;
+  bottom: 25px;
+  right: 30px;
+  font-size: 1em;
+  line-height: 43px;
+}
+.profile_top.profileHome {
+    height: 170px;
+}
+.profile-about h3 {
+  font-size: 1.4em;
+  margin-bottom: 50px;
+}
+.profile-about p {
+  font-size: 1em;
+  margin-bottom: 20px;
+}
+.profile-about p:last-of-type {
+  margin-bottom: 50px;
+}
+#profile_products {
+  margin-bottom: 20px;
+  margin-left: 0;
+}
+.profile_products_left {
+  width: calc(70% - 15px);
+  height: 620px;
+  float: left;
+  overflow: hidden;
+}
+.profile_products_left img {
+  width: 100%;
+  height: auto;
+}
+.profile_products_right {
+  width: calc(30% - 15px);
+  height: 620px;
+  float: right;
+}
+.profile_products_right_img {
+  width: 100%;
+  height: 310px;
+  padding-bottom: 15px;
+  overflow: hidden;
+}
 
+.profile_products_right_img:nth-of-type(2) {
+  padding-bottom: 0;
+  padding-top: 15px;
+}
 
+.profile_products_right_img img {
+  width: 100%;
+  height: auto;
+}
+.profile-event {
+    position: relative;
+    overflow: hidden;
+    -moz-transition: all 0.4s ease;
+    -webkit-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+}
+.profile-event:hover {
+    -webkit-transform: translate(0, -20px);
+    -moz-transform: translate(0, -20px);
+    transform: translate(0, -20px);
+    box-shadow: 0 1px 2px rgba(0,0,0,0.06),0 2px 5px rgba(0,0,0,0.1);
+}
+.event-desc {
+  text-align: center;
+  position: relative;
+  display: block;
+  padding: 10px;
+  background: transparent;
+  color: #313b46;
+  font-size: 0.9em;
+}
+.event-desc p {
+  line-height: 1em;
+  margin: 0;
+}
+.event-desc p b {
+  line-height: 1.5em;
+}
+.profile-event .product-img {
+    height: 220px;
+    overflow: hidden;
+}
+.profile-event .product-img img {
+    height: 120%;
+    width: auto;
+}
+#myGallery {
+  margin-left: 0;
+}
+.gallery-img {
+  width: 395px;
+  height: 265px;
+  overflow: hidden;
+  float: left;
+}
+.gallery-img img {
+  height: 265px;
+  width: auto;
+}
+.gallery-desc {
+  text-align: left;
+  position: relative;
+  display: block;
+  padding: 30px;
+  background: transparent;
+  color: #313b46;
+  font-size: 0.9em;
+  float: left;
+  height: 265px;
+  background: #fff;
+  max-width: 907px;
+  width: 100%;
+}
+.gallery-desc p {
+  font-size: 0.95em;
+}
+.gallery-desc-divider {
+  width: 60%;
+}
+.artist-profile-add-btns {
+  text-align: left;
+  width: 100%;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.artist-profile-add-btns .btn {
+    margin: 20px 20px 20px 0;
+    cursor: pointer;
+}
+.form-input {
+    height: 30px;
+    border: 1px solid #acacac;
+    border-radius: 3px;
+    padding-left: 10px;
+    line-height: 30px;
+    margin-top: 7px;
+    font-size: 14px;
+    background: #fff;
+}
+#myGallery {
+  margin-bottom: 60px;
+}
+#galleryName {
+  width: 560px;
+  line-height: 38px;
+  height: 38px;
+}
+.add-btns-wrapper {
+  width: 100%;
+  text-align: left;
+  height: 50px;
+}
+#profile-about-row {
+  margin-left: 0;
+}
+.profile-form.inv-gallery h5 {
+  margin-top: 20px;
+}
+
+.profile-form.inv-gallery .gallery-desc-divider {
+  width: 340px;
+}
 /* CSS FADE IN */
 .popup-inner{
     -webkit-animation: fadein 1s;
@@ -3296,24 +3559,7 @@ input[type="radio"] {
       height: 18px;
       width: 18px;
     }
-    .userprofile-menu-popup.active {
-      left: 60px;
-    }
-    .userprofile-menu-popup.myProfileLink {
-      top: 13px;
-    }
-    .userprofile-menu-popup.addProductLink {
-      top: 48px;
-    }
-    .userprofile-menu-popup.supportersLink {
-      top: 81px;
-    }
-    .userprofile-menu-popup.paymentLink {
-      top: 116px;
-    }
-    .userprofile-menu-popup.eventsLink {
-      top: 151px;
-    }
+
     .product_template_box {
         position: relative;
         height: 270px;
@@ -3364,8 +3610,94 @@ input[type="radio"] {
       margin-bottom: 20px;
       width: 130px;
     }
+    .profile_top.profileHome {
+      height: 130px;
+    }
+    .profile-about {
+      padding: 30px;
+    }
+    .followBtn {
+      top: 25px;
+      right: 30px;
+    }
+    .headerSoc-icon img {
+      height: 32px;
+      width: 32px;
+    }
+    .profile_top_btns {
+      height: 40px;
+    }
+    .header-soc-icons {
+      margin-top: 50px;
+    }
+    .profile_products_left {
+      height: 440px;
+    }
+    .profile_products_right {
+      height: 440px;
+    }
+    .profile_products_right_img {
+      height: 220px;
+    }
+    .profile-event .product-img {
+        height: 150px;
+        overflow: hidden;
+    }
+    .gallery-img {
+      width: 280px;
+      height: 190px;
 
+    }
+    .gallery-img img {
+      height: 190px;
 
+    }
+    .gallery-desc {
+      height: 190px;
+      max-width: 645px;
+
+    }
+    #galleryName {
+      width: 315px;
+      line-height: 30px;
+    }
+    .form-input {
+      font-size: 12px;
+    }
+    .userprofile-menu-popup {
+      position: absolute;
+      top: 3px;
+      visibility: hidden;
+      opacity: 0;
+      left: 20px;
+      padding: 2px 10px 2px 10px;
+      min-width: 10px;
+      max-width: 200px;
+      width: auto;
+      text-align: left;
+      font-size: 0.75em;
+      border-radius: 5px;
+      white-space: nowrap;
+      background: #fefefe;
+      border: solid 1px #d6d6d6;
+        -moz-transition: all 0.4s ease;
+        -webkit-transition: all 0.4s ease;
+        transition: all 0.4s ease;
+    }
+    .userprofile-menu-popup.active {
+      visibility: visible;
+      opacity: 1;
+      left: 45px;
+    }
+    .dropdown .share-content.active {
+        visibility: visible;
+        opacity: 1;
+        z-index: 100;
+        top: 45px;
+    }
+    .profile-form.inv-gallery .gallery-desc-divider {
+      width: 300px;
+    }
 }
 /* Medium Devices, Desktops
     @media screen and (max-width : 992px) {*/
@@ -4315,6 +4647,98 @@ input[type="radio"] {
           font-size: 1em;
           font-weight: normal;
         }
+        .profile_top.profileHome {
+          height: 105px;
+        }
+        #editProfileBtn {
+          bottom: 0px;
+        }
+        .followBtn {
+          top: 32px;
+        }
+        .gallery-img {
+          width: 100%;
+        }
+        .gallery-img img {
+          height: auto;
+          width: 100%;
+        }
+        .gallery-desc {
+          padding: 20px 10px;
+          height: 200px;
+        }
+        .followBtnLower {
+          bottom: 25px;
+          right: 20px;
+          height: 22px;
+          line-height: 22px;
+          font-size: 1em;
+        }
+        .event-desc p {
+          white-space: nowrap;
+          overflow: hidden;
+          max-width: 240px;
+          text-overflow: ellipsis
+        }
+        #myGallery {
+          margin-bottom: 30px;
+        }
+        .artist-profile-add-btns {
+          padding-left: 10px;
+          padding-right: 10px;
+        }
+        .profile_products_left {
+          width: calc(65% - 15px);
+          height: 220px;
+          float: left;
+          overflow: hidden;
+        }
+        .profile_products_left img {
+          width: 100%;
+          height: auto;
+        }
+        .profile_products_right {
+          width: calc(35% - 5px);
+          height: 220px;
+          float: right;
+        }
+        .profile_products_right_img {
+          width: 100%;
+          height: 110px;
+          padding-bottom: 15px;
+          overflow: hidden;
+        }
+        .profile_top_btns {
+          float: none;
+          margin-top: 30px;
+          height: 80px;
+        }
+        .clearBtnTop.left {
+          float: none;
+          margin-right: 30px;
+          margin-left: 30px;
+          margin-bottom: 15px;
+          background: #fff;
+        }
+        .header-soc-icons {
+          margin-top: 20px;
+          float: none;
+          margin-left: auto;
+          margin-right: auto;
+          margin-bottom: 20px;
+          height: 35px;
+        }
+        #galleryName {
+          width: 100%;
+          line-height: 30px;
+          height: 30px;
+        }
+        .header-soc-icons ul {
+          float: none;
+        }
+        .dropdown .share-content.active {
+          top: 55px;
+        }
 }
 /* Extra Small Devices, Phones */
 
@@ -5129,6 +5553,12 @@ input[type="radio"] {
       height: 27px;
       float: left;
     }
+    .profile_top_btns .clearBtnTop {
+      min-width: 130px;
+      margin-bottom: 15px;
+      margin-right: 10px;
+      margin-left: 10px;
+    }
     .clearBtn:hover {
       background: none;
     }
@@ -5269,6 +5699,133 @@ input[type="radio"] {
     #productTemplates_notAvail h3 {
       font-size: 1em;
       font-weight: normal;
+    }
+    .profile_top.profileHome {
+      height: 130px;
+    }
+    #editProfileBtn {
+      position: relative;
+      margin-top: 15px;
+    }
+    .profile_top_btns {
+      margin-top: 15px;
+      float: none;
+      margin-left: auto;
+      margin-right: auto;
+      height: 60px;
+    }
+    .header-soc-icons {
+      padding-top: 20px;
+      float: none;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 0;
+      margin-bottom: 20px;
+      height: 55px;
+    }
+    .follow_Btn_Wrapper {
+      text-align: center;
+      height: 30px;
+      margin-bottom: 20px;
+    }
+    .followBtn {
+      position: relative;
+      top: 0;
+    }
+    .profile-about h3 {
+      font-size: 1.4em;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    .profile_products_left {
+      width: 100%;
+      height: 200px;
+      float: none;
+      display: block;
+      margin-bottom: 30px;
+    }
+    .profile_products_right {
+      width: 100%;
+      height: auto;
+      float: none;
+      display: block;
+    }
+    .profile_products_right_img {
+      width: 100%;
+      max-height: 200px;
+      padding-bottom: 15px;
+      overflow: hidden;
+      margin-bottom: 30px;
+    }
+    #profile_events .column-4 {
+      width: 100%;
+      margin: 0 0 25px 0;
+    }
+    .gallery-img {
+        width: 100%;
+        height: 190px;
+        overflow: hidden;
+        float: none;
+    }
+    .gallery-desc {
+
+        padding: 20px 10px;
+
+        float: left;
+        height: auto;
+
+        max-width: 645px;
+        width: 100%;
+    }
+    .gallery-desc-divider {
+      width: 100%;
+    }
+    .gallery-desc-divider .separator {
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+    .followBtnLower {
+      position: relative;
+      bottom: 0;
+      right: 0;
+      font-size: 1em;
+      float: none;
+      margin-top: 20px;
+      line-height: 22px;
+    }
+    .followBtnLower_wrapper {
+      text-align: center;
+    }
+    .profile-about p:last-of-type {
+      margin-bottom: 30px;
+    }
+    #myGallery {
+      margin-bottom: 20px;
+    }
+    #galleryName {
+      width: 100%;
+      line-height: 30px;
+      height: 30px;
+    }
+    .artist-profile-add-btns p {
+      margin-left: 10px;
+    }
+    .artist-profile-add-btns .btn {
+      margin: 20px 5px 20px 5px;
+      cursor: pointer;
+      float: left;
+    }
+    #addBtn {
+      height: 22px;
+    }
+    .header-soc-icons ul {
+      float: none;
+    }
+    .dropdown .share-content.active {
+      top: 55px;
+    }
+    .profile-form.inv-gallery .gallery-desc-divider {
+      width: 280px;
     }
 
 }

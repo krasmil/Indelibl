@@ -186,7 +186,7 @@
 							</svg>
 						</div>
 						<!-- mobile menu -->
-						<menu class="menu clearfix bg-light mob_menu">
+						<div class="menu clearfix bg-light mob_menu">
 							<div class="menu-collection">
 								<a href="javascript:;" class="menu-link">Original Art</a>
 								<a href="javascript:;" class="menu-link">Art Prints</a>
@@ -199,29 +199,14 @@
 								<a href="javascript:;" class="menu-link">Mugs</a>
 								<a href="javascript:;" class="menu-link">Others</a>
 							</div>
-						</menu>
+						</div>
 						<!-- mobile search form -->
-						<div class="search" id="searchMob_dashboard">
+						<div class="search" id="searchMob">
 							<input type="text"/>
 							<button type="submit" class="search-button-mob">
 
 							</button>
 						</div>
-						<div class="navigation_toggle_dots">
-							<div class="menuDot"></div>
-						</div>
-						<!-- mobile menu -->
-						<menu class="menu clearfix bg-light dashboard_menu">
-							<div class="menu-collection dashboard_menu_collection">
-								<a href="javascript:;" class="menu-link">My profile</a>
-								<a href="javascript:;" class="menu-link">Add product</a>
-								<a href="javascript:;" class="menu-link">Supporters</a>
-								<a href="javascript:;" class="menu-link">Sales / Orders</a>
-								<a href="javascript:;" class="menu-link">Payments</a>
-								<a href="javascript:;" class="menu-link">Events</a>
-								<a href="javascript:;" class="menu-link">Referrals</a>
-							</div>
-						</menu>
 					</div>
 				</div>
 			</header>
@@ -278,7 +263,7 @@
 			<div class="content-wrapper">
 
 				<div class="row">
-					<div class="profile_top addProd left">
+					<div class="profile_top profileHome left">
 						<!-- user profile image -->
 						<div class="userprofile_img_wrapper">
 							<div class="userprofile_img" id="profile-image-preview"></div>
@@ -286,13 +271,13 @@
 						<div class="userprofile-info">
 							<ul>
 								<li>
-									<h5><b>Brian Williamsdfgdhgfhfghfghfsghsgffh</b></h5>
+									<h5><b>Brian Williams</b></h5>
 								</li>
 								<li>
 									<img class="userprofile-info-icon" src="images/icons/artist.png"><span>Artist</span>
 								</li>
 								<li>
-									<img class="userprofile-info-icon" src="images/icons/country.png"><span>Ghanagfhgsfhgsfhsgfdgdfgdgdfgfdgdgdg</span>
+									<img class="userprofile-info-icon" src="images/icons/country.png"><span>Ghana</span>
 								</li>
 								<li>
 									<img class="userprofile-info-icon" src="images/icons/birthday.png"><span>05.25.1973.</span>
@@ -301,6 +286,10 @@
 									<img class="userprofile-info-icon" src="images/icons/world-wide-web.png"><a href="javascript:;"><span>www.brianwilliams.com</span></a>
 								</li>
 							</ul>
+
+
+
+
 						</div>
 						<!-- end user profile image  -->
 					</div>
@@ -310,300 +299,248 @@
 			<hr class="profile-top-separator"/>
 		</section>
 
-		<section class="bg-lightest artist-menu-wrapper">
-			<!-- artist side menu -->
-			<div class="artist_menu">
-				<ul>
-					<li triggerLink="profileLink">
-						<a href="javascript:;"><img class="userprofile-menu-icon" src="images/icons/profile.png" ></a>
-						<div class="userprofile-menu-popup myProfileLink" popLink="profileLink">
-							<a href="javascript:;" class="userprofile-menu-link">My profile</a>
-						</div>
-					</li>
-					<li triggerLink="addPLink">
-						<a href="javascript:;"><img class="userprofile-menu-icon" src="images/icons/add_products.png"></a>
-						<div class="userprofile-menu-popup addProductLink" popLink="addPLink">
-							<a href="javascript:;" class="userprofile-menu-link">Add product</a>
-						</div>
-					</li>
-					<li  triggerLink="suppLink">
-						<a href="javascript:;"><img class="userprofile-menu-icon" src="images/icons/supporters.png"></a>
-						<div class="userprofile-menu-popup supportersLink" popLink="suppLink">
-							<a href="javascript:;" class="userprofile-menu-link">Supporters</a>
-						</div>
-					</li>
-					<li  triggerLink="salesordersLink">
-						<a href="javascript:;"><img class="userprofile-menu-icon" src="images/icons/Sales-Orders.png"></a>
-						<div class="userprofile-menu-popup soLink" popLink="salesordersLink">
-							<a href="javascript:;" class="userprofile-menu-link">Sales / Orders</a>
-						</div>
-					</li>
-					<li  triggerLink="payLink">
-						<a href="javascript:;"><img class="userprofile-menu-icon" src="images/icons/payments.png"></a>
-						<div class="userprofile-menu-popup paymentLink" popLink="payLink">
-							<a href="javascript:;" class="userprofile-menu-link">Payments</a>
-						</div>
-					</li>
-					<li  triggerLink="eventLink">
-						<a href="javascript:;"><img class="userprofile-menu-icon" src="images/icons/events.png"></a>
-						<div class="userprofile-menu-popup eventsLink" popLink="eventLink">
-							<a href="javascript:;" class="userprofile-menu-link">Events</a>
-						</div>
-					</li>
-					<li  triggerLink="referLink">
-						<a href="javascript:;"><img class="userprofile-menu-icon" src="images/icons/referrals.png"></a>
-						<div class="userprofile-menu-popup refersLink" popLink="referLink">
-							<a href="javascript:;" class="userprofile-menu-link">Referrals</a>
-						</div>
-					</li>
-				</ul>
-			</div>
 
 
-
-			<div class="content-wrapper padding-y">
-				<div class="ap_page_title">
-					<h3>
-						<b>
-							Add new product
-						</b>
-					</h3>
-				</div>
-				<a href="javascript:;" class="btn dark myProducts">
-						My products
-				</a>
-			</div>
-		</section>
-
-		<!-- end add products  header -->
-		<section class="bg-lightest large-padding-top-y">
+		<!-- end artist profile  header -->
+		<section class="bg-lightest">
 			<div class="content-wrapper">
+				<div class="row" id="ptb-row">
+					<div class="header-soc-icons">
+						<ul>
+							<li>
+								<a href="javascript:;" class="icon headerSoc-icon"><img src="images/icons/facebook.png" alt=""></a>
+							</li>
+							<li>
+								<a href="javascript:;" class="icon headerSoc-icon"><img src="images/icons/twitter.png" alt=""></a>
+							</li>
+							<li>
+								<a href="javascript:;" class="icon headerSoc-icon"><img src="images/icons/insta.png" alt=""></a>
+							</li>
+							<li>
+								<a href="javascript:;" class="icon headerSoc-icon"><img src="images/icons/pinterest.png" alt=""></a>
+							</li>
+							<li class="dropdown">
+								<a href="javascript:;" class="icon headerSoc-icon" trigger="share"><img src="images/icons/share.png" alt="">
+									<div class="share-content drop-right profile" dropdown="share">
+										Share via
+										<a href="javascript:;" class="icon headerSoc-icon"><img src="images/icons/fb-share.png" alt=""></a>
+										<a href="javascript:;" class="icon headerSoc-icon"><img src="images/icons/twit-share.png" alt=""></a>
+								</a>
+							</li>
+						</ul>
+					</div>
+				</div>
 			</div>
 		</section>
 		<!-- start add products main section -->
-		<section class="bg-lightest large-padding-bottom-y">
-			<div class="content-wrapper white">
-				<div class="row" id="productTemplates">
-
-
-					<div class="product_template_box" triggerOL="origArt">
-
-								<div class="product-img" bg-img>
-									<img src="images/ap_templ/easel.png" alt="" class="hidden-img"/>
-								</div>
-								<div class="overlay_product" overlay="origArt">
-									<h4>
-										<b>
-											Original art
-										</b>
-									</h4>
-									<div class="overlay_product_btn_container">
-										<a href="javascript:;" class="btn">
-											Create new
-										</a>
-									</div>
-								</div>
-
-					</div>
-					<div class="product_template_box" triggerOL="artPrints">
-
-								<div class="product-img" bg-img>
-									<img src="images/ap_templ/frame.png" alt="" class="hidden-img"/>
-								</div>
-								<div class="overlay_product" overlay="artPrints">
-									<h4>
-										<b>
-											Art prints
-										</b>
-									</h4>
-									<div class="overlay_product_btn_container">
-										<a href="javascript:;" class="btn">
-											Create new
-										</a>
-									</div>
-								</div>
-
-					</div>
-					<div class="product_template_box" triggerOL="booksol">
-
-								<div class="product-img" bg-img>
-									<img src="images/ap_templ/books.png" alt="" class="hidden-img"/>
-								</div>
-								<div class="overlay_product" overlay="booksol">
-									<h4>
-										<b>
-											Books
-										</b>
-									</h4>
-									<div class="overlay_product_btn_container">
-										<a href="javascript:;" class="btn">
-											Create new
-										</a>
-									</div>
-								</div>
+		<section class="bg-lightest">
+			<div class="content-wrapper white about">
+				<div class="row" id="profile-about-row">
+					<div class="profile-about">
+						<h3>
+							<b>
+								About Brian Williams
+							</b>
+						</h3>
+						<div class="follow_Btn_Wrapper">
+							<!-- follow / unfollow buttons -->
+							<button type="submit" class="btn followBtn" style="display: none;">
+									Follow
+							</button>
+							<button type="submit" class="btn clearBtn followBtn" style="border: 1px solid #e74c3c;">
+									Unfollow
+							</button>
+						</div>
+						<p>
+							All work sold comes with a Certificate of Authenticity and customers also receive postal/ package refunds if I have
+							been able to send the item/s bought cheaper as a tracked item.  I utilise a variety of postal services and always
+							think of the customer to keep prices as low as I can.  More information can be sought direct from me.  Do feel free
+							to contact me with any queries/ concerns/ information.
+						</p>
+						<p>
+							My work explores Poetics, Ecological Feminism and Pilgrimage utilising drawing, painting, printing, installation and
+							sculpture. Through creating dynamic sets of layered, diaphanous, repeating patterns of line, colour, form and rhythm,
+							I explore layered imagery as a metaphor for travel, pilgrimage and the archaeology of time. The methods I utilise
+							investigate my physical engagement with various realities, mapping and gathering research exploring patterns inspired
+							from Nature, History, Culture and Behaviour. My research explores landscape through extracting soil bacteria, collected
+							during my journeys. These mile-markers reveal hidden bacterial worlds; explore the micro and macro, diversity and
+							inter-cultural exchange through aestheticism and cultural identity. Moments of memory and intervention of the artist
+							explore patterns from archaeology of time.
+							Overall my work explores the Human Condition.
+							I hope you enjoy looking at the work and it is a pleasure to share my work with you.
+						</p>
+						<p>
+							Thank you.
+						</p>
+							<a href="javascript:;" class="arrow-link">Read more
+								<i class="material-arrow_forward"></i>
+							</a>
 
 					</div>
-					<div class="product_template_box" triggerOL="phonecases">
 
-								<div class="product-img" bg-img>
-									<img src="images/ap_templ/phone-cases.png" alt="" class="hidden-img"/>
-								</div>
-								<div class="overlay_product" overlay="phonecases">
-									<h4>
-										<b>
-											Phone cases
-										</b>
-									</h4>
-									<div class="overlay_product_btn_container">
-										<a href="javascript:;" class="btn">
-											Create new
-										</a>
-										<a href="javascript:;" class="btn">
-											Add existing
-										</a>
-									</div>
-								</div>
 
-					</div>
-					<div class="product_template_box" triggerOL="tshirts">
-
-								<div class="product-img" bg-img>
-									<img src="images/ap_templ/T-shirts.png" alt="" class="hidden-img"/>
-								</div>
-								<div class="overlay_product" overlay="tshirts">
-									<h4>
-										<b>
-											T-shirts
-										</b>
-									</h4>
-									<div class="overlay_product_btn_container">
-										<a href="javascript:;" class="btn">
-											Create new
-										</a>
-										<a href="javascript:;" class="btn">
-											Add existing
-										</a>
-									</div>
-								</div>
-
-					</div>
-					<div class="product_template_box" triggerOL="pillowsol">
-
-								<div class="product-img" bg-img>
-									<img src="images/ap_templ/pillow.png" alt="" class="hidden-img"/>
-								</div>
-								<div class="overlay_product" overlay="pillowsol">
-									<h4>
-										<b>
-											Pillows
-										</b>
-									</h4>
-									<div class="overlay_product_btn_container">
-										<a href="javascript:;" class="btn">
-											Create new
-										</a>
-										<a href="javascript:;" class="btn">
-											Add existing
-										</a>
-									</div>
-								</div>
-
-					</div>
-					<div class="product_template_box" triggerOL="postcardsol">
-
-								<div class="product-img" bg-img>
-									<img src="images/ap_templ/post-card.png" alt="" class="hidden-img"/>
-								</div>
-								<div class="overlay_product" overlay="postcardsol">
-									<h4>
-										<b>
-											Post cards
-										</b>
-									</h4>
-									<div class="overlay_product_btn_container">
-										<a href="javascript:;" class="btn">
-											Create new
-										</a>
-									</div>
-
-								</div>
-
-					</div>
-					<div class="product_template_box" triggerOL="totes">
-
-								<div class="product-img" bg-img>
-									<img src="images/ap_templ/tote_bags.png" alt="" class="hidden-img"/>
-								</div>
-								<div class="overlay_product" overlay="totes">
-									<h4>
-										<b>
-											Tote bags
-										</b>
-									</h4>
-									<div class="overlay_product_btn_container">
-										<a href="javascript:;" class="btn">
-											Create new
-										</a>
-										<a href="javascript:;" class="btn">
-											Add existing
-										</a>
-									</div>
-								</div>
-
-					</div>
-					<div class="product_template_box" triggerOL="mugsol">
-
-								<div class="product-img" bg-img>
-									<img src="images/ap_templ/Mugs.png" alt="" class="hidden-img"/>
-								</div>
-								<div class="overlay_product" overlay="mugsol">
-									<h4>
-										<b>
-											Mugs
-										</b>
-									</h4>
-									<div class="overlay_product_btn_container">
-										<a href="javascript:;" class="btn">
-											Create new
-										</a>
-										<a href="javascript:;" class="btn">
-											Add existing
-										</a>
-									</div>
-								</div>
-
-					</div>
-					<div class="product_template_box" triggerOL="othersol">
-
-								<div class="product-img" bg-img>
-									<img src="images/ap_templ/others.png" alt="" class="hidden-img"/>
-								</div>
-								<div class="overlay_product" overlay="othersol">
-									<h4>
-										<b>
-											Others
-										</b>
-									</h4>
-									<div class="overlay_product_btn_container">
-										<a href="javascript:;" class="btn">
-											Create new
-										</a>
-									</div>
-								</div>
-
-					</div>
 				</div>
-				<div class="row" id="productTemplates_notAvail">
-					<h3>
 
-							Unfortunately, this feature is not available on your current device.
-
-					</h3>
-				</div>
 			</div>
 			<!-- end white wrapper div -->
 		</section>
-		<!-- end add products main section -->
+		<section class="bg-lightest large-padding-y">
+			<div class="content-wrapper">
+				<!--Start Products-->
+				<h2 class="large-padding-y">
+					<b>
+						Products
+					</b>
+				</h2>
+				<div class="row" id="profile_products">
+
+					<div class="profile_products_left">
+						<img src="images/prod1.jpg" alt="">
+					</div>
+					<div class="profile_products_right">
+						<div class="profile_products_right_img">
+							<img src="images/image.jpg" alt="">
+						</div>
+						<div class="profile_products_right_img">
+							<img src="images/pic1.jpg" alt="">
+						</div>
+					</div>
+				</div>
+				<div class="large-padding-y">
+					<a class="btn wide" href="javascript:;">View all</a>
+				</div>
+				<!-- show this div if no products present -->
+
+				<div class="row" id="emptyProducts" style="display:none;">
+					<h3>
+							There are currently no products.
+					</h3>
+				</div>
+
+				<hr class="separator"/>
+				<!-- start Galleries-->
+				<h2 class="large-padding-y">
+					<b>
+						Events
+					</b>
+				</h2>
+				<div class="row" id="profile_events">
+					<div class="column-4 profile-event">
+						<a href="javascript:;">
+							<div class="product-img">
+								<img src="images/na1b.jpg" alt="" class="profile-event-img"/>
+							</div>
+							<div class="event-desc">
+								<p><b>Greene Naftali Gallery</b></p>
+								<p>Katja Novitskova: Approximation (Storm Time)</p>
+								<p>Nov 18, 2016–Jan 7, 2017</p>
+							</div>
+						</a>
+					</div>
+					<div class="column-4 profile-event">
+						<a href="javascript:;">
+							<div class="product-img" >
+								<img src="images/pic3.jpg" alt="" class="profile-event-img"/>
+							</div>
+							<div class="event-desc">
+								<p><b>Gerald Peters Gallery, NY</b></p>
+								<p>Masterworks of American Art</p>
+								<p>Nov 14, 2016–Jan 6, 2017</p>
+							</div>
+						</a>
+					</div>
+					<div class="column-4 profile-event">
+						<a href="javascript:;">
+							<div class="product-img" >
+								<img src="images/pic1.jpg" alt="" class="profile-event-img"/>
+							</div>
+							<div class="event-desc">
+								<p><b>Senior &amp Shopmaker Gallery</b></p>
+								<p>Polly Apfelbaum: Atomic Mystic Portraits</p>
+								<p>Nov 18, 2016–Jan 7, 2017</p>
+							</div>
+						</a>
+					</div>
+					<div class="column-4 profile-event">
+						<a href="javascript:;">
+							<div class="product-img" >
+								<img src="images/pic2.jpg" alt="" class="profile-event-img"/>
+							</div>
+							<div class="event-desc">
+								<p><b>Marlborough Gallery</b></p>
+								<p>Davina Semo: FUBAR</p>
+								<p>Nov 18, 2016–Jan 7, 2017</p>
+							</div>
+						</a>
+					</div>
+				</div>
+
+				<div class="large-padding-y">
+					<a class="btn wide" href="javascript:;">View all</a>
+				</div>
+
+				<!-- show this div if no events present -->
+
+				<div class="row" id="emptyEvents" style="display:none;">
+					<h3>
+							There are currently no upcoming events.
+					</h3>
+				</div>
+
+				<hr class="separator"/>
+				<!--start Artists-->
+				<h2 class="large-padding-y">
+					<b>
+						My gallery
+					</b>
+				</h2>
+				<div class="row" id="myGallery">
+					<div class="profile-myGallery">
+						<div class="gallery-img">
+								<img src="images/gallery1.png" alt=""/>
+						</div>
+						<div class="gallery-desc">
+							<h5>
+								<b>
+									<a href="javascript:;">Jessica Silverman Gallery</a>
+								</b>
+							</h5>
+							<p>
+								Jessica Silverman Gallery, founded in 2008, is known for discovering emergent, concept-driven artists
+								and bringing them to an international audience.   <a href="javascript:;">Read more</a>
+							</p>
+							<div class="gallery-desc-divider">
+								<hr class="separator"/>
+							</div>
+							<p>
+								Jessica Silverman Gallery South
+								<br/>
+								495 Ellis Street, San Francisco, CA 94102, US
+								<br/>
+								Tel: (415) 255-9508
+							</p>
+							<div class="followBtnLower_wrapper">
+								<button class="btn clearBtn followBtnLower">Follow</button>
+							</div>
+						</div>
+					</div>
+
+				</div>
+
+				<!-- show this div if no gallery present -->
+
+				<div class="row" id="emptyGallery" style="display:none;">
+					<h3>
+							This artist is not currently associated with any galleries.
+					</h3>
+				</div>
+
+
+			</div>
+			<!-- end content wrapper -->
+		</section>
+		<!-- end  -->
+		<!-- end artist profile main section -->
 
 		<!-- start footer -->
 		<footer class="footer">
