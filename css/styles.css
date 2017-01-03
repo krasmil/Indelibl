@@ -2901,7 +2901,7 @@ input[type="radio"] {
 .followBtnLower {
   position: absolute;
   bottom: 25px;
-  right: 30px;
+  right: 90px;
   font-size: 1em;
   line-height: 43px;
 }
@@ -3067,6 +3067,15 @@ input[type="radio"] {
 
 .profile-form.inv-gallery .gallery-desc-divider {
   width: 340px;
+}
+#removeGallery {
+  position: absolute;
+  bottom: 25px;
+  right: 30px;
+}
+button#addBtn {
+    opacity: 0.65;
+    cursor: not-allowed;
 }
 /* CSS FADE IN */
 .popup-inner{
@@ -3697,6 +3706,12 @@ input[type="radio"] {
     }
     .profile-form.inv-gallery .gallery-desc-divider {
       width: 300px;
+    }
+    #removeGallery {
+      height: 34px;
+    }
+    .followBtnLower {
+      right: 80px;
     }
 }
 /* Medium Devices, Desktops
@@ -4669,10 +4684,16 @@ input[type="radio"] {
         }
         .followBtnLower {
           bottom: 25px;
-          right: 20px;
+          right: 60px;
           height: 22px;
           line-height: 22px;
           font-size: 1em;
+        }
+        #removeGallery {
+          position: absolute;
+          bottom: 25px;
+          right: 20px;
+          height: 22px;
         }
         .event-desc p {
           white-space: nowrap;
@@ -5827,6 +5848,10 @@ input[type="radio"] {
     .profile-form.inv-gallery .gallery-desc-divider {
       width: 280px;
     }
+    #removeGallery {
+    height: 24px;
+    bottom: 20px;
+}
 
 }
 /* Custom, iPhone Retina */
