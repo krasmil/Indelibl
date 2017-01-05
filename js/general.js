@@ -516,10 +516,14 @@ var showAdditionalAddress = function() {
             if ($("#billingCountryStateRow").is(":visible")) {
                 $("#billingCountryStateRow").hide();
             }
+            if ($("#billingAddressCityRow").is(":visible")) {
+                $("#billingAddressCityRow").hide();
+            }
         });
         $("#billingAddress").click(function(e) {
             $("#billingCountryStateRow").show();
             $("#billingAddressRow").show();
+            $("#billingAddressCityRow").show();
         });
     }
 };
