@@ -466,7 +466,7 @@
 						<div class="form-row">
 							<div class="form-item form-item_full">
 								<label for="userStreet" class="form-label">
-									Billing Address *
+									Shipping Address *
 								</label>
 							</div>
 							<div class="form-item form-item_half">
@@ -512,28 +512,28 @@
 						<div class="form-row">
 							<div class="form-item form-item_full">
 								<label for="primaryAddress" class="form-label">
-									<b>Shipping Address</b>
+									<b>Billing Address</b>
 								</label>
 							</div>
 							<div class="form-item form-item_full">
-								<input type="radio" name="primaryAddress" value="primaryAddress" id="primaryAddress"><label for="primaryAddress">Use Billing address as Shipping address</label>
+								<input type="radio" name="primaryAddress" value="primaryAddress" id="primaryAddress"><label for="primaryAddress">Use shipping address as billing address</label>
 								<br />
 								<input type="radio" name="primaryAddress" value="billingAddress" id="billingAddress"><label for="billingAddress">Provide another address</label>
 							</div>
 						</div>
 
-						<!-- country state for shipping address -->
+						<!-- country state for billing address -->
 						<div class="form-row billingCountryState" id="billingCountryStateRow">
 
 							<div class="form-item form-item_half">
 								<div class="form-item form-item_full">
-									<label for="profileShippingCountry" class="form-label">
+									<label for="profileBillingCountry" class="form-label">
 										Country *
 									</label>
 								</div>
 
 								<div class="form-item form-item_full">
-									<select id="profileShippingCountry" name="profileShippingCountry" class="form-input">
+									<select id="profileBillingCountry" name="profileBillingCountry" class="form-input">
 										<option value="Select Country" selected="true" disabled="disabled">Select Country</option>
 										<option value="Afghanistan">Afghanistan</option>
 										<option value="Albania">Albania</option>
@@ -550,13 +550,13 @@
 							</div>
 							<div class="form-item form-item_half">
 								<div class="form-item form-item_full">
-									<label for="profileShippingState" class="form-label">
+									<label for="profileBillingState" class="form-label">
 										State *
 									</label>
 								</div>
 
 								<div class="form-item form-item_full">
-									<select id="profileShippingState" name="profileShippingState" class="form-input">
+									<select id="profileBillingState" name="profileBillingState" class="form-input">
 										<option value="Select State" selected="true" disabled="disabled">Select State</option>
 										<option value="State 1">State 1</option>
 										<option value="State 2">State 2</option>
@@ -570,12 +570,12 @@
 							</div>
 						</div>
 
-						<!-- shipping address -->
+						<!-- billing address -->
 
 						<div class="form-row billing-address" id="billingAddressRow">
 							<div class="form-item form-item_full">
 								<label for="billinguserStreet" class="form-label">
-									Shipping Address *
+									Billing Address *
 								</label>
 							</div>
 							<div class="form-item form-item_half">
