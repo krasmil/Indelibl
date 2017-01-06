@@ -3387,6 +3387,8 @@ ripple.ripple::after {
     margin-top: 7px;
     font-size: 14px;
     background: #fff;
+    max-width: 100%;
+    width: 315px;
 }
 
 #myGallery {
@@ -3630,7 +3632,10 @@ button#addBtn {
 .product-show>.column-4.box-product {
     width: 215px;
 }
-
+#invite_gallery_policy {
+  margin-left: 0;
+  margin-bottom: 10px;
+}
 
 /* CSS FADE IN */
 
