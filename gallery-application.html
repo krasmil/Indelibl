@@ -55,6 +55,9 @@
 								</div>
 								<div class="form-item form-item_full organisation">
 									<input type="text" class="form-input" id="orgName" name="orgName" placeholder="Name of Organisation">
+									<div class="errorMsg">
+										<div class="errorIcon"></div>Please fill this field appropriately
+									</div>
 								</div>
 							</div>
 						</div>
@@ -82,7 +85,7 @@
 									<div class="form-item form-item_full">
 									<input type="text" class="form-input" id="firstName" name="firstName" placeholder="First name">
 										<div class="errorMsg">
-											<div class="errorIcon"></div>
+											<div class="errorIcon"></div>Please fill this field appropriately
 										</div>
 									</div>
 								</div>
@@ -95,16 +98,15 @@
 
 									<div class="form-item form-item_full">
 										<input type="text" class="form-input" id="lastName" name="lastName" placeholder="Last name">
-											<div class="errorMsg">
-												<div class="errorIcon"></div>
-											</div>
+										<div class="errorMsg" style="display: block;">
+											<div class="errorIcon"></div>Please fill this field appropriately
+										</div>
 									</div>
 								</div>
 							</div>
 
 						<!-- country state -->
 						<div class="form-row">
-
 								<div class="form-item form-item_half">
 									<div class="form-item form-item_full">
 										<label for="profileCountry" class="form-label">
@@ -123,8 +125,8 @@
 											<option value="Anguilla">Anguilla</option>
 
 										</select>
-										<div class="errorMsg">
-											<div class="errorIcon"></div>
+										<div class="errorMsg" style="display: block;">
+											<div class="errorIcon"></div>Please fill this field appropriately
 										</div>
 									</div>
 								</div>
@@ -150,8 +152,10 @@
 								</div>
 							</div>
 
-						<!-- address -->
-						<div class="form-row">
+					
+
+							<!-- address -->
+							<div class="form-row">
 								<div class="form-item form-item_full">
 									<label for="userStreet" class="form-label">
 										Address *
@@ -170,6 +174,22 @@
 											<div class="errorIcon"></div>
 										</div>
 									</div>
+								</div>　
+							</div>
+
+							<div class="form-row">
+								<div class="form-item form-item_full">
+									<label for="userCity" class="form-label">
+										City *
+									</label>
+								</div>
+								<div class="form-item form-item_half">
+									<input type="text" class="form-input" id="userCity" name="userCity" placeholder="City">
+									<div class="errorMsg">
+										<div class="errorIcon"></div>
+									</div>
+								</div>
+								<div class="form-item form-item_half">
 									<div class="form-item form-item_half">
 										<input type="text" class="form-input" id="pCode" name="pCode" placeholder="Postcode">
 										<div class="errorMsg">
@@ -178,6 +198,13 @@
 									</div>
 								</div>　
 							</div>
+
+
+
+
+
+
+
 
 						<!-- Email and website -->
 						<div class="form-row">
@@ -191,9 +218,9 @@
 
 									<div class="form-item form-item_full">
 									<input type="email" class="form-input" id="galleryEmail" name="galleryEmail" placeholder="Email">
-										<div class="errorMsg">
-											<div class="errorIcon"></div>
-										</div>
+									<div class="errorMsg" style="display: block;">
+										<div class="errorIcon"></div>Please fill this field appropriately
+									</div>
 									</div>
 								</div>
 								<div class="form-item form-item_half">
@@ -205,9 +232,9 @@
 
 									<div class="form-item form-item_full">
 										<input type="text" class="form-input" id="galleryWebsite" name="galleryWebsite" placeholder="Website">
-											<div class="errorMsg">
-												<div class="errorIcon"></div>
-											</div>
+										<div class="errorMsg">
+											<div class="errorIcon"></div>
+										</div>
 									</div>
 								</div>
 							</div>
