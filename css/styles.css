@@ -1899,7 +1899,7 @@ ripple.ripple::after {
     -webkit-box-pack: center;
     -ms-flex-pack: center;
     justify-content: center;
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     right: 0;
@@ -3619,9 +3619,13 @@ button#addBtn {
 }
 
 .product-view-container {
-    width: 885px;
-    position: relative;
-    height: 270px;
+    width: 1220px;
+    position: absolute;
+    height: 332px;
+    overflow:hidden;
+    left: 41px;
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
 
 .product-show {
@@ -3630,11 +3634,43 @@ button#addBtn {
 }
 
 .product-show>.column-4.box-product {
-    width: 215px;
+    width: 290px;
+
+    margin: 0 20px 0 0;
 }
+
 #invite_gallery_policy {
   margin-left: 0;
   margin-bottom: 10px;
+}
+.recent-views {
+  margin-left: 0;
+  position: relative;
+  height: 332px;
+  margin-bottom: 20px;
+  margin-top: -20px;
+}
+.left-arrow {
+  width: 20px;
+  height: 100%;
+  background: url("../images/icons/left-arrow.png");
+  background-position: center;
+  background-size: 20px auto;
+  background-repeat: no-repeat;
+  position: absolute;
+  left: 0;
+  cursor: pointer;
+}
+.right-arrow {
+  width: 20px;
+  height: 100%;
+  background: url("../images/icons/right-arrow.png");
+  background-position: center;
+  background-size: 20px auto;
+  position: absolute;
+  background-repeat: no-repeat;
+  right: 0;
+  cursor: pointer;
 }
 
 /* CSS FADE IN */
@@ -4316,6 +4352,23 @@ button#addBtn {
     }
     .profile_gallery_artworks_col .desc {
         height: 42px;
+    }
+    .recent-views {
+      height: 262px;
+    }
+    .product-view-container {
+        width: 880px;
+        position: absolute;
+        height: 262px;
+        overflow:hidden;
+        left: 22.5px;
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+    .product-show>.column-4.box-product {
+        width: 205px;
+
+        margin: 0 20px 0 0;
     }
 }
 
@@ -5375,6 +5428,18 @@ button#addBtn {
     }
     .profile-about h3 {
         max-width: 290px;
+    }
+    .product-view-container {
+        width: 485px;
+        height: 300px;
+        left: 22.5px;
+    }
+    .recent-views {
+      height: 280px;
+    }
+    .product-show>.column-4.box-product {
+      width: 215px;
+      margin: 0 15px 0 15px;
     }
 }
 
@@ -6477,6 +6542,19 @@ button#addBtn {
     .profile_gallery_artworks_col:last-of-type {
         position: relative;
     }
+    .product-view-container {
+        width: 255px;
+        height: 335px;
+        left: 22.5px;
+    }
+    .recent-views {
+      height: 335px;
+      margin-bottom: 5px;
+    }
+    .product-show>.column-4.box-product {
+      width: 235px;
+      margin: 0 20px 0 20px;
+    }
 }
 
 
@@ -6503,5 +6581,9 @@ button#addBtn {
         margin-left: auto;
         margin-right: auto;
         margin-bottom: 30px;
+    }
+    .product-show>.column-4.box-product {
+      width: 215px;
+      margin: 0 20px 0 20px;
     }
 }

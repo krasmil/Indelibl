@@ -14,6 +14,7 @@ $(document).ready(function() {
     saveNewCoverPic();
     artistMenu();
     productTemplateOverlay();
+    scrollRecentViews();
 });
 
 /******* Run functions when document resize **********/
@@ -28,6 +29,20 @@ $(window).resize(function() {
         $('#productTemplates_notAvail').hide();
       }
   }
+  setTimeout(function () {
+    getRecentViewsSliderCoeff();
+    resetRecentViews();
+    scrollRecentViews();
+  }, 500);
+});
+/******* Run functions when document orientation changed (handheld devices) **********/
+$(window).on("orientationchange",function(){
+
+  setTimeout(function () {
+    getRecentViewsSliderCoeff();
+    resetRecentViews();
+    scrollRecentViews();
+  }, 500);
 });
 
 var checkDeviceForAddProducts = function() {
@@ -551,3 +566,64 @@ var productTemplateOverlay = function() {
       $overlay.fadeToggle(350);
   });
 };
+
+/************ returns coefficient for scrollRecentViews ******************************/
+
+var getRecentViewsSliderCoeff = function() {
+  var coeff;
+  if ($(window).width() <= 999 && $(window).width() >= 510) {
+    coeff = 3;
+  }
+  else if ($(window).width() <= 509) {
+    coeff = 4;
+  }
+  else {
+    coeff = 1;
+  }
+  return coeff;
+};
+
+/************ resets product-show left position for scrollRecentViews when orientation changed or resize ******************************/
+var resetRecentViews = function() {
+  $(".product-show").css("left", 0);
+};
+
+/************ returns move value for right and left button clicks ******************************/
+var getRecentViewMove = function() {
+  var a = $(".product-show > .column-4.box-product").outerWidth(true) + "px";
+  return a;
+}
+/************ returns sliderLimit value for right and left button clicks ******************************/
+var getRecentViewSliderLimit = function() {
+  var b = -($(".product-show > .column-4.box-product").outerWidth(true) * getRecentViewsSliderCoeff());
+  return b;
+}
+
+var scrollRecentViews = function() {
+
+  var view = $(".product-view-container");
+  var show = $(".product-show");
+  var productBox = $(".product-show > .column-4.box-product");
+  var productBox_margin_right = parseInt(productBox.css("margin-right")) + 2;
+  var productBox_margin_left = parseInt(productBox.css("margin-left"));
+  show.css("width", (productBox.width() * 10) + (productBox_margin_right * 10) + (productBox_margin_left * 10) + "px");
+  var move = productBox.outerWidth(true) + "px";
+  var sliderLimit = -(productBox.outerWidth(true) * getRecentViewsSliderCoeff());
+
+};
+
+/************ scrolls recent views to the right ******************************/
+$(".right-arrow").click(function(){
+  var show = $(".product-show");
+  var currentPosition = parseInt(show.css("left"));
+  console.log("currentPosition is what? " + currentPosition);
+  if (currentPosition >= getRecentViewSliderLimit()) show.stop(false,true).animate({left:"-="+ getRecentViewMove()},{ duration: 400})
+});
+
+/************ scrolls recent views to the left ******************************/
+$(".left-arrow").click(function(){
+  var show = $(".product-show");
+  var currentPosition = parseInt(show.css("left"));
+  console.log("currentPosition is what? " + currentPosition);
+  if (currentPosition < 0) show.stop(false,true).animate({left:"+="+ getRecentViewMove()},{ duration: 400})
+});
