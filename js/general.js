@@ -15,6 +15,8 @@ $(document).ready(function() {
     artistMenu();
     productTemplateOverlay();
     scrollRecentViews();
+    rightLeftArrows();
+    createDatePickers();
 });
 
 /******* Run functions when document resize **********/
@@ -334,6 +336,56 @@ function showMyProfile(fileInput) {
     }
 }
 
+/*---------- PREVIEW EVENT IMAGE ON SELECT ------------*/
+function showEventPhoto(fileInput) {
+    if (fileInput.files && fileInput.files[0]) {
+        // DODAO Zoran za proveru velicine i extenzije slike START
+        var imgSize = Math.round((fileInput.files[0].size / 1024) / 1024);
+        var imgExtSplit = fileInput.files[0].type.split("/");
+        var imgExt = imgExtSplit[1];
+        if (imgExt === 'jpeg') {
+            imgExt = 'jpg';
+        }
+        if (imgSize > 5) {
+            $('#size-error').show();
+            $('#' + fileInput.id).val('');
+            return false;
+        }
+        if (imgExt !== 'jpg' && imgExt !== 'png' && imgExt !== 'gif') {
+            $('#ext-error').show();
+            $('#' + fileInput.id).val('');
+            return false;
+        }
+        // DODAO Zoran END
+        var reader = new FileReader();
+        reader.onload = function(e) {
+
+            // get orientation
+            binImg = e.target.result;
+            input = document.getElementById('event-img-file-input');
+            getOrientation(input.files[0], function(orientation) {
+                console.log(orientation);
+                if ([5, 6, 7, 8].indexOf(orientation) > -1) {
+                    $('#event-photo-rotator').attr('src', binImg);
+                    var c = document.getElementById("event-Photo-Slice");
+                    c.width = $('#event-photo-rotator').height();
+                    c.height = $('#event-photo-rotator').width();
+                    var ctx = c.getContext("2d");
+                    ctx.transform(0, 1, -1, 0, $('#event-photo-rotator').height(), 0);
+                    ctx.drawImage(document.getElementById('event-photo-rotator'), 0, 0);
+                    urlRot = c.toDataURL();
+                    // set Base64 string in src of positioner
+                    $('.event-photo-preview').css("background-image", "url(" + urlRot + ")");
+                } else {
+                    // set Base64 string in src of positioner
+                    $('.event-photo-preview').css("background-image", "url(" + binImg + ")");
+                }
+            });
+        };
+        reader.readAsDataURL(fileInput.files[0]);
+    }
+}
+
 /*---------- PREVIEW ID IMAGE ON SELECT ------------*/
 function showMyID(fileInput) {
     if (fileInput.files && fileInput.files[0]) {
@@ -612,18 +664,45 @@ var scrollRecentViews = function() {
 
 };
 
-/************ scrolls recent views to the right ******************************/
-$(".right-arrow").click(function(){
-  var show = $(".product-show");
-  var currentPosition = parseInt(show.css("left"));
-  console.log("currentPosition is what? " + currentPosition);
-  if (currentPosition >= getRecentViewSliderLimit()) show.stop(false,true).animate({left:"-="+ getRecentViewMove()},{ duration: 400})
-});
+var rightLeftArrows = function() {
+  /************ scrolls recent views to the right ******************************/
+  if ($(".right-arrow").length) {
+    $(".right-arrow").click(function(){
+      var show = $(".product-show");
+      var currentPosition = parseInt(show.css("left"));
+      console.log("currentPosition is what? " + currentPosition);
+      if (currentPosition >= getRecentViewSliderLimit()) show.stop(false,true).animate({left:"-="+ getRecentViewMove()},{ duration: 400})
+    });
+  }
 
-/************ scrolls recent views to the left ******************************/
-$(".left-arrow").click(function(){
-  var show = $(".product-show");
-  var currentPosition = parseInt(show.css("left"));
-  console.log("currentPosition is what? " + currentPosition);
-  if (currentPosition < 0) show.stop(false,true).animate({left:"+="+ getRecentViewMove()},{ duration: 400})
-});
+  /************ scrolls recent views to the left ******************************/
+  if ($(".left-arrow").length) {
+    $(".left-arrow").click(function(){
+      var show = $(".product-show");
+      var currentPosition = parseInt(show.css("left"));
+      console.log("currentPosition is what? " + currentPosition);
+      if (currentPosition < 0) show.stop(false,true).animate({left:"+="+ getRecentViewMove()},{ duration: 400})
+    });
+  }
+};
+
+
+var createDatePickers = function() {
+
+  if ($('#start-date').length) {
+    $( "#start-date" ).datepicker();
+  }
+  if ($('#end-date').length) {
+    $( "#end-date" ).datepicker();
+  }
+  if ($('#start-time').length) {
+    $( "#start-time" ).timepicker({ 'timeFormat': 'h:i A' });
+  }
+  if ($('#end-time').length) {
+    $( "#end-time" ).timepicker({ 'timeFormat': 'h:i A' });
+  }
+
+
+
+
+};
