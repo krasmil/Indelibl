@@ -1,3 +1,8 @@
+/******* Run functions when window is loaded ********/
+$(window).load(function(){
+  masonryEventWorks();
+});
+
 /******* Run functions when document is ready ********/
 $(document).ready(function() {
     dropMenu();
@@ -17,7 +22,6 @@ $(document).ready(function() {
     scrollRecentViews();
     rightLeftArrows();
     createDatePickers();
-    masonryEventWorks();
 });
 
 /******* Run functions when document resize **********/
