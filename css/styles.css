@@ -2460,6 +2460,7 @@ ripple.ripple::after {
     background: #e74c3c;
 }
 
+
 .bin img {
     height: 20px;
     width: auto;
@@ -3776,6 +3777,339 @@ button#addBtn {
   margin-right: 5px;
   margin-bottom: 5px;
 }
+.event-details {
+  padding: 30px;
+}
+.event-photo {
+  width: 100%;
+  height: 540px;
+  background-position: center;
+  background-size: contain;
+}
+.event-tdl {
+  width: 100%;
+  margin-top: 30px;
+  margin-bottom: 60px;
+}
+.event-tdl ul {
+  width: 100%;
+  display: block;
+}
+.event-tdl ul li {
+  width: 100%;
+  display: block;
+  text-align: center;
+}
+.event-tdl ul li span {
+  font-size: 0.8em;
+  display: block;
+}
+.event-tdl ul li span:last-of-type {
+  padding-bottom: 10px;
+}
+.event-tdl ul li img {
+  height: 18px;
+  width: auto;
+}
+.event-tdl ul li button img {
+  height: 12px;
+  width: auto;
+  margin-right: 5px;
+}
+.exporter {
+  margin-top: 5px;
+  float: none;
+  font-size: 0.8em;
+}
+.about-event {
+  margin-top: 40px;
+  margin-bottom: 50px;
+  text-align: left;
+}
+.events-follow-artists-h4 {
+  padding-top: 40px;
+  padding-bottom: 20px;
+}
+.events-artists-wrapper {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  display: block;
+  margin-bottom: 50px;
+  overflow: hidden;
+}
+.event-artist {
+  position: relative;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  float: left;
+  height: 35px;
+  width: 50%;
+}
+.event-artist-split:first-of-type {
+  width: 50%;
+  float: left;
+  padding-left: 50px;
+}
+.event-artist-split:last-of-type {
+  width: 50%;
+  float: left;
+  padding-left: 30px;
+}
+.event-artist-split span {
+  position: relative;
+  float: right;
+  width: 100%;
+  margin-top: 4px;
+  white-space: nowrap;
+  overflow: hidden;
+  max-width: 180px;
+  text-overflow: ellipsis
+}
+.event-artist-split button {
+  position: relative;
+  float: left;
+}
+.event-reviews-related-events-split {
+  width: 50%;
+  float: left;
+}
+.reviews-wrapper {
+  text-align: left;
+  padding-top: 30px;
+  padding-right: 40px;
+  margin-bottom: 30px;
+  height: 400px;
+  overflow-y: scroll;
+}
+.reviews-wrapper textarea {
+    margin-top: 10px;
+    width: 100%;
+    margin-bottom: 10px;
+    border: solid 1px #acacac;
+    font-size: 0.9em;
+    padding: 10px;
+    resize: none;
+}
+.review-send-btn-wrapper {
+  height: 60px;
+}
+.review-container {
+  padding: 15px 10px 15px 10px;
+}
+.review-header {
+  width: 100%;
+  overflow: hidden;
+}
+.review-header-left {
+  width: 50%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  float:left;
+  font-size: 0.9em;
+}
+.review-header-right {
+  width: 50%;
+  float:left;
+  text-align: right;
+  font-size: 0.82em;
+}
+.review-rating-send {
+  font-size: 1.5em;
+  unicode-bidi: bidi-override;
+  direction: rtl;
+}
+.review-rating-send > span {
+  display: inline-block;
+  position: relative;
+  color: #acacac;
+}
+.review-rating-send > span:hover:before,
+.review-rating-send > span:hover ~ span:before {
+   content: "\2605";
+   position: absolute;
+   color: #ffc200;
+}
+.review-rating {
+  font-size: 1.3em;
+  color: #acacac;
+}
+.yellow-star {
+  color: #ffc200;
+}
+.review-content {
+  font-size: 0.82em;
+  margin-top: 10px;
+}
+.related-events-wrapper {
+  margin-top: 50px;
+}
+.related-events-wrapper-header {
+  background: #2d2d2d;
+  color: white;
+  padding: 10px;
+}
+.related-events-wrapper-header h5 {
+  margin-bottom: 0;
+}
+.related-events-content {
+  margin-top: 50px;
+}
+
+.related-events-content .product-img {
+  height: 220px;
+}
+.related-events-content .column-2 {
+  width: 50%;
+  padding: 15px;
+  margin: 0;
+}
+.related-events-content .column-2:nth-of-type(4n + 1) {
+  margin: 0;
+}
+.related-events-content .column-2 .event-desc {
+  height: 80px;
+  max-height: 120px;
+  font-size: 0.8em;
+}
+.event-details-row {
+  margin-left: 0;
+  position: relative;
+}
+.related-events-row {
+  margin-left: 0;
+}
+.event-date {
+  font-size: 0.8em;
+}
+.events-works-wrapper {
+  display: block;
+  width: 100%;
+  margin-bottom: 30px;
+  margin-top: 55px;
+  position: relative;
+  overflow: hidden;
+  margin-left: 12.5px;
+}
+.event-work-container {
+    position: relative;
+    overflow: hidden;
+    border: solid 1px #acacac;
+    margin-bottom: 30px;
+    width: calc(25% - 25px);
+    float: left;
+}
+
+.event-work-container .product-img {
+    height: auto;
+}
+.event-work-container .product-img img {
+  width: 100% !important;
+  height: auto !important;
+}
+.event-work-container .desc {
+    position: relative;
+    display: block;
+    padding: 10px;
+    background: #fff;
+    text-align: left;
+    color: #313b46;
+}
+.event-work-container h4, .event-work-container h5 {
+    line-height: 25px;
+    margin: 0;
+    font-size: 1em;
+    width: 140px;
+    max-width: 140px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.event-work-container h5 {
+    text-transform: uppercase;
+}
+.event-work-container .price {
+    margin: 0;
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    font-weight: 700;
+}
+.event-share-subscribe-wrapper {
+  position:absolute;
+  top: 555px;
+  right: 0;
+}
+.event-share-subscribe-wrapper button {
+  float: left;
+  margin-left: 10px;
+}
+.event-share-subscribe-wrapper .dropdown {
+  float: left;
+
+}
+.edit-pencil {
+  min-width: 34px;
+  width: 45px;
+  padding: 0;
+  margin-left: 5px;
+  background: white;
+  height: 43px;
+  border: 1px solid #acacac;
+}
+.edit-pencil:hover {
+  background: white;
+}
+.edit-pencil img {
+    height: 22px;
+    width: auto;
+    margin-left: auto;
+    margin-right: auto;
+    vertical-align: middle;
+}
+.event-artist a {
+  color: black;
+}
+.reviews-related-events-wrapper {
+  margin-top: 40px;
+}
+.product-show .column-4.profile-event {
+    width: 290px;
+    margin: 0 20px 0 0;
+}
+.related-events-content .product-view-container {
+    width: 818.5px;
+    position: absolute;
+    height: 262px;
+    overflow: hidden;
+    left: 22.5px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ---------------- timepicker styles ----------------- */
+
 .ui-timepicker-wrapper {
 	overflow-y: auto;
 	height: 150px;
@@ -3789,7 +4123,6 @@ button#addBtn {
 	z-index: 10001;
 	margin: 0;
 }
-
 .ui-timepicker-wrapper.ui-timepicker-with-duration {
 	width: 13em;
 }
@@ -3848,6 +4181,8 @@ li.ui-timepicker-selected .ui-timepicker-duration,
 .ui-timepicker-list li.ui-timepicker-selected.ui-timepicker-disabled {
 	background: #f2f2f2;
 }
+
+/* ---------------- END timepicker styles ----------------- */
 
 /* CSS FADE IN */
 
@@ -4112,6 +4447,7 @@ li.ui-timepicker-selected .ui-timepicker-duration,
         font-size: 1em;
         line-height: 1.1em;
         margin-bottom: 1em;
+        margin-top: 0.5em;
     }
     .box-icons p {
         font-size: .87em;
@@ -4568,6 +4904,41 @@ li.ui-timepicker-selected .ui-timepicker-duration,
     .added-item-wrapper > .xIcon {
       margin-top: 5px;
     }
+    .event-photo {
+      height: 380px;
+    }
+    .related-events-content .product-img {
+      height: 150px;
+    }
+
+    .reviews-wrapper {
+      padding-right: 30px;
+    }
+    .event-share-subscribe-wrapper {
+      top: 400px;
+    }
+    .edit-pencil {
+        min-width: 34px;
+        width: 35px;
+        height: 32px;
+        line-height: 32px;
+    }
+    .edit-pencil img {
+        height: 18px;
+    }
+    .product-show .column-4.profile-event {
+        width: 190px;
+        margin: 0 20px 0 0;
+    }
+    .related-events-content .product-view-container {
+        width: 818.5px;
+        position: absolute;
+        height: 262px;
+        overflow: hidden;
+        left: 22.5px;
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
 
 }
 
@@ -4794,6 +5165,11 @@ li.ui-timepicker-selected .ui-timepicker-duration,
         margin: 0 12px 25px 12px;
         max-width: 506px;
     }
+    #eventsRow .column-2 {
+        width: 100%;
+        margin: 0 12px 25px 12px;
+        max-width: 506px;
+    }
     .column-3 {
         width: calc(100% - 45px)
     }
@@ -4842,7 +5218,7 @@ li.ui-timepicker-selected .ui-timepicker-duration,
     }
     .box-gallery .desc {
         display: block;
-        height: 70px;
+        height: 105px;
         width: 100%;
         position: relative;
         padding: 10px;
@@ -4853,9 +5229,9 @@ li.ui-timepicker-selected .ui-timepicker-duration,
         margin: 0;
         position: absolute;
         bottom: 15px;
-        left: 400px;
-        width: 90px;
-        min-width: 90px;
+        left: 395px;
+        width: 100px;
+        min-width: 100px;
     }
     .box-artist {
         padding: 20px;
@@ -5667,6 +6043,100 @@ li.ui-timepicker-selected .ui-timepicker-duration,
     .added-item-wrapper > .xIcon {
       margin-top: 6px;
     }
+    .event-details {
+      padding: 10px;
+    }
+    .exporter {
+      margin-top: 5px;
+      float: none;
+      font-size: 1em;
+    }
+    .event-photo {
+      height: 200px;
+    }
+    .related-events-content {
+      padding-top: 10px;
+      padding-bottom: 10px;
+    }
+    .related-events-content .column-2 {
+      width: 100%;
+      padding: 5px;
+    }
+    .related-events-content .column-2 .event-desc {
+      height: 60px;
+      max-height: 80px;
+      font-size: 0.8em;
+    }
+    .review-header-left {
+      max-width: 250px;
+    }
+    .events-follow-artists-h4 {
+      padding-top: 10px;
+      padding-bottom: 0;
+    }
+    .events-artists-wrapper {
+      margin-bottom: 20px;
+    }
+    .reviews-wrapper {
+      padding-top: 15px;
+      padding-right: 20px;
+    }
+    .related-events-wrapper {
+      margin-top: 15px;
+    }
+    .related-events-content .product-img {
+      height: 150px;
+    }
+    .events-works-wrapper {
+      margin-left: 12.5px;
+    }
+    .event-work-container {
+      width: calc(50% - 25px);
+    }
+    .event-share-subscribe-wrapper {
+      position:relative;
+      top: 0;
+      right: 0;
+      margin-top: 10px;
+      text-align: center;
+
+    }
+    .event-share-subscribe-wrapper .headerSoc-icon img {
+      height: 20px;
+      width: 20px;
+      vertical-align: bottom;
+    }
+    .event-share-subscribe-wrapper button {
+      float: none;
+      display: inline-block;
+    }
+    .event-share-subscribe-wrapper .dropdown {
+      float: none;
+      display: inline-block;
+    }
+    .event-share-subscribe-wrapper .dropdown .share-content {
+      left: -47px;
+    }
+    .event-share-subscribe-wrapper .dropdown .share-content.active {
+      top: 33px;
+    }
+
+    .event-share-subscribe-wrapper .dropdown .share-content.active {
+      visibility: visible;
+      opacity: 1;
+      z-index: 100;
+      top: 33px;
+    }
+    .edit-pencil {
+      height: 22px;
+    }
+    .edit-pencil img {
+        height: 12px;
+    }
+    .event-artist {
+      width: 100%;
+    }
+
 }
 
 
@@ -5901,6 +6371,10 @@ li.ui-timepicker-selected .ui-timepicker-duration,
         width: 100%;
         margin: 0 0 25px 0;
     }
+    #eventsRow .column-2 {
+      width: 100%;
+      margin: 0 0 25px 0;
+    }
     #DIIA_row .column-4 {
         margin: 0 12px 25px 12px;
     }
@@ -5960,7 +6434,7 @@ li.ui-timepicker-selected .ui-timepicker-duration,
     }
     .box-gallery .desc {
         display: block;
-        height: 70px;
+        height: 105px;
         width: 100%;
         position: relative;
         padding: 10px;
@@ -5971,9 +6445,9 @@ li.ui-timepicker-selected .ui-timepicker-duration,
         margin: 0;
         position: absolute;
         bottom: 15px;
-        left: 195px;
-        width: 90px;
-        min-width: 90px;
+        left: 190px;
+        width: 100px;
+        min-width: 100px;
     }
     .box-artist {
         padding: 20px;
@@ -6832,6 +7306,132 @@ li.ui-timepicker-selected .ui-timepicker-duration,
     }
     .profile-form.new-event-form .btn {
       margin: 10px 10px 20px 0;
+    }
+    .event-details {
+      padding: 10px;
+    }
+    .exporter {
+      margin-top: 5px;
+      float: none;
+      font-size: 1em;
+    }
+    .event-photo {
+      height: 170px;
+    }
+
+    .events-follow-artists-h4 {
+      padding-top: 20px;
+      padding-bottom: 0;
+    }
+    .events-artists-wrapper {
+      max-width: 300px;
+      margin-bottom: 40px;
+    }
+    .event-artist-split:first-of-type {
+      width: 50%;
+      float: left;
+      padding-left: 20px;
+    }
+    .event-artist-split:last-of-type {
+      padding-left: 40px;
+    }
+    .event-artist-split button {
+      position: relative;
+      float: left;
+      min-width: 80px;
+      width: 80px;
+    }
+    .event-reviews-related-events-split {
+      width: 100%;
+      float: left;
+    }
+    .reviews-wrapper {
+      padding-right: 0;
+      padding-top: 10px;
+    }
+    .reviews-wrapper h5 {
+      font-size: 1.5em;
+    }
+    .review-send-btn-wrapper {
+      height: 30px;
+    }
+    .review-container {
+      padding: 0 10px 5px 10px;
+    }
+    .related-events-wrapper {
+      margin-top: 10px;
+    }
+    .related-events-content {
+      padding-left: 0;
+      padding-right: 0;
+    }
+
+    .related-events-content .product-img {
+      height: 150px;
+    }
+    .related-events-content .column-2 {
+      width: 100%;
+      padding: 10px;
+    }
+    .related-events-content .column-2 .event-desc {
+      height: 60px;
+      max-height: 80px;
+      font-size: 0.8em;
+    }
+    .review-header-left {
+      max-width: 250px;
+    }
+    .event-work-container {
+      width: 100%;
+    }
+    .events-works-wrapper {
+      margin-left: 0;
+    }
+    .event-share-subscribe-wrapper {
+      position:relative;
+      top: 0;
+      right: 0;
+      margin-top: 10px;
+      text-align: center;
+
+    }
+    .event-share-subscribe-wrapper .headerSoc-icon img {
+      height: 20px;
+      width: 20px;
+      vertical-align: bottom;
+    }
+    .event-share-subscribe-wrapper button {
+      float: none;
+      display: inline-block;
+    }
+    .event-share-subscribe-wrapper .dropdown {
+      float: none;
+      display: inline-block;
+    }
+    .event-share-subscribe-wrapper .dropdown .share-content {
+      left: -46px;
+    }
+    .event-share-subscribe-wrapper .dropdown .share-content.active {
+      top: 33px;
+    }
+
+    .event-share-subscribe-wrapper .dropdown .share-content.active {
+      visibility: visible;
+      opacity: 1;
+      z-index: 100;
+      top: 33px;
+    }
+    .edit-pencil {
+      height: 22px;
+    }
+    .edit-pencil img {
+        height: 12px;
+    }
+    .event-artist {
+      width: 100%;
+    }
+    .related-events-content .product-view-container {
+      width: 255px;
     }
 
 }

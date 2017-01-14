@@ -17,6 +17,7 @@ $(document).ready(function() {
     scrollRecentViews();
     rightLeftArrows();
     createDatePickers();
+    masonryEventWorks();
 });
 
 /******* Run functions when document resize **********/
@@ -642,12 +643,12 @@ var resetRecentViews = function() {
 
 /************ returns move value for right and left button clicks ******************************/
 var getRecentViewMove = function() {
-  var a = $(".product-show > .column-4.box-product").outerWidth(true) + "px";
+  var a = $(".product-show > .column-4").outerWidth(true) + "px";
   return a;
 }
 /************ returns sliderLimit value for right and left button clicks ******************************/
 var getRecentViewSliderLimit = function() {
-  var b = -($(".product-show > .column-4.box-product").outerWidth(true) * getRecentViewsSliderCoeff());
+  var b = -($(".product-show > .column-4").outerWidth(true) * getRecentViewsSliderCoeff());
   return b;
 }
 
@@ -655,7 +656,7 @@ var scrollRecentViews = function() {
 
   var view = $(".product-view-container");
   var show = $(".product-show");
-  var productBox = $(".product-show > .column-4.box-product");
+  var productBox = $(".product-show > .column-4");
   var productBox_margin_right = parseInt(productBox.css("margin-right")) + 2;
   var productBox_margin_left = parseInt(productBox.css("margin-left"));
   show.css("width", (productBox.width() * 10) + (productBox_margin_right * 10) + (productBox_margin_left * 10) + "px");
@@ -686,7 +687,7 @@ var rightLeftArrows = function() {
   }
 };
 
-
+/************ date and time pickers for create new event ******************************/
 var createDatePickers = function() {
 
   if ($('#start-date').length) {
@@ -701,8 +702,15 @@ var createDatePickers = function() {
   if ($('#end-time').length) {
     $( "#end-time" ).timepicker({ 'timeFormat': 'h:i A' });
   }
+};
 
-
-
-
+var masonryEventWorks = function() {
+  if ($('.events-works-wrapper').length) {
+    $('.events-works-wrapper').masonry({
+      // options
+      itemSelector: '.event-work-container',
+      columnWidth: '.event-work-container',
+      gutter: 25
+    });
+  }
 };
