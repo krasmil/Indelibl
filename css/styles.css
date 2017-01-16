@@ -3306,7 +3306,7 @@ ripple.ripple::after {
     padding: 10px;
     background: transparent;
     color: #313b46;
-    font-size: 0.9em;
+    font-size: 0.82em;
 }
 
 .event-desc p {
@@ -3810,8 +3810,9 @@ button#addBtn {
 .event-tdl ul li img {
   height: 18px;
   width: auto;
+  margin-right: 5px;
 }
-.event-tdl ul li button img {
+.event-tdl ul li a img {
   height: 12px;
   width: auto;
   margin-right: 5px;
@@ -3841,8 +3842,8 @@ button#addBtn {
 }
 .event-artist {
   position: relative;
-  margin-top: 30px;
-  margin-bottom: 30px;
+  margin-top: 15px;
+  margin-bottom: 15px;
   float: left;
   height: 35px;
   width: 50%;
@@ -3880,10 +3881,10 @@ button#addBtn {
   padding-top: 30px;
   padding-right: 40px;
   margin-bottom: 30px;
-  height: 400px;
+  height: 480px;
   overflow-y: scroll;
 }
-.reviews-wrapper textarea {
+.reviews-wrapper-outer textarea {
     margin-top: 10px;
     width: 100%;
     margin-bottom: 10px;
@@ -3916,22 +3917,40 @@ button#addBtn {
   text-align: right;
   font-size: 0.82em;
 }
+
 .review-rating-send {
-  font-size: 1.5em;
-  unicode-bidi: bidi-override;
-  direction: rtl;
+  border: none;
+  float: left;
 }
-.review-rating-send > span {
+
+.review-rating-send > input { display: none; }
+.review-rating-send > label:before {
+  margin: 5px;
+  font-size: 1.25em;
+  font-family: FontAwesome;
   display: inline-block;
-  position: relative;
-  color: #acacac;
+  content: "\2605";
 }
-.review-rating-send > span:hover:before,
-.review-rating-send > span:hover ~ span:before {
-   content: "\2605";
-   position: absolute;
-   color: #ffc200;
+
+.review-rating-send > label {
+  color: #ddd;
+ float: right;
+ font-size: 1.4em;
 }
+
+/***** CSS Magic to Highlight Stars on Hover *****/
+
+.review-rating-send > input:checked ~ label, /* show gold star when clicked */
+.review-rating-send:not(:checked) > label:hover, /* hover current star */
+.review-rating-send:not(:checked) > label:hover ~ label { color: #FFD700;  } /* hover previous stars in list */
+
+.review-rating-send > input:checked + label:hover, /* hover current star when changing rating */
+.review-rating-send > input:checked ~ label:hover,
+.review-rating-send > label:hover ~ input:checked ~ label, /* lighten current selection */
+.review-rating-send > input:checked ~ label:hover ~ label { color: #FFED85;  }
+
+
+
 .review-rating {
   font-size: 1.3em;
   color: #acacac;
@@ -4076,20 +4095,48 @@ button#addBtn {
   margin-top: 40px;
 }
 .product-show .column-4.profile-event {
-    width: 290px;
+    width: 274px;
     margin: 0 20px 0 0;
 }
 .related-events-content .product-view-container {
-    width: 818.5px;
+    width: 1155px;
     position: absolute;
-    height: 262px;
+    height: 350px;
     overflow: hidden;
-    left: 22.5px;
+    left: 42.5px;
     padding-top: 20px;
     padding-bottom: 20px;
 }
-
-
+.host-link {
+  font-size: 0.8em;
+  margin-bottom: 10px;
+}
+.host-link a {
+  font-style: italic;
+  color: #e74c3c;
+}
+.left-arrow-related-events {
+  width: 40px;
+  height: 260px;
+  background: url("../images/icons/left-arrow.png");
+  background-position: center;
+  background-size: 40px auto;
+  background-repeat: no-repeat;
+  position: absolute;
+  left: 0;
+  cursor: pointer;
+}
+.right-arrow-related-events {
+  width: 40px;
+  height: 260px;
+  background: url("../images/icons/right-arrow.png");
+  background-position: center;
+  background-size: 40px auto;
+  position: absolute;
+  background-repeat: no-repeat;
+  right: 0;
+  cursor: pointer;
+}
 
 
 
@@ -4913,6 +4960,7 @@ li.ui-timepicker-selected .ui-timepicker-duration,
 
     .reviews-wrapper {
       padding-right: 30px;
+      height: 400px;
     }
     .event-share-subscribe-wrapper {
       top: 400px;
@@ -4927,17 +4975,39 @@ li.ui-timepicker-selected .ui-timepicker-duration,
         height: 18px;
     }
     .product-show .column-4.profile-event {
-        width: 190px;
+        width: 180px;
         margin: 0 20px 0 0;
     }
     .related-events-content .product-view-container {
-        width: 818.5px;
+        width: 778.5px;
         position: absolute;
-        height: 262px;
+        height: 280px;
         overflow: hidden;
-        left: 22.5px;
+        left: 42.5px;
         padding-top: 20px;
         padding-bottom: 20px;
+    }
+    .left-arrow-related-events {
+      width: 40px;
+      height: 190px;
+      background: url("../images/icons/left-arrow.png");
+      background-position: center;
+      background-size: 40px auto;
+      background-repeat: no-repeat;
+      position: absolute;
+      left: 0;
+      cursor: pointer;
+    }
+    .right-arrow-related-events {
+      width: 40px;
+      height: 190px;
+      background: url("../images/icons/right-arrow.png");
+      background-position: center;
+      background-size: 40px auto;
+      position: absolute;
+      background-repeat: no-repeat;
+      right: 0;
+      cursor: pointer;
     }
 
 }
@@ -6080,6 +6150,7 @@ li.ui-timepicker-selected .ui-timepicker-duration,
     .reviews-wrapper {
       padding-top: 15px;
       padding-right: 20px;
+      height: 400px;
     }
     .related-events-wrapper {
       margin-top: 15px;
@@ -6135,6 +6206,30 @@ li.ui-timepicker-selected .ui-timepicker-duration,
     }
     .event-artist {
       width: 100%;
+    }
+    .related-events-content .product-view-container {
+      width: 428.5px;
+      left: 40px;
+      padding-top: 5px;
+      height: 250px;
+    }
+    .product-show .column-4.profile-event {
+      width: 205px;
+      margin: 0 20px 0 0;
+    }
+    .related-events-content .recent-views {
+      height: 200px;
+    }
+    .event-tdl ul li img {
+      height: 14px;
+      width: auto;
+      margin-right: 5px;
+    }
+    .left-arrow-related-events {
+      height: 160px;
+    }
+    .right-arrow-related-events {
+      height: 160px;
     }
 
 }
@@ -7330,10 +7425,10 @@ li.ui-timepicker-selected .ui-timepicker-duration,
     .event-artist-split:first-of-type {
       width: 50%;
       float: left;
-      padding-left: 20px;
+      padding-left: 10px;
     }
     .event-artist-split:last-of-type {
-      padding-left: 40px;
+      padding-left: 30px;
     }
     .event-artist-split button {
       position: relative;
@@ -7348,6 +7443,7 @@ li.ui-timepicker-selected .ui-timepicker-duration,
     .reviews-wrapper {
       padding-right: 0;
       padding-top: 10px;
+      height: 400px;
     }
     .reviews-wrapper h5 {
       font-size: 1.5em;
@@ -7431,7 +7527,27 @@ li.ui-timepicker-selected .ui-timepicker-duration,
       width: 100%;
     }
     .related-events-content .product-view-container {
-      width: 255px;
+      width: 192.5px;
+      left: 42.5px;
+      padding-top: 5px;
+      height: 250px;
+    }
+    .product-show .column-4.profile-event {
+      width: 192.5px;
+      margin: 0 20px 0 0;
+    }
+    .related-events-content .recent-views {
+      height: 250px;
+    }
+    .event-tdl ul li img {
+      height: 14px;
+      width: auto;
+    }
+    .left-arrow-related-events {
+      height: 160px;
+    }
+    .right-arrow-related-events {
+      height: 160px;
     }
 
 }
