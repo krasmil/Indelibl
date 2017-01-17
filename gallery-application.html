@@ -47,7 +47,7 @@
 						</h2>
 						<!-- organisation name -->
 						<div class="form-row appForm_row1">
-							<div class="form-item form-item_full">
+							<div class="form-item form-item_half">
 								<div class="form-item form-item_full">
 									<label for="orgName" class="form-label">
 										Name of Organisation *
@@ -60,7 +60,23 @@
 									</div>
 								</div>
 							</div>
-						</div>
+							<div class="form-item form-item_half">
+								<div class="form-item form-item_full">
+									<label for="profile_type" class="form-label">
+										Select
+									</label>
+								</div>
+								<div class="form-item form-item_full">
+									<select id="profile_type" name="profile_type" class="form-input">
+										<option value="Select Type" selected="true" disabled="disabled">Select Type</option>
+										<option value="Gallery">Gallery</option>
+										<option value="Publisher">Publisher</option>
+									</select>
+									<div class="errorMsg">
+										<div class="errorIcon"></div>Please fill this field appropriately
+									</div>
+								</div>
+							</div>
 					</div>
 				</div>
 				<div class="row">
@@ -152,7 +168,7 @@
 								</div>
 							</div>
 
-					
+
 
 							<!-- address -->
 							<div class="form-row">
