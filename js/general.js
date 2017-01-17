@@ -763,6 +763,7 @@ function getMobileOperatingSystem() {
 var calcRelatedEventsSliderWidth = function() {
   if ($('.related-events-over-four').length) {
     if ($(window).width() <= 509) {
+      console.log("mobile portrait!");
       if (getMobileOperatingSystem() == "Android" || getMobileOperatingSystem() == "Windows Phone") {
         $('.product-show .column-4.profile-event').css('width', '198px');
         $('.related-events-over-four .product-view-container').css('width', '218px');
@@ -771,11 +772,26 @@ var calcRelatedEventsSliderWidth = function() {
         $('.product-show .column-4.profile-event').css('width', '178px');
         $('.related-events-over-four .product-view-container').css('width', '198px');
       }
-    }
-    else if ($(window).width() >= 509 && $(window).width() < 1000) {
+      else {
+        $('.product-show .column-4.profile-event').css('width', '198px');
+        $('.related-events-over-four .product-view-container').css('width', '218px');
+      }
+    }else if ($(window).width() >= 509 && $(window).width() < 1000) {
+      console.log("mobile landscape!");
       $('.product-show .column-4.profile-event').css('width', '205px');
       $('.related-events-over-four .product-view-container').css('width', '428.5px');
     }
+    else if ($(window).width() >= 1000 && $(window).width() <= 1600) {
+      console.log("laptop!");
+      $('.product-show .column-4.profile-event').css('width', '180px');
+      $('.related-events-over-four .product-view-container').css('width', '778.5px');
+    }
+    else if ($(window).width() > 1600) {
+      console.log("bigg'n!");
+      $('.product-show .column-4.profile-event').css('width', '274px');
+      $('.related-events-over-four .product-view-container').css('width', '1155px');
+    }
+
   }
 };
 /************ calc width of related events wrapper if there are 4 or less related events ******************************/
