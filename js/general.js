@@ -46,6 +46,10 @@ $(window).resize(function() {
   if ($('.related-events-max-four').length) {
     calcRelatedEventsWidth();
   }
+  if ($('.related-events-over-four').length) {
+    calcRelatedEventsSliderWidth();
+  }
+
 });
 /******* Run functions when document orientation changed (handheld devices) **********/
 $(window).on("orientationchange",function(){
@@ -55,6 +59,13 @@ $(window).on("orientationchange",function(){
     resetRecentViews();
     scrollRecentViews();
   }, 500);
+  if ($('.related-events-max-four').length) {
+    calcRelatedEventsWidth();
+  }
+  if ($('.related-events-over-four').length) {
+    calcRelatedEventsSliderWidth();
+  }
+
 });
 
 var checkDeviceForAddProducts = function() {
@@ -712,7 +723,7 @@ var createDatePickers = function() {
     $( "#end-time" ).timepicker({ 'timeFormat': 'h:i A' });
   }
 };
-
+/************ set up masonry layout for artworks featured in event ******************************/
 var masonryEventWorks = function() {
   if ($('.events-works-wrapper').length) {
     $('.events-works-wrapper').masonry({
@@ -724,15 +735,50 @@ var masonryEventWorks = function() {
   }
 };
 
+/**
+ * Determine the mobile operating system.
+ * This function returns one of 'iOS', 'Android', 'Windows Phone', or 'unknown'.
+ *
+ * @returns {String}
+ */
+function getMobileOperatingSystem() {
+  var userAgent = navigator.userAgent || navigator.vendor || window.opera;
 
+      // Windows Phone must come first because its UA also contains "Android"
+    if (/windows phone/i.test(userAgent)) {
+        return "Windows Phone";
+    }
+
+    if (/android/i.test(userAgent)) {
+        return "Android";
+    }
+
+    if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+        return "iOS";
+    }
+
+    return "unknown";
+}
+/************ calc width of related event slider for mobile portrait view ******************************/
 var calcRelatedEventsSliderWidth = function() {
   if ($('.related-events-over-four').length) {
-      if ($(window).width() < 1000) {
-        $('.related-events-over-four .product-view-container').css('width') = $('.related-events-over-four .product-view-container .product-show .column-4.profile-event').outerWidth(true);
+    if ($(window).width() <= 509) {
+      if (getMobileOperatingSystem() == "Android" || getMobileOperatingSystem() == "Windows Phone") {
+        $('.product-show .column-4.profile-event').css('width', '198px');
+        $('.related-events-over-four .product-view-container').css('width', '218px');
       }
+      else if (getMobileOperatingSystem() == "iOS") {
+        $('.product-show .column-4.profile-event').css('width', '178px');
+        $('.related-events-over-four .product-view-container').css('width', '198px');
+      }
+    }
+    else if ($(window).width() >= 509 && $(window).width() < 1000) {
+      $('.product-show .column-4.profile-event').css('width', '205px');
+      $('.related-events-over-four .product-view-container').css('width', '428.5px');
+    }
   }
 };
-
+/************ calc width of related events wrapper if there are 4 or less related events ******************************/
 var calcRelatedEventsWidth = function() {
     if ($('.related-events-max-four').length) {
         if ($(window).width() >= 1000) {
