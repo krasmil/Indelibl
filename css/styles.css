@@ -4137,6 +4137,65 @@ button#addBtn {
   right: 0;
   cursor: pointer;
 }
+.related-events-max-four {
+  display: block;
+  overflow: hidden;
+  padding-top: 50px;
+  text-align: center;
+  width: auto;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 30px;
+}
+.related-events-max-four .column-4.profile-event {
+  width: 274px;
+  margin: 0 0 45px 45px;
+}
+.related-events-max-four .column-4.profile-event:nth-of-type(1) {
+  margin: 0 0 30px 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -5008,6 +5067,9 @@ li.ui-timepicker-selected .ui-timepicker-duration,
       background-repeat: no-repeat;
       right: 0;
       cursor: pointer;
+    }
+    .related-events-max-four .column-4.profile-event {
+      width: 180px;
     }
 
 }
@@ -6231,6 +6293,15 @@ li.ui-timepicker-selected .ui-timepicker-duration,
     .right-arrow-related-events {
       height: 160px;
     }
+    .related-events-max-four .column-4.profile-event {
+      margin: 0 12px 25px 12px;
+      float: left;
+      width: calc(50% - 25px);
+    }
+    .related-events-max-four .column-4.profile-event:nth-of-type(1) {
+      margin: 0 12px 25px 12px;
+      float: left;
+    }
 
 }
 
@@ -7404,6 +7475,7 @@ li.ui-timepicker-selected .ui-timepicker-duration,
     }
     .event-details {
       padding: 10px;
+      margin-top: 10px;
     }
     .exporter {
       margin-top: 5px;
@@ -7527,14 +7599,14 @@ li.ui-timepicker-selected .ui-timepicker-duration,
       width: 100%;
     }
     .related-events-content .product-view-container {
-      width: 192.5px;
-      left: 42.5px;
+      width: 208px;
+      left: 40px;
       padding-top: 5px;
       height: 250px;
     }
     .product-show .column-4.profile-event {
-      width: 192.5px;
-      margin: 0 20px 0 0;
+      width: 198px;
+      margin: 0 10px 0 10px;
     }
     .related-events-content .recent-views {
       height: 250px;
@@ -7549,6 +7621,32 @@ li.ui-timepicker-selected .ui-timepicker-duration,
     .right-arrow-related-events {
       height: 160px;
     }
+    .event-artist-split span {
+      max-width: 160px;
+    }
+    .event-artist-split button {
+      padding: 0 15px;
+    }
+    .related-events-max-four {
+      padding-top: 30px;
+      width: 100%;
+    }
+    .related-events-max-four .column-4.profile-event {
+      width: 200px;
+      float: none;
+      margin-bottom: 30px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .related-events-max-four .column-4.profile-event:nth-of-type(1) {
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 30px;
+    }
+    .related-events-max-four .column-4.profile-event:last-of-type {
+      margin-bottom: 10px;
+    }
+
 
 }
 

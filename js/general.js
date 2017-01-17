@@ -22,6 +22,8 @@ $(document).ready(function() {
     scrollRecentViews();
     rightLeftArrows();
     createDatePickers();
+    calcRelatedEventsWidth();
+    calcRelatedEventsSliderWidth();
 });
 
 /******* Run functions when document resize **********/
@@ -41,6 +43,9 @@ $(window).resize(function() {
     resetRecentViews();
     scrollRecentViews();
   }, 500);
+  if ($('.related-events-max-four').length) {
+    calcRelatedEventsWidth();
+  }
 });
 /******* Run functions when document orientation changed (handheld devices) **********/
 $(window).on("orientationchange",function(){
@@ -717,4 +722,29 @@ var masonryEventWorks = function() {
       gutter: 25
     });
   }
+};
+
+
+var calcRelatedEventsSliderWidth = function() {
+  if ($('.related-events-over-four').length) {
+      if ($(window).width() < 1000) {
+        $('.related-events-over-four .product-view-container').css('width') = $('.related-events-over-four .product-view-container .product-show .column-4.profile-event').outerWidth(true);
+      }
+  }
+};
+
+var calcRelatedEventsWidth = function() {
+    if ($('.related-events-max-four').length) {
+        if ($(window).width() >= 1000) {
+            var relatedEventsWidth = 0;
+
+            $('.related-events-max-four .column-4.profile-event').each(function(index) {
+                relatedEventsWidth = relatedEventsWidth + $(this).outerWidth(true);
+            });
+            $('.related-events-max-four').css("width", relatedEventsWidth);
+        }
+        else {
+          $('.related-events-max-four').css("width", "100%");
+        }
+    }
 };
