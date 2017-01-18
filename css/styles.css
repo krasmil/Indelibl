@@ -624,7 +624,7 @@ h6 a:hover {
 
 .main-container {
     overflow-x: hidden;
-    height: 100vh
+    height: 100vh;
 }
 
 .main-container.grey {
@@ -3324,7 +3324,7 @@ ripple.ripple::after {
 }
 
 .profile-event .product-img img {
-    height: 120%;
+    height: 100%;
     width: auto;
 }
 
@@ -3684,6 +3684,7 @@ button#addBtn {
 }
 .events-wrapper {
   padding: 30px;
+  position: relative;
 }
 .events-wrapper > .row {
   margin-left: 0;
@@ -4154,17 +4155,74 @@ button#addBtn {
 .related-events-max-four .column-4.profile-event:nth-of-type(1) {
   margin: 0 0 30px 0;
 }
+.view-events-header {
+  text-align: left;
+}
+.view-events-header h2 {
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+.view-current-events {
+  overflow:hidden;
+  position: relative;
+  margin-bottom: 30px;
+}
+.view-current-events-scroll {
+  overflow-y: scroll;
+  position: absolute;
+  left:0;
+  margin-left: 0;
+  padding-top: 20px;
 
+}
+.view-current-events .column-4.profile-event {
+  height: 310px;
+  max-height: 350px;
+  margin-bottom: 20px;
+  width: calc(25% - 34.75px);
+}
+.view-current-events .column-4.profile-event:nth-of-type(4n+1) {
+  margin: 0 0 20px 0px;
+  float: left;
+}
+.down-arrow {
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  width: 100%;
+  height: 30px;
+  background: url("../images/icons/down-arrow.png");
+  background-position: center;
+  background-size: auto 40px;
+  background-repeat: no-repeat;
+  opacity:0;
+  -moz-transition: opacity 0.4s ease;
+  -webkit-transition: opacity 0.4s ease;
+  transition: opacity 0.4s ease;
+}
 
+.down-arrow.active {
+  opacity: 1;
+  animation: bounce 1s infinite alternate;
+  -webkit-animation: bounce 1s infinite alternate;
+}
 
-
-
-
-
-
-
-
-
+@keyframes bounce {
+  from {
+    transform: translateY(0px);
+  }
+  to {
+    transform: translateY(-10px);
+  }
+}
+@-webkit-keyframes bounce {
+  from {
+    transform: translateY(0px);
+  }
+  to {
+    transform: translateY(-10px);
+  }
+}
 
 
 
@@ -5071,6 +5129,13 @@ li.ui-timepicker-selected .ui-timepicker-duration,
     .related-events-max-four .column-4.profile-event {
       width: 180px;
     }
+    .view-current-events .column-4.profile-event {
+      height: 250px;
+      max-height: 300px;
+      margin-bottom: 20px;
+      width: calc(25% - 15.5px);
+    }
+
 
 }
 
@@ -6299,6 +6364,17 @@ li.ui-timepicker-selected .ui-timepicker-duration,
       width: calc(50% - 25px);
     }
     .related-events-max-four .column-4.profile-event:nth-of-type(1) {
+      margin: 0 12px 25px 12px;
+      float: left;
+    }
+    .view-current-events .column-4.profile-event {
+      height: 290px;
+      max-height: 320px;
+      margin-bottom: 20px;
+      width: 235px;
+      margin: 0 12px 25px 12px;
+    }
+    .view-current-events .column-4.profile-event:nth-of-type(4n+1) {
       margin: 0 12px 25px 12px;
       float: left;
     }
@@ -7644,7 +7720,22 @@ li.ui-timepicker-selected .ui-timepicker-duration,
     .related-events-max-four .column-4.profile-event:last-of-type {
       margin-bottom: 10px;
     }
+    .view-current-events .column-4.profile-event {
+      height: 290px;
+      max-height: 320px;
+      margin-bottom: 20px;
+      width: 100%;
+    }
 
+    .view-current-events {
+      overflow:hidden;
+      position: relative;
+    }
+    .view-current-events-scroll {
+      overflow-y: scroll;
+      position: relative;
+      left:0;
+    }
 
 }
 
@@ -7656,6 +7747,7 @@ li.ui-timepicker-selected .ui-timepicker-duration,
         width: 300px;
         margin-left: auto;
         margin-right: auto;
+
     }
     #forgotPass_row .form-input {
         width: 95%;

@@ -24,6 +24,7 @@ $(document).ready(function() {
     createDatePickers();
     calcRelatedEventsWidth();
     calcRelatedEventsSliderWidth();
+    calcViewEventsHeight();
 });
 
 /******* Run functions when document resize **********/
@@ -49,6 +50,7 @@ $(window).resize(function() {
   if ($('.related-events-over-four').length) {
     calcRelatedEventsSliderWidth();
   }
+  calcViewEventsHeight();
 
 });
 /******* Run functions when document orientation changed (handheld devices) **********/
@@ -65,7 +67,7 @@ $(window).on("orientationchange",function(){
   if ($('.related-events-over-four').length) {
     calcRelatedEventsSliderWidth();
   }
-
+  calcViewEventsHeight();
 });
 
 var checkDeviceForAddProducts = function() {
@@ -809,4 +811,57 @@ var calcRelatedEventsWidth = function() {
           $('.related-events-max-four').css("width", "100%");
         }
     }
+};
+
+var calcViewEventsHeight = function() {
+  if ($('.view-current-events').length) {
+
+    var numEvents = $('.profile-event').length;
+    var eventHeight = $('.profile-event').outerHeight(true);
+    var eventsWidth = $('.view-current-events').outerWidth(true);
+
+    if ($(window).width() >= 1000) {
+      $('.view-current-events-scroll').css("width", eventsWidth + 18);
+    }
+    else {
+      $('.view-current-events-scroll').css("width", eventsWidth + 18);
+    }
+
+    if (numEvents <= 4) {
+      $('.view-current-events').css("height", eventHeight);
+      $('.view-current-events-scroll').css("height", eventHeight);
+    }
+    else if (numEvents > 4 && numEvents <= 8) {
+      $('.view-current-events').css("height", eventHeight*2);
+      $('.view-current-events-scroll').css("height", eventHeight*2);
+    }
+    else if (numEvents >= 9) {
+      $('.view-current-events').css("height", eventHeight*3);
+      $('.view-current-events-scroll').css("height", eventHeight*3);
+
+    }
+    if (numEvents > 12) {
+      bounceDownArrow();
+    }
+
+  }
+
+}
+
+var bounceDownArrow = function() {
+  if ($('.down-arrow').length) {
+    $('.view-current-events').hover(
+      function() {
+        $('.down-arrow').addClass( "active" );
+      }, function() {
+        $('.down-arrow').removeClass( "active" );
+      }
+    );
+    if ($(window).width() < 1000) {
+        $('.down-arrow').addClass( "active" );
+    }
+    else {
+      $('.down-arrow').removeClass( "active" );
+    }
+  }
 };
