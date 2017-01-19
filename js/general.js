@@ -25,6 +25,7 @@ $(document).ready(function() {
     calcRelatedEventsWidth();
     calcRelatedEventsSliderWidth();
     calcViewEventsHeight();
+    calcViewFollowsHeight();
 });
 
 /******* Run functions when document resize **********/
@@ -51,7 +52,7 @@ $(window).resize(function() {
     calcRelatedEventsSliderWidth();
   }
   calcViewEventsHeight();
-
+  calcViewFollowsHeight();
 });
 /******* Run functions when document orientation changed (handheld devices) **********/
 $(window).on("orientationchange",function(){
@@ -68,6 +69,7 @@ $(window).on("orientationchange",function(){
     calcRelatedEventsSliderWidth();
   }
   calcViewEventsHeight();
+  calcViewFollowsHeight();
 });
 
 var checkDeviceForAddProducts = function() {
@@ -812,7 +814,7 @@ var calcRelatedEventsWidth = function() {
         }
     }
 };
-
+/************ calculate height of events wrapper ******************************/
 var calcViewEventsHeight = function() {
   if ($('.view-current-events').length) {
 
@@ -820,12 +822,9 @@ var calcViewEventsHeight = function() {
     var eventHeight = $('.profile-event').outerHeight(true);
     var eventsWidth = $('.view-current-events').outerWidth(true);
 
-    if ($(window).width() >= 1000) {
+
       $('.view-current-events-scroll').css("width", eventsWidth + 18);
-    }
-    else {
-      $('.view-current-events-scroll').css("width", eventsWidth + 18);
-    }
+
 
     if (numEvents <= 4) {
       $('.view-current-events').css("height", eventHeight);
@@ -846,11 +845,62 @@ var calcViewEventsHeight = function() {
 
   }
 
-}
+};
 
+/************ calc height of followings wrapper ******************************/
+var calcViewFollowsHeight = function() {
+  if ($('.view-follows').length) {
+
+    var numFollows = $('.follow-item-col').length;
+    var followsHeight = $('.follow-item-col').outerHeight(true);
+    var followsWidth = $('.view-follows').outerWidth(true);
+    $('.view-follows-scroll').css("width", followsWidth + 18);
+
+
+    if (numFollows <= 5) {
+      $('.view-follows').css("height", followsHeight);
+      $('.view-follows-scroll').css("height", followsHeight);
+    }
+    else if (numFollows > 5 && numFollows <= 10) {
+      $('.view-follows').css("height", followsHeight*2);
+      $('.view-follows-scroll').css("height", followsHeight*2);
+    }
+    else if (numFollows > 10 && numFollows <= 15) {
+      $('.view-follows').css("height", followsHeight*3);
+      $('.view-follows-scroll').css("height", followsHeight*3);
+    }
+    else if (numFollows > 15 && numFollows <= 20) {
+      $('.view-follows').css("height", followsHeight*4);
+      $('.view-follows-scroll').css("height", followsHeight*4);
+    }
+    else if (numFollows >= 21) {
+      $('.view-follows').css("height", followsHeight*4);
+      $('.view-follows-scroll').css("height", followsHeight*4);
+      bounceDownArrow();
+    }
+    // bounce arrow for mobile view
+    if (numFollows > 5 && $(window).width() < 1000 && $(window).width() > 509) {
+      bounceDownArrow();
+    }
+    else if (numFollows > 4 && $(window).width() < 509) {
+      bounceDownArrow();
+    }
+
+  }
+
+};
+
+/************ bounce downwards arrow to indicate scrolling possible ******************************/
 var bounceDownArrow = function() {
   if ($('.down-arrow').length) {
     $('.view-current-events').hover(
+      function() {
+        $('.down-arrow').addClass( "active" );
+      }, function() {
+        $('.down-arrow').removeClass( "active" );
+      }
+    );
+    $('.follows-wrapper').hover(
       function() {
         $('.down-arrow').addClass( "active" );
       }, function() {

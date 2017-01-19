@@ -3491,6 +3491,7 @@ button#addBtn {
 
 #gall_artists {
     margin-top: 30px;
+    margin-left: 0;
 }
 
 .large-margin-bottom-y {
@@ -4187,7 +4188,7 @@ button#addBtn {
 }
 .down-arrow {
   position: absolute;
-  bottom: 10px;
+  bottom: 5px;
   left: 0;
   width: 100%;
   height: 30px;
@@ -4223,15 +4224,78 @@ button#addBtn {
     transform: translateY(-10px);
   }
 }
+.follows-wrapper {
+  padding: 30px;
+  position: relative;
+}
+.follows-wrapper > .row {
+  margin-left: 0;
+}
+.view-follows-scroll{
+  margin-left: 0;
+}
+.follow-item-col {
+    width: calc(20% - 20px);
+    float: left;
+    margin-right: 10px;
+    margin-left: 10px;
+    margin-bottom: 30px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
 
+.follow-item-col .artist-img {
+    display: block;
+    margin: auto;
+    background-color: #e0e0dc;
+    height: 115px;
+    width: 115px;
+    border-radius: 100%;
+    overflow: hidden;
+    -moz-transition: all 0.4s ease;
+    -webkit-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+    margin-bottom: 10px;
+}
+.follow-item-col h4, .follow-item-col h5 {
+    line-height: 25px;
+    margin: 0;
+    font-size: 1em;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.follow-item-col h5 {
+    color: #e74c3c;
+    font-style: italic;
+}
+.view-follows {
+  overflow:hidden;
+  position: relative;
+  margin-bottom: 40px;
+}
+.view-follows-scroll {
+  overflow-y: scroll;
+  position: absolute;
+  left:0;
+  margin-left: 0;
+  padding-top: 20px;
+}
+.filter_follows {
+  display: block;
+  margin-top: 10px;
+  margin-bottom: 30px;
+  text-align: left;
+}
+.filter_follows .form-label {
+  display: block;
+  margin-bottom: 10px;
+}
 
-
-
-
-
-
-
-
+.filter_follows .form-input {
+  display: block;
+  width: 250px;
+}
 
 
 
@@ -6378,6 +6442,23 @@ li.ui-timepicker-selected .ui-timepicker-duration,
       margin: 0 12px 25px 12px;
       float: left;
     }
+    .follow-item-col {
+        width: calc(33% - 20px);
+        margin-left: 10px;
+        padding-left: 0;
+        padding-right: 0;
+        margin-right: 10px;
+    }
+    .follow-item-col .artist-img {
+      height: 105px;
+      width: 105px;
+    }
+    .follows-wrapper > .row {
+      margin-left: -3px;
+    }
+    .view-follows {
+      margin-bottom: 40px;
+    }
 
 }
 
@@ -7730,12 +7811,31 @@ li.ui-timepicker-selected .ui-timepicker-duration,
     .view-current-events {
       overflow:hidden;
       position: relative;
+      margin-bottom: 50px;
     }
     .view-current-events-scroll {
       overflow-y: scroll;
       position: relative;
       left:0;
     }
+    .follows-wrapper {
+      padding: 10px;
+    }
+    .follow-item-col {
+        width: calc(50% - 20px);
+        margin-left: 0;
+        padding-left: 0;
+        padding-right: 0;
+        margin-right: 20px;
+    }
+    .follow-item-col .artist-img {
+      height: 105px;
+      width: 105px;
+    }
+    .view-follows {
+      margin-bottom: 50px;
+    }
+
 
 }
 
