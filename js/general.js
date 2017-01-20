@@ -893,7 +893,7 @@ var calcViewFollowsHeight = function() {
 /************ bounce downwards arrow to indicate scrolling possible ******************************/
 var bounceDownArrow = function() {
   if ($('.down-arrow').length) {
-    $('.view-current-events').hover(
+    $('.events-wrapper').hover(
       function() {
         $('.down-arrow').addClass( "active" );
       }, function() {

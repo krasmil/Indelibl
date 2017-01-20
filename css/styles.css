@@ -4296,13 +4296,62 @@ button#addBtn {
   display: block;
   width: 250px;
 }
+.public-below-slider {
+  margin-top: -10px;
+}
+.public-below-slider .form-row {
+  width: 100%;
+  overflow: hidden;
+  text-align: left;
+}
 
-
-
-
-
-
-
+.public-below-slider .form-row .form-input {
+  width: 100%;
+}
+.public-below-slider .form-row .form-item_half:last-of-type {
+  padding-right: 0;
+  padding-left: 15px;
+}
+.public-below-slider .form-row .form-item_half:first-of-type {
+  padding-right: 15px;
+  padding-left: 0;
+}
+.event-slider-caption {
+  padding: 20px;
+  background-color:rgba(210, 204, 197, 0.9);
+  position: absolute;
+  bottom: 70px;
+  left: 50%;
+  width: 400px;
+  -webkit-transform: translate(-50%, 0);
+  -moz-transform: translate(-50%, 0);
+  transform: translate(-50%, 0);
+  text-align: left;
+  color: #2d2d2d;
+}
+.event-slider-caption h4 {
+  display: block;
+  margin-bottom: 5px;
+  width: 350px;
+  white-space: nowrap;
+  overflow: hidden;
+  max-width: 350px;
+  text-overflow: ellipsis;
+  line-height: 1.4em;
+}
+.event-slider-caption span {
+  display: block;
+  margin-bottom: 5px;
+  width: 350px;
+  max-width: 350px;
+  white-space: normal;
+}
+span.event-name-slider {
+  text-transform: uppercase;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
 
 
 
@@ -6459,6 +6508,41 @@ li.ui-timepicker-selected .ui-timepicker-duration,
     .view-follows {
       margin-bottom: 40px;
     }
+    .public-below-slider .form-row .form-item_half:last-of-type {
+      padding-right: 10px;
+      padding-left: 10px;
+    }
+    .public-below-slider .form-row .form-item_half:first-of-type {
+      padding-right: 10px;
+      padding-left: 10px;
+      margin-bottom: 10px;
+    }
+    .event-slider-caption {
+      bottom: 20px;
+      width: 300px;
+      padding: 10px;
+    }
+    .event-slider-caption h4 {
+      width: 250px;
+      max-width: 250px;
+      line-height: 1.2em;
+      font-size: 1.2em;
+    }
+    .event-slider-caption span {
+      width: 250px;
+      max-width: 250px;
+      font-size: 0.9em;
+    }
+    .event-name-slider {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    span.event-name-slider {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
 
 }
 
@@ -7835,7 +7919,41 @@ li.ui-timepicker-selected .ui-timepicker-duration,
     .view-follows {
       margin-bottom: 50px;
     }
+    .public-below-slider .form-row .form-item_half:last-of-type {
+      padding-right: 10px;
+      padding-left: 10px;
+    }
+    .public-below-slider .form-row .form-item_half:first-of-type {
+      padding-right: 10px;
+      padding-left: 10px;
+      margin-bottom: 10px;
+    }
+    .event-slider-caption {
+      bottom: 30px;
+      width: 220px;
+      padding: 10px;
+    }
+    .event-slider-caption h4 {
+      width: 190px;
+      max-width: 190px;
+      line-height: 1.2em;
+      font-size: 1.1em;
+      margin-bottom: 2px;
+    }
+    .event-slider-caption span {
+      width: 190px;
+      max-width: 190px;
+      font-size: 0.85em;
+      line-height: 1.2em;
+      margin-bottom: 2px;
+      white-space: normal;
 
+    }
+    span.event-name-slider {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
 
 }
 
