@@ -26,6 +26,7 @@ $(document).ready(function() {
     calcRelatedEventsSliderWidth();
     calcViewEventsHeight();
     calcViewFollowsHeight();
+    calcViewGalleriesHeight();
 });
 
 /******* Run functions when document resize **********/
@@ -53,6 +54,7 @@ $(window).resize(function() {
   }
   calcViewEventsHeight();
   calcViewFollowsHeight();
+  calcViewGalleriesHeight();
 });
 /******* Run functions when document orientation changed (handheld devices) **********/
 $(window).on("orientationchange",function(){
@@ -70,6 +72,7 @@ $(window).on("orientationchange",function(){
   }
   calcViewEventsHeight();
   calcViewFollowsHeight();
+  calcViewGalleriesHeight();
 });
 
 var checkDeviceForAddProducts = function() {
@@ -695,7 +698,6 @@ var rightLeftArrows = function() {
     $(".right-arrow").click(function(){
       var show = $(".product-show");
       var currentPosition = parseInt(show.css("left"));
-      console.log("currentPosition is what? " + currentPosition);
       if (currentPosition >= getRecentViewSliderLimit()) show.stop(false,true).animate({left:"-="+ getRecentViewMove()},{ duration: 400})
     });
   }
@@ -705,10 +707,17 @@ var rightLeftArrows = function() {
     $(".left-arrow").click(function(){
       var show = $(".product-show");
       var currentPosition = parseInt(show.css("left"));
-      console.log("currentPosition is what? " + currentPosition);
-      if (currentPosition < 0) show.stop(false,true).animate({left:"+="+ getRecentViewMove()},{ duration: 400})
+      if (currentPosition < 0) {
+        show.stop(false,true).animate({left:"+="+ getRecentViewMove()},{ duration: 400});
+        console.log(show.position().left);
+        if (show.position().left >= 0) {
+          show.stop(false,true).animate({left:0},{ duration: 400});
+        }
+      }
     });
-  }
+
+      }
+
 };
 
 /************ date and time pickers for create new event ******************************/
@@ -817,15 +826,10 @@ var calcRelatedEventsWidth = function() {
 /************ calculate height of events wrapper ******************************/
 var calcViewEventsHeight = function() {
   if ($('.view-current-events').length) {
-
     var numEvents = $('.profile-event').length;
     var eventHeight = $('.profile-event').outerHeight(true);
     var eventsWidth = $('.view-current-events').outerWidth(true);
-
-
-      $('.view-current-events-scroll').css("width", eventsWidth + 18);
-
-
+    $('.view-current-events-scroll').css("width", eventsWidth + 18);
     if (numEvents <= 4) {
       $('.view-current-events').css("height", eventHeight);
       $('.view-current-events-scroll').css("height", eventHeight);
@@ -837,14 +841,11 @@ var calcViewEventsHeight = function() {
     else if (numEvents >= 9) {
       $('.view-current-events').css("height", eventHeight*3);
       $('.view-current-events-scroll').css("height", eventHeight*3);
-
     }
     if (numEvents > 12) {
       bounceDownArrow();
     }
-
   }
-
 };
 
 /************ calc height of followings wrapper ******************************/
@@ -855,7 +856,6 @@ var calcViewFollowsHeight = function() {
     var followsHeight = $('.follow-item-col').outerHeight(true);
     var followsWidth = $('.view-follows').outerWidth(true);
     $('.view-follows-scroll').css("width", followsWidth + 18);
-
 
     if (numFollows <= 5) {
       $('.view-follows').css("height", followsHeight);
@@ -885,10 +885,41 @@ var calcViewFollowsHeight = function() {
     else if (numFollows > 4 && $(window).width() < 509) {
       bounceDownArrow();
     }
-
   }
 
 };
+/************ calculate height of galleries wrapper ******************************/
+var calcViewGalleriesHeight = function() {
+  if ($('.view-galleries').length) {
+    var numGalls = $('.view-box-gallery').length;
+    var eventHeight = $('.view-box-gallery').outerHeight(true);
+    var eventsWidth = $('.view-galleries').outerWidth(true);
+    $('.view-galleries-scroll').css("width", eventsWidth + 18);
+    if (numGalls <= 3) {
+      $('.view-galleries').css("height", eventHeight);
+      $('.view-galleries-scroll').css("height", eventHeight);
+    }
+    else if (numGalls > 3 && numGalls <= 6) {
+      $('.view-galleries').css("height", eventHeight*2);
+      $('.view-galleries-scroll').css("height", eventHeight*2);
+    }
+    else if (numGalls > 7) {
+      $('.view-galleries').css("height", eventHeight*3);
+      $('.view-galleries-scroll').css("height", eventHeight*3);
+    }
+    if (numGalls > 9) {
+      bounceDownArrow();
+    }
+  }
+};
+
+
+
+
+
+
+
+
 
 /************ bounce downwards arrow to indicate scrolling possible ******************************/
 var bounceDownArrow = function() {
@@ -901,6 +932,13 @@ var bounceDownArrow = function() {
       }
     );
     $('.follows-wrapper').hover(
+      function() {
+        $('.down-arrow').addClass( "active" );
+      }, function() {
+        $('.down-arrow').removeClass( "active" );
+      }
+    );
+    $('.galleries-wrapper').hover(
       function() {
         $('.down-arrow').addClass( "active" );
       }, function() {

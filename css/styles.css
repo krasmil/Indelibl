@@ -3883,8 +3883,8 @@ button#addBtn {
   padding-top: 30px;
   padding-right: 40px;
   margin-bottom: 30px;
-  height: 480px;
-  overflow-y: scroll;
+  max-height: 480px;
+  overflow-y: auto;
 }
 .reviews-wrapper-outer textarea {
     margin-top: 10px;
@@ -4352,11 +4352,85 @@ span.event-name-slider {
   overflow: hidden;
   text-overflow: ellipsis;
 }
-
-
-
-
-
+.galleries-wrapper {
+  padding: 30px;
+  position: relative;
+}
+.view-galleries {
+  margin-left: 0;
+  overflow: hidden;
+  position: relative;
+  margin-bottom: 30px;
+}
+.view-galleries-scroll {
+  margin-left: 0;
+  overflow-y: scroll;
+  position: absolute;
+  left: 0;
+  padding-top: 20px;
+}
+.view-box-gallery {
+  width: calc(33% - 24px);
+  float: left;
+  margin: 0 0 45px 40px;
+  -moz-transition: all 0.4s ease;
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+.view-box-gallery:hover {
+    -webkit-transform: translate(0, -20px);
+    -moz-transform: translate(0, -20px);
+    transform: translate(0, -20px);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.06), 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+.view-box-gallery:nth-of-type(3n+1) {
+  margin: 0 0 45px 0;
+}
+.view-box-gallery .product-img {
+  display: block;
+  height: 220px;
+  width: 100%;
+  overflow: hidden;
+}
+.view-box-gallery .desc {
+  display: block;
+  width: 100%;
+  position: relative;
+  padding: 10px;
+  text-align: left;
+  height: 80px;
+  max-height: 100px;
+}
+.view-box-gallery .desc p {
+  font-size: 0.95em;
+  line-height: 1.5em;
+  white-space: nowrap;
+  overflow: hidden;
+  max-width: 200px;
+  text-overflow: ellipsis;
+  margin: 0.3em 0;
+}
+.view-box-gallery .desc h5 {
+  font-size: 1.1em;
+  line-height: 1.2em;
+  white-space: nowrap;
+  overflow: hidden;
+  max-width: 200px;
+  text-overflow: ellipsis;
+  margin-bottom: 0.2em;
+  margin-top: 0.2em;
+}
+.view-box-gallery .desc .btn {
+  position: absolute;
+  bottom: 20px;
+  right: 10px;
+  height: 42px;
+  width: 120px;
+  min-width: 80px;
+  font-size: 0.95em;
+  line-height: 2.85em;
+  padding: 0;
+}
 
 
 
@@ -5190,7 +5264,7 @@ li.ui-timepicker-selected .ui-timepicker-duration,
 
     .reviews-wrapper {
       padding-right: 30px;
-      height: 400px;
+      max-height: 400px;
     }
     .event-share-subscribe-wrapper {
       top: 400px;
@@ -5248,6 +5322,28 @@ li.ui-timepicker-selected .ui-timepicker-duration,
       margin-bottom: 20px;
       width: calc(25% - 15.5px);
     }
+    .view-box-gallery .product-img {
+      height: 150px;
+    }
+    .view-box-gallery .desc .btn {
+      bottom: 20px;
+      right: 10px;
+      height: 32px;
+      width: 80px;
+      min-width: 80px;
+      font-size: 0.85em;
+      line-height: 2.85em;
+    }
+    .view-box-gallery .desc {
+      height: 70px;
+    }
+    .view-box-gallery .desc p {
+      max-width: 150px;
+    }
+    .view-box-gallery .desc h5 {
+      max-width: 150px;
+    }
+
 
 
 }
@@ -6542,6 +6638,37 @@ li.ui-timepicker-selected .ui-timepicker-duration,
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
+    }
+    .galleries-wrapper {
+      padding: 20px 5px 20px 5px;
+    }
+    .view-box-gallery {
+      width: 235px;
+      float: left;
+      margin: 0 12px 30px 12px;
+    }
+    .view-box-gallery:nth-of-type(3n+1) {
+      margin: 0 12px 30px 12px
+    }
+    .view-box-gallery .product-img {
+      height: 150px;
+    }
+    .view-box-gallery .desc {
+      height: 100px;
+      max-height: 100px;
+    }
+    .view-box-gallery .desc .btn {
+      position: relative;
+      bottom: auto;
+      right: auto;
+      height: 22px;
+      width: 120px;
+      min-width: 80px;
+      font-size: 0.95em;
+      line-height: 2em;
+      padding: 0;
+      margin: 5px auto;
+      float: right;
     }
 
 }
@@ -7947,12 +8074,43 @@ li.ui-timepicker-selected .ui-timepicker-duration,
       line-height: 1.2em;
       margin-bottom: 2px;
       white-space: normal;
-
     }
     span.event-name-slider {
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
+    }
+    .galleries-wrapper {
+      padding: 20px 5px 20px 5px;
+    }
+    .view-box-gallery {
+      width: 100%;
+      float: left;
+      margin: 0 0 30px 0;
+    }
+    .view-box-gallery:nth-of-type(3n+1) {
+      margin: 0 0 30px 0
+    }
+    .view-box-gallery .product-img {
+      height: 150px;
+    }
+    .view-box-gallery .desc {
+      height: 100px;
+      max-height: 100px;
+    }
+    .view-box-gallery .desc .btn {
+      position: relative;
+      bottom: auto;
+      right: auto;
+      height: 22px;
+      width: 120px;
+      min-width: 80px;
+      font-size: 0.95em;
+      line-height: 2em;
+      padding: 0;
+      margin: 5px auto;
+      float: right;
+      margin-right: 15px;
     }
 
 }
