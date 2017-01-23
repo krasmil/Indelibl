@@ -3215,6 +3215,7 @@ ripple.ripple::after {
     position: absolute;
     top: 30px;
     right: 40px;
+    height: 43px;
 }
 
 .followBtnLower {
@@ -4431,10 +4432,34 @@ span.event-name-slider {
   line-height: 2.85em;
   padding: 0;
 }
+.author_books_wrapper {
+  margin-left: 0;
+  overflow: hidden;
+  padding-top: 20px;
+  margin-top: -20px;
+}
 
-
-
-
+.author_book {
+  width: calc(20% - 20px);
+  margin: 0 0 50px 25px;
+  height: 350px;
+  float: left;
+  -moz-transition: all 0.4s ease;
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+  }
+  .author_book:hover {
+    -webkit-transform: translate(0, -20px);
+    -moz-transform: translate(0, -20px);
+    transform: translate(0, -20px);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.06), 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+.author_book:nth-of-type(5n+1) {
+  margin: 0 0 50px 0;
+}
+.publisher-row {
+  margin-left: 0;
+}
 
 
 
@@ -5119,6 +5144,7 @@ li.ui-timepicker-selected .ui-timepicker-duration,
     .followBtn {
         top: 25px;
         right: 30px;
+        height: 34px;
     }
     .headerSoc-icon img {
         height: 32px;
@@ -5343,8 +5369,9 @@ li.ui-timepicker-selected .ui-timepicker-duration,
     .view-box-gallery .desc h5 {
       max-width: 150px;
     }
-
-
+    .author_book {
+      height: 250px;
+    }
 
 }
 
@@ -6278,7 +6305,8 @@ li.ui-timepicker-selected .ui-timepicker-duration,
         bottom: 0px;
     }
     .followBtn {
-        top: 32px;
+        top: 36px;
+        height: 30px;
     }
     .gallery-img {
         width: 100%;
@@ -6669,6 +6697,14 @@ li.ui-timepicker-selected .ui-timepicker-duration,
       padding: 0;
       margin: 5px auto;
       float: right;
+    }
+    .author_book {
+      width: calc(50% - 30px);
+      margin: 0 15px 40px 15px;
+
+    }
+    .author_book:nth-of-type(5n+1) {
+      margin: 0 15px 40px 15px;
     }
 
 }
@@ -7645,6 +7681,7 @@ li.ui-timepicker-selected .ui-timepicker-duration,
     .followBtn {
         position: relative;
         top: 0;
+        height: 30px;
     }
     .profile-about h3 {
         font-size: 1.4em;
@@ -8111,6 +8148,14 @@ li.ui-timepicker-selected .ui-timepicker-duration,
       margin: 5px auto;
       float: right;
       margin-right: 15px;
+    }
+    .author_book {
+      width: calc(100% - 70px);
+      margin: 0 35px 50px 35px;
+
+    }
+    .author_book:nth-of-type(5n+1) {
+      margin: 0 35px 50px 35px;
     }
 
 }
