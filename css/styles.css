@@ -2971,6 +2971,10 @@ ripple.ripple::after {
     height: 22px;
     width: 22px;
 }
+.book-icon {
+  height: auto;
+  width: 22px;
+}
 
 .userprofile-menu-popup {
     position: absolute;
@@ -5084,6 +5088,10 @@ li.ui-timepicker-selected .ui-timepicker-duration,
     .userprofile-menu-icon {
         height: 18px;
         width: 18px;
+    }
+    .book-icon {
+      height: auto;
+      width: 18px;
     }
     .product_template_box {
         position: relative;
