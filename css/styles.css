@@ -366,9 +366,15 @@ button, input, select, textarea {
 .mid-padding-top-y {
     padding-top: 60px;
 }
+.half-padding-top {
+  padding-top: 40px;
+}
 
 .large-padding-bottom-y {
     padding-bottom: 80px;
+}
+.mid-padding-bottom-y {
+    padding-bottom: 40px;
 }
 
 .large-padding-t {
@@ -5642,6 +5648,9 @@ li.ui-timepicker-selected .ui-timepicker-duration,
         padding-top: 10px;
         padding-bottom: 20px;
     }
+    .mid-padding-bottom-y {
+      padding-bottom: 20px;
+    }
     .separator {
         margin-top: 20px;
         margin-bottom: 20px;
@@ -6993,6 +7002,9 @@ li.ui-timepicker-selected .ui-timepicker-duration,
     .large-padding-y {
         padding-top: 10px;
         padding-bottom: 20px;
+    }
+    .mid-padding-bottom-y {
+      padding-bottom: 20px;
     }
     .separator {
         margin-top: 20px;
