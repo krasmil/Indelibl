@@ -4471,11 +4471,25 @@ span.event-name-slider {
   margin-left: 0;
 }
 
-
-
-
-
-
+.my-galleries {
+  padding: 30px 20px;
+}
+.my-galls-row {
+  margin-left: 0;
+}
+.my-galleries .profile-myGallery {
+  width: 100%;
+  border: 1px solid #acacac;
+  overflow: hidden;
+  display: block;
+  margin-bottom: 45px;
+}
+.my-galleries .profile-myGallery .gallery-desc {
+  max-width: 860px;
+}
+.follow-gall {
+  right: 30px;
+}
 
 
 
@@ -5385,6 +5399,12 @@ li.ui-timepicker-selected .ui-timepicker-duration,
     }
     .author_book {
       height: 250px;
+    }
+    .follow-gall {
+      right: 30px;
+    }
+    .my-galleries .profile-myGallery .gallery-desc {
+      max-width: 600px;
     }
 
 }
@@ -6722,6 +6742,12 @@ li.ui-timepicker-selected .ui-timepicker-duration,
     }
     .author_book:nth-of-type(5n+1) {
       margin: 0 15px 40px 15px;
+    }
+    .my-galleries .profile-myGallery .gallery-img {
+      height: 200px;
+    }
+    .follow-gall {
+      right: 30px;
     }
 
 }
@@ -8176,6 +8202,9 @@ li.ui-timepicker-selected .ui-timepicker-duration,
     }
     .author_book:nth-of-type(5n+1) {
       margin: 0 35px 50px 35px;
+    }
+    .my-galleries .profile-myGallery .gallery-img {
+      height: 150px;
     }
 
 }
