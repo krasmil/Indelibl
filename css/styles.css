@@ -4488,7 +4488,7 @@ span.event-name-slider {
   max-width: 860px;
 }
 .follow-gall {
-  right: 30px;
+  right: 90px;
 }
 
 
@@ -5401,7 +5401,7 @@ li.ui-timepicker-selected .ui-timepicker-duration,
       height: 250px;
     }
     .follow-gall {
-      right: 30px;
+      right: 80px;
     }
     .my-galleries .profile-myGallery .gallery-desc {
       max-width: 600px;
@@ -6747,7 +6747,7 @@ li.ui-timepicker-selected .ui-timepicker-duration,
       height: 200px;
     }
     .follow-gall {
-      right: 30px;
+      right: 60px;
     }
 
 }
