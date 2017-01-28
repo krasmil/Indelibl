@@ -4078,6 +4078,10 @@ button#addBtn {
   float: left;
   margin-left: 10px;
 }
+.event-share-subscribe-wrapper a {
+  float: left;
+  margin-left: 10px;
+}
 .event-share-subscribe-wrapper .dropdown {
   float: left;
 
@@ -6582,6 +6586,10 @@ li.ui-timepicker-selected .ui-timepicker-duration,
       float: none;
       display: inline-block;
     }
+    .event-share-subscribe-wrapper a {
+      float: none;
+      display: inline-block;
+    }
     .event-share-subscribe-wrapper .dropdown {
       float: none;
       display: inline-block;
@@ -8020,6 +8028,10 @@ li.ui-timepicker-selected .ui-timepicker-duration,
       vertical-align: bottom;
     }
     .event-share-subscribe-wrapper button {
+      float: none;
+      display: inline-block;
+    }
+    .event-share-subscribe-wrapper a {
       float: none;
       display: inline-block;
     }
