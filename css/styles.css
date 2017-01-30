@@ -4686,6 +4686,31 @@ li.active-tab {
 .manage-invite-inner-wrapper-left .select-artist-label {
   margin-bottom: 10px;
 }
+.mid-padding-header-y {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -7030,6 +7055,10 @@ li.ui-timepicker-selected .ui-timepicker-duration,
       min-height: 380px;
       height: 380px;
     }
+    .mid-padding-header-y {
+      padding-top: 15px;
+      padding-bottom: 15px;
+    }
 
 }
 
@@ -8565,6 +8594,11 @@ li.ui-timepicker-selected .ui-timepicker-duration,
     .view-invites-sent-scroll, .view-invites-received-scroll {
       position: relative;
     }
+    .mid-padding-header-y {
+      padding-top: 15px;
+      padding-bottom: 15px;
+    }
+
 
 /* Custom, iPhone Retina */
 

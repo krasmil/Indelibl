@@ -961,12 +961,9 @@ var calcViewInvitesHeight = function() {
       var invitesSentHeight = $('.view-invites-received .artist-invite').outerHeight(true);
       var invitesSentWidth = $('.view-invites-received').outerWidth(true);
     }
-  //  if ($(window).width() < 1000) {
-  //    $('.view-invites-sent-scroll').css("width", "calc(100% + 34px)");
-  //  }
-  //  else {
+
       $('.view-invites-sent-scroll').css("width", invitesSentWidth + 18);
-  //  }
+
     if (numInvitesSent <= 5) {
       for (i = 1; i < 5; i++) {
         if (numInvitesSent == i) {
@@ -978,7 +975,7 @@ var calcViewInvitesHeight = function() {
     else {
       $('.view-invites-sent').css("height", invitesSentHeight*5);
       $('.view-invites-sent-scroll').css("height", invitesSentHeight*5);
-      bounceDownArrowSent();
+      bounceDownArrow();
     }
   }
 
@@ -994,12 +991,7 @@ var calcViewInvitesHeight = function() {
       var invitesRecdHeight = $('.view-invites-sent .artist-invite').outerHeight(true);
       var invitesRecdWidth = $('.view-invites-sent').outerWidth(true);
     }
-//    if ($(window).width() < 1000) {
-//      $('.view-invites-received-scroll').css("width", "calc(100% + 34px)");
-//    }
-//    else {
       $('.view-invites-received-scroll').css("width", invitesRecdWidth + 18);
-//    }
     if (numInvitesRecd <= 5) {
       for (i = 1; i < 5; i++) {
         if (numInvitesSent == i) {
@@ -1040,7 +1032,13 @@ var bounceDownArrow = function() {
         $('.down-arrow').removeClass( "active" );
       }
     );
-
+    $('.view-invites-sent').hover(
+      function() {
+        $('.down-arrow').addClass( "active" );
+      }, function() {
+        $('.down-arrow').removeClass( "active" );
+      }
+    );
     if ($(window).width() < 1000) {
         $('.down-arrow').addClass( "active" );
     }
