@@ -3377,6 +3377,9 @@ ripple.ripple::after {
 .gallery-desc-divider {
     width: 60%;
 }
+.gallery-desc-divider .separator {
+    height: 1px;
+}
 
 .artist-profile-add-btns {
     text-align: left;
@@ -3434,10 +3437,12 @@ ripple.ripple::after {
 
 .profile-form.inv-gallery h5 {
     margin-top: 20px;
+    margin-bottom: 5px;
 }
 
 .profile-form.inv-gallery .gallery-desc-divider {
     width: 340px;
+    margin-bottom: 10px;
 }
 
 .removeGallery {
@@ -4257,6 +4262,7 @@ button#addBtn {
     margin-bottom: 30px;
     padding-left: 10px;
     padding-right: 10px;
+    position: relative;
 }
 
 .follow-item-col .artist-img {
@@ -4494,12 +4500,192 @@ span.event-name-slider {
 .follow-gall {
   right: 90px;
 }
+.manage-invite-wrapper {
+  display: block;
+  margin-bottom: 40px;
+  width: 100%;
+  position: relative;
+  min-height: 60px;
+}
 
+.manage-invite-inner-wrapper {
+  position: absolute;
+  display: block;
+  right: 0;
+  top: 0;
 
+}
+.manage-invite-inner-wrapper .btn.dark {
+  margin-right: 15px;
+  margin-bottom: 10px;
+}
+.artist-select-img {
+  width: 12px;
+  height: 12px;
+  margin-right: 5px;
+  margin-bottom: 5px;
+}
+.manage-invite-inner-wrapper-left {
+  width: 100%;
+  display: block;
+  margin-right: 40px;
+  max-width: 500px;
+  text-align: left;
 
+}
+.manage-invite-inner-wrapper-left label {
+  display: block;
+  margin-bottom: 0;
+}
+.manage-invite-inner-wrapper-left label:first-of-type {
+  margin-top: 20px;
+}
+.manage-invite-inner-wrapper-left select {
+  display: block;
+  margin-bottom: 20px;
+}
+.remove-icon {
+  background: url("../images/icons/remove1.png");
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 25px;
+  height: 25px;
+  position: absolute;
+  top: 0;
+  right: 65px;
+  cursor: pointer;
+}
 
+.artist-invite {
+  border: 1px solid #acacac;
+  border-radius: 5px;
+  width: 1200px;
+  padding: 10px;
+  margin-bottom: 30px;
+  overflow: hidden;
 
+}
 
+.artist-invite .artist-img {
+  float: left;
+  display: block;
+    margin: auto;
+    background-color: #e0e0dc;
+    height: 85px;
+    width: 85px;
+    border-radius: 100%;
+    overflow: hidden;
+}
+.artist-invite .invite-text-wrapper {
+  float: left;
+  margin-top: 15px;
+  margin-left: 20px;
+}
+.artist-invite h4, .artist-invite h5 {
+  display: block;
+  line-height: 25px;
+    margin: 0;
+    font-size: 1em;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.artist-invite h5 {
+  color: #e74c3c;
+font-style: italic;
+}
+.artist-invite .invite-btns-wrapper {
+  float: right;
+  margin-top: 25px;
+}
+
+.artist-invite .invite-btns-wrapper .btn {
+  margin-right: 20px;
+}
+.artist-invite .invite-btns-wrapper .clearBtn {
+  border: 1px solid #e74c3c;
+  color: #e74c3c;
+  line-height: 41px;
+}
+.view-invites-scroll {
+  margin-left: 0;
+
+}
+.view-invites-wrapper {
+  border: 1px solid #acacac;
+  margin-top: -1px;
+  overflow: hidden;
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+.view-invites-sent, .view-invites-received {
+
+  padding-left: 20px;
+  padding-right: 20px;
+  overflow: hidden;
+  margin-bottom: 40px;
+  margin-left: 0;
+  position: relative;
+}
+.tab-bar {
+  overflow: hidden;
+  z-index: 100;
+  margin-top: 40px;
+}
+.tab-bar li {
+  float: left;
+  padding: 10px 20px 10px 20px;
+  cursor: pointer;
+}
+li.active-tab {
+  border-top: 1px solid #acacac;
+  border-left: 1px solid #acacac;
+  border-bottom: 1px solid #fff;
+  border-right: 1px solid #acacac;
+}
+.tab-bar li a {
+  color: #000;
+}
+.view-invites-sent-scroll, .view-invites-received-scroll {
+  overflow-y: scroll;
+  position: absolute;
+  margin-left: 0;
+  padding-top: 20px;
+}
+.sent-arrow, .recd-arrow {
+  bottom: 40px;
+}
+.invites-form {
+  width: 600px;
+  max-width: 600px;
+}
+.invites-form .profile-form.inv-gallery {
+  margin-left: 0;
+}
+.invites-form .profile-form.inv-gallery .form-input {
+  margin-bottom: 15px;
+}
+.invites-form .profile-form.inv-gallery .btn {
+  margin-bottom: 0;
+}
+.manage-invite-wrapper.no-bottom {
+  margin-bottom: 0;
+}
+.tall-invites {
+  min-height: 200px;
+  height: 200px;
+}
+.ddcommon {
+  width: 415px;
+}
+.tall-form-invites {
+  min-height: 370px;
+  height: 430px;
+}
+.manage-invite-inner-wrapper-left .select-artist-label {
+  margin-bottom: 10px;
+}
 
 
 
@@ -5410,7 +5596,33 @@ li.ui-timepicker-selected .ui-timepicker-duration,
     .my-galleries .profile-myGallery .gallery-desc {
       max-width: 600px;
     }
-
+    .manage-invite-inner-wrapper {
+      margin-right: 20px;
+    }
+    .artist-invite {
+      width: 820px;
+    }
+    .artist-invite .invite-btns-wrapper .clearBtn {
+      line-height: 30px;
+    }
+    .artist-invite .artist-img {
+      width: 75px;
+      height: 75px;
+    }
+    .manage-invite-wrapper {
+      height: 50px;
+      margin-bottom: 20px;
+    }
+    .tall-invites {
+      min-height: 190px;
+      height: 190px;
+    }
+    .remove-icon {
+      right: 30px;
+    }
+    .ddcommon {
+      width: 315px;
+    }
 }
 
 
@@ -6756,6 +6968,67 @@ li.ui-timepicker-selected .ui-timepicker-duration,
     }
     .follow-gall {
       right: 60px;
+    }
+    .manage-invite-wrapper {
+      margin-bottom: 10px;
+    }
+    .manage-invite-inner-wrapper {
+      float: none;
+      display: block;
+      margin-right: 0;
+      margin-top: 10px;
+      position: relative;
+    }
+    .remove-icon {
+      right: 22px;
+    }
+    .ddcommon {
+      width: 100%;
+    }
+    .mob-abs {
+      position: absolute;
+      margin-top: 0;
+    }
+    .tall-invites {
+      min-height: 160px;
+      height: 160px;
+    }
+    .invites-form {
+      width: 100%;
+      max-width: 100%;
+    }
+    .view-invites-sent-scroll, .view-invites-received-scroll {
+      position: relative;
+    }
+    .invites-form .profile-form.inv-gallery .form-input {
+      width: 100%;
+    }
+    .invites-form .profile-form.inv-gallery .form-item {
+      padding-right: 0;
+    }
+	  .artist-invite {
+      border: 1px solid #acacac;
+      border-radius: 5px;
+      width: calc(100% - 58px);
+      padding: 10px;
+      margin-bottom: 30px;
+      overflow: hidden;
+    }
+    .artist-invite .invite-btns-wrapper {
+      float: right;
+      margin-top: 7px;
+    }
+    .artist-invite .invite-btns-wrapper .btn {
+      display: block;
+      margin-top: 8px;
+      margin-bottom: 8px;
+    }
+    .artist-invite .invite-btns-wrapper .clearBtn {
+      line-height: 18px;
+    }
+    .tall-form-invites {
+      min-height: 380px;
+      height: 380px;
     }
 
 }
@@ -8125,7 +8398,7 @@ li.ui-timepicker-selected .ui-timepicker-duration,
       left:0;
     }
     .follows-wrapper {
-      padding: 10px;
+      padding: 20px 10px;
     }
     .follow-item-col {
         width: calc(50% - 20px);
@@ -8218,9 +8491,80 @@ li.ui-timepicker-selected .ui-timepicker-duration,
     .my-galleries .profile-myGallery .gallery-img {
       height: 150px;
     }
+    .manage-invite-wrapper {
+      margin-bottom: 30px;
+    }
+    .manage-invite-inner-wrapper {
+      float: none;
+      display: block;
+      margin-right: 0;
+      margin-top: 10px;
+      position: relative;
+    }
+    .manage-invite-inner-wrapper .btn.dark {
+      margin-bottom: 10px;
+      margin-right: 0;
+    }
+    .ddcommon {
+      width: 100%;
+    }
+    .remove-icon {
+      right: 18px;
+    }
+    .mob-abs {
+      position: absolute;
+      margin-top: 0;
+    }
+    .artist-invite {
+      border: 1px solid #acacac;
+      border-radius: 5px;
+      width: calc(100% - 58px);
+      padding: 10px;
+      margin-bottom: 30px;
+      overflow: hidden;
+    }
+    .artist-invite .artist-img {
+      float: none;
+    }
+    .artist-invite .invite-text-wrapper {
+      float: none;
+      margin-left: 0;
+    }
+    .artist-invite .invite-btns-wrapper .btn {
+      margin-right: 0;
+      margin-bottom: 15px;
+      float: none;
+    }
+    .artist-invite .invite-btns-wrapper .clearBtn {
+      line-height: 18px;
+    }
+    .invites-form {
+      width: 100%;
+      max-width: 100%;
+    }
+    .tall-invites {
+      min-height: 160px;
+      height: 160px;
+    }
+    .tall-form-invites {
+      min-height: 360px;
+      height: 360px;
+    }
+    .invites-form .profile-form.inv-gallery .form-input {
+      width: 100%;
+    }
+    .invites-form .profile-form.inv-gallery .form-item {
+      padding-right: 0;
+    }
+    .tab-bar li {
+      float: left;
+      padding: 10px;
+      cursor: pointer;
 
-}
-
+    }
+    .view-invites-sent-scroll, .view-invites-received-scroll {
+      position: relative;
+    }
 
 /* Custom, iPhone Retina */
 

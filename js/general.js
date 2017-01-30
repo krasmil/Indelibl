@@ -27,6 +27,9 @@ $(document).ready(function() {
     calcViewEventsHeight();
     calcViewFollowsHeight();
     calcViewGalleriesHeight();
+    openTab();
+    calcViewInvitesHeight();
+    addImagesSelect();
 });
 
 /******* Run functions when document resize **********/
@@ -55,6 +58,7 @@ $(window).resize(function() {
   calcViewEventsHeight();
   calcViewFollowsHeight();
   calcViewGalleriesHeight();
+  calcViewInvitesHeight();
 });
 /******* Run functions when document orientation changed (handheld devices) **********/
 $(window).on("orientationchange",function(){
@@ -73,6 +77,7 @@ $(window).on("orientationchange",function(){
   calcViewEventsHeight();
   calcViewFollowsHeight();
   calcViewGalleriesHeight();
+  calcViewInvitesHeight();
 });
 
 var checkDeviceForAddProducts = function() {
@@ -342,7 +347,7 @@ function showMyProfile(fileInput) {
             binImg = e.target.result;
             input = document.getElementById('profile-img-file-input');
             getOrientation(input.files[0], function(orientation) {
-                console.log(orientation);
+
                 if ([5, 6, 7, 8].indexOf(orientation) > -1) {
                     $('#profileRotator').attr('src', binImg);
                     var c = document.getElementById("profile-Photo-Slice");
@@ -392,7 +397,7 @@ function showEventPhoto(fileInput) {
             binImg = e.target.result;
             input = document.getElementById('event-img-file-input');
             getOrientation(input.files[0], function(orientation) {
-                console.log(orientation);
+
                 if ([5, 6, 7, 8].indexOf(orientation) > -1) {
                     $('#event-photo-rotator').attr('src', binImg);
                     var c = document.getElementById("event-Photo-Slice");
@@ -470,7 +475,7 @@ function showMyImage(fileInput) {
             binImg = e.target.result;
             input = document.getElementById('cover-img-file-input');
             getOrientation(input.files[0], function(orientation) {
-                console.log(orientation);
+
                 if ([5, 6, 7, 8].indexOf(orientation) > -1) {
                     $('#rotator').attr('src', binImg);
                     var c = document.getElementById("cover-Photo-Slice");
@@ -651,15 +656,18 @@ var productTemplateOverlay = function() {
 
 var getRecentViewsSliderCoeff = function() {
   var coeff;
+  var numItems = $(".product-show > .column-4").length;
+
   if ($(window).width() <= 999 && $(window).width() >= 510) {
-    coeff = 3;
+    coeff = numItems - 3;
   }
   else if ($(window).width() <= 509) {
-    coeff = 4;
+    coeff = numItems - 2;
   }
   else {
-    coeff = 1;
+    coeff = numItems - 5;
   }
+
   return coeff;
 };
 
@@ -680,13 +688,15 @@ var getRecentViewSliderLimit = function() {
 }
 
 var scrollRecentViews = function() {
+  var numItems = $(".product-show > .column-4").length;
+
 
   var view = $(".product-view-container");
   var show = $(".product-show");
   var productBox = $(".product-show > .column-4");
   var productBox_margin_right = parseInt(productBox.css("margin-right")) + 2;
   var productBox_margin_left = parseInt(productBox.css("margin-left"));
-  show.css("width", (productBox.width() * 10) + (productBox_margin_right * 10) + (productBox_margin_left * 10) + "px");
+  show.css("width", (productBox.outerWidth(true) * numItems) + "px");
   var move = productBox.outerWidth(true) + "px";
   var sliderLimit = -(productBox.outerWidth(true) * getRecentViewsSliderCoeff());
 
@@ -709,7 +719,7 @@ var rightLeftArrows = function() {
       var currentPosition = parseInt(show.css("left"));
       if (currentPosition < 0) {
         show.stop(false,true).animate({left:"+="+ getRecentViewMove()},{ duration: 400});
-        console.log(show.position().left);
+
         if (show.position().left >= 0) {
           show.stop(false,true).animate({left:0},{ duration: 400});
         }
@@ -776,7 +786,7 @@ function getMobileOperatingSystem() {
 var calcRelatedEventsSliderWidth = function() {
   if ($('.related-events-over-four').length) {
     if ($(window).width() <= 509) {
-      console.log("mobile portrait!");
+
       if (getMobileOperatingSystem() == "Android" || getMobileOperatingSystem() == "Windows Phone") {
         $('.product-show .column-4.profile-event').css('width', '198px');
         $('.related-events-over-four .product-view-container').css('width', '218px');
@@ -790,17 +800,17 @@ var calcRelatedEventsSliderWidth = function() {
         $('.related-events-over-four .product-view-container').css('width', '218px');
       }
     }else if ($(window).width() >= 509 && $(window).width() < 1000) {
-      console.log("mobile landscape!");
+
       $('.product-show .column-4.profile-event').css('width', '205px');
       $('.related-events-over-four .product-view-container').css('width', '428.5px');
     }
     else if ($(window).width() >= 1000 && $(window).width() <= 1600) {
-      console.log("laptop!");
+
       $('.product-show .column-4.profile-event').css('width', '180px');
       $('.related-events-over-four .product-view-container').css('width', '778.5px');
     }
     else if ($(window).width() > 1600) {
-      console.log("bigg'n!");
+
       $('.product-show .column-4.profile-event').css('width', '274px');
       $('.related-events-over-four .product-view-container').css('width', '1155px');
     }
@@ -913,13 +923,98 @@ var calcViewGalleriesHeight = function() {
   }
 };
 
+/************ switch between tabs on invites page ******************************/
+var openTab = function() {
+
+  if ($('.tab-bar').length) {
+    $('.tab-bar li').first().addClass( "active-tab" );
+    $('.view-invites-received').hide();
+
+    $('.tab-bar li').click(
+      function() {
+        $(this).addClass( "active-tab" );
+        $(this).siblings().removeClass( "active-tab" );
+        if ($(this).attr('id') == "sent-inv") {
+          $('.view-invites-sent').show();
+          $('.view-invites-received').hide();
+        }
+        else if ($(this).attr('id') == "rec-inv") {
+          $('.view-invites-sent').hide();
+          $('.view-invites-received').show();
+        }
+      });
+  }
+};
 
 
+/************ calculate height of invites wrappers ******************************/
+var calcViewInvitesHeight = function() {
 
+  if ($('.view-invites-sent').length) {
+    var numInvitesSent = $('.view-invites-sent .artist-invite').length;
 
+    if ($('.view-invites-sent').is(':visible')) {
+      var invitesSentHeight = $('.view-invites-sent .artist-invite').outerHeight(true);
+      var invitesSentWidth = $('.view-invites-sent').outerWidth(true);
+    }
+    else {
+      var invitesSentHeight = $('.view-invites-received .artist-invite').outerHeight(true);
+      var invitesSentWidth = $('.view-invites-received').outerWidth(true);
+    }
+  //  if ($(window).width() < 1000) {
+  //    $('.view-invites-sent-scroll').css("width", "calc(100% + 34px)");
+  //  }
+  //  else {
+      $('.view-invites-sent-scroll').css("width", invitesSentWidth + 18);
+  //  }
+    if (numInvitesSent <= 5) {
+      for (i = 1; i < 5; i++) {
+        if (numInvitesSent == i) {
+          $('.view-invites-sent').css("height", invitesSentHeight*i );
+          $('.view-invites-sent-scroll').css("height", invitesSentHeight*i );
+        }
+      }
+    }
+    else {
+      $('.view-invites-sent').css("height", invitesSentHeight*5);
+      $('.view-invites-sent-scroll').css("height", invitesSentHeight*5);
+      bounceDownArrowSent();
+    }
+  }
 
+  if ($('.view-invites-received').length) {
 
+    var numInvitesRecd = $('.view-invites-received .artist-invite').length;
 
+    if ($('.view-invites-received').is(':visible')) {
+      var invitesRecdHeight = $('.view-invites-received .artist-invite').outerHeight(true);
+      var invitesRecdWidth = $('.view-invites-received').outerWidth(true);
+    }
+    else {
+      var invitesRecdHeight = $('.view-invites-sent .artist-invite').outerHeight(true);
+      var invitesRecdWidth = $('.view-invites-sent').outerWidth(true);
+    }
+//    if ($(window).width() < 1000) {
+//      $('.view-invites-received-scroll').css("width", "calc(100% + 34px)");
+//    }
+//    else {
+      $('.view-invites-received-scroll').css("width", invitesRecdWidth + 18);
+//    }
+    if (numInvitesRecd <= 5) {
+      for (i = 1; i < 5; i++) {
+        if (numInvitesSent == i) {
+          $('.view-invites-received').css("height", invitesRecdHeight*i);
+          $('.view-invites-received-scroll').css("height", invitesRecdHeight*i);
+        }
+      }
+    }
+    else {
+      $('.view-invites-received').css("height", invitesRecdHeight*5);
+      $('.view-invites-received-scroll').css("height", invitesRecdHeight*5);
+      bounceDownArrowRecd();
+    }
+  }
+};
 
 /************ bounce downwards arrow to indicate scrolling possible ******************************/
 var bounceDownArrow = function() {
@@ -945,11 +1040,39 @@ var bounceDownArrow = function() {
         $('.down-arrow').removeClass( "active" );
       }
     );
+
     if ($(window).width() < 1000) {
         $('.down-arrow').addClass( "active" );
     }
     else {
       $('.down-arrow').removeClass( "active" );
     }
+  }
+};
+
+/************ for invites sent ******************************/
+var bounceDownArrowSent = function() {
+  $('.view-invites-sent').hover(
+    function() {
+      $('.down-arrow.sent-arrow').addClass( "active" );
+    }, function() {
+      $('.down-arrow.sent-arrow').removeClass( "active" );
+    }
+  );
+};
+
+/************ for invites received ******************************/
+var bounceDownArrowRecd = function() {
+  $('.view-invites-received').hover(
+    function() {
+      $('.down-arrow.recd-arrow').addClass( "active" );
+    }, function() {
+      $('.down-arrow.recd-arrow').removeClass( "active" );
+    }
+  );
+};
+var addImagesSelect = function() {
+  if ($('#select-artists').length) {
+    $("#select-artists").msDropDown();
   }
 };

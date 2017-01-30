@@ -216,12 +216,12 @@
 					<div class="menu clearfix bg-light dashboard_menu">
 						<div class="menu-collection dashboard_menu_collection">
 							<a href="javascript:;" class="menu-link">My profile</a>
-							<a href="javascript:;" class="menu-link">Add book</a>
+							<a href="javascript:;" class="menu-link">Add art</a>
 							<a href="javascript:;" class="menu-link">Supporters</a>
-							<a href="javascript:;" class="menu-link">Authors</a>
-							<a href="javascript:;" class="menu-link">Events</a>
+							<a href="javascript:;" class="menu-link">Artists</a>
 							<a href="javascript:;" class="menu-link">Sales / Orders</a>
 							<a href="javascript:;" class="menu-link">Payments</a>
+							<a href="javascript:;" class="menu-link">Events</a>
 							<a href="javascript:;" class="menu-link">Referrals</a>
 						</div>
 					</div>
@@ -276,37 +276,37 @@
 
 		<!-- end user cover photo -->
 
-		<!-- start events header -->
+		<!-- start followers header -->
 		<section class="bg-lightest">
 			<div class="content-wrapper">
 
 				<div class="row">
 					<div class="profile_top profileHome left">
-						<!-- user profile image -->
+						<!-- user profile image and info -->
 						<div class="userprofile_img_wrapper">
 							<div class="userprofile_img" id="profile-image-preview"></div>
 						</div>
 						<div class="userprofile-info">
 							<ul>
 								<li>
-									<h5><b>Blake Publishing</b></h5>
+									<h5><b>Jessica Silverman Gallery</b></h5>
 								</li>
 								<li>
-									<img class="userprofile-info-icon" src="images/icons/world-wide-web.png"><a href="javascript:;"><span>www.blakepublishing.com</span></a>
+									<img class="userprofile-info-icon" src="images/icons/world-wide-web.png"><a href="javascript:;"><span>www.jessicasilvermangallery.com</span></a>
 								</li>
-							</ul>		
-						</div>
-						<!-- end user profile image  -->
-					</div>
+							</ul>
 
+
+						</div>
+						<!-- end user profile image and info  -->
+					</div>
 				</div>
 			</div>
 			<hr class="profile-top-separator" />
 		</section>
 
-
 		<section class="bg-lightest artist-menu-wrapper">
-			<!-- publisher side menu -->
+			<!-- gallery side menu -->
 			<div class="artist_menu">
 				<ul>
 					<li triggerLink="profileLink">
@@ -318,7 +318,7 @@
 					<li triggerLink="addPLink">
 						<a href="javascript:;"><img class="userprofile-menu-icon" src="images/icons/add_products.png"></a>
 						<div class="userprofile-menu-popup addProductLink" popLink="addPLink">
-							<a href="javascript:;" class="userprofile-menu-link">Add book</a>
+							<a href="javascript:;" class="userprofile-menu-link">Add art</a>
 						</div>
 					</li>
 					<li triggerLink="suppLink">
@@ -328,15 +328,9 @@
 						</div>
 					</li>
 					<li triggerLink="artistsLink">
-						<a href="javascript:;"><img class="userprofile-menu-icon book-icon" src="images/icons/book.png"></a>
+						<a href="javascript:;"><img class="userprofile-menu-icon" src="images/icons/brush.png"></a>
 						<div class="userprofile-menu-popup artistsLink" popLink="artistsLink">
-							<a href="javascript:;" class="userprofile-menu-link">Authors</a>
-						</div>
-					</li>
-					<li triggerLink="eventLink">
-						<a href="javascript:;"><img class="userprofile-menu-icon" src="images/icons/events.png"></a>
-						<div class="userprofile-menu-popup eventsLink" popLink="eventLink">
-							<a href="javascript:;" class="userprofile-menu-link">Events</a>
+							<a href="javascript:;" class="userprofile-menu-link">Artists</a>
 						</div>
 					</li>
 					<li triggerLink="salesordersLink">
@@ -351,6 +345,12 @@
 							<a href="javascript:;" class="userprofile-menu-link">Payments</a>
 						</div>
 					</li>
+					<li triggerLink="eventLink">
+						<a href="javascript:;"><img class="userprofile-menu-icon" src="images/icons/events.png"></a>
+						<div class="userprofile-menu-popup eventsLink" popLink="eventLink">
+							<a href="javascript:;" class="userprofile-menu-link">Events</a>
+						</div>
+					</li>
 					<li triggerLink="referLink">
 						<a href="javascript:;"><img class="userprofile-menu-icon" src="images/icons/referrals.png"></a>
 						<div class="userprofile-menu-popup refersLink" popLink="referLink">
@@ -361,235 +361,502 @@
 			</div>
 		</section>
 
-		<!-- end publisher events header -->
+		<!-- end followers header -->
 		<section class="bg-lightest view-events-header">
 			<div class="content-wrapper large-padding-y">
 				<h2>
 					<b>
-						My and Invited Events
+						Artists
 					</b>
 				</h2>
 			</div>
 		</section>
 		<!-- start artist events main section -->
 		<section class="bg-lightest large-padding-bottom-y">
-			<div class="content-wrapper white events-wrapper">
+			<div class="content-wrapper white follows-wrapper">
 
-					<!-- display current events  -->
-					<div class="row view-current-events">
-						<div class="row view-current-events-scroll">
-							<div class="column-4 profile-event">
-								<a href="javascript:;">
-									<div class="product-img" style='background: url("images/na1b.jpg") no-repeat center center / cover;'>
-									</div>
-									<div class="event-desc">
-										<p><b>Greene Naftali Gallery</b></p>
-										<p>Katja Novitskova: Approximation (Storm Time)</p>
-										<p>Nov 18, 2016–Jan 7, 2017</p>
-									</div>
-								</a>
-							</div>
-							<div class="column-4 profile-event">
-								<a href="javascript:;">
-									<div class="product-img" style='background: url("images/pic3.jpg") no-repeat center center / cover;'>
-									</div>
-									<div class="event-desc">
-										<p><b>Gerald Peters Gallery, NY</b></p>
-										<p>Masterworks of American Art</p>
-										<p>Nov 14, 2016–Jan 6, 2017</p>
-									</div>
-								</a>
-							</div>
-							<div class="column-4 profile-event">
-								<a href="javascript:;">
-									<div class="product-img" style='background: url("images/pic1.jpg") no-repeat center center / cover;'>
-									</div>
-									<div class="event-desc">
-										<p><b>Senior &amp Shopmaker Gallery</b></p>
-										<p>Polly Apfelbaum: Atomic Mystic Portraits</p>
-										<p>Nov 18, 2016–Jan 7, 2017</p>
-									</div>
-								</a>
-							</div>
-							<div class="column-4 profile-event">
-								<a href="javascript:;">
-									<div class="product-img" style='background: url("images/pic2.jpg") no-repeat center center / cover;'>
-										<img src="images/pic2.jpg" alt="" class="profile-event-img" />
-									</div>
-									<div class="event-desc">
-										<p><b>Marlborough Gallery</b></p>
-										<p>Davina Semo: FUBAR</p>
-										<p>Nov 18, 2016–Jan 7, 2017</p>
-									</div>
-								</a>
-							</div>
-							<div class="column-4 profile-event">
-								<a href="javascript:;">
-									<div class="product-img" style='background: url("images/na1b.jpg") no-repeat center center / cover;'>
-									</div>
-									<div class="event-desc">
-										<p><b>Greene Naftali Gallery</b></p>
-										<p>Katja Novitskova: Approximation (Storm Time)</p>
-										<p>Nov 18, 2016–Jan 7, 2017</p>
-									</div>
-								</a>
-							</div>
-							<div class="column-4 profile-event">
-								<a href="javascript:;">
-									<div class="product-img" style='background: url("images/pic3.jpg") no-repeat center center / cover;'>
-									</div>
-									<div class="event-desc">
-										<p><b>Gerald Peters Gallery, NY</b></p>
-										<p>Masterworks of American Art</p>
-										<p>Nov 14, 2016–Jan 6, 2017</p>
-									</div>
-								</a>
-							</div>
-							<div class="column-4 profile-event">
-								<a href="javascript:;">
-									<div class="product-img" style='background: url("images/pic1.jpg") no-repeat center center / cover;'>
-									</div>
-									<div class="event-desc">
-										<p><b>Senior &amp Shopmaker Gallery</b></p>
-										<p>Polly Apfelbaum: Atomic Mystic Portraits</p>
-										<p>Nov 18, 2016–Jan 7, 2017</p>
-									</div>
-								</a>
-							</div>
-							<div class="column-4 profile-event">
-								<a href="javascript:;">
-									<div class="product-img" style='background: url("images/pic2.jpg") no-repeat center center / cover;'>
-										<img src="images/pic2.jpg" alt="" class="profile-event-img" />
-									</div>
-									<div class="event-desc">
-										<p><b>Marlborough Gallery</b></p>
-										<p>Davina Semo: FUBAR</p>
-										<p>Nov 18, 2016–Jan 7, 2017</p>
-									</div>
-								</a>
-							</div>
-							<div class="column-4 profile-event">
-								<a href="javascript:;">
-									<div class="product-img" style='background: url("images/na1b.jpg") no-repeat center center / cover;'>
-									</div>
-									<div class="event-desc">
-										<p><b>Greene Naftali Gallery</b></p>
-										<p>Katja Novitskova: Approximation (Storm Time)</p>
-										<p>Nov 18, 2016–Jan 7, 2017</p>
-									</div>
-								</a>
-							</div>
-							<div class="column-4 profile-event">
-								<a href="javascript:;">
-									<div class="product-img" style='background: url("images/pic3.jpg") no-repeat center center / cover;'>
-									</div>
-									<div class="event-desc">
-										<p><b>Gerald Peters Gallery, NY</b></p>
-										<p>Masterworks of American Art</p>
-										<p>Nov 14, 2016–Jan 6, 2017</p>
-									</div>
-								</a>
-							</div>
-							<div class="column-4 profile-event">
-								<a href="javascript:;">
-									<div class="product-img" style='background: url("images/pic1.jpg") no-repeat center center / cover;'>
-									</div>
-									<div class="event-desc">
-										<p><b>Senior &amp Shopmaker Gallery</b></p>
-										<p>Polly Apfelbaum: Atomic Mystic Portraits</p>
-										<p>Nov 18, 2016–Jan 7, 2017</p>
-									</div>
-								</a>
-							</div>
-							<div class="column-4 profile-event">
-								<a href="javascript:;">
-									<div class="product-img" style='background: url("images/pic2.jpg") no-repeat center center / cover;'>
-										<img src="images/pic2.jpg" alt="" class="profile-event-img" />
-									</div>
-									<div class="event-desc">
-										<p><b>Marlborough Gallery</b></p>
-										<p>Davina Semo: FUBAR</p>
-										<p>Nov 18, 2016–Jan 7, 2017</p>
-									</div>
-								</a>
-							</div>
-							<div class="column-4 profile-event">
-								<a href="javascript:;">
-									<div class="product-img" style='background: url("images/na1b.jpg") no-repeat center center / cover;'>
-									</div>
-									<div class="event-desc">
-										<p><b>Greene Naftali Gallery</b></p>
-										<p>Katja Novitskova: Approximation (Storm Time)</p>
-										<p>Nov 18, 2016–Jan 7, 2017</p>
-									</div>
-								</a>
-							</div>
-							<div class="column-4 profile-event">
-								<a href="javascript:;">
-									<div class="product-img" style='background: url("images/pic3.jpg") no-repeat center center / cover;'>
-									</div>
-									<div class="event-desc">
-										<p><b>Gerald Peters Gallery, NY</b></p>
-										<p>Masterworks of American Art</p>
-										<p>Nov 14, 2016–Jan 6, 2017</p>
-									</div>
-								</a>
-							</div>
-							<div class="column-4 profile-event">
-								<a href="javascript:;">
-									<div class="product-img" style='background: url("images/pic1.jpg") no-repeat center center / cover;'>
-									</div>
-									<div class="event-desc">
-										<p><b>Senior &amp Shopmaker Gallery</b></p>
-										<p>Polly Apfelbaum: Atomic Mystic Portraits</p>
-										<p>Nov 18, 2016–Jan 7, 2017</p>
-									</div>
-								</a>
-							</div>
-							<div class="column-4 profile-event">
-								<a href="javascript:;">
-									<div class="product-img" style='background: url("images/pic2.jpg") no-repeat center center / cover;'>
-										<img src="images/pic2.jpg" alt="" class="profile-event-img" />
-									</div>
-									<div class="event-desc">
-										<p><b>Marlborough Gallery</b></p>
-										<p>Davina Semo: FUBAR</p>
-										<p>Nov 18, 2016–Jan 7, 2017</p>
-									</div>
-								</a>
-							</div>
-							<div class="column-4 profile-event">
-								<a href="javascript:;">
-									<div class="product-img" style='background: url("images/na1b.jpg") no-repeat center center / cover;'>
-									</div>
-									<div class="event-desc">
-										<p><b>Greene Naftali Gallery</b></p>
-										<p>Katja Novitskova: Approximation (Storm Time)</p>
-										<p>Nov 18, 2016–Jan 7, 2017</p>
-									</div>
-								</a>
-							</div>
-							<div class="column-4 profile-event">
-								<a href="javascript:;">
-									<div class="product-img" style='background: url("images/pic3.jpg") no-repeat center center / cover;'>
-									</div>
-									<div class="event-desc">
-										<p><b>Gerald Peters Gallery, NY</b></p>
-										<p>Masterworks of American Art</p>
-										<p>Nov 14, 2016–Jan 6, 2017</p>
-									</div>
-								</a>
-							</div>
+			<div class="manage-invite-wrapper">
+				<div class="manage-invite-inner-wrapper">
+					<a href="javascript:;" class="btn dark">Manage</a>
+					<a href="javascript:;" class="btn blackWhite">Invitations</a>
+				</div>
+			</div>
 
+
+					<!-- display subscribers  -->
+					<div class="row view-follows">
+						<div class="row view-follows-scroll">
+							<div class="follow-item-col">
+								<a href="javascript:;">
+									<div class="artist-img" style='background: url("images/liam1.jpg") no-repeat center center / cover;'>
+									</div>
+								</a>
+								<h4>
+									<b>
+										<a href="javascript:;">Liam Nelson</a>
+									</b>
+								</h4>
+								<h5>
+									Photographer
+								</h5>
+							</div>
+							<div class="follow-item-col">
+								<a href="javascript:;">
+									<div class="artist-img" style='background: url("images/liam1.jpg") no-repeat center center / cover;'>
+									</div>
+								</a>
+								<h4>
+									<b>
+										<a href="javascript:;">Liam Nelson</a>
+									</b>
+								</h4>
+								<h5>
+									Photographer
+								</h5>
+							</div>
+							<div class="follow-item-col">
+								<a href="javascript:;">
+									<div class="artist-img" style='background: url("images/liam1.jpg") no-repeat center center / cover;'>
+									</div>
+								</a>
+								<h4>
+									<b>
+										<a href="javascript:;">Liam Nelson</a>
+									</b>
+								</h4>
+								<h5>
+									Photographer
+								</h5>
+							</div>
+							<div class="follow-item-col">
+								<a href="javascript:;">
+									<div class="artist-img" style='background: url("images/liam1.jpg") no-repeat center center / cover;'>
+									</div>
+								</a>
+								<h4>
+									<b>
+										<a href="javascript:;">Barry Smith</a>
+									</b>
+								</h4>
+								<h5>
+									Artist
+								</h5>
+							</div>
+							<div class="follow-item-col">
+								<a href="javascript:;">
+									<div class="artist-img" style='background: url("images/liam1.jpg") no-repeat center center / cover;'>
+									</div>
+								</a>
+								<h4>
+									<b>
+										<a href="javascript:;">Liam Nelson</a>
+									</b>
+								</h4>
+								<h5>
+									Photographer
+								</h5>
+							</div>
+							<div class="follow-item-col">
+								<a href="javascript:;">
+									<div class="artist-img" style='background: url("images/liam1.jpg") no-repeat center center / cover;'>
+									</div>
+								</a>
+								<h4>
+									<b>
+										<a href="javascript:;">Liam Nelson</a>
+									</b>
+								</h4>
+								<h5>
+									Photographer
+								</h5>
+							</div>
+							<div class="follow-item-col">
+								<a href="javascript:;">
+									<div class="artist-img" style='background: url("images/liam1.jpg") no-repeat center center / cover;'>
+									</div>
+								</a>
+								<h4>
+									<b>
+										<a href="javascript:;">Liam Nelson</a>
+									</b>
+								</h4>
+								<h5>
+									Photographer
+								</h5>
+							</div>
+							<div class="follow-item-col">
+								<a href="javascript:;">
+									<div class="artist-img" style='background: url("images/liam1.jpg") no-repeat center center / cover;'>
+									</div>
+								</a>
+								<h4>
+									<b>
+										<a href="javascript:;">Liam Nelson</a>
+									</b>
+								</h4>
+								<h5>
+									Photographer
+								</h5>
+							</div>
+							<div class="follow-item-col">
+								<a href="javascript:;">
+									<div class="artist-img" style='background: url("images/liam1.jpg") no-repeat center center / cover;'>
+									</div>
+								</a>
+								<h4>
+									<b>
+										<a href="javascript:;">Liam Nelson</a>
+									</b>
+								</h4>
+								<h5>
+									Photographer
+								</h5>
+							</div>
+							<div class="follow-item-col">
+								<a href="javascript:;">
+									<div class="artist-img" style='background: url("images/liam1.jpg") no-repeat center center / cover;'>
+									</div>
+								</a>
+								<h4>
+									<b>
+										<a href="javascript:;">Liam Nelson</a>
+									</b>
+								</h4>
+								<h5>
+									Photographer
+								</h5>
+							</div>
+							<div class="follow-item-col">
+								<a href="javascript:;">
+									<div class="artist-img" style='background: url("images/liam1.jpg") no-repeat center center / cover;'>
+									</div>
+								</a>
+								<h4>
+									<b>
+										<a href="javascript:;">Liam Nelson</a>
+									</b>
+								</h4>
+								<h5>
+									Photographer
+								</h5>
+							</div>
+							<div class="follow-item-col">
+								<a href="javascript:;">
+									<div class="artist-img" style='background: url("images/liam1.jpg") no-repeat center center / cover;'>
+									</div>
+								</a>
+								<h4>
+									<b>
+										<a href="javascript:;">Liam Nelson</a>
+									</b>
+								</h4>
+								<h5>
+									Photographer
+								</h5>
+							</div>
+							<div class="follow-item-col">
+								<a href="javascript:;">
+									<div class="artist-img" style='background: url("images/liam1.jpg") no-repeat center center / cover;'>
+									</div>
+								</a>
+								<h4>
+									<b>
+										<a href="javascript:;">Liam Nelson</a>
+									</b>
+								</h4>
+								<h5>
+									Photographer
+								</h5>
+							</div>
+							<div class="follow-item-col">
+								<a href="javascript:;">
+									<div class="artist-img" style='background: url("images/liam1.jpg") no-repeat center center / cover;'>
+									</div>
+								</a>
+								<h4>
+									<b>
+										<a href="javascript:;">Liam Nelson</a>
+									</b>
+								</h4>
+								<h5>
+									Photographer
+								</h5>
+							</div>
+							<div class="follow-item-col">
+								<a href="javascript:;">
+									<div class="artist-img" style='background: url("images/liam1.jpg") no-repeat center center / cover;'>
+									</div>
+								</a>
+								<h4>
+									<b>
+										<a href="javascript:;">Liam Nelson</a>
+									</b>
+								</h4>
+								<h5>
+									Photographer
+								</h5>
+							</div>
+							<div class="follow-item-col">
+								<a href="javascript:;">
+									<div class="artist-img" style='background: url("images/liam1.jpg") no-repeat center center / cover;'>
+									</div>
+								</a>
+								<h4>
+									<b>
+										<a href="javascript:;">Liam Nelson</a>
+									</b>
+								</h4>
+								<h5>
+									Photographer
+								</h5>
+							</div>
+							<div class="follow-item-col">
+								<a href="javascript:;">
+									<div class="artist-img" style='background: url("images/liam1.jpg") no-repeat center center / cover;'>
+									</div>
+								</a>
+								<h4>
+									<b>
+										<a href="javascript:;">Liam Nelson</a>
+									</b>
+								</h4>
+								<h5>
+									Photographer
+								</h5>
+							</div>
+							<div class="follow-item-col">
+								<a href="javascript:;">
+									<div class="artist-img" style='background: url("images/liam1.jpg") no-repeat center center / cover;'>
+									</div>
+								</a>
+								<h4>
+									<b>
+										<a href="javascript:;">Liam Nelson</a>
+									</b>
+								</h4>
+								<h5>
+									Photographer
+								</h5>
+							</div>
+							<div class="follow-item-col">
+								<a href="javascript:;">
+									<div class="artist-img" style='background: url("images/liam1.jpg") no-repeat center center / cover;'>
+									</div>
+								</a>
+								<h4>
+									<b>
+										<a href="javascript:;">Liam Nelson</a>
+									</b>
+								</h4>
+								<h5>
+									Photographer
+								</h5>
+							</div>
+							<div class="follow-item-col">
+								<a href="javascript:;">
+									<div class="artist-img" style='background: url("images/liam1.jpg") no-repeat center center / cover;'>
+									</div>
+								</a>
+								<h4>
+									<b>
+										<a href="javascript:;">Liam Nelson</a>
+									</b>
+								</h4>
+								<h5>
+									Photographer
+								</h5>
+							</div>
+							<div class="follow-item-col">
+								<a href="javascript:;">
+									<div class="artist-img" style='background: url("images/liam1.jpg") no-repeat center center / cover;'>
+									</div>
+								</a>
+								<h4>
+									<b>
+										<a href="javascript:;">Liam Nelson</a>
+									</b>
+								</h4>
+								<h5>
+									Photographer
+								</h5>
+							</div>
+							<div class="follow-item-col">
+								<a href="javascript:;">
+									<div class="artist-img" style='background: url("images/liam1.jpg") no-repeat center center / cover;'>
+									</div>
+								</a>
+								<h4>
+									<b>
+										<a href="javascript:;">Liam Nelson</a>
+									</b>
+								</h4>
+								<h5>
+									Photographer
+								</h5>
+							</div>
+							<div class="follow-item-col">
+								<a href="javascript:;">
+									<div class="artist-img" style='background: url("images/liam1.jpg") no-repeat center center / cover;'>
+									</div>
+								</a>
+								<h4>
+									<b>
+										<a href="javascript:;">Liam Nelson</a>
+									</b>
+								</h4>
+								<h5>
+									Photographer
+								</h5>
+							</div>
+							<div class="follow-item-col">
+								<a href="javascript:;">
+									<div class="artist-img" style='background: url("images/liam1.jpg") no-repeat center center / cover;'>
+									</div>
+								</a>
+								<h4>
+									<b>
+										<a href="javascript:;">Liam Nelson</a>
+									</b>
+								</h4>
+								<h5>
+									Photographer
+								</h5>
+							</div>
+							<div class="follow-item-col">
+								<a href="javascript:;">
+									<div class="artist-img" style='background: url("images/liam1.jpg") no-repeat center center / cover;'>
+									</div>
+								</a>
+								<h4>
+									<b>
+										<a href="javascript:;">Liam Nelson</a>
+									</b>
+								</h4>
+								<h5>
+									Photographer
+								</h5>
+							</div>
+							<div class="follow-item-col">
+								<a href="javascript:;">
+									<div class="artist-img" style='background: url("images/liam1.jpg") no-repeat center center / cover;'>
+									</div>
+								</a>
+								<h4>
+									<b>
+										<a href="javascript:;">Liam Nelson</a>
+									</b>
+								</h4>
+								<h5>
+									Photographer
+								</h5>
+							</div>
+							<div class="follow-item-col">
+								<a href="javascript:;">
+									<div class="artist-img" style='background: url("images/liam1.jpg") no-repeat center center / cover;'>
+									</div>
+								</a>
+								<h4>
+									<b>
+										<a href="javascript:;">Liam Nelson</a>
+									</b>
+								</h4>
+								<h5>
+									Photographer
+								</h5>
+							</div>
+							<div class="follow-item-col">
+								<a href="javascript:;">
+									<div class="artist-img" style='background: url("images/liam1.jpg") no-repeat center center / cover;'>
+									</div>
+								</a>
+								<h4>
+									<b>
+										<a href="javascript:;">Liam Nelson</a>
+									</b>
+								</h4>
+								<h5>
+									Photographer
+								</h5>
+							</div>
+							<div class="follow-item-col">
+								<a href="javascript:;">
+									<div class="artist-img" style='background: url("images/liam1.jpg") no-repeat center center / cover;'>
+									</div>
+								</a>
+								<h4>
+									<b>
+										<a href="javascript:;">Liam Nelson</a>
+									</b>
+								</h4>
+								<h5>
+									Photographer
+								</h5>
+							</div>
+							<div class="follow-item-col">
+								<a href="javascript:;">
+									<div class="artist-img" style='background: url("images/liam1.jpg") no-repeat center center / cover;'>
+									</div>
+								</a>
+								<h4>
+									<b>
+										<a href="javascript:;">Liam Nelson</a>
+									</b>
+								</h4>
+								<h5>
+									Photographer
+								</h5>
+							</div>
+							<div class="follow-item-col">
+								<a href="javascript:;">
+									<div class="artist-img" style='background: url("images/liam1.jpg") no-repeat center center / cover;'>
+									</div>
+								</a>
+								<h4>
+									<b>
+										<a href="javascript:;">Liam Nelson</a>
+									</b>
+								</h4>
+								<h5>
+									Photographer
+								</h5>
+							</div>
+							<div class="follow-item-col">
+								<a href="javascript:;">
+									<div class="artist-img" style='background: url("images/liam1.jpg") no-repeat center center / cover;'>
+									</div>
+								</a>
+								<h4>
+									<b>
+										<a href="javascript:;">Liam Nelson</a>
+									</b>
+								</h4>
+								<h5>
+									Photographer
+								</h5>
+							</div>
+							<div class="follow-item-col">
+								<a href="javascript:;">
+									<div class="artist-img" style='background: url("images/liam1.jpg") no-repeat center center / cover;'>
+									</div>
+								</a>
+								<h4>
+									<b>
+										<a href="javascript:;">Liam Nelson</a>
+									</b>
+								</h4>
+								<h5>
+									Photographer
+								</h5>
+							</div>
 						</div>
 
 					</div>
-<div class="down-arrow"></div>
+					<div class="down-arrow"></div>
 
 
 					<div class="row" style="display:none;">
 						<h3>
-								There are no current events.
+								You do not have any followers.
 						</h3>
 					</div>
 			</div>
@@ -770,6 +1037,7 @@
 	<h1 style="display:none;">INDELIBL</h1>
 	<h2 style="display:none;">INDELIBL</h2>
 	<!--Custom Scripts-->
+
 	<script src="js/general.js">
 	</script>
 
