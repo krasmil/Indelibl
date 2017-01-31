@@ -105,7 +105,7 @@
 				<!-- right header, user profile dropdown -->
 				<div class="right">
 					<ul class="user-options">
-						<li><a href="javascript:;">Brian Williams</a></li>
+						<li><a href="javascript:;">Brian</a></li>
 						<li class="dropdown">
 							<img src="images/morgan1.jpg" alt="" trigger="profileMenu" />
 							<div class="drop-content drop-right profile" dropdown="profileMenu">
@@ -113,6 +113,13 @@
 								<a href="javascript:;">My Indelibl</a>
 								<a href="javascript:;">Log out</a>
 							</div>
+						</li>
+						<!-- notifications popup -->
+						<li class="dropdown notifications-icon-wrapper">
+							<a href="javascript:;" data-popup="notifications">
+								<img class="notify-icon" src="images/icons/notification_red.png" alt="" />
+								<img class="notify-icon" src="images/icons/notification.png" alt="" style="display: none;" />
+							</a>
 						</li>
 						<!-- wishlist dropdown -->
 						<li class="dropdown">
@@ -918,6 +925,261 @@
 			</div>
 		</footer>
 	</div>
+
+	<!-- notifications start -->
+	<div class="popup-wrapper" style="display: none;" data-popup-id="notifications">
+		<div class="popup-inner ie-popup notify-popup">
+			<div class="popup popup-notifications">
+				<div class="notifications-popup-header">
+					<h4>
+					<b>
+						Notifications
+					</b>
+				</h4>
+					<div class="xIcon" id="close-notifications"></div>
+				</div>
+				<ul class="notifications-list">
+					<li>
+						<div class="notification-text long-text">
+							<p>
+								<a href="javascript:;">Julia</a> subscribed to your event <a href="javascript:;">Let's Dance</a> - <span class="notification-date">Nov 12, 2017</span>
+							</p>
+						</div>
+						<div class="notification-close">
+							<div class="xIcon"></div>
+						</div>
+					</li>
+					<li>
+						<div class="notification-text">
+							<p>
+								<a href="javascript:;">Jeffrey</a> has invited you to his event <a href="javascript:;">A Night to Remember</a> - <span class="notification-date">Nov 12, 2017</span>
+							</p>
+						</div>
+						<div class="notification-buttons">
+							<button class="btn">Accept</a>
+						<button class="btn clearBtn">Decline</a>
+					</div>
+					<div class="notification-close">
+						<div class="xIcon"></div>
+					</div>
+				</li>
+				<li>
+					<div class="notification-text long-text">
+						<p>
+						<a href="javascript:;">Jeffrey</a> has started following you - <span class="notification-date">Nov 12, 2017</span>
+						</p>
+					</div>
+					<div class="notification-close">
+						<div class="xIcon"></div>
+					</div>
+				</li>
+				<li>
+					<div class="notification-text">
+						<p>
+						<a href="javascript:;">Retro Gallery</a> has invited you to synchornize profiles - <span class="notification-date">Nov 12, 2017</span>
+						</p>
+					</div>
+					<div class="notification-buttons">
+						<button class="btn">Accept</a>
+						<button class="btn clearBtn">Decline</a>
+					</div>
+					<div class="notification-close">
+						<div class="xIcon"></div>
+					</div>
+				</li>
+				<li>
+					<div class="notification-text long-text">
+						<p>
+						<a href="javascript:;">Pace Gallery</a> accepted your invitation to synchornize profiles - <span class="notification-date">Nov 12, 2017</span>
+						</p>
+					</div>
+
+					<div class="notification-close">
+						<div class="xIcon"></div>
+					</div>
+				</li>
+				<li>
+					<div class="notification-text long-text">
+						<p>
+						You have 5 new subscriptions to your event <a href="javascript:;">Joe Party</a> - <span class="notification-date">Nov 12, 2017</span>
+						</p>
+					</div>
+
+					<div class="notification-close">
+						<div class="xIcon"></div>
+					</div>
+				</li>
+				<li>
+					<div class="notification-text long-text">
+						<p>
+						<a href="javascript:;">Kanye</a> declined your invitation to the event <a href="javascript:;">Joe Party</a> - <span class="notification-date">Nov 12, 2017</span>
+						</p>
+					</div>
+
+					<div class="notification-close">
+						<div class="xIcon"></div>
+					</div>
+				</li>
+				<li>
+					<div class="notification-text long-text">
+						<p>
+						You have been removed from the event <a href="javascript:;">Joe Party</a> - <span class="notification-date">Nov 12, 2017</span>
+						</p>
+					</div>
+
+					<div class="notification-close">
+						<div class="xIcon"></div>
+					</div>
+				</li>
+				<li>
+					<div class="notification-text long-text">
+						<p>
+						You have been removed from the event <a href="javascript:;">Joe Party</a> - <span class="notification-date">Nov 12, 2017</span>
+						</p>
+					</div>
+
+					<div class="notification-close">
+						<div class="xIcon"></div>
+					</div>
+				</li>
+				<li>
+					<div class="notification-text">
+						<p>
+						<a href="javascript:;">Retro Gallery</a> has invited you to the event <a href="javascript:;">Retro Sale</a> - <span class="notification-date">Nov 12, 2017</span>
+						</p>
+					</div>
+					<div class="notification-buttons">
+						<button class="btn">Accept</a>
+						<button class="btn clearBtn">Decline</a>
+					</div>
+					<div class="notification-close">
+						<div class="xIcon"></div>
+					</div>
+				</li>
+				<li>
+					<div class="notification-text long-text">
+						<p>
+							<a href="javascript:;">Julia</a> subscribed to your event <a href="javascript:;">Let's Dance</a> - <span class="notification-date">Nov 12, 2017</span>
+						</p>
+					</div>
+
+					<div class="notification-close">
+						<div class="xIcon"></div>
+					</div>
+				</li>
+				<li>
+					<div class="notification-text">
+						<p>
+							<a href="javascript:;">Jeffrey</a> has invited you to his event <a href="javascript:;">A Night to Remember</a> - <span class="notification-date">Nov 12, 2017</span>
+						</p>
+					</div>
+					<div class="notification-buttons">
+						<button class="btn">Accept</a>
+						<button class="btn clearBtn">Decline</a>
+					</div>
+					<div class="notification-close">
+						<div class="xIcon"></div>
+					</div>
+				</li>
+				<li>
+					<div class="notification-text long-text">
+						<p>
+						<a href="javascript:;">Jeffrey</a> has started following you - <span class="notification-date">Nov 12, 2017</span>
+						</p>
+					</div>
+
+					<div class="notification-close">
+						<div class="xIcon"></div>
+					</div>
+				</li>
+				<li>
+					<div class="notification-text">
+						<p>
+						<a href="javascript:;">Retro Gallery</a> has invited you to synchornize profiles - <span class="notification-date">Nov 12, 2017</span>
+						</p>
+					</div>
+					<div class="notification-buttons">
+						<button class="btn">Accept</a>
+						<button class="btn clearBtn">Decline</a>
+					</div>
+					<div class="notification-close">
+						<div class="xIcon"></div>
+					</div>
+				</li>
+				<li>
+					<div class="notification-text long-text">
+						<p>
+						<a href="javascript:;">Pace Gallery</a> accepted your invitation to synchornize profiles - <span class="notification-date">Nov 12, 2017</span>
+						</p>
+					</div>
+
+					<div class="notification-close">
+						<div class="xIcon"></div>
+					</div>
+				</li>
+				<li>
+					<div class="notification-text long-text">
+						<p>
+						You have 5 new subscriptions to your event <a href="javascript:;">Joe Party</a> - <span class="notification-date">Nov 12, 2017</span>
+						</p>
+					</div>
+
+					<div class="notification-close">
+						<div class="xIcon"></div>
+					</div>
+				</li>
+				<li>
+					<div class="notification-text long-text">
+						<p>
+						<a href="javascript:;">Kanye</a> declined your invitation to the event <a href="javascript:;">Joe Party</a> - <span class="notification-date">Nov 12, 2017</span>
+						</p>
+					</div>
+
+					<div class="notification-close">
+						<div class="xIcon"></div>
+					</div>
+				</li>
+				<li>
+					<div class="notification-text long-text">
+						<p>
+						You have been removed from the event <a href="javascript:;">Joe Party</a> - <span class="notification-date">Nov 12, 2017</span>
+						</p>
+					</div>
+
+					<div class="notification-close">
+						<div class="xIcon"></div>
+					</div>
+				</li>
+				<li>
+					<div class="notification-text long-text">
+						<p>
+						You have been removed from the event <a href="javascript:;">Joe Party</a> - <span class="notification-date">Nov 12, 2017</span>
+						</p>
+					</div>
+
+					<div class="notification-close">
+						<div class="xIcon"></div>
+					</div>
+				</li>
+				<li>
+					<div class="notification-text">
+						<p>
+						<a href="javascript:;">Retro Gallery</a> has invited you to the event <a href="javascript:;">Retro Sale</a> - <span class="notification-date">Nov 12, 2017</span>
+						</p>
+					</div>
+					<div class="notification-buttons">
+						<button class="btn">Accept</a>
+						<button class="btn clearBtn">Decline</a>
+					</div>
+					<div class="notification-close">
+						<div class="xIcon"></div>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+	</div>
+	<!-- notifications end -->
 
 
 	<!-- preloader -->

@@ -1218,7 +1218,7 @@ ripple.ripple::after {
 .user-options li>i {
     font-size: 30px;
     line-height: 50px;
-    width: 50px;
+    width: 40px;
     text-align: center;
     color: #313b46;
     margin: 0 10px
@@ -4599,7 +4599,6 @@ font-style: italic;
   float: right;
   margin-top: 25px;
 }
-
 .artist-invite .invite-btns-wrapper .btn {
   margin-right: 20px;
 }
@@ -4610,7 +4609,6 @@ font-style: italic;
 }
 .view-invites-scroll {
   margin-left: 0;
-
 }
 .view-invites-wrapper {
   border: 1px solid #acacac;
@@ -4620,7 +4618,6 @@ font-style: italic;
   padding-bottom: 40px;
 }
 .view-invites-sent, .view-invites-received {
-
   padding-left: 20px;
   padding-right: 20px;
   overflow: hidden;
@@ -4690,15 +4687,131 @@ li.active-tab {
   padding-top: 30px;
   padding-bottom: 30px;
 }
+.notify-icon {
+  height: 28px;
+  width: auto;
+  margin-top: 5px;
+}
+.notifications-icon-wrapper {
+  width: 50px;
+}
+.popup-inner.ie-popup.notify-popup {
+  width: 920px;
+  border: 1px solid #acacac;
+  padding: 0;
+  max-width: 920px;
+  background: #fff;
+  margin-top: 0;
+  height: 100%;
+  overflow-y: auto;
+}
+.notifications-list {
+  padding-top: 60px;
+}
+.notifications-list li {
+  display: table;
+  overflow: hidden;
+  vertical-align: middle;
+  border-bottom: 1px solid #acacac;
+  width: 100%;
+}
+.notifications-list li:last-of-type {
+  border-bottom: none;
+}
+.notifications-popup-header {
+  padding-top: 20px;
+  border-bottom: 1px solid #acacac;
+  position: fixed;
+  text-align: left;
+  width: 918px;
+  height: 60px;
+  background: #fff;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+.notifications-popup-header h4 {
+  margin-bottom: 20px;
+  font-size: 1.2em;
+  margin-left: 20px;
+}
+.notifications-popup-header .xIcon {
+  width: 14px;
+  height: 14px;
+  top: 10px;
+  background: url(../images/icons/close.png) no-repeat;
+  background-size: cover;
+  cursor: pointer;
+  margin: 0;
+  right: 10px;
+  position: absolute;
+}
+.notification-text {
+  font-size: 0.85em;
+  text-align: left;
+  display: table-cell;
+  /*width: 440px;*/
+  width: 70%;
+  vertical-align: middle;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.notification-text.long-text {
+  /*width: 600px;*/
+  width: 95%;
+}
+.notification-text a {
 
+}
+.notification-buttons {
+  /*width: 160px;*/
+  width: 25%;
+  margin-right: 20px;
+  display: table-cell;
+  vertical-align: middle;
+}
+.notification-close {
+  /*width: 30px;*/
+  width: 5%;
+  display: table-cell;
+  vertical-align: top;
+}
+.notification-close .xIcon {
+  width: 10px;
+  height: 10px;
+  margin-top: 10px;
+  background: url(../images/icons/close-grey.png) no-repeat;
+  background-size: cover;
+  cursor: pointer;
+  float: right;
+  margin-right: 10px;
+}
 
-
-
-
-
-
-
-
+.notification-buttons .btn {
+  margin: 5px;
+  float: left;
+  line-height: 28px;
+  font-size: 0.8em;
+  min-width: 70px;
+  padding: 0 10px;
+}
+.notification-buttons .clearBtn {
+  border: 1px solid #e74c3c;
+  color: #e74c3c;
+  line-height: 26px;
+}
+.notifications-more {
+  padding: 10px 20px;
+  text-align: left;
+  border-top: 1px solid #acacac;
+}
+.notifications-more a {
+  color: #acacac;
+}
+.notification-date {
+  font-style: italic;
+  color: #acacac;
+  font-size: 0.8em;
+}
 
 
 
@@ -5163,7 +5276,7 @@ li.ui-timepicker-selected .ui-timepicker-duration,
     .user-options li>i {
         font-size: 24px;
         line-height: 30px;
-        width: 50px;
+        width: 40px;
         text-align: center;
         color: #313b46;
         margin: 0 10px;
@@ -5648,6 +5761,29 @@ li.ui-timepicker-selected .ui-timepicker-duration,
     .ddcommon {
       width: 315px;
     }
+    .notification-buttons .btn {
+        line-height: 24px;
+        min-width: 65px;
+    }
+    .notification-buttons .clearBtn {
+        line-height: 22px;
+    }
+    .popup-inner.ie-popup.notify-popup {
+      width: 630px;
+    }
+    .notify-icon {
+      height: 24px;
+    }
+    .notifications-list {
+
+    }
+    .notifications-icon-wrapper {
+      width: 44px;
+    }
+    .notifications-popup-header {
+      width: 628px;
+    }
+
 }
 
 
@@ -7059,6 +7195,31 @@ li.ui-timepicker-selected .ui-timepicker-duration,
       padding-top: 15px;
       padding-bottom: 15px;
     }
+    .user-options li>a>img.notify-icon {
+      height: 14px;
+      width: 14px;
+      margin-top: 3px;
+    }
+    .notification-buttons {
+      padding-left: 10px;
+    }
+    .notification-buttons .btn {
+      min-width: 90px;
+      line-height: 22px;
+    }
+    .notification-buttons .clearBtn {
+      line-height: 20px
+    }
+    .popup-inner.ie-popup.notify-popup {
+      width: 530px;
+    }
+    .notifications-icon-wrapper {
+      width: 17px;
+    }
+    .notifications-popup-header {
+      width: 528px;
+    }
+
 
 }
 
@@ -8598,6 +8759,31 @@ li.ui-timepicker-selected .ui-timepicker-duration,
       padding-top: 15px;
       padding-bottom: 15px;
     }
+    .user-options li>a>img.notify-icon {
+      height: 14px;
+      width: 14px;
+      margin-top: 3px;
+    }
+    .notification-buttons {
+      padding-left: 10px;
+    }
+    .notification-buttons .btn {
+      min-width: 90px;
+      line-height: 22px;
+    }
+    .notification-buttons .clearBtn {
+      line-height: 20px
+    }
+    .popup-inner.ie-popup.notify-popup {
+      width: 330px;
+    }
+    .notifications-icon-wrapper {
+      width: 17px;
+    }
+    .notifications-popup-header {
+      width: 328px;
+    }
+
 
 
 /* Custom, iPhone Retina */
@@ -8629,4 +8815,11 @@ li.ui-timepicker-selected .ui-timepicker-duration,
       width: 215px;
       margin: 0 20px 0 20px;
     }
+    .popup-inner.ie-popup.notify-popup {
+      width: 300px;
+    }
+    .notifications-popup-header {
+      width: 298px;
+    }
+
 }

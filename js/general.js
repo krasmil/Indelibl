@@ -210,6 +210,7 @@ var openRegPanel = function() {
             a = $('[data-popup-id="' + t + '"]');
             $("[data-popup-id]").hide();
             a.show();
+            
             /*  $("body, html").css({
                   overflow: "hidden"
               }); */
@@ -224,6 +225,10 @@ var openRegPanel = function() {
     //*************************
     var closeIcon = $("#closeLoginPopup");
     closeIcon.click(function() {
+        $("[data-popup-id]").hide();
+    });
+    var closeNotes = $("#close-notifications");
+    closeNotes.click(function() {
         $("[data-popup-id]").hide();
     });
 };
@@ -1069,6 +1074,7 @@ var bounceDownArrowRecd = function() {
     }
   );
 };
+
 var addImagesSelect = function() {
   if ($('#select-artists').length) {
     $("#select-artists").msDropDown();
