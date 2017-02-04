@@ -4290,6 +4290,15 @@ button#addBtn {
     color: #e74c3c;
     font-style: italic;
 }
+.follow-item-col .btn {
+    margin-top: 10px;
+    margin-bottom: 20px;
+    min-width: 100px;
+    height: 30px;
+    padding: 0;
+    line-height: 30px;
+    font-size: 0.9em;
+}
 .view-follows {
   overflow:hidden;
   position: relative;
@@ -5783,6 +5792,11 @@ li.ui-timepicker-selected .ui-timepicker-duration,
     .notifications-popup-header {
       width: 628px;
     }
+    .follow-item-col .btn {
+      min-width: 90px;
+      height: 25px;
+      line-height: 25px;
+    }
 
 }
 
@@ -7219,7 +7233,11 @@ li.ui-timepicker-selected .ui-timepicker-duration,
     .notifications-popup-header {
       width: 528px;
     }
-
+    .follow-item-col .btn {
+      min-width: 90px;
+      height: 22px;
+      line-height: 22px;
+    }
 
 }
 
@@ -8782,6 +8800,11 @@ li.ui-timepicker-selected .ui-timepicker-duration,
     }
     .notifications-popup-header {
       width: 328px;
+    }
+    .follow-item-col .btn {
+      min-width: 90px;
+      height: 22px;
+      line-height: 22px;
     }
 
 
