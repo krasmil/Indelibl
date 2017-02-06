@@ -4821,33 +4821,6 @@ li.active-tab {
   color: #acacac;
   font-size: 0.8em;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 .creatives-row {
   margin-left: 0;
 }
@@ -4933,10 +4906,10 @@ li.active-tab {
     max-width: 900px;
     margin-top: 5px;
     display: block;
-    float: left;
+
     background-color: #fff;
     padding: 20px 0;
-    position: relative;
+
     z-index: 10;
     -webkit-user-select: none;
     -moz-user-select: none;
@@ -4958,8 +4931,16 @@ li.active-tab {
   min-width: 140px;
 }
 
-
-
+.view-current-events .column-4.profile-event.mproduct {
+  height: 200px;
+  border: 1px solid #acacac;
+}
+.terms-msg {
+  margin-left: 20px;
+  font-size: 1em;
+  margin-top: 0;
+  margin-bottom: 20px;
+}
 
 
 
@@ -6012,6 +5993,11 @@ li.ui-timepicker-selected .ui-timepicker-duration,
     .creative_application .middle:before {
       width: 600px;
     }
+    .view-current-events .column-4.profile-event.mproduct {
+      height: 200px;
+      border: 1px solid #acacac;
+    }
+
 
 }
 
