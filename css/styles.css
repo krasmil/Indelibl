@@ -4845,6 +4845,211 @@ li.active-tab {
 
 
 
+
+
+
+.creatives-row {
+  margin-left: 0;
+}
+.creative_application {
+  margin-left: 0;
+  padding: 30px;
+  overflow: hidden;
+}
+.creative_application h2 {
+  font-size: 1.8em;
+  margin-top: 0;
+  margin-bottom: 60px;
+}
+.creative_application .top {
+  width: 100%;
+  overflow: hidden;
+  padding-bottom: 20px;
+}
+.creative_application .top a {
+  display: inline-block;
+  width: 100%;
+  text-decoration: none;
+  color: #fff;
+  font-size: 15px;
+  padding: 10px;
+  text-align: center;
+}
+.creative_application .top .facebook {
+  background-color: #4466b0;
+  margin-bottom: 30px;
+}
+.creative_application .top .googleplus {
+  background-color: #cf4331;
+}
+.creative_application .middle {
+    float: left;
+    width: 60px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #b1a0a1;
+    font-size: 10px;
+    height: 100%;
+    display: block;
+    position: relative;
+}
+.creative_application .middle:before {
+    content: '';
+    display: block;
+    top: 0;
+    height: 1px;
+    width: 880px;
+    position: absolute;
+    background-color: #b2a0a0;
+    z-index: 5;
+}
+.creative_application .middle span {
+    display: block;
+    position: absolute;
+    top: -20px;
+    left: 80%;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+    z-index: 10;
+    padding: 10px 10px;
+    font-size: 1.4em;
+    background-color: #fff;
+}
+.creative_application .bottom {
+  margin-top: 50px;
+  overflow: hidden;
+}
+.profile-form.creative_application .bottom input[type="checkbox"], input[type="radio"] {
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: 0;
+    margin-right: 10px;
+}
+.creative_application .bottom label {
+  white-space: normal;
+}
+.creative_application .bottom .accept {
+    width: 100%;
+    max-width: 900px;
+    margin-top: 5px;
+    display: block;
+    float: left;
+    background-color: #fff;
+    padding: 20px 0;
+    position: relative;
+    z-index: 10;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    word-wrap: break-word;
+
+}
+.creative_application .bottom a {
+  color: #000;
+  text-decoration: underline;
+}
+.creative_application .bottom span {
+  margin-left: 25px;
+  white-space: normal;
+}
+.creative_application .bottom .bottom-row button {
+  margin-top: 60px;
+  min-width: 140px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* ---------------- timepicker styles ----------------- */
 
 .ui-timepicker-wrapper {
@@ -5796,6 +6001,16 @@ li.ui-timepicker-selected .ui-timepicker-duration,
       min-width: 90px;
       height: 25px;
       line-height: 25px;
+    }
+    .creative_application {
+      margin-left: 0;
+      max-width: 680px;
+    }
+    .creative_application .bottom .accept {
+      max-width: 600px;
+    }
+    .creative_application .middle:before {
+      width: 600px;
     }
 
 }
@@ -7238,6 +7453,26 @@ li.ui-timepicker-selected .ui-timepicker-duration,
       height: 22px;
       line-height: 22px;
     }
+    .creative_application .top {
+      margin-bottom: 30px;
+    }
+    .creative_application .bottom {
+      padding-top: 20px;
+    }
+    .creative_application .middle:before {
+      width: 450px;
+    }
+    .creative_application .bottom .bottom-row button {
+      margin-top: 40px;
+      margin-left: 0;
+    }
+    .creative_application .bottom span {
+      margin-left: 0;
+    }
+    .creative_application h2 {
+      margin-bottom: 40px;
+    }
+
 
 }
 
@@ -8806,8 +9041,29 @@ li.ui-timepicker-selected .ui-timepicker-duration,
       height: 22px;
       line-height: 22px;
     }
-
-
+    .creative_application .top {
+      margin-bottom: 30px;
+    }
+    .creative_application .bottom {
+      padding-top: 20px;
+    }
+    .creative_application h2 {
+      font-size: 1.5em;
+      margin-top: 0;
+    }
+    .creative_application .middle:before {
+      width: 220px;
+    }
+    .creative_application .bottom .bottom-row button {
+        margin-top: 30px;
+        margin-left: 0;
+    }
+    .creative_application .bottom span {
+      margin-left: 0;
+    }
+    .creative_application h2 {
+      margin-bottom: 40px;
+    }
 
 /* Custom, iPhone Retina */
 
