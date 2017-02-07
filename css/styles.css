@@ -4200,7 +4200,7 @@ button#addBtn {
   height: 310px;
   max-height: 350px;
   margin-bottom: 20px;
-  width: calc(25% - 34.75px);
+  width: calc(25% - 36px);
 }
 .view-current-events .column-4.profile-event:nth-of-type(4n+1) {
   margin: 0 0 20px 0px;
@@ -4932,7 +4932,7 @@ li.active-tab {
 }
 
 .view-current-events .column-4.profile-event.mproduct {
-  height: 200px;
+  height: 270px;
   border: 1px solid #acacac;
 }
 .terms-msg {
@@ -4941,8 +4941,13 @@ li.active-tab {
   margin-top: 0;
   margin-bottom: 20px;
 }
-
-
+.view-current-events .column-4.profile-event.mproduct {
+  margin-bottom: 45px;
+}
+.mproduct-link {
+  width: 100%;
+  height: 100%;
+}
 
 
 
@@ -5897,7 +5902,7 @@ li.ui-timepicker-selected .ui-timepicker-duration,
       height: 250px;
       max-height: 300px;
       margin-bottom: 20px;
-      width: calc(25% - 15.5px);
+      width: calc(25% - 16.9px);
     }
     .view-box-gallery .product-img {
       height: 150px;
@@ -5997,7 +6002,9 @@ li.ui-timepicker-selected .ui-timepicker-duration,
       height: 200px;
       border: 1px solid #acacac;
     }
-
+    .view-current-events .column-4.profile-event.mproduct {
+      height: 200px;
+    }
 
 }
 
@@ -7458,7 +7465,9 @@ li.ui-timepicker-selected .ui-timepicker-duration,
     .creative_application h2 {
       margin-bottom: 40px;
     }
-
+    .view-current-events .column-4.profile-event.mproduct {
+      height: 235px;
+    }
 
 }
 
@@ -8813,7 +8822,7 @@ li.ui-timepicker-selected .ui-timepicker-duration,
       height: 290px;
       max-height: 320px;
       margin-bottom: 20px;
-      width: 100%;
+      width: 287px;
     }
 
     .view-current-events {
