@@ -599,13 +599,6 @@ var saveNewCoverPic = function() {
     }
 };
 
-
-
-
-
-
-
-
 /*---------- PREVIEW PROFILE IMAGE ON SELECT ------------*/
 function showOriginalArt(fileInput) {
     if (fileInput.files && fileInput.files[0]) {
@@ -656,16 +649,20 @@ function showOriginalArt(fileInput) {
     }
 }
 
-/*---------- PREVIEW PROFILE IMAGE ON SELECT ------------*/
-function removeArt(fileInput) {
+/*---------- remove art from add product ------------*/
+function removeArt() {
   $('#original-art-preview').css("background-image", "none");
   $('#art-input').val('');
 }
+/*---------- hide size error in add product when click on cancel in error------------*/
+function hideSizeError() {
+  $('#size-error').hide();
+}
 
-
-
-
-
+/*---------- hide extension error in add product when click on cancel in error------------*/
+function hideExtError() {
+  $('#ext-error').hide();
+}
 
 // get image orientation
 var getOrientation = function(file, callback) {

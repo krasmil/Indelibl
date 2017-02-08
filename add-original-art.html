@@ -492,7 +492,7 @@
 										<div class="progress-track"></div>
 									</div>
 								</div>
-					<div class="add-art-nav-buttons">
+								<div class="add-art-nav-buttons">
 									<a href="javascript:;" class="btn dark left">
 										Back
 									</a>
@@ -930,9 +930,8 @@
 	<!-- notifications end -->
 
 	<!-- upload error start -->
-<!--
------------ file too big error -------------
-	<div class="popup-wrapper" data-popup-id="upload-error">
+
+	<div class="popup-wrapper" id="size-error" style="display: none;">
 		<div class="popup-inner ie-popup error-popup">
 			<div class="error-popup-left">
 				<div class="errorIcon-large"></div>
@@ -942,14 +941,14 @@
 					<b>Please correct following</b>
 				</h5>
 				<span>Selected file is too big. Please select file up to 10MB.</span>
-				<button class="btn clearBtn">Cancel</button>
+				<button class="btn clearBtn" onclick="hideSizeError()">Cancel</button>
 			</div>
 		</div>
 	</div>
 
 
------------ file wrong format error -------------
-	<div class="popup-wrapper" data-popup-id="upload-error">
+
+	<div class="popup-wrapper" id="ext-error" style="display: none;">
 		<div class="popup-inner ie-popup error-popup">
 			<div class="error-popup-left">
 				<div class="errorIcon-large"></div>
@@ -958,13 +957,13 @@
 				<h5>
 					<b>Please correct following</b>
 				</h5>
-				<span>Selected file is not supported big. Please use JPG or PNG file.</span>
-				<button class="btn clearBtn">Cancel</button>
+				<span>Selected file is not supported. Please use JPG or PNG file.</span>
+				<button class="btn clearBtn" onclick="hideExtError()">Cancel</button>
 			</div>
 		</div>
 	</div>
 
--->
+
 
 	<!-- preloader -->
 	<div class="loader-mask">
