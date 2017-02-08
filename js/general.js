@@ -43,7 +43,19 @@ $(window).resize(function() {
         $('#productTemplates').show();
         $('#productTemplates_notAvail').hide();
       }
-  }
+    }
+    if ($('#art-templates').length) {
+      if ($(window).width() <= 1000 ) {
+        $('#art-templates').hide();
+        $('#art-templates').removeClass("large-padding-bottom-y");
+        $('#add-art-not-avail').show();
+      }
+      else if ($(window).width() > 1000 ) {
+        $('#art-templates').show();
+        $('#art-templates').addClass("large-padding-bottom-y");
+        $('#add-art-not-avail').hide();
+      }
+    }
   setTimeout(function () {
     getRecentViewsSliderCoeff();
     resetRecentViews();
@@ -82,9 +94,15 @@ $(window).on("orientationchange",function(){
 
 var checkDeviceForAddProducts = function() {
   if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
-
-    $('#productTemplates').html("");
-    $('#productTemplates_notAvail').show();
+    if ($('#productTemplates').length) {
+      $('#productTemplates').html("");
+      $('#productTemplates_notAvail').show();
+    }
+    if ($('#art-templates').length) {
+      $('#art-templates').html("");
+      $('#art-templates').removeClass("large-padding-bottom-y");
+      $('#add-art-not-avail').show();
+    }
   }
 };
 /*****************************************************/
@@ -210,7 +228,7 @@ var openRegPanel = function() {
             a = $('[data-popup-id="' + t + '"]');
             $("[data-popup-id]").hide();
             a.show();
-            
+
             /*  $("body, html").css({
                   overflow: "hidden"
               }); */
@@ -580,6 +598,74 @@ var saveNewCoverPic = function() {
         }
     }
 };
+
+
+
+
+
+
+
+
+/*---------- PREVIEW PROFILE IMAGE ON SELECT ------------*/
+function showOriginalArt(fileInput) {
+    if (fileInput.files && fileInput.files[0]) {
+        // DODAO Zoran za proveru velicine i extenzije slike START
+        var imgSize = Math.round((fileInput.files[0].size / 1024) / 1024);
+        var imgExtSplit = fileInput.files[0].type.split("/");
+        var imgExt = imgExtSplit[1];
+        if (imgExt === 'jpeg') {
+            imgExt = 'jpg';
+        }
+        if (imgSize > 10) {
+            $('#size-error').show();
+            $('#' + fileInput.id).val('');
+            return false;
+        }
+        if (imgExt !== 'jpg' && imgExt !== 'png' && imgExt !== 'gif') {
+            $('#ext-error').show();
+            $('#' + fileInput.id).val('');
+            return false;
+        }
+        // DODAO Zoran END
+        var reader = new FileReader();
+        reader.onload = function(e) {
+
+            // get orientation
+            binImg = e.target.result;
+            input = document.getElementById('art-input');
+            getOrientation(input.files[0], function(orientation) {
+
+                if ([5, 6, 7, 8].indexOf(orientation) > -1) {
+                    $('#original-art-rotator').attr('src', binImg);
+                    var c = document.getElementById("original-art-slice");
+                    c.width = $('#original-art-rotator').height();
+                    c.height = $('#original-art-rotator').width();
+                    var ctx = c.getContext("2d");
+                    ctx.transform(0, 1, -1, 0, $('#original-art-rotator').height(), 0);
+                    ctx.drawImage(document.getElementById('#original-art-rotator'), 0, 0);
+                    urlRot = c.toDataURL();
+                    // set Base64 string in src of positioner
+                    $('#original-art-preview').css("background-image", "url(" + urlRot + ")");
+                } else {
+                    // set Base64 string in src of positioner
+                    $('#original-art-preview').css("background-image", "url(" + binImg + ")");
+                }
+            });
+        };
+        reader.readAsDataURL(fileInput.files[0]);
+    }
+}
+
+/*---------- PREVIEW PROFILE IMAGE ON SELECT ------------*/
+function removeArt(fileInput) {
+  $('#original-art-preview').css("background-image", "none");
+  $('#art-input').val('');
+}
+
+
+
+
+
 
 // get image orientation
 var getOrientation = function(file, callback) {

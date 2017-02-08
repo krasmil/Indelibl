@@ -2224,7 +2224,7 @@ ripple.ripple::after {
     height: 12px;
     display: block;
     float: left;
-    margin-top: 5px;
+    margin-top: 4px;
     margin-right: 3px;
 }
 
@@ -4948,25 +4948,117 @@ li.active-tab {
   width: 100%;
   height: 100%;
 }
+.add-prod-header {
+  text-align: left;
+}
+.add-prod-header .right {
+  margin-top: 0;
+}
+.add-prod-header .content-wrapper {
+  overflow: hidden;
+}
+.add-prod-header h2 {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  float: left;
+}
+.add-art-wrapper {
+  overflow: hidden;
+}
+.add-art-form-left {
+  width: 295px;
+  text-align: left;
+  padding: 20px;
+  float: left;
+  height: 645px;
+}
+.add-art-form-left label, .add-art-form-left span, .add-art-form-left p {
+  font-size: 0.8em;
+  float: left;
+  padding-top: 3px;
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+.add-art-form-left label {
+  margin-right: 10px;
+}
+.add-art-form-left p {
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+}
+.add-art-form-left input, .add-art-form-left select {
+  font-size: 0.8em;
+  margin-top: 0;
+  margin-bottom: 15px;
+  line-height: 30px;
+  height: 30px;
+}
+.add-art-form-left input.art-dim {
+  width: 150px;
+  float: left;
+  margin-right: 10px;
+  margin-bottom: 5px;
+  margin-top: 5px;
+}
+.add-art-main-wrapper {
+  width: 960px;
+  margin-left: 45px;
+  float: left;
+}
+.add-art-form-main {
+  width: 100%;
+}
+.art-area {
+  width: 640px;
+  height: 400px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 80px;
+}
+.original-art-img {
+  width: 640px;
+  height: 400px;
+  border: 1px dashed #fe0813;
+  background-position: center center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+#art-input {
+  display: none;
+}
+#add-art-btn {
+  font-size: 0.9em;
+  margin-top: 2em;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+.add-art-form-main .btn.wide {
+  border: 1px solid #e74c3c;
+  color: #e74c3c;
+  background: #fff;
+  margin-top: 60px;
+  margin-bottom: 30px;
+}
+.add-art-nav-buttons {
+  overflow: hidden;
+  width: 100%;
+}
+.add-art-nav-buttons .right {
+  margin-top: 0;
+}
+#add-art-not-avail {
+    display: none;
+    text-align: center;
+}
+.add-art-form-left .errorMsg {
+  margin-top: -10px;
+  margin-bottom: -5px;
+}
+label.width-height {
+  margin-top: 5px;
+}
+span.width-height {
+  margin-top: 5px;
+}
 
 
 
@@ -6005,6 +6097,35 @@ li.ui-timepicker-selected .ui-timepicker-duration,
     .view-current-events .column-4.profile-event.mproduct {
       height: 200px;
     }
+    .add-art-form-left {
+      width: 210px;
+      height: 614px;
+    }
+    .add-art-form-left input.art-dim {
+      width: 80px;
+    }
+    .add-art-form-left input, .add-art-form-left select {
+      line-height: 22px;
+      height: 22px;
+    }
+    .add-art-main-wrapper {
+      width: 685px;
+      margin-left: 30px;
+    }
+    .art-area {
+      margin-top: 60px;
+    }
+
+    .original-art-img {
+      width: 640px;
+      height: 400px;
+    }
+    .add-art-form-left label, .add-art-form-left span, .add-art-form-left p {
+      padding-top: 0;
+    }
+    .add-art-form-main .btn.wide {
+      width: 300px;
+    }
 
 }
 
@@ -6930,6 +7051,9 @@ li.ui-timepicker-selected .ui-timepicker-duration,
     #productTemplates_notAvail {
         display: block;
     }
+    #add-art-not-avail {
+        display: block;
+    }
     #productTemplates_notAvail h3 {
         font-size: 1em;
         font-weight: normal;
@@ -7467,6 +7591,9 @@ li.ui-timepicker-selected .ui-timepicker-duration,
     }
     .view-current-events .column-4.profile-event.mproduct {
       height: 235px;
+    }
+    #add-art-main-section {
+      padding-top: 20px;
     }
 
 }
@@ -8411,6 +8538,9 @@ li.ui-timepicker-selected .ui-timepicker-duration,
     #productTemplates_notAvail {
         display: block;
     }
+    #add-art-not-avail {
+        display: block;
+    }
     #productTemplates_notAvail h3 {
         font-size: 1em;
         font-weight: normal;
@@ -9058,6 +9188,9 @@ li.ui-timepicker-selected .ui-timepicker-duration,
     }
     .creative_application h2 {
       margin-bottom: 40px;
+    }
+    #add-art-main-section {
+      padding-top: 20px;
     }
 
 /* Custom, iPhone Retina */
