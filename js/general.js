@@ -614,7 +614,7 @@ function showOriginalArt(fileInput) {
             $('#' + fileInput.id).val('');
             return false;
         }
-        if (imgExt !== 'jpg' && imgExt !== 'png' && imgExt !== 'gif') {
+        if (imgExt !== 'jpg' && imgExt !== 'png') {
             $('#ext-error').show();
             $('#' + fileInput.id).val('');
             return false;
