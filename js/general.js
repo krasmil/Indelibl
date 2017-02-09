@@ -30,6 +30,9 @@ $(document).ready(function() {
     openTab();
     calcViewInvitesHeight();
     addImagesSelect();
+    lightenYourPrice();
+    checkReqPrice();
+    yearSpinner();
 });
 
 /******* Run functions when document resize **********/
@@ -1161,5 +1164,28 @@ var bounceDownArrowRecd = function() {
 var addImagesSelect = function() {
   if ($('#select-artists').length) {
     $("#select-artists").msDropDown();
+  }
+};
+
+var lightenYourPrice = function() {
+  $(".your-price").keyup(function(){
+       if ($(this).val() !== ''){
+           $(this).css('background-color', '#fff')
+       } else {
+           $(this).css('background-color', '#2d2d2d')
+       }
+   });
+};
+
+var checkReqPrice = function() {
+    $('#req-price').click(function() {
+        var cb1 = $('#req-price').is(':checked');
+        $('#prod-your-price, #prod-rec-price, #prod-your-profit').prop('disabled', (cb1));
+    });
+};
+
+var yearSpinner = function() {
+  if ($('#product-year').length) {
+    var spinner = $( "#product-year" ).spinner({ min: new Date().getFullYear() - 100, max: new Date().getFullYear() });
   }
 };

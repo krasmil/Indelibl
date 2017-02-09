@@ -4892,7 +4892,7 @@ li.active-tab {
   margin-top: 50px;
   overflow: hidden;
 }
-.profile-form.creative_application .bottom input[type="checkbox"], input[type="radio"] {
+.profile-form.creative_application .bottom input[type="checkbox"], .profile-form.creative_application .bottom input[type="radio"] {
     margin-top: 0;
     margin-bottom: 0;
     margin-left: 0;
@@ -5059,18 +5059,68 @@ label.width-height {
 span.width-height {
   margin-top: 5px;
 }
+.product-description {
+  margin-top: 30px;
+}
+.product-description .form-item_third .form-item_full {
+  padding-right: 0;
+}
+.product-description .form-item_quarter {
+    width: 25%;
+    float: left;
+    padding-right: 25px;
+}
+.product-description .form-item_quarter .form-item_full {
+  padding-right: 0;
+}
+.your-price {
+  background-color: #2d2d2d;
+}
+.your-price:focus {
+  background-color: #fff;
+}
+.req-price-desc {
+  font-size: 0.75em;
+  color: #acacac;
+  margin-top: 3px;
+  margin-left: 20px;
+}
+input#req-price {
+  margin-top: 45px;
+  margin-bottom: 0;
+}
+input#terms-conditions {
+  margin-left: 0;
 
+}
+input#product-year {
+  margin: 0;
+  border: none;
+}
+.profile-form .form-row.product-description-row {
+  height: auto;
+}
+.profile-form.product-description h3 {
+    padding-top: 10px;
+}
 
+.profile-form.product-description .form-row.overflow-hidden {
+  overflow:hidden;
+}
+.product-description input[type="text"]:disabled {
+    color: #acacac;
 
-
-
-
-
-
-
-
-
-
+}
+.ui-spinner-input {
+    border: none;
+    background: none;
+    color: inherit;
+    padding: .222em 0;
+    margin: .2em 0;
+    vertical-align: middle;
+    margin-left: .4em;
+    margin-right: 2em;
+}
 
 
 
