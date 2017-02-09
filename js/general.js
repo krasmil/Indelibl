@@ -1180,7 +1180,7 @@ var lightenYourPrice = function() {
 var checkReqPrice = function() {
     $('#req-price').click(function() {
         var cb1 = $('#req-price').is(':checked');
-        $('#prod-your-price, #prod-rec-price, #prod-your-profit').prop('disabled', (cb1));
+        $('#prod-your-price').prop('disabled', (cb1));
     });
 };
 

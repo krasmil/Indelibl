@@ -5108,7 +5108,7 @@ input#product-year {
   overflow:hidden;
 }
 .product-description input[type="text"]:disabled {
-    color: #acacac;
+
 
 }
 .ui-spinner-input {
@@ -5121,7 +5121,9 @@ input#product-year {
     margin-left: .4em;
     margin-right: 2em;
 }
-
+.price-input {
+  width: 80%;
+}
 
 
 
