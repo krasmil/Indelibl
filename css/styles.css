@@ -5013,6 +5013,7 @@ li.active-tab {
   margin-left: auto;
   margin-right: auto;
   margin-top: 80px;
+  position: relative;
 }
 .original-art-img {
   width: 640px;
@@ -5036,7 +5037,10 @@ li.active-tab {
   color: #e74c3c;
   background: #fff;
   margin-top: 60px;
-  margin-bottom: 30px;
+  margin-bottom: 50px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 .add-art-nav-buttons {
   overflow: hidden;
@@ -5109,17 +5113,16 @@ input#product-year {
 }
 .product-description input[type="text"]:disabled {
 
-
 }
 .ui-spinner-input {
-    border: none;
-    background: none;
-    color: inherit;
-    padding: .222em 0;
-    margin: .2em 0;
-    vertical-align: middle;
-    margin-left: .4em;
-    margin-right: 2em;
+  border: none;
+  background: none;
+  color: inherit;
+  padding: .222em 0;
+  margin: .2em 0;
+  vertical-align: middle;
+  margin-left: .4em;
+  margin-right: 2em;
 }
 .price-input {
   width: 80%;
@@ -5129,17 +5132,205 @@ input#product-year {
 
 
 
+/************************ bootstrap tags input **********************/
+.bootstrap-tagsinput {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  display: inline-block;
+  padding: 4px 6px;
+  color: #555;
+  vertical-align: middle;
+  min-height: 210px;
+  max-width: 100%;
+  width: 100%;
+  line-height: 22px;
+  cursor: text;
+  margin-top: 10px;
+}
+.bootstrap-tagsinput input {
+  border: none;
+  box-shadow: none;
+  outline: none;
+  background-color: transparent;
+  padding: 0 6px;
+  margin: 0;
+  width: 100%;
+  max-width: inherit;
+}
+.bootstrap-tagsinput.form-control input::-moz-placeholder {
+  color: #777;
+  opacity: 1;
+}
+.bootstrap-tagsinput.form-control input:-ms-input-placeholder {
+  color: #777;
+}
+.bootstrap-tagsinput.form-control input::-webkit-input-placeholder {
+  color: #777;
+}
+.bootstrap-tagsinput input:focus {
+  border: none;
+  box-shadow: none;
+}
+.bootstrap-tagsinput .tag {
+  margin-right: 2px;
+  color: white;
 
+}
+.bootstrap-tagsinput .tag [data-role="remove"] {
+  margin-left: 8px;
+  cursor: pointer;
+  font-size: 0.8em;
+  float: none;
+  padding-top: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.bootstrap-tagsinput .tag [data-role="remove"]:after {
+  content: "x";
+  padding: 0px 2px;
+}
+.bootstrap-tagsinput .tag [data-role="remove"]:hover {
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+.bootstrap-tagsinput .tag [data-role="remove"]:hover:active {
+  box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+}
 
+.label-info {
+    background-color: #acacac;
+}
+.label {
+    display: inline;
+    padding: .2em .6em .3em;
+    font-size: 75%;
+    font-weight: 700;
+    line-height: 1;
+    color: #fff;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: .25em;
+}
+.add-product-buttons-wrapper .btn.wide {
+  margin: 30px auto;
+}
+.phone-case {
+  display: block;
+  position: absolute;
+  left: 50%;
+  margin-left: -146.5px;
+  /*width: 310px;
+  height: 625px;*/
+  width: 293px;
+  height: 610px;
+  background: url(../images/phone-casea.png) no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+.art-area.phone-area {
+  height: 650px;
+}
+.print-area {
+  position: absolute;
+}
+#full-mask {
+  position: absolute;
+  left: 330px;
+  left: 50%;
+  margin-left: -146.5px;
+  width: 293px;
+  height: 610px;
+  pointer-events: none;
+  display: block;
+}
+.print {
+  display: block;
+  position: absolute;
+  top: 0px;
+  left: 50%;
+  overflow: hidden;
+}
+.phone-art {
+  position: relative;
+}
+#slider {
+  display: block;
+  position: absolute;
+  top: 45px;
+  right: 50px;
+  height: 300px;
+  width: 10px;
+}
+.plus {
+  display: none;
+  position: absolute;
+  top: 10px;
+  right: 45px;
+  height: 20px;
+  width: 20px;
+  background: url("../images/icons/plus.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.minus {
+  display: none;
+  position: absolute;
+  top: 370px;
+  right: 45px;
+  height: 20px;
+  width: 20px;
+  background: url("../images/icons/minus.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.center-img-icon {
+  display: none;
+  position: absolute;
+  top: 407px;
+  right: 45px;
+  height: 20px;
+  width: 20px;
+  background: url("../images/icons/center.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
 
-
-
-
-
-
-
-
-
+.original-size {
+  display: none;
+  position: absolute;
+  top: 450px;
+  right: 45px;
+  height: 20px;
+  width: 20px;
+  background: url("../images/icons/og-size.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+.add-product-buttons-wrapper {
+  margin-bottom: 40px;
+}
+.phone-case-form-left {
+  height: 930px;
+}
+.phone-case-wrapper {
+  overflow: visible;
+}
+.add-image-popup {
+  top: -5px;
+  left: 35px;
+}
+.add-image-popup.active {
+  left: 40px;
+}
 
 
 
@@ -6178,6 +6369,16 @@ li.ui-timepicker-selected .ui-timepicker-duration,
     .add-art-form-main .btn.wide {
       width: 300px;
     }
+    .phone-case-form-left {
+      height: 888px;
+    }
+    .add-image-popup {
+      top: -3px;
+      left: 35px;
+    }
+    .add-image-popup.active {
+      left: 40px;
+    }
 
 }
 
@@ -6400,6 +6601,11 @@ li.ui-timepicker-selected .ui-timepicker-duration,
         bottom: 5px;
     }
     #galleriesRow .column-2 {
+        width: 100%;
+        margin: 0 12px 25px 12px;
+        max-width: 506px;
+    }
+    #publishersRow .column-2 {
         width: 100%;
         margin: 0 12px 25px 12px;
         max-width: 506px;
@@ -7647,6 +7853,9 @@ li.ui-timepicker-selected .ui-timepicker-duration,
     #add-art-main-section {
       padding-top: 20px;
     }
+    #dialog {
+      display:none;
+    }
 
 }
 
@@ -7879,6 +8088,10 @@ li.ui-timepicker-selected .ui-timepicker-duration,
         bottom: 5px;
     }
     #galleriesRow .column-2 {
+        width: 100%;
+        margin: 0 0 25px 0;
+    }
+    #publishersRow .column-2 {
         width: 100%;
         margin: 0 0 25px 0;
     }
@@ -9244,6 +9457,10 @@ li.ui-timepicker-selected .ui-timepicker-duration,
     #add-art-main-section {
       padding-top: 20px;
     }
+    #dialog {
+      display:none;
+    }
+
 
 /* Custom, iPhone Retina */
 
