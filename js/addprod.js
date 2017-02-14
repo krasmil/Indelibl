@@ -147,12 +147,13 @@ var imageLoaded = function() {
                 scroll: true,
                 handles: "se, sw, nw, ne",
                 resize: function(e, ui) {
-
+                  $("#max-image-size").hide();
                   $("#slider").slider({orientation: "vertical", value: ui.size.width});
                   console.log("ui.size.width is " + ui.size.width);
                   console.log("sliderMax is " + sliderMax);
                    if (ui.size.width >= sliderMax) {
-                    $("#dialog").dialog();
+                  //  $("#dialog").dialog();
+                    $('#max-image-size').show();
                    }
                 },
                 stop: function(e, ui) {
@@ -185,8 +186,7 @@ var imageLoaded = function() {
     });
 }
 var slideFunc = function(m, v) {
-    console.log("m is " + m);
-    console.log("v is " + v);
+
     $("#slider").slider({
         orientation: "vertical",
         range: "min",
@@ -195,6 +195,7 @@ var slideFunc = function(m, v) {
         max: m,
         //this gets a live reading of the value and prints it on the page
         slide: function(event, ui) {
+            $("#max-image-size").hide();
             $("#print").width(ui.value);
             $("#print").height('auto');
             $(".ui-wrapper").width(ui.value);
@@ -202,15 +203,22 @@ var slideFunc = function(m, v) {
             console.log("m is " + m);
             console.log("ui.value is " + ui.value);
             if (ui.value >= m) {
-                $("#dialog").dialog();
+            //    $("#dialog").dialog();
+                $('#max-image-size').show();
             }
         },
         //this updates the value of your hidden field when user stops dragging
         change: function(event, ui) {
-            console.log(ui.value);
+
         }
     });
   }
+
+  var closeIcon = $("#close-max-image-size");
+  closeIcon.click(function() {
+      $("#max-image-size").hide();
+  });
+
   var changePrint = function() {
     $("#selp").change(function() {
         if ($(this).val() == 'sp') {
