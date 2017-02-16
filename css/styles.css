@@ -5254,6 +5254,7 @@ input#product-year {
   right: 50px;
   height: 300px;
   width: 10px;
+  border-color: #2d2d2d;
 }
 .plus {
   display: none;
@@ -5343,17 +5344,45 @@ input#product-year {
   margin: 0;
 }
 
-
-
-
-
-
-
-
-
-
-
-
+.shirt-icon {
+  width: 60px;
+  height: auto;
+}
+.shirt-wrapper {
+  padding: 10px;
+}
+.shirt-wrapper.active {
+  border: 1px solid #acacac;
+  border-radius: 3px;
+}
+.color-select-wrapper {
+  display: block;
+  width: 100%;
+  overflow: hidden;
+}
+.color-select-panel {
+  width: calc(10% - 5px);
+  margin-left: 5px;
+  margin-bottom: 5px;
+}
+.color-select-panel:nth-of-type(10n) {
+  margin-left: 0;
+}
+.tshirt-form-left input[type="checkbox"], input[type="radio"] {
+    margin: 0 10px 0 0;
+    line-height: 18px;
+    height: 18px;
+    float: left;
+}
+.tshirt-form-left p {
+  float: none;
+  display: block;
+}
+.tshirt-form-left label {
+  margin: 0;
+  display: block;
+  float: left;
+}
 
 
 
@@ -6389,7 +6418,12 @@ li.ui-timepicker-selected .ui-timepicker-duration,
     .add-image-popup.active {
       left: 40px;
     }
-
+    .tshirt-form-left input[type="checkbox"], input[type="radio"] {
+      margin: 0 10px 0 0;
+      line-height: 18px;
+      height: 18px;
+      float: left;
+    }
 
 }
 
