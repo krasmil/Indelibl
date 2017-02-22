@@ -90,13 +90,54 @@ var previewImg = function() {
                 for (var i = 0; i < countFiles; i++) {
                     var reader = new FileReader();
                     reader.onload = function(e) {
-                        $("<img />", {
-                            "src": e.target.result,
-                            "id": "print",
-                            "class": "draggable resizable"
-                        }).appendTo(image_holder);
-                        imageLoaded();
-                    }
+                      binImg = e.target.result;
+                      input = document.getElementById('art-input');
+                      getOrientation(input.files[0], function(orientation) {
+                        if ([5, 6, 7, 8].indexOf(orientation) > -1 && [5, 6, 7, 8].indexOf(orientation) !== 3) {
+                          console.log(1);
+                          $('#img-rotator').attr('src', binImg);
+                          var c = document.getElementById("img-slice");
+                          c.width = $('#img-rotator').height();
+                          c.height = $('#img-rotator').width();
+                          var ctx = c.getContext("2d");
+                          ctx.transform(0, 1, -1, 0, $('#img-rotator').height(), 0);
+                                ctx.drawImage(document.getElementById('img-rotator'), 0, 0);
+                                urlRot = c.toDataURL();
+                                $("<img />", {
+                                    "src": urlRot,
+                                    "id": "print",
+                                    "class": "draggable resizable"
+                                }).appendTo(image_holder);
+                                imageLoaded();
+                            } else if ([5, 6, 7, 8].indexOf(orientation) === 3) {
+                                console.log(2);
+                                $('#img-rotator').attr('src', binImg);
+                                var c2 = document.getElementById("img-slice");
+                                c2.width = $('#img-rotator').height();
+                                c2.height = $('#img-rotator').width();
+                                var ctx2 = c2.getContext("2d");
+                                ctx2.transform(0, 1, -1, 0, $('#img-rotator').height(), 0);
+                                ctx2.rotate(Math.PI);
+                                ctx2.translate(-parseInt(c2.height), -parseInt(c2.width));
+                                ctx2.drawImage(document.getElementById('img-rotator'), 0, 0);
+                                urlRot2 = c2.toDataURL();
+                                $("<img />", {
+                                    "src": urlRot2,
+                                    "id": "print",
+                                    "class": "draggable resizable"
+                                }).appendTo(image_holder);
+                                imageLoaded();
+                            } else {
+                                console.log(3);
+                                $("<img />", {
+                                    "src": binImg,
+                                    "id": "print",
+                                    "class": "draggable resizable"
+                                }).appendTo(image_holder);
+                                imageLoaded();
+                            }
+                        });
+                    };
                     image_holder.show();
                     reader.readAsDataURL($(this)[0].files[i]);
                     showImgControls();

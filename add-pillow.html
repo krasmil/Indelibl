@@ -371,7 +371,7 @@
 				<div class="ap_page_title">
 					<h3>
 						<b>
-							Phone cases
+							Pillows
 						</b>
 					</h3>
 				</div>
@@ -393,59 +393,341 @@
 		<section class="bg-lightest large-padding-bottom-y" id="art-templates">
 			<div class="content-wrapper add-art-wrapper phone-case-wrapper">
 				<div class="row" style="margin-left: 0;">
-					<div class="add-art-form-left phone-case-form-left white">
+
+
+
+					<div class="add-art-form-left pillow-square-form-left white">
 						<p>
 							<b>
-								Add tags
+								Pillow type
 							</b>
 						</p>
-            <input type="text" class="form-input tags-input" id="subject-other" name="subject-other" data-role="tagsinput">
-						<p style="color: #acacac; font-size: 0.75em;">
-							Separate tags with commas (,)
-							<br />
-							Maximum of 20 characters per tag.
-						</p>
-							<label for="art-input" class="btn" id="add-art-btn">
-								Add art
-							</label>
-							<input id="art-input" type="file" accept="image/*" />
+						<div style="width: 100%; overflow: hidden;">
+							<input type="radio" name="pillowtype" value="square" id="squarePillow" checked><label for="squarePillow">Square pillow</label>
 						</div>
-					      <div class="add-art-main-wrapper white">
-									<div class="add-art-form-main phone-art">
-										<div class="art-area phone-area">
-											<canvas id="cloner" style="display: none;"></canvas>
-											<canvas id="img-slice" style="display: none;"></canvas>
-											<img id="img-rotator" src="" style="display: none;">
-                      <div id="printer" class="print">
-                      </div>
-                      <img src="images/phone-casea.png" width="293px" height="610px" style="" id="full-mask">
+						<div style="width: 100%; overflow: hidden;">
+							<input type="radio" name="pillowtype" value="rectangle" id="rectanglePillow"><label for="rectanglePillow">Rectangular pillow</label>
+						</div>
+
+
+
+						<div id="pillow-square-controls-wrapper">
+							<div class="pillow-icons-wrapper">
+								<div class="pillow-wrapper pillow-front active" onclick="switch_front_back_square(this)">
+									<img src="images/icons/pillow-square.png" class="pillow-icon" id="pillow-square-front">
+									<span style="float: none;">Front</span>
+								</div>
+								<div class="pillow-wrapper pillow-back" onclick="switch_front_back_square(this)">
+									<img src="images/icons/pillow-square.png" class="pillow-icon" id="pillow-square-back">
+									<span style="float: none;">Back</span>
+								</div>
+							</div>
+							<div id="add-pillow-bottom-square-front" style="overflow: hidden;">
+								<p>
+									<b>
+										Add tags
+									</b>
+								</p>
+		            <input type="text" class="form-input tags-input" id="tags-box-square-pillow-front" name="tags-box-square-front" data-role="tagsinput">
+								<p style="color: #acacac; font-size: 0.75em;">
+									Separate tags with commas (,)
+									<br />
+									Maximum of 20 characters per tag.
+								</p>
+								<label for="art-input-square-front" class="btn add-art-btn" id="add-art-btn-square-front">
+									Add art
+								</label>
+								<p style="color: #acacac; font-size: 0.75em;">
+									Max file size 10Mb.
+									<br />
+									PNG and JPG format only.
+								</p>
+								<input id="art-input-square-front" type="file" accept="image/*" />
+							</div>
+							<div id="add-pillow-bottom-square-back" style="overflow: hidden; display: none;">
+								<p>
+									<b>
+										Add tags
+									</b>
+								</p>
+		            <input type="text" class="form-input tags-input" id="tags-box-square-pillow-back" name="tags-box-square-back" data-role="tagsinput">
+								<p style="color: #acacac; font-size: 0.75em;">
+									Separate tags with commas (,)
+									<br />
+									Maximum of 20 characters per tag.
+								</p>
+								<label for="art-input-square-back" class="btn add-art-btn" id="add-art-btn-square-back">
+									Add art
+								</label>
+								<p style="color: #acacac; font-size: 0.75em;">
+									Max file size 10Mb.
+									<br />
+									PNG and JPG format only.
+								</p>
+								<input id="art-input-square-back" type="file" accept="image/*" />
+							</div>
+						</div>
+
+
+
+
+
+
+
+
+
+						<div id="pillow-rectangle-controls-wrapper" style="display: none;">
+							<div class="pillow-icons-wrapper">
+								<div class="pillow-wrapper pillow-front active" onclick="switch_front_back_rectangle(this)">
+									<img src="images/icons/pillow-rectangle.png" class="pillow-icon" id="pillow-rectangle-front">
+									<span style="float: none;">Front</span>
+								</div>
+								<div class="pillow-wrapper pillow-back" onclick="switch_front_back_rectangle(this)">
+									<img src="images/icons/pillow-rectangle.png" class="pillow-icon" id="pillow-rectangle-back">
+									<span style="float: none;">Back</span>
+								</div>
+							</div>
+							<div id="add-pillow-bottom-rectangle-front" style="overflow: hidden;">
+								<p>
+									<b>
+										Add tags
+									</b>
+								</p>
+		            <input type="text" class="form-input tags-input" id="tags-box-rectangle-pillow-front" name="tags-box-rectangle" data-role="tagsinput">
+								<p style="color: #acacac; font-size: 0.75em;">
+									Separate tags with commas (,)
+									<br />
+									Maximum of 20 characters per tag.
+								</p>
+								<label for="art-input-rectangle-front" class="btn add-art-btn" id="add-art-btn-rectangle-front">
+									Add art
+								</label>
+								<p style="color: #acacac; font-size: 0.75em;">
+									Max file size 10Mb.
+									<br />
+									PNG and JPG format only.
+								</p>
+								<input id="art-input-rectangle-front" type="file" accept="image/*" />
+							</div>
+							<div id="add-pillow-bottom-rectangle-back" style="overflow: hidden; display: none;">
+								<p>
+									<b>
+										Add tags
+									</b>
+								</p>
+		            <input type="text" class="form-input tags-input" id="tags-box-rectangle-pillow-back" name="tags-box-square" data-role="tagsinput">
+								<p style="color: #acacac; font-size: 0.75em;">
+									Separate tags with commas (,)
+									<br />
+									Maximum of 20 characters per tag.
+								</p>
+								<label for="art-input-rectangle-back" class="btn add-art-btn" id="add-art-btn-rectangle-back">
+									Add art
+								</label>
+								<p style="color: #acacac; font-size: 0.75em;">
+									Max file size 10Mb.
+									<br />
+									PNG and JPG format only.
+								</p>
+								<input id="art-input-rectangle-back" type="file" accept="image/*" />
+							</div>
+						</div>
+
+					</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+					  <div class="add-art-main-wrapper white">
+
+
+							<div id="square-pillow-templates-wrapper">
+								<!-- start wrapper for square pillow - front -->
+								<div class="add-art-form-main square-pillow-art" id="square-pillow-front">
+									<div class="art-area pillow-square-area">
+										<div class="pillow-outline-square" id="pillow-outline-square-front">
+
+		                  <div id="printer_square_front" class="print">
+		                  </div>
+											<img src="images/pillow-square.png" class="pillow-mask-square" id="pillow-mask-square-front">
+											<img src="images/square-pillow-printarea.png" class="print-safe-area-square" id="print-safe-area-square-front">
+
+
 										</div>
-										<div class="plus"></div>
-										<div class="max-image-size-popup" id="max-image-size" style="display: none;">
-											<div class="xIcon" id="close-max-image-size"></div>
-											<span>Maximum image size.</span>
-										</div>
-										<div id="slider"></div>
-										<div class="minus"></div>
-										<div class="center-img-icon" id="center-image" triggerLink="center-img-link">
-											<div class="userprofile-menu-popup add-image-popup" popLink="center-img-link">
-												<a href="javascript:;" class="userprofile-menu-link">Center</a>
-											</div>
-										</div>
-										<div class="original-size" id="max-size" triggerLink="og-img-link">
-											<div class="userprofile-menu-popup add-image-popup" popLink="og-img-link">
-												<a href="javascript:;" class="userprofile-menu-link">Original size</a>
-											</div>
-										</div>
-                    <div class="add-product-buttons-wrapper">
-                      <button class="btn wide" style="color: #fff; background: #e74c3c;" id="download">
-  											Download
-  										</button>
-  										<button class="btn wide" onclick="removePhoneArt()">
-  											Remove art
-  										</button>
-                    </div>
 									</div>
+									<div class="plus" id="plus-square-front"></div>
+									<div class="max-image-size-popup" id="max-image-size-square-front" style="display: none;">
+									<div class="xIcon" id="close-max-image-size-square-front"></div>
+										<span>Maximum image size.</span>
+									</div>
+									<div id="slider-square-front" class="pillow-slider"></div>
+									<div class="minus" id="minus-square-front"></div>
+									<div class="center-img-icon" id="center-image-square-front" triggerLink="center-img-link">
+										<div class="userprofile-menu-popup add-image-popup" popLink="center-img-link">
+											<a href="javascript:;" class="userprofile-menu-link">Center</a>
+										</div>
+									</div>
+									<div class="original-size" id="max-size-square-front" triggerLink="og-img-link">
+										<div class="userprofile-menu-popup add-image-popup" popLink="og-img-link">
+											<a href="javascript:;" class="userprofile-menu-link">Original size</a>
+										</div>
+									</div>
+	                <div class="add-product-buttons-wrapper">
+	                  <button class="btn wide" style="color: #fff; background: #e74c3c;" id="download-square-front">
+	  									Download
+	  								</button>
+	  								<button class="btn wide" onclick="removePillowArt_Square_front()">
+	  									Remove art
+	  								</button>
+	                </div>
+								</div>
+								<!-- end wrapper for square pillow - front -->
+								<!-- start wrapper for square pillow - back -->
+								<div class="add-art-form-main square-pillow-art" id="square-pillow-back" style="display: none;">
+									<div class="art-area pillow-square-area">
+
+										<div class="pillow-outline-square" id="pillow-outline-square-back">
+
+		                  <div id="printer_square_back" class="print">
+		                  </div>
+											<img src="images/pillow-square.png" class="pillow-mask-square" id="pillow-mask-square-back">
+											<img src="images/square-pillow-printarea.png" class="print-safe-area-square" id="print-safe-area-square-back">
+										</div>
+									</div>
+									<div class="plus" id="plus-square-back"></div>
+									<div class="max-image-size-popup" id="max-image-size-square-back" style="display: none;">
+									<div class="xIcon" id="close-max-image-size-square-back"></div>
+										<span>Maximum image size.</span>
+									</div>
+									<div id="slider-square-back" class="pillow-slider"></div>
+									<div class="minus" id="minus-square-back"></div>
+									<div class="center-img-icon" id="center-image-square-back" triggerLink="center-img-link">
+										<div class="userprofile-menu-popup add-image-popup" popLink="center-img-link">
+											<a href="javascript:;" class="userprofile-menu-link">Center</a>
+										</div>
+									</div>
+									<div class="original-size" id="max-size-square-back" triggerLink="og-img-link">
+										<div class="userprofile-menu-popup add-image-popup" popLink="og-img-link">
+											<a href="javascript:;" class="userprofile-menu-link">Original size</a>
+										</div>
+									</div>
+	                <div class="add-product-buttons-wrapper">
+	                  <button class="btn wide" style="color: #fff; background: #e74c3c;" id="download-square-back">
+	  									Download
+	  								</button>
+	  								<button class="btn wide" onclick="removePillowArt_Square_back()">
+	  									Remove art
+	  								</button>
+	                </div>
+								</div>
+								<!-- end wrapper for square pillow - front -->
+								<img src="images/pillow-square-backing.png" width="385" height="385" id="download-pillow-square-back" style="display: none;">
+								<img src="images/pillow-square-cover.png" width="385" height="385" id="download-pillow-square-cover" style="display: none;">
+
+							</div>
+
+
+
+							<div id="rectangle-pillow-templates-wrapper" style="display: none;">
+								<!-- start wrapper for rectangle pillow - front -->
+								<div class="add-art-form-main rectangle-pillow-art" id="rectangle-pillow-front">
+									<div class="art-area pillow-rectangle-area">
+										<div class="pillow-outline-rectangle" id="pillow-outline-rectangle-front">
+
+		                  <div id="printer_rectangle_front" class="print">
+		                  </div>
+											<img src="images/pillow-rectangle.png" class="pillow-mask-rectangle" id="pillow-mask-rectangle-front">
+											<img src="images/rectangular-pillow-printarea.png" class="print-safe-area-rectangle" id="print-safe-area-rectangle-front">
+										</div>
+									</div>
+									<div class="plus" id="plus-rectangle-front"></div>
+									<div class="max-image-size-popup" id="max-image-size-rectangle-front" style="display: none;">
+									<div class="xIcon" id="close-max-image-size-rectangle-front"></div>
+										<span>Maximum image size.</span>
+									</div>
+									<div id="slider-rectangle-front" class="pillow-slider"></div>
+									<div class="minus" id="minus-rectangle-front"></div>
+									<div class="center-img-icon" id="center-image-rectangle-front" triggerLink="center-img-link">
+										<div class="userprofile-menu-popup add-image-popup" popLink="center-img-link">
+											<a href="javascript:;" class="userprofile-menu-link">Center</a>
+										</div>
+									</div>
+									<div class="original-size" id="max-size-rectangle-front" triggerLink="og-img-link">
+										<div class="userprofile-menu-popup add-image-popup" popLink="og-img-link">
+											<a href="javascript:;" class="userprofile-menu-link">Original size</a>
+										</div>
+									</div>
+	                <div class="add-product-buttons-wrapper">
+	                  <button class="btn wide" style="color: #fff; background: #e74c3c;" id="download-rectangle-front">
+	  									Download
+	  								</button>
+	  								<button class="btn wide" onclick="removePillowArt_rectangle_front()">
+	  									Remove art
+	  								</button>
+	                </div>
+								</div>
+								<!-- end wrapper for rectangle pillow - front -->
+								<!-- start wrapper for rectangle pillow - back -->
+								<div class="add-art-form-main rectangle-pillow-art" id="rectangle-pillow-back">
+									<div class="art-area pillow-rectangle-area">
+										<div class="pillow-outline-rectangle" id="pillow-outline-rectangle-back">
+
+		                  <div id="printer_rectangle_back" class="print">
+		                  </div>
+											<img src="images/pillow-rectangle.png" class="pillow-mask-rectangle" id="pillow-mask-rectangle-back">
+											<img src="images/rectangular-pillow-printarea.png" class="print-safe-area-rectangle" id="print-safe-area-rectangle-back">
+										</div>
+									</div>
+									<div class="plus" id="plus-rectangle-back"></div>
+									<div class="max-image-size-popup" id="max-image-size-rectangle-back" style="display: none;">
+									<div class="xIcon" id="close-max-image-size-rectangle-back"></div>
+										<span>Maximum image size.</span>
+									</div>
+									<div id="slider-rectangle-back" class="pillow-slider"></div>
+									<div class="minus" id="minus-rectangle-back"></div>
+									<div class="center-img-icon" id="center-image-rectangle-back" triggerLink="center-img-link">
+										<div class="userprofile-menu-popup add-image-popup" popLink="center-img-link">
+											<a href="javascript:;" class="userprofile-menu-link">Center</a>
+										</div>
+									</div>
+									<div class="original-size" id="max-size-rectangle-back" triggerLink="og-img-link">
+										<div class="userprofile-menu-popup add-image-popup" popLink="og-img-link">
+											<a href="javascript:;" class="userprofile-menu-link">Original size</a>
+										</div>
+									</div>
+	                <div class="add-product-buttons-wrapper">
+	                  <button class="btn wide" style="color: #fff; background: #e74c3c;" id="download-rectangle-back">
+	  									Download
+	  								</button>
+	  								<button class="btn wide" onclick="removePillowArt_rectangle_back()">
+	  									Remove art
+	  								</button>
+	                </div>
+								</div>
+								<!-- end wrapper for rectangle pillow - back -->
+								<img src="images/pillow-rectangle-backing.png" width="500" height="300" id="download-pillow-rectangle-back" style="display: none;">
+								<img src="images/pillow-cover-rectangle.png" width="500" height="300" id="download-pillow-rectangle-cover" style="display: none;">
+
+							</div>
+							<canvas id="cloner_front" style="display: none;"></canvas>
+							<canvas id="cloner_back" style="display: none;"></canvas>
+							<canvas id="cloner_final" style="display: none;"></canvas>
+							<canvas id="img-slice" style="display: none;"></canvas>
+							<img id="img-rotator" src="" style="display: none;">
 									<div class="submit_status">
 										<div class="progress-track"></div>
 									</div>
@@ -942,9 +1224,10 @@
 	</script>
 	<script src="js/FileSaver.js">
 	</script>
-  <script src="js/addprod.js">
+  <script src="js/addprod-pillow-square.js">
 	</script>
-
+	<script src="js/addprod-pillow-rectangle.js">
+	</script>
 
 
 </body>

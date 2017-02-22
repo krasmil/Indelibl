@@ -5023,6 +5023,11 @@ li.active-tab {
   margin-bottom: 10px;
   cursor: pointer;
 }
+.add-art-form-left label.add-art-btn {
+  font-size: 0.9em;
+  margin-top: 2em;
+  cursor: pointer;
+}
 .add-art-form-main .btn.wide {
   border: 1px solid #e74c3c;
   color: #e74c3c;
@@ -5238,7 +5243,7 @@ input#product-year {
   display: block;
 }
 .print {
-  display: block;
+  display: none;
   position: absolute;
   top: 0px;
   left: 50%;
@@ -5259,7 +5264,7 @@ input#product-year {
 .plus {
   display: none;
   position: absolute;
-  top: 10px;
+  top: 0;
   right: 45px;
   height: 20px;
   width: 20px;
@@ -5369,10 +5374,9 @@ input#product-year {
   margin-left: 0;
 }
 .tshirt-form-left input[type="checkbox"], input[type="radio"] {
-    margin: 0 10px 0 0;
-    line-height: 18px;
-    height: 18px;
-    float: left;
+  margin: 0 10px 0 0;
+  line-height: 18px;
+  float: left;
 }
 .tshirt-form-left p {
   float: none;
@@ -5383,6 +5387,196 @@ input#product-year {
   display: block;
   float: left;
 }
+.pillow-outline-square {
+  width: 385px;
+  height: 430px;
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  margin-bottom: 40px;
+}
+.pillow-safe-area {
+  width: 100%;
+  height: 100%;
+}
+.pillow-outline.active {
+  border: 1px dashed #23b9b1;
+}
+.pillow-square-area {
+  height: 450px;
+}
+.pillow-safe-area.active {
+  border: 1px dashed #fe0813;
+}
+.pillow-mask-square {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 385px;
+  height: 385px;
+  pointer-events: none;
+  display: block;
+}
+.pillow-wrapper {
+  padding: 10px;
+  float: left;
+  width: auto;
+  text-align: center;
+  cursor: pointer;
+}
+.pillow-wrapper.active {
+  border: 1px solid #acacac;
+  border-radius: 3px;
+}
+.pillow-icon {
+  width: 60px;
+  height: auto;
+  display: block;
+}
+.pillow-icons-wrapper {
+  margin-top: 20px;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+#art-input-square-front {
+  display: none;
+}
+#art-input-square-back {
+  display: none;
+}
+.add-art-form-left.pillow-square-form-left {
+  min-height: 790px;
+  max-height: 900px;
+  height: auto;
+}
+.add-art-form-left label {
+  margin: 0;
+  display: block;
+  float: left;
+}
+.square-pillow-art {
+  position: relative;
+}
+.pillow-slider {
+  display: block;
+  position: absolute;
+  top: 45px;
+  right: 50px;
+  height: 300px;
+  width: 10px;
+  border-color: #2d2d2d;
+}
+.print-safe-area-square {
+  width: 385px;
+  height: 418px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  pointer-events: none;
+  display: none;
+}
+.rectangle-pillow-art {
+  position: relative;
+}
+.pillow-rectangle-area {
+  height: 400px;
+}
+.pillow-outline-rectangle {
+  width: 500px;
+  height: 430px;
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  margin-bottom: 40px;
+}
+.pillow-mask-rectangle {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 500px;
+    height: 300px;
+    pointer-events: none;
+    display: block;
+}
+.print-safe-area-rectangle {
+  width: 500px;
+  height: 334px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  pointer-events: none;
+  display: none;
+}
+#art-input-rectangle-front {
+  display: none;
+}
+#art-input-rectangle-back {
+  display: none;
+}
+
+#download-pillow-square-back {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 385px;
+    height: 385px;
+    pointer-events: none;
+    margin-left: -192.5px;
+}
+
+#download-pillow-square-cover {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 385px;
+    height: 385px;
+    pointer-events: none;
+    margin-left: -192.5px;
+}
+
+#download-pillow-rectangle-back {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 500px;
+    height: 300px;
+    pointer-events: none;
+    margin-left: -250px;
+}
+
+#download-pillow-rectangle-cover {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 500px;
+    height: 300px;
+    pointer-events: none;
+    margin-left: -250px;
+}
+#square-pillow-templates-wrapper, #rectangle-pillow-templates-wrapper {
+  height: 680px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -6421,9 +6615,24 @@ li.ui-timepicker-selected .ui-timepicker-duration,
     .tshirt-form-left input[type="checkbox"], input[type="radio"] {
       margin: 0 10px 0 0;
       line-height: 18px;
-      height: 18px;
       float: left;
     }
+    .pillow-icon {
+      width: 50px;
+      height: auto;
+    }
+    .add-art-form-left label {
+      padding-top: 0;
+    }
+    .add-art-form-left.pillow-square-form-left {
+      height: 748px;
+      min-height: 748px;
+      max-height: 748px;
+    }
+    #square-pillow-templates-wrapper, #rectangle-pillow-templates-wrapper {
+      height: 660px;
+    }
+
 
 }
 
