@@ -4961,7 +4961,8 @@ li.active-tab {
   text-align: left;
   padding: 20px;
   float: left;
-  height: 645px;
+  min-height: 645px;
+  height: auto;
 }
 .add-art-form-left label, .add-art-form-left span, .add-art-form-left p {
   font-size: 0.8em;
@@ -5000,7 +5001,8 @@ li.active-tab {
 }
 .art-area {
   width: 640px;
-  height: 400px;
+  min-height: 400px;
+  height: auto;
   margin-left: auto;
   margin-right: auto;
   margin-top: 80px;
@@ -5234,7 +5236,6 @@ input#product-year {
 }
 #full-mask {
   position: absolute;
-  left: 330px;
   left: 50%;
   margin-left: -146.5px;
   width: 293px;
@@ -5562,6 +5563,181 @@ input#product-year {
 #square-pillow-templates-wrapper, #rectangle-pillow-templates-wrapper {
   height: 680px;
 }
+
+.print-safe-area-mug-center {
+  width: 540px;
+  height: 274px;
+  position: absolute;
+  left: 50%;
+  top: 0;
+  pointer-events: none;
+  display: none;
+  margin-left: -270px;
+}
+#full-mask-mug {
+  position: absolute;
+  left: 50%;
+  margin-left: -150px;
+  width: 300px;
+  height: 300px;
+  pointer-events: none;
+  display: block;
+}
+.print-mug {
+  left: 0;
+  top: 0;
+  position: absolute;
+  overflow: hidden;
+  display: none;
+}
+.add-art-form-left.mug-form-left {
+  height: auto;
+  min-height: 630px;
+}
+.art-area.mug-area {
+  height: 350px;
+  width: 540px;
+  min-height: 350px;
+}
+#download-mug-backing-left {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 299px;
+    height: 285px;
+    pointer-events: none;
+    margin-left: -131.5px;
+}
+#download-mug-backing-right {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 299px;
+    height: 285px;
+    pointer-events: none;
+    margin-left: -131.5px;
+}
+#download-mug-backing-center {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 285px;
+    height: 285px;
+    pointer-events: none;
+    margin-left: -114px;
+}
+
+#download-mug-mask-left {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 299px;
+    height: 285px;
+    pointer-events: none;
+    margin-left: -131.5px;
+}
+#download-mug-mask-right {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 299px;
+    height: 285px;
+    pointer-events: none;
+    margin-left: -131.5px;
+}
+#download-mug-mask-center {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 285px;
+    height: 285px;
+    pointer-events: none;
+    margin-left: -114px;
+}
+.mug-icons-wrapper {
+  margin-top: 20px;
+  overflow: hidden;
+  margin-bottom: 20px;
+  margin-left: -5px;
+}
+.mug-icons-wrapper span {
+  font-size: 0.6em;
+}
+.mug-icon {
+  width: auto;
+  height: 35px;
+  display: block;
+  margin: 0 auto;
+}
+.file-input-hidden {
+  display: none;
+}
+.mug-art {
+  position: relative;
+}
+.print-safe-area-mug-left {
+  width: 270px;
+  height: 312px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  pointer-events: none;
+  display: none;
+  margin-left: 0;
+}
+.print-safe-area-mug-right {
+  width: 270px;
+  height: 312px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  pointer-events: none;
+  display: none;
+  margin-left: 270px;
+}
+.mug-slider {
+  display: block;
+  position: absolute;
+  top: 45px;
+  right: 50px;
+  height: 300px;
+  width: 10px;
+  border-color: #2d2d2d;
+}
+.mug-wrapper.active {
+  border: 1px solid #acacac;
+  border-radius: 3px;
+}
+.mug-wrapper {
+  padding: 5px;
+  float: left;
+  width: auto;
+  text-align: center;
+  cursor: pointer;
+}
+.add-art-print-form {
+  height: 650px;
+}
+.art-print-img {
+  margin-bottom: 40px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -6575,7 +6751,7 @@ li.ui-timepicker-selected .ui-timepicker-duration,
     }
     .add-art-form-left {
       width: 210px;
-      height: 614px;
+      min-height: 614px;
     }
     .add-art-form-left input.art-dim {
       width: 80px;
@@ -6625,14 +6801,52 @@ li.ui-timepicker-selected .ui-timepicker-duration,
       padding-top: 0;
     }
     .add-art-form-left.pillow-square-form-left {
-      height: 748px;
       min-height: 748px;
-      max-height: 748px;
     }
     #square-pillow-templates-wrapper, #rectangle-pillow-templates-wrapper {
       height: 660px;
     }
-
+    .print-safe-area-mug-center {
+      width: 540px;
+      height: 274px;
+      position: absolute;
+      left: 0;
+      top: 0;
+      pointer-events: none;
+      display: none;
+      margin-left: 0;
+    }
+    .add-art-form-left.mug-form-left {
+      height: auto;
+      min-height: 588px;
+    }
+    .print-safe-area-mug-left {
+      width: 270px;
+      height: 312px;
+      position: absolute;
+      left: 0;
+      top: 0;
+      pointer-events: none;
+      display: none;
+      margin-left: 0;
+    }
+    .print-safe-area-mug-right {
+      width: 270px;
+      height: 312px;
+      position: absolute;
+      left: 0;
+      top: 0;
+      pointer-events: none;
+      display: none;
+      margin-left: 270px;
+    }
+    .art-area.mug-area {
+      height: 350px;
+      width: 600px;
+    }
+    .add-art-print-form {
+      height: 604px;
+    }
 
 }
 

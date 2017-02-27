@@ -407,7 +407,7 @@ var hideImgControlsSquareBack = function() {
 var imageLoadedSquareFront = function() {
   console.log("gone in");
     $("#print-square-front").load(function() {
-      console.log("going in hard");
+
         imgWidth = parseInt($(this).css('width'));
         imgHeight = parseInt($(this).css('height'));
         imgWidthInch = Math.round(imgWidth / dpi);
@@ -420,7 +420,7 @@ var imageLoadedSquareFront = function() {
         } else {
             sliderPos = imgWidthProp;
         }
-        console.log("sheeeit");
+
         slideFuncSquareFront(sliderMax, sliderPos);
         $("#print-square-front").width(sliderPos);
         centerImgSquareFront();
@@ -431,8 +431,7 @@ var imageLoadedSquareFront = function() {
                 resize: function(e, ui) {
                   $("#max-image-size-square-front").hide();
                   $("#slider-square-front").slider({orientation: "vertical", value: ui.size.width});
-                  console.log("ui.size.width is " + ui.size.width);
-                  console.log("sliderMax is " + sliderMax);
+
 
                    if (ui.size.width >= sliderMax) {
                   //  $("#dialog").dialog();
@@ -446,7 +445,7 @@ var imageLoadedSquareFront = function() {
                 minWidth: 10,
                 aspectRatio: true
           });
-
+          
         $("#printer_square_front > .ui-wrapper").draggable({
             scroll: false,
             cursor: "move",
