@@ -3040,7 +3040,11 @@ ripple.ripple::after {
     float: left;
     margin-top: 30px;
 }
+.ap_page_title h3 {
+    font-size: 2.1em;
 
+
+}
 #productTemplates {
     margin-top: 50px;
     margin-bottom: 20px;
@@ -4965,7 +4969,7 @@ li.active-tab {
   height: auto;
 }
 .add-art-form-left label, .add-art-form-left span, .add-art-form-left p {
-  font-size: 0.8em;
+  font-size: 1em;
   float: left;
   padding-top: 3px;
   margin-top: 10px;
@@ -4978,7 +4982,7 @@ li.active-tab {
 
 }
 .add-art-form-left input, .add-art-form-left select {
-  font-size: 0.8em;
+  font-size: 0.9em;
   margin-top: 0;
   margin-bottom: 15px;
   line-height: 30px;
@@ -5661,7 +5665,7 @@ input#product-year {
   margin-left: -5px;
 }
 .mug-icons-wrapper span {
-  font-size: 0.6em;
+  font-size: 0.8em;
 }
 .mug-icon {
   width: auto;
@@ -5721,22 +5725,179 @@ input#product-year {
 .art-print-img {
   margin-bottom: 40px;
 }
+.book-area {
+  width: 100%;
+  padding: 30px 30px 0 30px;
+}
+.book-page-preview {
+  width: 100%;
+  height: 266px;
+  border: 1px dashed #fe0813;
+  background-position: center center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  display: block;
+  margin-bottom: 10px;
+  vertical-align: middle;
+  text-align: center;
+  position: relative;
+}
+.books-row {
+  display: block;
+  overflow: hidden;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+.books-row:nth-of-type(1) {
+  width: 381px;
+}
+.add-book-form {
+  height: 792px;
+}
+.book-page-preview-wrapper {
+  width: 177px;
+  margin-right: 27px;
+  margin-bottom: 35px;
+  display: block;
+  float: left;
+}
+.book-page-preview-wrapper:nth-of-type(2) {
+  margin-right: 0;
+}
+.book-buttons-wrapper {
+  width: 100%;
+}
+.add-art-form-main .btn.wide {
+    width: 300px;
+}
+.book-buttons-wrapper .btn {
+  display: inline-block;
+  min-width: 80px;
+  font-size: 0.85em;
+  padding: 0;
+  float: left;
+  line-height: 32px;
+  width: 100%;
+}
+.book-buttons-wrapper label {
+  margin-right: 11px;
+  display: inline-block;
+  border: 1px solid #e74c3c;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+.book-left-form {
+  min-height: 822px;
+}
+.book-preview-upload-msg {
+  float: left;
+  margin-left: 5px;
+  width: 90%;
+  text-align: left;
+}
+.errorImg {
+    width: 12px;
+    height: 12px;
+    display: block;
+    float: left;
+    margin-top: 4px;
+    margin-right: 3px;
+}
+.errorImg-small {
+    width: 12px;
+    height: 12px;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    margin-top: 4px;
+    margin-right: 3px;
+}
+.add-page-desc {
+  vertical-align: middle;
+  margin-left: auto;
+  margin-right: auto;
+  color: #acacac;
+  font-size: 0.8em;
+  position: absolute;
+  top: 100px;
+  width: 100%;
+  left:0;
+}
+#book-added-msg {
+  max-width: 100%;
+  float: left;
+  color: #c5262b;
+  font-size: 0.75em;
+  margin-top: 20px;
+}
+.book-area .btn.wide {
+    border: 1px solid #e74c3c;
+    color: #fff;
+    background: #e74c3c;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    cursor: pointer;
+}
+#paper-book-preview-added-msg, #ebook-preview-added-msg {
+  width: 70%;
+  color: #c5262b;
+  margin-left: auto;
+  margin-right: auto;
+  min-height: 40px;
+  overflow: hidden;
+}
+.add-product-slider {
+  display: block;
+  position: absolute;
+  top: 45px;
+  right: 50px;
+  height: 300px;
+  width: 10px;
+  border-color: #2d2d2d;
+}
+.tote-icons-wrapper {
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+.tote-icon {
+  width: 30px;
+  height: auto;
+  display: block;
+}
+.tote-wrapper {
+  padding: 10px;
+  float: left;
+  width: auto;
+  text-align: center;
+  cursor: pointer;
+  margin-right: 20px;
+}
+.tote-wrapper.active {
+  border: 1px solid #acacac;
+  border-radius: 3px;
+}
+.tote-aa-bg {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 270px;
+    height: 501px;
+    pointer-events: none;
+    display: block;
+}
+.tote-outline-aa {
+    width: 270px;
+    height: 501px;
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    margin-bottom: 40px;
+}
 
 
 
@@ -6846,6 +7007,20 @@ li.ui-timepicker-selected .ui-timepicker-duration,
     }
     .add-art-print-form {
       height: 604px;
+    }
+    .book-left-form {
+      min-height: 695px;
+    }
+    .book-area {
+      width: 100%;
+      padding: 30px 5px 0 5px;
+    }
+
+    .mug-icons-wrapper span {
+      font-size: 0.6em;
+    }
+    .add-book-form {
+      height: 665px;
     }
 
 }
