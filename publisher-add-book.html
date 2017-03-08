@@ -447,12 +447,12 @@
 								</div>
 								<p>
 									<b>
-										Publisher *
+										Author *
 									</b>
 								</p>
-								<input type="text" class="form-input" id="paper-book-publisher" name="book-publisher" placeholder="Publisher">
+								<input type="text" class="form-input" id="paper-book-author" name="book-author" placeholder="Author">
 								<div class="errorMsg">
-									<div class="errorIcon"></div>Publisher is required
+									<div class="errorIcon"></div>Author is required
 								</div>
 								<p>
 									<b>
@@ -506,12 +506,12 @@
 									</div>
 									<p>
 										<b>
-											Publisher *
+											Author *
 										</b>
 									</p>
-									<input type="text" class="form-input" id="ebook-publisher" name="book-publisher" placeholder="Publisher">
+									<input type="text" class="form-input" id="ebook-author" name="book-author" placeholder="Author">
 									<div class="errorMsg">
-										<div class="errorIcon"></div>Publisher is required
+										<div class="errorIcon"></div>Author is required
 									</div>
 									<p>
 										<b>
@@ -530,6 +530,9 @@
 										<br />
 										PDF and EPUB files only.
 									</p>
+									<div class="errorMsg" style="width: 130px; margin: 0 auto; float: left;">
+										<div class="errorIcon"></div>Book file is required
+									</div>
 									<div class="book-added-msg-wrapper" style="display: none;">
 										<div id="book-added-msg"><div class="errorIcon"></div></div>
 									</div>
@@ -603,7 +606,9 @@
 														<br />
 														Maximum number pages: 10. PDF files only.
 													</p>
-
+													<div class="errorMsg" style="width: 130px; margin: 0 auto;">
+														<div class="errorIcon"></div>Preview is required
+													</div>
 												</div>
 
 											</div>
@@ -665,7 +670,9 @@
 														<br />
 														Maximum number pages: 10. PDF files only.
 													</p>
-
+													<div class="errorMsg" style="width: 130px; margin: 0 auto;">
+														<div class="errorIcon"></div>Preview is required
+													</div>
 												</div>
 
 											</div>
