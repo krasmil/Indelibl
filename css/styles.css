@@ -5841,7 +5841,7 @@ input#product-year {
     cursor: pointer;
 }
 #paper-book-preview-added-msg, #ebook-preview-added-msg {
-  width: 70%;
+  width: 30%;
   color: #c5262b;
   margin-left: auto;
   margin-right: auto;

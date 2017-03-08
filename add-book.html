@@ -526,26 +526,24 @@
 											Add book
 									</label>
 									<input id="book-input" type="file" accept="application/pdf, .epub" onchange="showBookMsg(this)" style="display: none;"/>
-
 									<p style="color: #acacac; font-size: 0.75em;">
 										Maximum upload file size for e-book file: 60MB.
 										<br />
 										PDF and EPUB files only.
 									</p>
+									<div class="errorMsg" style="width: 130px; margin: 0 auto; float: left;">
+										<div class="errorIcon"></div>Book file is required
+									</div>
 									<div class="book-added-msg-wrapper" style="display: none;">
 										<div id="book-added-msg"><div class="errorIcon"></div></div>
 									</div>
 								</div>
-
-
 							</div>
 					<div class="add-art-main-wrapper white">
 									<div class="add-art-form-main add-book-form">
 										<div class="book-area ">
-
 											<canvas id="original-art-slice" style="display: none;"></canvas>
 											<img id="original-art-rotator" src="" style="display: none;">
-
 											<div id="paper-book-main-area">
 												<div class="books-row">
 													<div class="book-page-preview-wrapper">
@@ -555,9 +553,7 @@
 																	<br /><img src="images/icons/error.png" class="errorImg-small"><span>Cover is required</span>
 																</p>
 															</p>
-
 														</div>
-
 														<div class="book-buttons-wrapper">
 															<label for="book-input-1" class="btn add-art-btn" id="book-input-1-button">
 																Add
@@ -586,18 +582,14 @@
 						  								</button>
 														</div>
 													</div>
-
 												</div>
 												<div class="books-row">
 													<div id="paper-book-preview-added-msg" style="opacity: 0">
-
 													</div>
-
 													<label for="paper-book-preview-input" class="btn wide" id="add-paper-book-preview-btn">
 															Add preview
 													</label>
 													<input id="paper-book-preview-input" type="file" accept="application/pdf" onchange="showBookPreviewMsg(this)" style="display: none;"/>
-
 													<p style="color: #acacac; font-size: 0.75em;">
 														Preview file is required.
 														<br />
@@ -605,9 +597,10 @@
 														<br />
 														Maximum number pages: 10. PDF files only.
 													</p>
-
+													<div class="errorMsg" style="width: 130px; margin: 0 auto;">
+														<div class="errorIcon"></div>Preview is required
+													</div>
 												</div>
-
 											</div>
 											<div id="ebook-main-area" style="display: none;">
 												<div class="books-row">
@@ -647,12 +640,9 @@
 						  								</button>
 														</div>
 													</div>
-
 												</div>
 												<div class="books-row">
-
 													<div id="ebook-preview-added-msg" style="opacity: 0;">
-
 													</div>
 
 													<label for="ebook-preview-input" class="btn wide" id="add-ebook-preview-btn">
@@ -667,13 +657,11 @@
 														<br />
 														Maximum number pages: 10. PDF files only.
 													</p>
-
+													<div class="errorMsg" style="width: 130px; margin: 0 auto;">
+														<div class="errorIcon"></div>Preview is required
+													</div>
 												</div>
-
 											</div>
-
-
-
 										</div>
 									</div>
 									<div class="submit_status">
