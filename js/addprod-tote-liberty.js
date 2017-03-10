@@ -813,11 +813,13 @@ var switch_tote_color = function(e) {
     $("#tote-liberty-bg-back-white").show();
     $("#tote-liberty-bg-front-black").hide();
     $("#tote-liberty-bg-back-black").hide();
+    $("#liberty-color").val("white");
   }
   else if (e.id.includes("black")) {
     $("#tote-liberty-bg-front-white").hide();
     $("#tote-liberty-bg-back-white").hide();
     $("#tote-liberty-bg-front-black").show();
     $("#tote-liberty-bg-back-black").show();
+    $("#liberty-color").val("black");
   }
 }
