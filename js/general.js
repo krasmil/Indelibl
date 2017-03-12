@@ -602,7 +602,7 @@ var saveNewCoverPic = function() {
     }
 };
 
-/*---------- PREVIEW PROFILE IMAGE ON SELECT ------------*/
+/*---------- PREVIEW ORIGINAL ART ON ADD ------------*/
 function showOriginalArt(fileInput) {
     if (fileInput.files && fileInput.files[0]) {
         // DODAO Zoran za proveru velicine i extenzije slike START
@@ -613,6 +613,70 @@ function showOriginalArt(fileInput) {
             imgExt = 'jpg';
         }
         if (imgSize > 10) {
+            $('#size-error').show();
+            $('#' + fileInput.id).val('');
+            return false;
+        }
+        if (imgExt !== 'jpg' && imgExt !== 'png') {
+            $('#ext-error').show();
+            $('#' + fileInput.id).val('');
+            return false;
+        }
+        // DODAO Zoran END
+        var reader = new FileReader();
+        reader.onload = function(e) {
+
+            // get orientation
+            binImg = e.target.result;
+            input = document.getElementById('art-input');
+            getOrientation(input.files[0], function(orientation) {
+
+              if ([5, 6, 7, 8].indexOf(orientation) > -1 && [5, 6, 7, 8].indexOf(orientation) !== 3) {
+                  $('#original-art-rotator').attr('src', binImg);
+                  var c = document.getElementById("original-art-slice");
+                  c.width = $('#original-art-rotator').height();
+                  c.height = $('#original-art-rotator').width();
+                  var ctx = c.getContext("2d");
+                  ctx.transform(0, 1, -1, 0, $('#original-art-rotator').height(), 0);
+                  ctx.drawImage(document.getElementById('#original-art-rotator'), 0, 0);
+                  urlRot = c.toDataURL();
+                  // set Base64 string in src of positioner
+                  $('#original-art-preview').css("background-image", "url(" + urlRot + ")");
+
+} else if ([5, 6, 7, 8].indexOf(orientation) === 3) {
+                              console.log(2);
+                              $('#original-art-rotator').attr('src', binImg);
+                              var c2 = document.getElementById("original-art-slice");
+                              c2.width = $('#original-art-rotator').height();
+                              c2.height = $('#original-art-rotator').width();
+                              var ctx2 = c2.getContext("2d");
+                              ctx2.transform(0, 1, -1, 0, $('#original-art-rotator').height(), 0);
+                              ctx2.rotate(Math.PI);
+                              ctx2.translate(-parseInt(c2.height), -parseInt(c2.width));
+                              ctx2.drawImage(document.getElementById('original-art-rotator'), 0, 0);
+                              urlRot2 = c2.toDataURL();
+                              $('#original-art-preview').css("background-image", "url(" + urlRot2 + ")");
+              } else {
+                  // set Base64 string in src of positioner
+                  $('#original-art-preview').css("background-image", "url(" + binImg + ")");
+              }
+            });
+        };
+        reader.readAsDataURL(fileInput.files[0]);
+    }
+}
+
+/*---------- PREVIEW ART PRINT ON ADD ------------*/
+function showArtPrint(fileInput) {
+    if (fileInput.files && fileInput.files[0]) {
+        // DODAO Zoran za proveru velicine i extenzije slike START
+        var imgSize = Math.round((fileInput.files[0].size / 1024) / 1024);
+        var imgExtSplit = fileInput.files[0].type.split("/");
+        var imgExt = imgExtSplit[1];
+        if (imgExt === 'jpeg') {
+            imgExt = 'jpg';
+        }
+        if (imgSize > 50) {
             $('#size-error').show();
             $('#' + fileInput.id).val('');
             return false;

@@ -5359,17 +5359,6 @@ input#product-year {
   margin: 0;
 }
 
-.shirt-icon {
-  width: 60px;
-  height: auto;
-}
-.shirt-wrapper {
-  padding: 10px;
-}
-.shirt-wrapper.active {
-  border: 1px solid #acacac;
-  border-radius: 3px;
-}
 .color-select-wrapper {
   display: block;
   width: 100%;
@@ -5725,7 +5714,7 @@ input#product-year {
   cursor: pointer;
 }
 .add-art-print-form {
-  height: 650px;
+  height: 665px;
 }
 .art-print-img {
   margin-bottom: 40px;
@@ -5979,12 +5968,57 @@ input#product-year {
   overflow: hidden;
   float: left;
 }
+.color-select-box.shirt-color {
+  width: 19px;
+  height: 19px;
+  display: block;
+  margin-right: 5px;
+  cursor: pointer;
+  border: 1px solid #d3d3d3;
+  float: left;
+  margin-bottom: 5px;
+}
+.color-select-box.shirt-color:nth-of-type(10) {
+  margin-right: 0;
+}
+.shirt-wrapper {
+    padding: 10px;
+    float: left;
+    width: auto;
+    text-align: center;
+    cursor: pointer;
 
-
-
-
-
-
+}
+.shirt-wrapper.active {
+    border: 1px solid #acacac;
+    border-radius: 3px;
+}
+.shirt-icon {
+  width: 50px;
+  height: auto;
+  display: block;
+  margin: 5px auto;
+}
+.men-front-bg {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 550px;
+    height: 524px;
+    pointer-events: none;
+    display: block;
+}
+.tote-outline-aa {
+  width: 550px;
+  height: 524px;
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  margin-bottom: 40px;
+}
 
 
 
@@ -7075,7 +7109,7 @@ li.ui-timepicker-selected .ui-timepicker-duration,
       width: 600px;
     }
     .add-art-print-form {
-      height: 604px;
+      height: 615px;
     }
     .book-left-form {
       min-height: 695px;
@@ -7104,6 +7138,12 @@ li.ui-timepicker-selected .ui-timepicker-duration,
     }
     .tote-radio-wrapper {
       width: 12%;
+    }
+    .color-select-box.shirt-color:nth-of-type(10) {
+      margin-right: 5px;
+    }
+    .color-select-box.shirt-color:nth-of-type(7) {
+      margin-right: 0;
     }
 
 }
