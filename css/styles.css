@@ -5917,14 +5917,7 @@ input#product-year {
   position: relative;
   min-height: 766px;
 }
-.color-select-box-wrapper {
-  overflow: hidden;
-  width: 100%;
-  height: auto;
-  display: block;
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
+
 .color-select-box {
   width: 20px;
   height: 20px;
@@ -5994,12 +5987,70 @@ input#product-year {
     border-radius: 3px;
 }
 .shirt-icon {
-  width: 50px;
+  width: 60px;
   height: auto;
   display: block;
   margin: 5px auto;
 }
-.men-front-bg {
+.shirt-outline-men {
+    width: 550px;
+    height: 524px;
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    margin-bottom: 40px;
+}
+.shirt-outline-women {
+    width: 500px;
+    height: 511px;
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    margin-bottom: 40px;
+}
+.men-shirt-backing-color {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 550px;
+  height: 524px;
+  pointer-events: none;
+  display: block;
+}
+.women-shirt-backing-color {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 500px;
+  height: 511px;
+  pointer-events: none;
+  display: block;
+}
+.add-art-form-left.shirt-form-left {
+    min-height: 855px;
+    height: auto;
+}
+.men-shirt-area {
+  min-height: 572px;
+  height: auto;
+}
+.women-shirt-area {
+  min-height: 572px;
+  height: auto;
+}
+.men-shirt-art {
+  position: relative;
+}
+.women-shirt-art {
+  position: relative;
+}
+.shirt-men-bg {
     position: absolute;
     left: 0;
     top: 0;
@@ -6008,19 +6059,121 @@ input#product-year {
     pointer-events: none;
     display: block;
 }
-.tote-outline-aa {
-  width: 550px;
-  height: 524px;
-  background-position: center center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  margin-left: auto;
-  margin-right: auto;
-  position: relative;
-  margin-bottom: 40px;
+.shirt-women-bg {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 500px;
+    height: 511px;
+    pointer-events: none;
+    display: block;
 }
-
-
+.print.red-outline.men-shirt {
+    border: 1px dashed #fe0813;
+    top: 87px;
+    z-index: 100;
+}
+.print.red-outline.men-shirt-back {
+    border: 1px dashed #fe0813;
+    top: 40px;
+    z-index: 100;
+}
+.print.red-outline.women-shirt {
+    border: 1px dashed #fe0813;
+    top: 90px;
+    z-index: 100;
+}
+.print.red-outline.women-shirt-back {
+    border: 1px dashed #fe0813;
+    top: 45px;
+    z-index: 100;
+}
+.ao-shirt-men-bg {
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    width: 503px;
+    height: 453px;
+    pointer-events: none;
+    display: block;
+}
+.shirt-men-allover-printarea {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 525px;
+  height: 450px;
+  pointer-events: none;
+  display: block;
+}
+.ao-shirt-women-bg {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 511px;
+    height: 480px;
+    pointer-events: none;
+    display: block;
+}
+.shirt-women-allover-printarea {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 540px;
+  height: 480px;
+  pointer-events: none;
+  display: block;
+}
+.shirt-outline-men-ao {
+    width: 525px;
+    height: 450px;
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    margin-bottom: 40px;
+}
+.shirt-outline-women-ao {
+    width: 540px;
+    height: 480px;
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    margin-bottom: 40px;
+}
+.men-shirt-area-ao {
+  min-height: 500px;
+  height: auto;
+}
+.women-shirt-area-ao {
+  min-height: 500px;
+  height: auto;
+}
+.add-art-form-left.shirt-form-left-ao {
+    min-height: 790px;
+    height: auto;
+}
+.color-select-box-wrapper {
+    overflow: auto;
+    width: 100%;
+    height: 72px;
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.color-select-box-wrapper.colors-women {
+    overflow: auto;
+    width: 100%;
+    height: 72px;
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
 
 
 
@@ -7142,10 +7295,43 @@ li.ui-timepicker-selected .ui-timepicker-duration,
     .color-select-box.shirt-color:nth-of-type(10) {
       margin-right: 5px;
     }
-    .color-select-box.shirt-color:nth-of-type(7) {
+    .color-select-box.shirt-color:nth-of-type(6n) {
       margin-right: 0;
     }
-
+    .men-shirt-area {
+      min-height: 607px;
+      height: auto;
+    }
+    .women-shirt-area {
+      min-height: 607px;
+      height: auto;
+    }
+    .add-art-form-left.shirt-form-left-ao {
+        min-height: 748px;
+        height: auto;
+    }
+    .shirt-minus, .shirt-plus, .shirt-cii, .shirt-ogs {
+      right: 25px;
+    }
+    .shirt-slider {
+      right: 30px;
+    }
+    .color-select-box-wrapper {
+        overflow: auto;
+        width: 90%;
+        height: 120px;
+        display: block;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    .color-select-box-wrapper.colors-women {
+        overflow: auto;
+        width: 90%;
+        height: 96px;
+        display: block;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
 }
 
 
