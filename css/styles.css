@@ -6174,6 +6174,11 @@ input#product-year {
     margin-top: 10px;
     margin-bottom: 10px;
 }
+.overlay_product h5 {
+  margin-top: -30px;
+  color: #fff;
+  margin-bottom: 20px;
+}
 
 
 
@@ -7331,6 +7336,11 @@ li.ui-timepicker-selected .ui-timepicker-duration,
         display: block;
         margin-top: 10px;
         margin-bottom: 10px;
+    }
+    .overlay_product h5 {
+      margin-top: -30px;
+      color: #fff;
+      margin-bottom: 20px;
     }
 }
 
