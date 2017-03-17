@@ -6107,9 +6107,8 @@ input#product-year {
   display: block;
 }
 .ao-shirt-women-bg {
-    position: absolute;
-    left: 0;
-    top: 0;
+    position: relative;
+    margin: auto;
     width: 511px;
     height: 480px;
     pointer-events: none;
@@ -6179,7 +6178,14 @@ input#product-year {
   color: #fff;
   margin-bottom: 20px;
 }
-
+.ao-men-bg-mask {
+  width: 525px;
+  height: 450px;
+}
+.ao-women-bg-mask {
+  width: 540px;
+  height: 480px;
+}
 
 
 
