@@ -50,6 +50,7 @@ $(function() {
       $("#controls-wrapper-pcard1").show();
       $("#outline-pcard1").show();
       $("#outline-pcard1").removeClass("portrait");
+      $("#pcard-art > .add-product-buttons-wrapper").addClass("cards-button");
       $("#print-safe-area-pcard1").show();
       $("#print-safe-area-portrait-pcard1").hide();
       $("#print-back-pcard1").hide();
@@ -68,6 +69,7 @@ $(function() {
       $("#controls-wrapper-gcard1").show();
       $("#outline-gcard1").show();
       $("#outline-gcard1").removeClass("portrait");
+      $("#gcard-art > .add-product-buttons-wrapper").addClass("cards-button2");
       $("#print-safe-area-gcard1").show();
       $("#print-safe-area-portrait-gcard1").hide();
       $("#print-back-gcard1").hide();
