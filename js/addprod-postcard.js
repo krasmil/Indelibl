@@ -397,7 +397,8 @@ var remove_postcard_art = function() {
       $(this).find(".print").html("").hide();
       $('#slider-front-men').hide();
       $('#preview-' + id1).css("background-image", "none");
-      $('#preview-' + id1).attr('onclick','');
+      $('#preview-' + id1).attr( "onclick", "" );
+      $('#preview-' + id1).css( "cursor", "auto" );
       $('#preview-' + id1).find(".add-art-btn2").show();
       $('#art-input-' + id1).val('');
       $('#slider-'  + id1).hide();
@@ -572,24 +573,28 @@ var flipImgPostcard  = function(e) {
     $('#print-back-' + id1).hide();
     $('#printer-' + id1).css("opacity", "0");
     $('#print-back-portrait-' + id1).show();
+    $("#slider-" + id1).slider({disabled: true});
   }
   else if ($('#print-safe-area-' + id1).is(":visible")) {
     $('#print-safe-area-' + id1).hide();
     $('#print-back-' + id1).show();
     $('#print-back-portrait-' + id1).hide();
     $('#printer-' + id1).css("opacity", "0");
+    $("#slider-" + id1).slider({disabled: true});
   }
   else if ($('#print-back-portrait-' + id1).is(":visible")) {
     $('#print-safe-area-portrait-' + id1).show();
     $('#print-back-' + id1).hide();
     $('#printer-' + id1).css("opacity", "1");
     $('#print-back-portrait-' + id1).hide();
+    $("#slider-" + id1).slider({disabled: false});
   }
   else if ($('#print-back-' + id1).is(":visible")) {
     $('#print-safe-area-' + id1).show();
     $('#print-back-' + id1).hide();
     $('#print-back-portrait-' + id1).hide();
     $('#printer-' + id1).css("opacity", "1");
+    $("#slider-" + id1).slider({disabled: false});
   }
 
 }

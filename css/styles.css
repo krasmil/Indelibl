@@ -6457,7 +6457,7 @@ input#product-year {
 .print-safe-area-greetingcard-portrait-back {
   position: absolute;
   left: 0;
-  top: 0;
+  top: -20px;
   width: 316px;
   height: 473px;
   pointer-events: none;
