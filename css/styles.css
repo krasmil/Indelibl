@@ -6227,7 +6227,7 @@ input#product-year {
 .flip-card {
   display: none;
   position: absolute;
-  top: 550px;
+  top: 495px;
   right: 45px;
   height: 20px;
   width: 20px;
@@ -6274,6 +6274,12 @@ input#product-year {
 #max-file-1366 {
   display: none;
 }
+#max-file-1920b {
+  display: block;
+}
+#max-file-1366b {
+  display: none;
+}
 .postcard-area {
   margin-top: 40px;
 
@@ -6283,30 +6289,278 @@ input#product-year {
 }
 .pcard-img-ctrls-wrapper {
   position: absolute;
-  top: 190px;
+  top: 0;
   right: 0;
+}
+.print-safe-area-postcard {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 429px;
+    height: 309px;
+    pointer-events: none;
+    display: block;
+}
+.print-safe-area-postcard-back {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 429px;
+    height: 309px;
+    pointer-events: none;
+    display: block;
+    background-color: #fff;
+}
+.print-safe-area-postcard-portrait {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 309px;
+  height: 429px;
+  pointer-events: none;
+  display: block;
+}
+.print-safe-area-postcard-portrait-back {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 310px;
+  height: 429px;
+  pointer-events: none;
+  display: block;
+  background-color: #fff;
+}
+.postcard-outline {
+    width: 429px;
+    height: 309px;
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    margin-bottom: 40px;
+}
+.postcard-outline.portrait {
+  width: 309px;
+  height: 429px;
+}
+
+.cards-info-icon {
+  width: 22px;
+  height: 22px;
+  position: absolute;
+
+  top: 5px;
+  cursor: pointer;
+}
+.postcard-area .cards-info-icon {
+  left: 80px;
+}
+
+.greetingcard-area .cards-info-icon {
+  left: 70px;
+}
+.product-info-popup::before {
+    border-color: transparent transparent transparent #d6d6d6;
+    border-style: solid;
+    border-width: 4px 9px;
+    content: "";
+    height: 0;
+    right: -19px;
+    position: absolute;
+    top: 9px;
+    width: 0;
+}
+.product-info-popup::after {
+    border-color: transparent transparent transparent #fff;
+    border-style: solid;
+    border-width: 5px 10px;
+    content: "";
+    right: -18px;
+    position: absolute;
+    top: 8px;
+}
+.product-info-popup {
+    background: #fff none repeat scroll 0 0;
+    border: 1px solid #d6d6d6;
+    border-radius: 5px;
+
+    width: auto;
+    opacity: 0;
+    padding: 2px 10px;
+    position: absolute;
+    text-align: left;
+    top: 3px;
+    transition: all 0.4s ease 0s;
+    visibility: hidden;
+    white-space: nowrap;
+    width: auto;
+}
+.product-info-popup.active {
+  visibility: visible;
+  opacity: 1;
+
+}
+.postcard-area .product-info-popup {
+  left: -175px;
+}
+.greetingcard-area .product-info-popup {
+  left: -185px;
+}
+.postcard-area .product-info-popup.active {
+  left: -190px;
+}
+.greetingcard-area .product-info-popup.active {
+  left: -200px;
+}
+.cards-info-popup {
+  width: 236px;
+  height: 177px;
+}
+.greetingcard-art {
+  position: relative;
+}
+.print-safe-area-greetingcard {
+
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 473px;
+  height: 316px;
+  pointer-events: none;
+  display: block;
+}
+
+.print-safe-area-greetingcard-back {
+
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 473px;
+  height: 316px;
+  pointer-events: none;
+  display: block;
+  background-color: #fff;
 }
 
 
+.print-safe-area-greetingcard-portrait {
+  position: absolute;
+  left: 0;
+  top: -25px;
+  width: 316px;
+  height: 473px;
+  pointer-events: none;
+  display: block;
+}
+.print-safe-area-greetingcard-portrait-back {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 316px;
+  height: 473px;
+  pointer-events: none;
+  display: block;
+  background-color: #fff;
+}
 
+.greetingcard-outline {
+    width: 449px;
+    height: 316px;
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    margin-bottom: 40px;
+}
+.greetingcard-outline.portrait {
+  width: 316px;
+  height: 449px;
+  margin-top: 30px;
+  /* overflow: hidden; */
+  display: block;
+  position: absolute;
+  left: 50%;
+  margin-left: -158px;
+}
+.gcard-img-ctrls-wrapper {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
 
+#postcard-mask-portrait {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 309px;
+    height: 429px;
+    pointer-events: none;
+    margin-left: -155px;
+}
 
+#postcard-mask {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 429px;
+    height: 309px;
+    pointer-events: none;
+    margin-left: -215px;
+}
 
+#greetingcard-mask {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 448px;
+    height: 316px;
+    pointer-events: none;
+    margin-left: -223px;
+}
 
+#greetingcard-mask-portrait {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 316px;
+    height: 448px;
+    pointer-events: none;
+    margin-left: -158px;
+}
 
+.add-art-form-left.card-form-left {
+  min-height: 691px;
+}
+.postcard-area {
+  min-height: 479px;
+}
+.greetingcard-area {
+  min-height: 479px;
 
+}
+#greetingcard-templates-wrapper {
+  min-height: 600px;
+}
+#postcard-templates-wrapper {
+  min-height: 600px;
+}
+.add-product-buttons-wrapper.cards-button {
 
-
-
-
-
-
-
-
-
-
-
-
+  position: absolute;
+  left: 50%;
+  margin-left: -150px;
+  top: 380px;
+}
+.add-product-buttons-wrapper.cards-button2 {
+  position: absolute;
+  left: 50%;
+  margin-left: -150px;
+  top: 380px;
+}
 
 
 
@@ -7586,7 +7840,7 @@ li.ui-timepicker-selected .ui-timepicker-duration,
     }
     .add-art-btn2 {
       font-size: 0.9em;
-      margin-top: 2em;
+      margin-top: 2.4em;
       cursor: pointer;
       background: #fff;
       color: #e74c3c;
@@ -7612,6 +7866,51 @@ li.ui-timepicker-selected .ui-timepicker-duration,
     #max-file-1366 {
       display: block;
     }
+    #max-file-1920b {
+      display: none;
+    }
+    #max-file-1366b {
+      display: block;
+    }
+    .cards-info-icon {
+      width: 20px;
+      height: 20px;
+
+    }
+
+    .add-art-form-left.card-form-left {
+      min-height: 826px;
+    }
+    .gcard-img-ctrls-wrapper {
+        position: absolute;
+        top: 190px;
+        right: 0;
+    }
+    .pcard-img-ctrls-wrapper {
+        position: absolute;
+        top: 190px;
+        right: 0;
+    }
+    #greetingcard-templates-wrapper {
+      min-height: 745px;
+    }
+    .add-product-buttons-wrapper.cards-button {
+
+      position: absolute;
+      left: 50%;
+      margin-left: -150px;
+      top: 580px;
+    }
+    .add-product-buttons-wrapper.cards-button2 {
+      position: absolute;
+      left: 50%;
+      margin-left: -150px;
+      top: 580px;
+    }
+    #postcard-templates-wrapper {
+      min-height: 745px;
+    }
+
 
 }
 
