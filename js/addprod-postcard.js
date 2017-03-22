@@ -40,6 +40,9 @@ $(function() {
     $("#postc").prop('checked', true);
     $("#greetc").prop('checked', false);
 
+    $("#lso").prop('checked', true);
+    $("#porto").prop('checked', false);
+
     mouseControlPostcard();
 
 
@@ -243,21 +246,55 @@ var hideImgControlsPostcard = function(e) {
 
 //-------load image to print for postcards-------//
 var imageLoadedPostcard = function(eid) {
+
     $("#print-" + eid).load(function() {
         imgWidth = parseInt($(this).css('width'));
         imgHeight = parseInt($(this).css('height'));
+
+
+
         imgWidthInch = Math.round(imgWidth / dpi);
         imgHeightInch = Math.round(imgHeight / dpi);
         imgWidthProp = Math.round(imgWidth / containerProportion);
         imgHeightProp = imgHeight / containerProportion;
-        sliderMax = imgWidthProp;
-        if (sliderMax > containerWidthProp) {
-            sliderPos = containerWidthProp;
-        } else {
-            sliderPos = imgWidthProp;
+
+        if (imgWidth > imgHeight) {
+          sliderMax = imgWidthProp;
+          if (sliderMax > containerWidthProp) {
+              sliderPos = containerWidthProp;
+          } else {
+              sliderPos = imgWidthProp;
+          }
+          slideFuncPostcard(sliderMax, sliderPos, eid);
+          $("#print-" + eid).width(sliderPos);
         }
-        slideFuncPostcard(sliderMax, sliderPos, eid);
-        $("#print-" + eid).width(sliderPos);
+        else if (imgWidth < imgHeight) {
+
+          sliderMax = imgHeightProp;
+          if (sliderMax > containerHeightProp) {
+              sliderPos = containerHeightProp;
+          } else {
+              sliderPos = imgHeightProp;
+          }
+          slideFuncPostcard(sliderMax, sliderPos, eid);
+          $("#print-" + eid).height(sliderPos);
+        }
+        else if (imgWidth = imgHeight) {
+
+          sliderMax = imgHeightProp;
+          if (sliderMax > containerHeightProp) {
+              sliderPos = containerHeightProp;
+          } else {
+              sliderPos = imgHeightProp;
+          }
+          slideFuncPostcard(sliderMax, sliderPos, eid);
+          $("#print-" + eid).height(sliderPos);
+        }
+
+
+
+    //    slideFuncPostcard(sliderMax, sliderPos, eid);
+  //      $("#print-" + eid).width(sliderPos);
         centerImgPostcard(document.getElementById("center-image-" + eid));
 
         $(".resizable").resizable({
@@ -422,6 +459,8 @@ var switch_postcard_orientation = function(e) {
     $("#controls-wrapper-" + eid +" .postcard-landscape").addClass("active");
     $("#controls-wrapper-" + eid +" .postcard-portrait").removeClass("active");
     $("#pcard-art > .add-product-buttons-wrapper").addClass("cards-button");
+    $("#lso").prop('checked', true);
+    $("#porto").prop('checked', false);
     $(".postcard-outline").each(function( index ) {
       if ($(this).css("display") != "none") {
         var id1 = this.id;
@@ -431,6 +470,7 @@ var switch_postcard_orientation = function(e) {
         $(this).find(".print-safe-area-postcard-portrait").hide();
         var e_id = $(this).find(".print").attr("id");
         switchPrinterOrientation("landscape", e_id);
+        imageLoadedPostcard(id1);
         centerImgPostcard(document.getElementById("center-image-" + id1));
       }
     });
@@ -441,6 +481,8 @@ var switch_postcard_orientation = function(e) {
     $("#controls-wrapper-" + eid +" .postcard-landscape").removeClass("active");
     $("#controls-wrapper-" + eid +" .postcard-portrait").addClass("active");
     $("#pcard-art > .add-product-buttons-wrapper").removeClass("cards-button");
+    $("#lso").prop('checked', false);
+    $("#porto").prop('checked', true);
     $(".postcard-outline").each(function( index ) {
       if ($(this).css("display") != "none") {
         var id2 = this.id;
@@ -450,6 +492,7 @@ var switch_postcard_orientation = function(e) {
         $(this).find(".print-safe-area-postcard-portrait").show();
         var e_id = $(this).find(".print").attr("id");
         switchPrinterOrientation("portrait", e_id);
+        imageLoadedPostcard(id2);
         centerImgPostcard(document.getElementById("center-image-" + id2));
       }
     });
@@ -574,6 +617,8 @@ var flipImgPostcard  = function(e) {
     $('#printer-' + id1).css("opacity", "0");
     $('#print-back-portrait-' + id1).show();
     $("#slider-" + id1).slider({disabled: true});
+    $("#printer_" + id1 + " > .ui-wrapper").draggable( 'disable' );
+    $("#printer_" + id1 + " > .ui-wrapper").resizable( 'disable' );
   }
   else if ($('#print-safe-area-' + id1).is(":visible")) {
     $('#print-safe-area-' + id1).hide();
@@ -581,6 +626,8 @@ var flipImgPostcard  = function(e) {
     $('#print-back-portrait-' + id1).hide();
     $('#printer-' + id1).css("opacity", "0");
     $("#slider-" + id1).slider({disabled: true});
+    $("#printer_" + id1 + " > .ui-wrapper").draggable( 'disable' );
+    $("#printer_" + id1 + " > .ui-wrapper").resizable( 'disable' );
   }
   else if ($('#print-back-portrait-' + id1).is(":visible")) {
     $('#print-safe-area-portrait-' + id1).show();
@@ -588,6 +635,8 @@ var flipImgPostcard  = function(e) {
     $('#printer-' + id1).css("opacity", "1");
     $('#print-back-portrait-' + id1).hide();
     $("#slider-" + id1).slider({disabled: false});
+    $("#printer_" + id1 + " > .ui-wrapper").draggable( 'enable' );
+    $("#printer_" + id1 + " > .ui-wrapper").resizable( 'enable' );
   }
   else if ($('#print-back-' + id1).is(":visible")) {
     $('#print-safe-area-' + id1).show();
@@ -595,6 +644,8 @@ var flipImgPostcard  = function(e) {
     $('#print-back-portrait-' + id1).hide();
     $('#printer-' + id1).css("opacity", "1");
     $("#slider-" + id1).slider({disabled: false});
+    $("#printer_" + id1 + " > .ui-wrapper").draggable( 'enable' );
+    $("#printer_" + id1 + " > .ui-wrapper").resizable( 'enable' );
   }
 
 }

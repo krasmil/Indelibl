@@ -202,14 +202,42 @@ var imageLoadedGreetingcard = function(eid) {
         imgHeightInch = Math.round(imgHeight / dpi);
         imgWidthProp = Math.round(imgWidth / containerProportionG);
         imgHeightProp = imgHeight / containerProportionG;
-        sliderMax = imgWidthProp;
-        if (sliderMax > containerWidthPropG) {
-            sliderPos = containerWidthPropG;
-        } else {
-            sliderPos = imgWidthProp;
+
+
+        if (imgWidth > imgHeight) {
+          sliderMax = imgWidthProp;
+          if (sliderMax > containerWidthProp) {
+              sliderPos = containerWidthProp;
+          } else {
+              sliderPos = imgWidthProp;
+          }
+          slideFuncGreetingcard(sliderMax, sliderPos, eid);
+          $("#print-" + eid).width(sliderPos);
         }
-        slideFuncGreetingcard(sliderMax, sliderPos, eid);
-        $("#print-" + eid).width(sliderPos);
+        else if (imgWidth < imgHeight) {
+
+          sliderMax = imgHeightProp;
+          if (sliderMax > containerHeightProp) {
+              sliderPos = containerHeightProp;
+          } else {
+              sliderPos = imgHeightProp;
+          }
+          slideFuncGreetingcard(sliderMax, sliderPos, eid);
+          $("#print-" + eid).height(sliderPos);
+        }
+        else if (imgWidth = imgHeight) {
+
+          sliderMax = imgHeightProp;
+          if (sliderMax > containerHeightProp) {
+              sliderPos = containerHeightProp;
+          } else {
+              sliderPos = imgHeightProp;
+          }
+          slideFuncGreetingcard(sliderMax, sliderPos, eid);
+          $("#print-" + eid).height(sliderPos);
+        }
+
+
         centerImgGreetingcard(document.getElementById("center-image-" + eid));
 
         $(".resizable").resizable({
@@ -374,6 +402,8 @@ var switch_greetingcard_orientation = function(e) {
     $("#controls-wrapper-" + eid +" .postcard-landscape").addClass("active");
     $("#controls-wrapper-" + eid +" .postcard-portrait").removeClass("active");
     $("#gcard-art > .add-product-buttons-wrapper").addClass("cards-button2");
+    $("#lso").prop('checked', true);
+    $("#porto").prop('checked', false);
     $(".greetingcard-outline").each(function( index ) {
       if ($(this).css("display") != "none") {
         var id1 = this.id;
@@ -393,6 +423,8 @@ var switch_greetingcard_orientation = function(e) {
     $("#controls-wrapper-" + eid +" .postcard-landscape").removeClass("active");
     $("#controls-wrapper-" + eid +" .postcard-portrait").addClass("active");
     $("#gcard-art > .add-product-buttons-wrapper").removeClass("cards-button2");
+    $("#lso").prop('checked', false);
+    $("#porto").prop('checked', true);
     $(".greetingcard-outline").each(function( index ) {
       if ($(this).css("display") != "none") {
         var id2 = this.id;
@@ -514,12 +546,16 @@ var flipImgGreetingcard  = function(e) {
     $('#print-back-' + id1).hide();
     $('#print-back-portrait-' + id1).show();
     $("#slider-" + id1).slider({disabled: true});
+    $("#printer_" + id1 + " > .ui-wrapper").draggable( 'disable' );
+    $("#printer_" + id1 + " > .ui-wrapper").resizable( 'disable' );
   }
   else if ($('#print-safe-area-' + id1).is(":visible")) {
     $('#print-safe-area-' + id1).hide();
     $('#print-back-' + id1).show();
     $('#print-back-portrait-' + id1).hide();
     $("#slider-" + id1).slider({disabled: true});
+    $("#printer_" + id1 + " > .ui-wrapper").draggable( 'disable' );
+    $("#printer_" + id1 + " > .ui-wrapper").resizable( 'disable' );
 //    $('#print-' + id1).hide();
   }
   else if ($('#print-back-portrait-' + id1).is(":visible")) {
@@ -528,6 +564,8 @@ var flipImgGreetingcard  = function(e) {
     $('#print-' + id1).show();
     $('#print-back-portrait-' + id1).hide();
     $("#slider-" + id1).slider({disabled: false});
+    $("#printer_" + id1 + " > .ui-wrapper").draggable( 'enable' );
+    $("#printer_" + id1 + " > .ui-wrapper").resizable( 'enable' );
   }
   else if ($('#print-back-' + id1).is(":visible")) {
     $('#print-safe-area-' + id1).show();
@@ -535,6 +573,8 @@ var flipImgGreetingcard  = function(e) {
     $('#print-back-portrait-' + id1).hide();
     $('#print-' + id1).show();
     $("#slider-" + id1).slider({disabled: false});
+    $("#printer_" + id1 + " > .ui-wrapper").draggable( 'enable' );
+    $("#printer_" + id1 + " > .ui-wrapper").resizable( 'enable' );
   }
 
 }
