@@ -6561,9 +6561,23 @@ input#product-year {
   margin-left: -150px;
   top: 380px;
 }
+.add-other-form {
+  min-height: 680px;
+}
+.add-art-form-main .btn.wide.otherbtn {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  border: 1px solid #e74c3c;
+  color: #e74c3c;
+  background: #fff;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 
-
-
+}
+.add-art-other-form {
+    min-height: 570px;
+}
 
 
 
@@ -7910,7 +7924,12 @@ li.ui-timepicker-selected .ui-timepicker-duration,
     #postcard-templates-wrapper {
       min-height: 745px;
     }
-
+    .add-other-form {
+      min-height: 640px;
+    }
+    .add-art-other-form {
+        min-height: 550px;
+    }
 
 }
 
