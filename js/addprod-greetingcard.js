@@ -37,6 +37,7 @@ $(function() {
     $("#printer_gcard4").height(containerHeightPropG);
     $("#printer_gcard4").css("margin-left", -(containerWidthPropG/2)+ "px");
 
+
     mouseControlGreetingcard();
 
 });
@@ -408,6 +409,8 @@ var switch_greetingcard_orientation = function(e) {
       if ($(this).css("display") != "none") {
         var id1 = this.id;
         id1= id1.replace("outline-", "");
+        id1_o = id1.substring(1);
+        $("#orient-" + id1_o).val("landscape");
         $(this).removeClass("portrait");
         $(this).find(".print-safe-area-greetingcard").show();
         $(this).find(".print-safe-area-greetingcard-portrait").hide();
@@ -429,6 +432,8 @@ var switch_greetingcard_orientation = function(e) {
       if ($(this).css("display") != "none") {
         var id2 = this.id;
         id2= id2.replace("outline-", "");
+        id2_o = id2.substring(1);
+        $("#orient-" + id2_o).val("portrait");
         $(this).addClass("portrait");
         $(this).find(".print-safe-area-greetingcard").hide();
         $(this).find(".print-safe-area-greetingcard-portrait").show();

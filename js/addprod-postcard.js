@@ -37,6 +37,11 @@ $(function() {
     $("#printer_pcard4").height(containerHeightProp);
     $("#printer_pcard4").css("margin-left", -(containerWidthProp/2)+ "px");
 
+    $("#orient-card1").val("landscape");
+    $("#orient-card2").val("landscape");
+    $("#orient-card3").val("landscape");
+    $("#orient-card4").val("landscape");
+
     $("#postc").prop('checked', true);
     $("#greetc").prop('checked', false);
 
@@ -67,6 +72,10 @@ $(function() {
       $("#controls-wrapper-pcard1 .postcard-landscape").addClass("active");
       $("#controls-wrapper-pcard1 .postcard-portrait").removeClass("active");
       clearGreetingcards();
+      $("#orient-card1").val("landscape");
+      $("#orient-card2").val("landscape");
+      $("#orient-card3").val("landscape");
+      $("#orient-card4").val("landscape");
     }
     else if (card_type == "greeting") {
       $("#controls-wrapper-gcard1").show();
@@ -86,6 +95,10 @@ $(function() {
       $("#controls-wrapper-gcard1 .postcard-landscape").addClass("active");
       $("#controls-wrapper-gcard1 .postcard-portrait").removeClass("active");
       clearPostcards();
+      $("#orient-card1").val("landscape");
+      $("#orient-card2").val("landscape");
+      $("#orient-card3").val("landscape");
+      $("#orient-card4").val("landscape");
     }
 
   } );
@@ -465,6 +478,9 @@ var switch_postcard_orientation = function(e) {
       if ($(this).css("display") != "none") {
         var id1 = this.id;
         id1= id1.replace("outline-", "");
+        id1_o = id1.substring(1);
+        console.log(id1_o);
+        $("#orient-" + id1_o).val("landscape");
         $(this).removeClass("portrait");
         $(this).find(".print-safe-area-postcard").show();
         $(this).find(".print-safe-area-postcard-portrait").hide();
@@ -487,6 +503,9 @@ var switch_postcard_orientation = function(e) {
       if ($(this).css("display") != "none") {
         var id2 = this.id;
         id2= id2.replace("outline-", "");
+        id2_o = id2.substring(1);
+        console.log(id2_o);
+        $("#orient-" + id2_o).val("portrait");
         $(this).addClass("portrait");
         $(this).find(".print-safe-area-postcard").hide();
         $(this).find(".print-safe-area-postcard-portrait").show();
