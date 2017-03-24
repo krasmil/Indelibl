@@ -407,9 +407,11 @@
 							<input type="radio" name="cardtype" value="greeting" id="greetc"><label for="greetc">Greeting card</label>
 						</div>
 
-						<input type="radio" name="orientationcard" value="ls" id="lso" style="display: none;">
-						<input type="radio" name="orientationcard" value="port" id="porto" style="display: none;">
-						
+						<input type="hidden" value="" id="orient-card1" >
+						<input type="hidden" value="" id="orient-card2" >
+						<input type="hidden" value="" id="orient-card3" >
+						<input type="hidden" value="" id="orient-card4" >
+
 						<div class="cards-icons-wrapper" id="controls-wrapper-pcard1">
 							<div class="card-wrapper postcard-landscape active" onclick="switch_postcard_orientation(this)">
 								<div class="card-landscape"></div>
@@ -970,6 +972,7 @@
 
 					<div class="subscribe-form">
 						<div class="subscribe_container">
+							<div class="xIcon" id="hide-subscribe-form" onclick="hideSubscribeForm()"></div>
 							<input type="email" name="subscriberMail" placeholder="Email address" />
 							<div class="errorMsg">
 								<div class="errorIcon"></div>

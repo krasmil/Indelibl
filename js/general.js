@@ -345,6 +345,16 @@ function showSubscribeForm() {
     }
 }
 
+/************ show subscribe form on click ***********************/
+function hideSubscribeForm() {
+    if ($('#hide-subscribe-form').length) {
+
+        $('.subscribe-form').slideUp("slow", function() {
+          $('#showSubscribeFormButton').show();
+        });
+    }
+}
+
 /*---------- PREVIEW PROFILE IMAGE ON SELECT ------------*/
 function showMyProfile(fileInput) {
     if (fileInput.files && fileInput.files[0]) {

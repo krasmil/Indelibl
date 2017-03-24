@@ -6578,6 +6578,139 @@ input#product-year {
 .add-art-other-form {
     min-height: 570px;
 }
+.box-product2 {
+    position: relative;
+    overflow: hidden;
+    width: 310px;
+    -moz-transition: all 0.4s ease;
+    -webkit-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+    margin-left: 25px;
+}
+
+.box-product2 .product-img2 {
+    height: 310px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    border: 1px solid #d0cfcf;
+    background-size: contain;
+}
+.box-product2 .desc2 {
+    position: relative;
+    display: block;
+    padding: 10px;
+    text-align: left;
+    color: #313b46;
+}
+
+.box-product2 .price2 {
+    margin: 0;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-weight: bolder;
+}
+.box-product2 h4, .box-product2 h5 {
+    line-height: 25px;
+    margin: 0;
+    font-size: 1em;
+    width: 200px;
+    max-width: 200px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-transform: uppercase;
+}
+.product-desc-bottom {
+  font-size: 0.9em;
+  color: black;
+  margin-top: 0;
+    float: left;
+}
+.small-link {
+  width: 160px;
+  max-width: 160px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  float: left;
+  font-size: 0.9em;
+  line-height: 1.5em;
+  margin-top: 0;
+  margin-left: 3px;
+}
+.box-product2:hover {
+    -webkit-transform: translate(0, -20px);
+    -moz-transform: translate(0, -20px);
+    transform: translate(0, -20px);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.06), 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.product-img2.art-print-img {
+  display: table-cell;
+    vertical-align: middle;
+  text-align: center;
+  width: 310px;
+}
+
+
+[class*="column"] .art-print-product-home {
+  width: auto;
+  height: 65%;
+  border: 7px solid black;
+  margin-left: auto;
+  margin-right: auto;
+  display: inline-block;
+}
+.subscribe_container > .xIcon {
+  width: 14px;
+  height: 14px;
+  margin-top: 0;
+  margin-right: -5px;
+}
+.add-art-form-left input[type="radio"] {
+  
+  float: left;
+  margin-bottom: 0;
+  margin-left: 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -7679,6 +7812,14 @@ li.ui-timepicker-selected .ui-timepicker-duration,
     .add-art-form-left input, .add-art-form-left select {
       line-height: 22px;
       height: 22px;
+
+    }
+    .add-art-form-left input[type="radio"] {
+      line-height: 22px;
+      height: 22px;
+      float: left;
+      margin-bottom: 0;
+      margin-left: 0;
     }
     .add-art-main-wrapper {
       width: 685px;
@@ -7708,7 +7849,7 @@ li.ui-timepicker-selected .ui-timepicker-duration,
     .add-image-popup.active {
       left: 40px;
     }
-    .tshirt-form-left input[type="checkbox"], input[type="radio"] {
+    .tshirt-form-left input[type="checkbox"], .tshirt-form-left input[type="radio"] {
       margin: 0 10px 0 0;
       line-height: 18px;
       float: left;
@@ -7929,6 +8070,19 @@ li.ui-timepicker-selected .ui-timepicker-duration,
     }
     .add-art-other-form {
         min-height: 550px;
+    }
+    .box-product2 .product-img2 {
+        height: 216px;
+
+    }
+    .box-product2 h4, .box-product2 h5 {
+        width: 150px;
+        max-width: 150px;
+    }
+
+    .small-link {
+      width: 100px;
+      max-width: 100px;
     }
 
 }
@@ -9407,6 +9561,19 @@ li.ui-timepicker-selected .ui-timepicker-duration,
     #dialog {
       display:none;
     }
+    .box-product2 .product-img2 {
+      height: 240px;
+
+    }
+    .small-link {
+      width: 140px;
+      max-width: 140px;
+    }
+    .box-product2 h4, .box-product2 h5 {
+
+    width: 190px;
+    max-width: 190px;
+  }
 
 }
 
