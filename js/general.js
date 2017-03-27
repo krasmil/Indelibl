@@ -1046,7 +1046,12 @@ var calcViewProductsHeight = function() {
     var eventHeight = $('.box-product3').outerHeight(true);
     var eventsWidth = $('.view-current-events').outerWidth(true);
     $('.view-current-events-scroll').css("width", eventsWidth + 18);
-    if (numEvents <= 4) {
+
+    if (numEvents == 0) {
+      $('.view-current-events').css("height", 0);
+      $('.view-current-events-scroll').css("height", 0);
+    }
+    else if (numEvents >= 1  && numEvents <= 4) {
       $('.view-current-events').css("height", eventHeight);
       $('.view-current-events-scroll').css("height", eventHeight);
     }
