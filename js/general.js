@@ -33,6 +33,7 @@ $(document).ready(function() {
     lightenYourPrice();
     checkReqPrice();
     yearSpinner();
+    calcViewProductsHeight();
 });
 
 /******* Run functions when document resize **********/
@@ -1017,6 +1018,32 @@ var calcViewEventsHeight = function() {
   if ($('.view-current-events').length) {
     var numEvents = $('.profile-event').length;
     var eventHeight = $('.profile-event').outerHeight(true);
+    var eventsWidth = $('.view-current-events').outerWidth(true);
+    $('.view-current-events-scroll').css("width", eventsWidth + 18);
+    if (numEvents <= 4) {
+      $('.view-current-events').css("height", eventHeight);
+      $('.view-current-events-scroll').css("height", eventHeight);
+    }
+    else if (numEvents > 4 && numEvents <= 8) {
+      $('.view-current-events').css("height", eventHeight*2);
+      $('.view-current-events-scroll').css("height", eventHeight*2);
+    }
+    else if (numEvents >= 9) {
+      $('.view-current-events').css("height", eventHeight*3);
+      $('.view-current-events-scroll').css("height", eventHeight*3);
+    }
+    if (numEvents > 12) {
+      bounceDownArrow();
+    }
+  }
+};
+
+/************ calculate height of products wrapper ******************************/
+var calcViewProductsHeight = function() {
+  if ($('#view-products-select').length) {
+    console.log("joo");
+    var numEvents = $('.box-product3').length;
+    var eventHeight = $('.box-product3').outerHeight(true);
     var eventsWidth = $('.view-current-events').outerWidth(true);
     $('.view-current-events-scroll').css("width", eventsWidth + 18);
     if (numEvents <= 4) {

@@ -6675,8 +6675,59 @@ input#product-year {
   margin-left: 0;
 }
 
+.box-product3 {
+    position: relative;
+    overflow: hidden;
+    width: calc(25% - 21px);
+    -moz-transition: all 0.4s ease;
+    -webkit-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+    margin-left: 25px;
+}
+.box-product3:hover {
+    -webkit-transform: translate(0, -20px);
+    -moz-transform: translate(0, -20px);
+    transform: translate(0, -20px);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.06), 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+.box-product3 .product-img2 {
+    height: 290px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    border: 1px solid #d0cfcf;
+    background-size: contain;
+}
+.box-product3 .desc2 {
+    position: relative;
+    display: block;
+    padding: 10px;
+    text-align: left;
+    color: #313b46;
+}
 
+.box-product3 .price2 {
+    margin: 0;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-weight: bolder;
+}
+.box-product3 h4, .box-product3 h5 {
+    line-height: 25px;
+    margin: 0;
+    font-size: 1em;
+    width: 200px;
+    max-width: 200px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-transform: uppercase;
+}
 
+.box-product3:nth-of-type(4n+1) {
+    margin: 0 0 45px 0px;
+    float: left;
+}
 
 
 
@@ -7146,6 +7197,9 @@ li.ui-timepicker-selected .ui-timepicker-duration,
     }
     .column-4 {
         width: calc(25% - 15px);
+    }
+    .column-4.box-product3 {
+        width: calc(25% - 16.8px);
     }
     #recentArtists .column-4 {
         width: calc(25% - 18px);
@@ -8083,6 +8137,13 @@ li.ui-timepicker-selected .ui-timepicker-duration,
     .small-link {
       width: 100px;
       max-width: 100px;
+    }
+    .box-product3 .product-img2 {
+      height: 200px;
+    }
+    .box-product3 h4, .box-product3 h5 {
+        width: 150px;
+        max-width: 150px;
     }
 
 }
@@ -9573,6 +9634,20 @@ li.ui-timepicker-selected .ui-timepicker-duration,
 
     width: 190px;
     max-width: 190px;
+  }
+  .box-product3 {
+    width: 235px;
+  }
+  .box-product3 .product-img2 {
+    height: 235px;
+  }
+  .box-product3 h4, .box-product3 h5 {
+    width: 190px;
+    max-width: 190px;
+  }
+  .box-product3:nth-of-type(4n+1) {
+    margin: 0 12px 25px 12px;
+    float: left;
   }
 
 }
@@ -11178,6 +11253,17 @@ li.ui-timepicker-selected .ui-timepicker-duration,
     #dialog {
       display:none;
     }
+    .box-product3 .product-img2 {
+      height: 308px;
+    }
+    .box-product3 h4, .box-product3 h5 {
+      width: 190px;
+      max-width: 190px;
+    }
+    .events-wrapper .column-4.box-product3 {
+      width: 308px;
+    }
+
 
 
 /* Custom, iPhone Retina */
@@ -11214,6 +11300,13 @@ li.ui-timepicker-selected .ui-timepicker-duration,
     }
     .notifications-popup-header {
       width: 298px;
+    }
+    .events-wrapper .column-4.box-product3 {
+      width: 287px;
+    }
+
+    .box-product3 .product-img2 {
+      height: 287px;
     }
 
 }
