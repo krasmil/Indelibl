@@ -1373,18 +1373,26 @@ var hoverOnProductButtons = function () {
 
 var deleteProduct = function(e) {
   $("#product-delete-popup").show();
+  $("#delete_prod_id").val($(e).parent().parent().attr("id"));
 }
 
 var hideDeleteProduct = function() {
   $("#product-delete-popup").hide();
+  $("#delete_prod_id").val("");
 }
 
 var confirmDeleteProduct = function() {
-  hideDeleteProduct();
+  $("#product-delete-popup").hide();
   $("#product-delete-confirmation-popup").show();
+
 }
 var hideDeleteConfirm = function(e) {
   $("#product-delete-confirmation-popup").hide();
+  var p_box = $("#delete_prod_id").val();
+  $('#' + p_box).attr("onclick", "");
+  $('#' + p_box).html('<div class="overlay_product_delete"><h5>Pending deletion</h5></div>');
+  $('#' + p_box).css('cursor', 'auto');
+  $("#delete_prod_id").val("");
 }
 
 var previewBackProduct = function(e) {

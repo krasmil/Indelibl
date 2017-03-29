@@ -6922,7 +6922,20 @@ input#product-year {
     text-align: center;
     width: 402px;
 }
+.overlay_product_delete {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 290px;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
 
+}
+.overlay_product_delete h5 {
+  line-height: 290px;
+  margin: auto;
+  color: #fff;
+}
 
 
 
@@ -8357,6 +8370,13 @@ li.ui-timepicker-selected .ui-timepicker-duration,
       top: -22px;
       width: 90px;
     }
+    .overlay_product_delete {
+        height: 200px;
+    }
+    .overlay_product_delete h5 {
+      line-height: 200px;
+    }
+
 
 
 }
