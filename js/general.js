@@ -39,7 +39,7 @@ $(document).ready(function() {
     showEditRelatedItemMsg();
     hoverOnProductButtons();
     showDeleteItemMsg();
-
+    checkDeviceForMyProducts();
 });
 
 /******* Run functions when document resize **********/
@@ -64,6 +64,14 @@ $(window).resize(function() {
         $('#art-templates').show();
         $('#art-templates').addClass("large-padding-bottom-y");
         $('#add-art-not-avail').hide();
+      }
+    }
+    if ($(".my-prod-img").length) {
+      if ($(window).width() <= 1000 ) {
+        toggleProductLinks("off");
+      }
+      else if ($(window).width() > 1000 ) {
+        toggleProductLinks("on");
       }
     }
   setTimeout(function () {
@@ -1317,6 +1325,7 @@ var yearSpinner = function() {
 };
 
 var showMyProdBtns = function() {
+
   $(".product-img2.my-prod-img").mouseover(function() {
     $(this).parent().find(".my-product-buttons-wrapper").show();
   });
@@ -1394,6 +1403,9 @@ var hideDeleteConfirm = function(e) {
   $('#' + p_box).attr("onclick", "");
   $('#' + p_box).html('<div class="overlay_product_delete"><h5>Pending deletion</h5></div>');
   $('#' + p_box).css('cursor', 'auto');
+  if ($('#' + p_box).parent().is( "a" ) ) {
+    $('#' + p_box).unwrap("a");
+  }
   $("#delete_prod_id").val("");
 }
 
@@ -1421,4 +1433,36 @@ var printDimensions = function() {
         $(this).css("display", "inline-block");
     });
   }
+}
+// ------------ prepare my products for mobile display
+var checkDeviceForMyProducts = function() {
+  if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+    if ($(".my-prod-img").length) {
+      toggleProductLinks("off");
+    }
+  }
+}
+// ------------- show / hide links etc for my products on resize and for mobile display
+var toggleProductLinks = function(e) {
+  if (e == "on") {
+    $(".my-prod-img").each(function(index) {
+      $(this).attr("onclick", "showProductDesc(this)");
+      $(this).unwrap( "a" );
+      $(this).find(".product-edit-btn").show();
+      $(this).find(".my-product-buttons-wrapper").hide();
+      $(this).mouseout(function() {
+        $(this).parent().find(".my-product-buttons-wrapper").hide();
+      });
+    });
+  }
+  else if (e == "off") {
+    $(".my-prod-img").each(function(index) {
+      $(this).attr("onclick", "");
+      $(this).wrap( "<a href='javascript:;'></a>" );
+      $(this).find(".product-edit-btn").hide();
+      $(this).find(".my-product-buttons-wrapper").show();
+      $(this).off('mouseout');
+    });
+  }
+
 }

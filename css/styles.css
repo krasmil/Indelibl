@@ -6661,7 +6661,7 @@ input#product-year {
   margin-left: auto;
   margin-right: auto;
   display: none;
-  
+
 }
 .subscribe_container > .xIcon {
   width: 14px;
@@ -9884,6 +9884,10 @@ li.ui-timepicker-selected .ui-timepicker-duration,
     margin: 0 12px 25px 12px;
     float: left;
   }
+  .overlay_product_delete {
+    height: 235px;
+  }
+
 
 }
 
@@ -10661,7 +10665,7 @@ li.ui-timepicker-selected .ui-timepicker-duration,
         padding-left: 20px;
         text-align: left;
         border-radius: 0;
-        margin-top: 10%;
+        margin-top: 40%;
     }
     .error-popup-left {
         display: block;
@@ -11498,7 +11502,9 @@ li.ui-timepicker-selected .ui-timepicker-duration,
     .events-wrapper .column-4.box-product3 {
       width: 308px;
     }
-
+    .confirm-delete-wrapper {
+      margin-top: 40%;
+    }
 
 
 /* Custom, iPhone Retina */
