@@ -1416,7 +1416,7 @@ var printDimensions = function() {
           $(this).css({"width": "65%", "height": "auto"});
         }
         else if (this.width = this.height) {
-          $(this).css({"width": "65%", "height": "65%"});
+          $(this).css({"width": "auto", "height": "65%"});
         }
         $(this).css("display", "inline-block");
     });
