@@ -6656,11 +6656,12 @@ input#product-year {
 
 [class*="column"] .art-print-product-home {
   width: auto;
-  height: 65%;
+  height: auto;
   border: 7px solid black;
   margin-left: auto;
   margin-right: auto;
-  display: inline-block;
+  display: none;
+  
 }
 .subscribe_container > .xIcon {
   width: 14px;
@@ -6909,12 +6910,13 @@ input#product-year {
   border-radius: 5px;
 }
 .pdb-main-img .art-print-product-home {
-    width: auto;
-    height: 65%;
+  width: auto;
+  height: auto;
+
     border: 7px solid black;
     margin-left: auto;
     margin-right: auto;
-    display: inline-block;
+    display: none;
 }
 .pdb-main-img.art-print-img {
     display: table-cell;

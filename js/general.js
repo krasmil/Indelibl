@@ -1,6 +1,7 @@
 /******* Run functions when window is loaded ********/
 $(window).load(function(){
   masonryEventWorks();
+  printDimensions();
 });
 
 /******* Run functions when document is ready ********/
@@ -38,6 +39,7 @@ $(document).ready(function() {
     showEditRelatedItemMsg();
     hoverOnProductButtons();
     showDeleteItemMsg();
+
 });
 
 /******* Run functions when document resize **********/
@@ -1402,4 +1404,21 @@ var previewBackProduct = function(e) {
   $('#bgPreviewImgVal').val(bg_img);
   $(e).parent().find('.pdb-main-img').css("background", $('#bgPreviewImgVal').val());
 
+}
+
+var printDimensions = function() {
+  if ($(".art-print-product-home").length) {
+    $(".art-print-product-home").each(function(index) {
+        if (this.width < this.height) {
+          $(this).css({"width": "auto", "height": "65%"});
+        }
+        else if (this.width > this.height) {
+          $(this).css({"width": "65%", "height": "auto"});
+        }
+        else if (this.width = this.height) {
+          $(this).css({"width": "65%", "height": "65%"});
+        }
+        $(this).css("display", "inline-block");
+    });
+  }
 }
