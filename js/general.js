@@ -1446,8 +1446,7 @@ var checkDeviceForMyProducts = function() {
 var toggleProductLinks = function(e) {
   if (e == "on") {
     $(".my-prod-img").each(function(index) {
-      $(this).attr("onclick", "showProductDesc(this)");
-      $(this).unwrap( "a" );
+      
       $(this).find(".product-edit-btn").show();
       $(this).find(".my-product-buttons-wrapper").hide();
       $(this).mouseout(function() {
@@ -1457,8 +1456,7 @@ var toggleProductLinks = function(e) {
   }
   else if (e == "off") {
     $(".my-prod-img").each(function(index) {
-      $(this).attr("onclick", "");
-      $(this).wrap( "<a href='javascript:;'></a>" );
+
       $(this).find(".product-edit-btn").hide();
       $(this).find(".my-product-buttons-wrapper").show();
       $(this).off('mouseout');
