@@ -1325,7 +1325,6 @@ var yearSpinner = function() {
 };
 
 var showMyProdBtns = function() {
-
   $(".product-img2.my-prod-img").mouseover(function() {
     $(this).parent().find(".my-product-buttons-wrapper").show();
   });
@@ -1342,12 +1341,23 @@ var showProductDesc = function(e) {
       $(this).hide();
     }
   });
+$("#descriptionbox_" + id).parent().show();
 $("#descriptionbox_" + id).show();
+
+if ($(window).width() < 1000) {
+  $('body').css('overflow-y', 'hidden');
+}
+
 }
 
 
 var hideProductDesc = function(e) {
   $(e).parent().hide();
+  $(e).parent().parent().hide();
+  $('body').css('overflow', 'auto');
+  if ($(window).width() < 1000) {
+    $('body').css('overflow-y', 'visible');
+  }
 }
 
 
@@ -1446,7 +1456,6 @@ var checkDeviceForMyProducts = function() {
 var toggleProductLinks = function(e) {
   if (e == "on") {
     $(".my-prod-img").each(function(index) {
-      
       $(this).find(".product-edit-btn").show();
       $(this).find(".my-product-buttons-wrapper").hide();
       $(this).mouseout(function() {
