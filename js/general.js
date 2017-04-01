@@ -89,6 +89,7 @@ $(window).resize(function() {
   calcViewFollowsHeight();
   calcViewGalleriesHeight();
   calcViewInvitesHeight();
+  calcViewProductsHeight();
 });
 /******* Run functions when document orientation changed (handheld devices) **********/
 $(window).on("orientationchange",function(){
@@ -1055,7 +1056,7 @@ var calcViewEventsHeight = function() {
 /************ calculate height of products wrapper ******************************/
 var calcViewProductsHeight = function() {
   if ($('#view-products-select').length) {
-    console.log("joo");
+
     var numEvents = $('.box-product3').length;
     var eventHeight = $('.box-product3').outerHeight(true);
     var eventsWidth = $('.view-current-events').outerWidth(true);

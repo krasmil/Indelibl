@@ -6965,8 +6965,33 @@ input#product-year {
     background-color: rgba(0, 0, 0, 0.0);
     z-index: 9999;
 }
+.main-item-product-wrapper {
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+.main-item-product-wrapper .pdb-main-img {
+  width: 100%;
+  height: 410px;
+  border: 1px solid #d0cfcf;
+  -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+}
 
-
+.main-item-product-wrapper .pdb-left {
+  width: 33%;
+}
+.main-item-product-wrapper .pdb-right {
+  width: 67%;
+  padding-left: 50px;
+  margin-top: 10px;
+}
+.related-items-separator {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
 
 
 
@@ -8404,8 +8429,14 @@ li.ui-timepicker-selected .ui-timepicker-duration,
     .overlay_product_delete h5 {
       line-height: 200px;
     }
-
-
+    .main-item-product-wrapper .pdb-main-img {
+      width: 100%;
+      height: 285px;
+    }
+    .related-items-separator {
+      margin-top: 0;
+      margin-bottom: 30px;
+    }
 
 }
 
