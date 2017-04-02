@@ -1396,11 +1396,13 @@ var hoverOnProductButtons = function () {
 var deleteProduct = function(e) {
   $("#product-delete-popup").show();
   $("#delete_prod_id").val($(e).parent().parent().attr("id"));
+  $("#prid").val($(e).parent().parent().attr("data-uid"));
 }
 
 var hideDeleteProduct = function() {
   $("#product-delete-popup").hide();
   $("#delete_prod_id").val("");
+  $("#prid").val("");
 }
 
 var confirmDeleteProduct = function() {

@@ -6992,7 +6992,9 @@ input#product-year {
   margin-top: 30px;
   margin-bottom: 30px;
 }
-
+.main-item-product-wrapper .pdb-main-img.art-print-img {
+  width: 409px;
+}
 
 
 
@@ -8436,6 +8438,9 @@ li.ui-timepicker-selected .ui-timepicker-duration,
     .related-items-separator {
       margin-top: 0;
       margin-bottom: 30px;
+    }
+    .main-item-product-wrapper .pdb-main-img.art-print-img {
+      width: 284px;
     }
 
 }
