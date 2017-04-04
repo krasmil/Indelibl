@@ -4198,8 +4198,8 @@ button#addBtn {
   left:0;
   margin-left: 0;
   padding-top: 20px;
-
 }
+
 .view-current-events .column-4.profile-event {
   height: 310px;
   max-height: 350px;
@@ -7046,7 +7046,7 @@ input#product-year {
   line-height: 28px;
   border: 1px solid #d0cfcf;
   border-radius: 3px;
-  
+
   margin-left: 10px;
 }
 .search.search-artist button i {
@@ -7061,7 +7061,7 @@ input#product-year {
 }
 .cat-ogart-works-wrapper {
   display: block;
-  width: 100%;
+  width: 99.5%;
   margin-bottom: 0;
   margin-top: 0;
   position: relative;
@@ -7090,6 +7090,10 @@ input#product-year {
 }
 .add-art-main-wrapper.ogart-cat-wrapper {
   margin-left: 25px;
+  position: relative;
+  height: 1484px;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 .product-wishlist-btn, .product-cart-btn {
   width: 40px;
@@ -7146,11 +7150,16 @@ input#product-year {
   right: 10px;
   cursor: pointer;
 }
-
-
-
-
-
+.cat-ogart-work-container .product-img {
+    height: auto;
+}
+.cat-ogart-work-container .product-img a img {
+    width: 100% !important;
+    height: auto !important;
+}
+#view-category-products {
+  height: 1000px;
+}
 
 
 
@@ -8615,6 +8624,10 @@ li.ui-timepicker-selected .ui-timepicker-duration,
       width: 30px;
       height: 30px;
     }
+    .add-art-main-wrapper.ogart-cat-wrapper {
+      height: 1251px;
+    }
+
 }
 
 

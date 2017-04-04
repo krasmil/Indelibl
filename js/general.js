@@ -1509,8 +1509,8 @@ var change_lth = function(e) {
 
 /************ set up masonry layout for artworks featured in original art category ******************************/
 var masonryCatOgArtWorks = function() {
-  if ($('.cat-ogart-works-wrapper ').length) {
-    $('.cat-ogart-works-wrapper ').masonry({
+  if ($('.cat-ogart-works-wrapper').length) {
+    $('.cat-ogart-works-wrapper').masonry({
       // options
       itemSelector: '.cat-ogart-work-container',
       columnWidth: '.cat-ogart-work-container',
