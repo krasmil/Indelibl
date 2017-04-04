@@ -1,6 +1,7 @@
 /******* Run functions when window is loaded ********/
 $(window).load(function(){
   masonryEventWorks();
+  masonryCatOgArtWorks();
   printDimensions();
 });
 
@@ -40,6 +41,10 @@ $(document).ready(function() {
     hoverOnProductButtons();
     showDeleteItemMsg();
     checkDeviceForMyProducts();
+    showCategoryProdButtons();
+    showProdCatButtonsMobile();
+    showOgArtFilterMobile();
+    hideOgArtFilterMobile();
 });
 
 /******* Run functions when document resize **********/
@@ -74,6 +79,20 @@ $(window).resize(function() {
         toggleProductLinks("on");
       }
     }
+
+    if ($('#og_art_filter_wrapper').length) {
+      if ($(window).width() <= 1000 ) {
+        $('#og_art_filter_wrapper').hide();
+        $('.toggleFilterPanel').show();
+        $('.toggleFilterPanelUp').hide();
+      }
+      else if ($(window).width() > 1000 ) {
+        $('#og_art_filter_wrapper').show();
+        $('.toggleFilterPanel').hide();
+        $('.toggleFilterPanelUp').hide();
+      }
+    }
+
   setTimeout(function () {
     getRecentViewsSliderCoeff();
     resetRecentViews();
@@ -90,6 +109,7 @@ $(window).resize(function() {
   calcViewGalleriesHeight();
   calcViewInvitesHeight();
   calcViewProductsHeight();
+  showProdCatButtonsMobile();
 });
 /******* Run functions when document orientation changed (handheld devices) **********/
 $(window).on("orientationchange",function(){
@@ -1475,4 +1495,72 @@ var toggleProductLinks = function(e) {
     });
   }
 
+}
+
+var change_lth = function(e) {
+  var eval = $(e).val();
+  if (eval =="low") {
+    $(e).parent().find(".lth-container.lth-right").html("High");
+  }
+  else if (eval =="high") {
+    $(e).parent().find(".lth-container.lth-right").html("Low");
+  }
+}
+
+/************ set up masonry layout for artworks featured in original art category ******************************/
+var masonryCatOgArtWorks = function() {
+  if ($('.cat-ogart-works-wrapper ').length) {
+    $('.cat-ogart-works-wrapper ').masonry({
+      // options
+      itemSelector: '.cat-ogart-work-container',
+      columnWidth: '.cat-ogart-work-container',
+      gutter: 25
+    });
+  }
+};
+
+var showCategoryProdButtons = function() {
+  $(".cat-ogart-work-container .product-img").mouseover(function() {
+    $(this).find(".my-product-cat-buttons-wrapper").show();
+  });
+  $(".cat-ogart-work-container .product-img").mouseout(function() {
+    $(this).find(".my-product-cat-buttons-wrapper").hide();
+  });
+}
+
+var showProdCatButtonsMobile =  function() {
+  if ($(".cat-ogart-work-container").length) {
+    if ($(window).width() <= 1000 ) {
+      $(".cat-ogart-work-container").find(".my-product-cat-buttons-wrapper").show();
+      $(".cat-ogart-work-container .product-img").off('mouseout');
+    }
+    else if ($(window).width() > 1000 ) {
+      $(".cat-ogart-work-container").find(".my-product-cat-buttons-wrapper").hide();
+      $(".cat-ogart-work-container .product-img").mouseout(function() {
+        $(".cat-ogart-work-container .product-img").find(".my-product-cat-buttons-wrapper").hide();
+      });
+    }
+  }
+}
+
+var showOgArtFilterMobile = function () {
+  if ($('.toggleFilterPanel').length) {
+      $('.toggleFilterPanel').on('click', function(e) {
+        $('#og_art_filter_wrapper').slideDown("slow", function() {
+          $('.toggleFilterPanel').hide();
+          $('.toggleFilterPanelUp').show();
+        });
+      });
+  }
+}
+
+var hideOgArtFilterMobile = function () {
+  if ($('.toggleFilterPanel').length) {
+      $('.toggleFilterPanelUp').on('click', function(e) {
+        $('#og_art_filter_wrapper').slideUp("slow", function() {
+          $('.toggleFilterPanel').show();
+          $('.toggleFilterPanelUp').hide();
+        });
+      });
+  }
 }
