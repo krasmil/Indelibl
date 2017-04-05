@@ -7160,7 +7160,23 @@ input#product-year {
 #view-category-products {
   height: 1000px;
 }
-
+.wishlist-msg, .cart-msg, .cart-msg-already-added {
+  position: absolute;
+  width: 170px;
+  height: auto;
+  background: #fff;
+  border: 1px solid #d0cfcf;
+  top: 30%;
+  left: 50%;
+  margin-left: -85px;
+  -webkit-box-shadow: 0px 0px 20px 5px rgba(0,0,0,0.6);
+  -moz-box-shadow: 0px 0px 20px 5px rgba(0,0,0,0.6);
+  box-shadow: 0px 0px 20px 5px rgba(0,0,0,0.6);
+  display: block;
+  padding: 5px;
+  text-align: left;
+  font-size: 0.9em;
+}
 
 
 

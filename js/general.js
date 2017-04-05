@@ -1564,3 +1564,12 @@ var hideOgArtFilterMobile = function () {
       });
   }
 }
+
+var addProductToWishlist = function(e) {
+  $(e).parent().parent().find('.wishlist-msg').fadeIn().delay(2000).fadeOut();
+
+}
+
+var addProductToCart = function(e) {
+  $(e).parent().parent().find('.cart-msg').fadeIn().delay(2000).fadeOut();
+}
