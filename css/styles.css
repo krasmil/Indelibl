@@ -6829,9 +6829,9 @@ input#product-year {
 }
 .separator-thin {
     display: block;
-    border: none;
     height: 1px;
-    background: #c6c6c6
+    background: #c6c6c6;
+    border: #c6c6c6;
 }
 .view-individual {
   position: absolute;
@@ -7023,7 +7023,6 @@ input#product-year {
     text-align: center;
     color: #313b46;
 }
-
 .color-select-box2 {
   width: 16px;
   height: 16px;
@@ -7034,9 +7033,7 @@ input#product-year {
   float: left;
   margin-bottom: 5px;
 }
-.color-select-box2:nth-of-type(12) {
-  margin-right: 0;
-}
+
 .lth-container {
   text-align: left;
   float: left;
@@ -7176,16 +7173,53 @@ input#product-year {
   padding: 5px;
   text-align: left;
   font-size: 0.9em;
+  z-index: 2000;
+}
+.product-cat-wrapper .box-product3 {
+  width: calc(33% - 21px);
 }
 
+.product-cat-wrapper .box-product3:nth-of-type(4n+1) {
+  margin: 0 0 45px 25px;
+}
+.product-cat-wrapper .box-product3:nth-of-type(3n+1) {
+  margin: 0 0 45px 0px;
+}
+.product-cat-wrapper .box-product3 .product-img2.my-prod-img {
+    cursor: auto;
+    height: 297px;
+}
+.add-art-main-wrapper.product-cat-wrapper {
+  margin-left: 25px;
+  height: 1285px;
+  position: relative;
+}
+.added-item-wrapper.cat-tag-wrapper {
+  border: 1px solid #acadad;
+  padding-top: 0;
+  margin-top: 0;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  margin-right: 5px;
+}
 
+.added-item-wrapper.cat-tag-wrapper span {
+  font-size: 0.9em;
+  margin: 0;
+  padding: 5px;
 
-
-
-
-
-
-
+}
+#cat-pbook-lang {
+  margin-bottom: 30px;
+}
+.product-cat-artist-name {
+  font-style: italic;
+  margin: 0;
+  width: 255px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
 
 
 
@@ -7403,9 +7437,9 @@ li.ui-timepicker-selected .ui-timepicker-duration,
     left: 0;
     right: 0;
     margin: auto;
-    border: 16px solid #f3f3f3;
+    border: 16px solid rgba(0, 0, 0, 0.05);
     border-radius: 50%;
-    border-top: 16px solid #cf4331;
+    border-top: 16px solid rgba(255, 255, 255, 1);
     width: 120px;
     height: 120px;
     -webkit-animation: spin 2s linear infinite;
@@ -8613,9 +8647,7 @@ li.ui-timepicker-selected .ui-timepicker-duration,
       width: 100%;
       min-width: 100%;
     }
-    .color-select-box2:nth-of-type(12) {
-      margin-right: 0;
-    }
+
     .color-select-box2:nth-of-type(8) {
       margin-right: 0;
     }
@@ -8642,6 +8674,15 @@ li.ui-timepicker-selected .ui-timepicker-duration,
     }
     .add-art-main-wrapper.ogart-cat-wrapper {
       height: 1251px;
+    }
+    .product-cat-wrapper .box-product3 .product-img2.my-prod-img {
+        height: 207px;
+    }
+    .add-art-main-wrapper.product-cat-wrapper {
+      height: 960px;
+    }
+    .product-cat-artist-name {
+      width: 180px;
     }
 
 }
@@ -10209,8 +10250,8 @@ li.ui-timepicker-selected .ui-timepicker-duration,
     width: 100%;
   }
   .color-select-box2 {
-    width: 20px;
-    height: 20px;
+    width: 16px;
+    height: 16px;
     margin-right: 10px;
     margin-top: 10px;
   }
@@ -10223,6 +10264,38 @@ li.ui-timepicker-selected .ui-timepicker-duration,
   .toggleFilterPanel {
     display: block;
   }
+  .product-cat-wrapper .box-product3 {
+    width: 241px;
+    margin: 0 12px 25px 12px;
+    float: left;
+  }
+  .product-cat-wrapper .box-product3:nth-of-type(3n+1) {
+    margin: 0 12px 25px 12px;
+  }
+
+  .product-cat-wrapper .box-product3:nth-of-type(4n+1) {
+      margin: 0 12px 25px 12px;
+  }
+  .add-art-main-wrapper.product-cat-wrapper {
+    margin-left: 0;
+  }
+  .product-cat-wrapper .box-product3 .product-img2.my-prod-img {
+    cursor: auto;
+    height: 241px;
+  }
+  .add-art-main-wrapper.product-cat-wrapper {
+    height: 990px;
+  }
+  .tote-radio-wrapper {
+    width: auto;
+  }
+  #cat-pbook-lang {
+    margin-bottom: 60px;
+  }
+  .product-cat-artist-name {
+    width: 180px;
+  }
+
 }
 
 
@@ -11899,8 +11972,8 @@ li.ui-timepicker-selected .ui-timepicker-duration,
       width: 100%;
     }
     .color-select-box2 {
-      width: 20px;
-      height: 20px;
+      width: 16px;
+      height: 16px;
       margin-right: 10px;
       margin-top: 10px;
     }
@@ -11912,6 +11985,40 @@ li.ui-timepicker-selected .ui-timepicker-duration,
     }
     .toggleFilterPanel {
       display: block;
+    }
+    .product-cat-wrapper .box-product3 {
+      width: 310px;
+      margin: 0 5px 25px 5px;
+      float: left;
+    }
+    .product-cat-wrapper .box-product3:nth-of-type(3n+1) {
+      margin: 0 5px 25px 5px;
+    }
+
+    .product-cat-wrapper .box-product3:nth-of-type(4n+1) {
+        margin: 0 5px 25px 5px;
+    }
+    .add-art-main-wrapper.product-cat-wrapper {
+      margin-left: 0;
+    }
+    .product-cat-wrapper .box-product3 .product-img2.my-prod-img {
+      cursor: auto;
+      height: 310px;
+    }
+    .add-art-main-wrapper.product-cat-wrapper {
+      height: 1200px;
+    }
+    .tote-radio-wrapper {
+      width: auto;
+    }
+    .tote-radio-label-wrapper {
+      width: 82%;
+    }
+    #cat-pbook-lang {
+      margin-bottom: 60px;
+    }
+    .product-cat-artist-name {
+      width: 240px;
     }
   }
 
@@ -11956,6 +12063,11 @@ li.ui-timepicker-selected .ui-timepicker-duration,
     .box-product3 .product-img2 {
       height: 287px;
     }
-
+    .product-cat-wrapper .box-product3 {
+      width: 290px;
+    }
+    .product-cat-wrapper .box-product3 .product-img2.my-prod-img {
+      height: 290px;
+    }
 
 }
