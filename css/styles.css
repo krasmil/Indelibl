@@ -7220,10 +7220,24 @@ input#product-year {
   text-overflow: ellipsis;
   white-space: nowrap;
 }
+[class*="column"] .product-cat-img {
+  width: 100%;
+  height: auto;
+}
+.product-img2.my-prod-img {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+  width: 310px;
+}
+[class*="column"] .cat-product-img {
+  width: auto;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+  display: none;
 
-
-
-
+}
 
 
 

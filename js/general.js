@@ -3,6 +3,7 @@ $(window).load(function(){
   masonryEventWorks();
   masonryCatOgArtWorks();
   printDimensions();
+  productDimensions();
 });
 
 /******* Run functions when document is ready ********/
@@ -45,6 +46,8 @@ $(document).ready(function() {
     showProdCatButtonsMobile();
     showOgArtFilterMobile();
     hideOgArtFilterMobile();
+    showCategoryProdButtonsAll();
+    showProdCatButtonsMobileAll();
 });
 
 /******* Run functions when document resize **********/
@@ -110,6 +113,7 @@ $(window).resize(function() {
   calcViewInvitesHeight();
   calcViewProductsHeight();
   showProdCatButtonsMobile();
+  showProdCatButtonsMobileAll();
 });
 /******* Run functions when document orientation changed (handheld devices) **********/
 $(window).on("orientationchange",function(){
@@ -1285,6 +1289,13 @@ var bounceDownArrow = function() {
         $('.down-arrow').removeClass( "active" );
       }
     );
+    $('.product-cat-wrapper').hover(
+      function() {
+        $('.down-arrow').addClass( "active" );
+      }, function() {
+        $('.down-arrow').removeClass( "active" );
+      }
+    );
     if ($(window).width() < 1000) {
         $('.down-arrow').addClass( "active" );
     }
@@ -1497,15 +1508,6 @@ var toggleProductLinks = function(e) {
 
 }
 
-var change_lth = function(e) {
-  var eval = $(e).val();
-  if (eval =="low") {
-    $(e).parent().find(".lth-container.lth-right").html("High");
-  }
-  else if (eval =="high") {
-    $(e).parent().find(".lth-container.lth-right").html("Low");
-  }
-}
 
 /************ set up masonry layout for artworks featured in original art category ******************************/
 var masonryCatOgArtWorks = function() {
@@ -1518,7 +1520,7 @@ var masonryCatOgArtWorks = function() {
     });
   }
 };
-
+// ---------- this method is used by original art category
 var showCategoryProdButtons = function() {
   $(".cat-ogart-work-container .product-img").mouseover(function() {
     $(this).find(".my-product-cat-buttons-wrapper").show();
@@ -1527,7 +1529,7 @@ var showCategoryProdButtons = function() {
     $(this).find(".my-product-cat-buttons-wrapper").hide();
   });
 }
-
+// ---------- this method is used by original art category
 var showProdCatButtonsMobile =  function() {
   if ($(".cat-ogart-work-container").length) {
     if ($(window).width() <= 1000 ) {
@@ -1572,4 +1574,46 @@ var addProductToWishlist = function(e) {
 
 var addProductToCart = function(e) {
   $(e).parent().parent().find('.cart-msg').fadeIn().delay(2000).fadeOut();
+}
+// ---------- this method is used by all categories except original art category
+var showCategoryProdButtonsAll = function() {
+  if ($(".product-cat-wrapper").length) {
+    $(".column-3.box-product3").mouseover(function() {
+      $(this).find(".my-product-cat-buttons-wrapper").show();
+    });
+    $(".column-3.box-product3").mouseout(function() {
+      $(this).find(".my-product-cat-buttons-wrapper").hide();
+    });
+  }
+}
+// ---------- this method is used by all categories except original art category
+var showProdCatButtonsMobileAll =  function() {
+  if ($(".product-cat-wrapper").length) {
+    if ($(window).width() <= 1000 ) {
+      $(".column-3.box-product3").find(".my-product-cat-buttons-wrapper").show();
+      $(".column-3.box-product3").off('mouseout');
+    }
+    else if ($(window).width() > 1000 ) {
+      $(".column-3.box-product3").find(".my-product-cat-buttons-wrapper").hide();
+      $(".column-3.box-product3").mouseout(function() {
+        $(".column-3.box-product3").find(".my-product-cat-buttons-wrapper").hide();
+      });
+    }
+  }
+}
+var productDimensions = function() {
+  if ($(".cat-product-img").length) {
+    $(".cat-product-img").each(function(index) {
+        if (this.width < this.height) {
+          $(this).css({"width": "auto", "height": "65%"});
+        }
+        else if (this.width > this.height) {
+          $(this).css({"width": "65%", "height": "auto"});
+        }
+        else if (this.width = this.height) {
+          $(this).css({"width": "auto", "height": "65%"});
+        }
+        $(this).css("display", "inline-block");
+    });
+  }
 }
