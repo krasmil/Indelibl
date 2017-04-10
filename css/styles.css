@@ -5125,6 +5125,7 @@ input#product-year {
   vertical-align: middle;
   margin-left: .4em;
   margin-right: 2em;
+
 }
 .price-input {
   width: 80%;
@@ -7244,10 +7245,10 @@ input#product-year {
   border: 1px solid #d0cfcf;
   cursor: auto;
 }
-.og-art-description .pdb-left, .og-art-description .pdb-right {
+.individual-art-description .pdb-left, .individual-art-description .pdb-right {
   width: 50%;
 }
-.og-art-description .pdb-right {
+.individual-art-description .pdb-right {
   padding-left: 30px;
 }
 .header-soc-icons .share-media-li {
@@ -7371,8 +7372,13 @@ input#product-year {
 .individual-related-items-title {
   text-align: left;
 }
-
-
+.so-right .ui-spinner {
+  width: 60%;
+  font-size: 14px;
+}
+#product-quantity {
+  height: 24px;
+}
 
 
 
@@ -7828,8 +7834,8 @@ li.ui-timepicker-selected .ui-timepicker-duration,
         width: calc(50% - 10px);
     }
     h5 {
-        font-size: 1em;
-        line-height: 1.1em;
+        font-size: 1.2em;
+        line-height: 1.5em;
         margin-bottom: 1em;
         margin-top: 0.5em;
     }
@@ -8878,7 +8884,9 @@ li.ui-timepicker-selected .ui-timepicker-duration,
       float: left;
       width: 20%;
     }
-
+    .so-right .ui-spinner {
+      width: 60%;
+    }
 
 }
 
@@ -10490,13 +10498,13 @@ li.ui-timepicker-selected .ui-timepicker-duration,
   .product-cat-artist-name {
     width: 180px;
   }
-  .og-art-description .pdb-right {
+  .individual-art-description .pdb-right {
     width: 100%;
     float: none;
     padding-left: 0;
     text-align: center;
   }
-  .og-art-description .pdb-left {
+  .individual-art-description .pdb-left {
     width: 100%;
     float: none;
     padding-left: 0;
@@ -10504,7 +10512,7 @@ li.ui-timepicker-selected .ui-timepicker-duration,
     margin-bottom: 20px;
   }
   .individual-main-img.product-img2.my-prod-img {
-    height: 278px;
+    height: 378px;
 
   }
   .individual-prod-top-buttons {
@@ -10519,7 +10527,7 @@ li.ui-timepicker-selected .ui-timepicker-duration,
     right: 0;
     position: relative;
   }
-  .og-art-description .product-cat-artist-name {
+  .individual-art-description .product-cat-artist-name {
 
     margin: 10px auto;
   }
@@ -10529,7 +10537,7 @@ li.ui-timepicker-selected .ui-timepicker-duration,
   .so-right {
     width: 20%;
   }
-  .og-art-description .header-soc-icons {
+  .individual-art-description .header-soc-icons {
     padding-top: 0;
     height: auto;
   }
@@ -10552,6 +10560,9 @@ li.ui-timepicker-selected .ui-timepicker-duration,
     min-width: 230px;
     margin-left: -120px;
     text-align: center;
+  }
+  .so-right .ui-spinner {
+    width: 50%;
   }
 
 
@@ -12279,13 +12290,13 @@ li.ui-timepicker-selected .ui-timepicker-duration,
     .product-cat-artist-name {
       width: 240px;
     }
-    .og-art-description .pdb-right {
+    .individual-art-description .pdb-right {
       width: 100%;
       float: none;
       padding-left: 0;
       text-align: center;
     }
-    .og-art-description .pdb-left {
+    .individual-art-description .pdb-left {
       width: 100%;
       float: none;
       padding-left: 0;
@@ -12307,7 +12318,7 @@ li.ui-timepicker-selected .ui-timepicker-duration,
       top: 0;
       right: 0;
     }
-    .og-art-description .product-cat-artist-name {
+    .individual-art-description .product-cat-artist-name {
 
       margin: 10px auto;
     }
@@ -12317,7 +12328,7 @@ li.ui-timepicker-selected .ui-timepicker-duration,
     .so-right {
       width: 20%;
     }
-    .og-art-description .header-soc-icons {
+    .individual-art-description .header-soc-icons {
       padding-top: 0;
       height: auto;
     }
@@ -12343,6 +12354,9 @@ li.ui-timepicker-selected .ui-timepicker-duration,
     }
     .wishlist-msg-individual.phone-individual-popup {
       text-align: center;
+    }
+    .so-right .ui-spinner {
+      width: 85%;
     }
   }
 

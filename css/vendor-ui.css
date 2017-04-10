@@ -861,7 +861,7 @@ input.ui-button::-moz-focus-inner, button.ui-button::-moz-focus-inner {
 }
 
 .ui-spinner-button {
-    width: 1.6em;
+    width: 1.4em;
     height: 50%;
     font-size: .5em;
     padding: 0;
