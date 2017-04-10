@@ -7236,8 +7236,150 @@ input#product-year {
   margin-left: auto;
   margin-right: auto;
   display: none;
-
 }
+.individual-main-img.product-img2.my-prod-img {
+  width: 620px;
+  height: 620px;
+  margin-bottom: 20px;
+  border: 1px solid #d0cfcf;
+  cursor: auto;
+}
+.og-art-description .pdb-left, .og-art-description .pdb-right {
+  width: 50%;
+}
+.og-art-description .pdb-right {
+  padding-left: 30px;
+}
+.header-soc-icons .share-media-li {
+  margin-right: 33%;
+}
+.wishlist-msg-individual, .cart-msg-individual, .cart-msg-already-added-individual {
+  position: absolute;
+  min-width: 270px;
+  width: auto;
+  height: auto;
+  background: #fff;
+  border: 1px solid #d0cfcf;
+  top: 26%;
+  left: 19%;
+  display: block;
+  padding: 5px;
+  text-align: left;
+  font-size: 0.9em;
+  z-index: 2000;
+  -webkit-box-shadow: 0px 0px 8px 3px rgba(0,0,0,0.3);
+  -moz-box-shadow: 0px 0px 8px 3px rgba(0,0,0,0.3);
+  box-shadow: 0px 0px 8px 3px rgba(0,0,0,0.3);
+}
+.enquire_btn {
+  height: 35px;
+  width: 55px;
+  border: 1px solid #d0cfcf;
+  border-radius: 5px;
+  background: url("../images/icons/enquire.png");
+  background-position: center;
+  background-size: auto 80%;
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 100px;
+  left: 225px;
+}
+.individual-related-video {
+  width: 35%;
+  height: auto;
+  overflow: hidden;
+  display: block;
+  position: relative;
+  cursor: pointer;
+}
+.vid-overlay {
+  position: absolute;
+  width: 100%;
+  height: 95%;
+  background: #000;
+  top: 0;
+  opacity: 0.5;
+}
+.play-arrow {
+  opacity: 1;
+  height: 50px;
+  width: 50px;
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  margin-left: -25px;
+}
+.related-events-content .product-img2 {
+    height: 220px;
+}
+.zoom_btn {
+  height: 55px;
+  width: 55px;
+  border: 1px solid #d0cfcf;
+  border-radius: 5px;
+  background: url("../images/icons/zoom-tool.png");
+  background-color: #fff;
+  background-position: center;
+  background-size: auto 80%;
+  background-repeat: no-repeat;
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+}
+.art-price-enquiry {
+  width: 540px;
+  height: auto;
+  position: absolute;
+  overflow: hidden;
+  border: 1px solid #d0cfcf;
+  padding: 20px;
+  z-index: 2000;
+  top: 15%;
+  left: 50%;
+  margin-left: -270px;
+  background: #eeebeb;
+  -webkit-box-shadow: 0px 9px 59px 11px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 9px 59px 11px rgba(0,0,0,0.75);
+  box-shadow: 0px 9px 59px 11px rgba(0,0,0,0.75);
+}
+.select-options-wrapper {
+  display: block;
+  overflow: hidden;
+  width: 100%;
+}
+.so-left {
+  float: left;
+  padding-right: 20px;
+  width: 50%;
+}
+.so-right {
+  float: left;
+  width: 15%;
+}
+.wishlist-msg-individual.phone-individual-popup, .cart-msg-individual.phone-individual-popup, .cart-msg-already-added-individual.phone-individual-popup {
+  top: 33%;
+}
+.individual-prod-top-buttons {
+  text-align: center;
+  margin-bottom: 60px;
+  margin-top: 30px;
+}
+.followBtn.individual-p {
+  top: 0;
+  right: 0;
+}
+.individual-related-items-title {
+  text-align: left;
+}
+
+
+
+
+
+
+
+
+
 
 
 
@@ -8698,6 +8840,45 @@ li.ui-timepicker-selected .ui-timepicker-duration,
     .product-cat-artist-name {
       width: 180px;
     }
+    .individual-main-img.product-img2.my-prod-img {
+      height: 431px;
+      width: 431px;
+    }
+    .header-soc-icons .share-media-li  {
+      margin-right: 15%;
+    }
+    .enquire_btn {
+      height: 30px;
+      width: 45px;
+      top: 90px;
+      left: 205px;
+    }
+    .play-arrow {
+      opacity: 1;
+      height: 36px;
+      width: 36px;
+      position: absolute;
+      top: 30%;
+      left: 50%;
+      margin-left: -18px;
+    }
+    .related-events-content .product-img2 {
+        height: 150px;
+    }
+    .zoom_btn {
+      height: 35px;
+      width: 35px;
+      bottom: 10px;
+      right: 10px;
+    }
+    .wishlist-msg-individual.phone-individual-popup, .cart-msg-individual.phone-individual-popup, .cart-msg-already-added-individual.phone-individual-popup {
+      top: 32%;
+    }
+    .so-right {
+      float: left;
+      width: 20%;
+    }
+
 
 }
 
@@ -10309,6 +10490,70 @@ li.ui-timepicker-selected .ui-timepicker-duration,
   .product-cat-artist-name {
     width: 180px;
   }
+  .og-art-description .pdb-right {
+    width: 100%;
+    float: none;
+    padding-left: 0;
+    text-align: center;
+  }
+  .og-art-description .pdb-left {
+    width: 100%;
+    float: none;
+    padding-left: 0;
+    display: block;
+    margin-bottom: 20px;
+  }
+  .individual-main-img.product-img2.my-prod-img {
+    height: 278px;
+
+  }
+  .individual-prod-top-buttons {
+    margin-bottom: 20px;
+    margin-top: 20px;
+  }
+  .select-options-wrapper .ui-spinner {
+    margin-bottom: 10px;
+  }
+  .followBtn.individual-p {
+    top: 0;
+    right: 0;
+    position: relative;
+  }
+  .og-art-description .product-cat-artist-name {
+
+    margin: 10px auto;
+  }
+  .so-left {
+    margin-left: 15%;
+  }
+  .so-right {
+    width: 20%;
+  }
+  .og-art-description .header-soc-icons {
+    padding-top: 0;
+    height: auto;
+  }
+  .header-soc-icons .share-media-li {
+    margin-right: 0;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  .related-events-content .product-img2 {
+    height: 150px;
+  }
+  .individual-related-items-title {
+    text-align: center;
+  }
+  .wishlist-msg-individual.phone-individual-popup, .cart-msg-individual.phone-individual-popup, .cart-msg-already-added-individual.phone-individual-popup {
+    top: 38%;
+    left: 50%;
+    width: 270px;
+    min-width: 230px;
+    margin-left: -120px;
+    text-align: center;
+  }
+
 
 }
 
@@ -12033,6 +12278,71 @@ li.ui-timepicker-selected .ui-timepicker-duration,
     }
     .product-cat-artist-name {
       width: 240px;
+    }
+    .og-art-description .pdb-right {
+      width: 100%;
+      float: none;
+      padding-left: 0;
+      text-align: center;
+    }
+    .og-art-description .pdb-left {
+      width: 100%;
+      float: none;
+      padding-left: 0;
+      display: block;
+      margin-bottom: 20px;
+    }
+    .individual-main-img.product-img2.my-prod-img {
+      height: 278px;
+
+    }
+    .individual-prod-top-buttons {
+      margin-bottom: 20px;
+      margin-top: 20px;
+    }
+    .select-options-wrapper .ui-spinner {
+      margin-bottom: 10px;
+    }
+    .followBtn.individual-p {
+      top: 0;
+      right: 0;
+    }
+    .og-art-description .product-cat-artist-name {
+
+      margin: 10px auto;
+    }
+    .so-left {
+      margin-left: 15%;
+    }
+    .so-right {
+      width: 20%;
+    }
+    .og-art-description .header-soc-icons {
+      padding-top: 0;
+      height: auto;
+    }
+    .header-soc-icons .share-media-li {
+      margin-right: 0;
+      width: 100%;
+      text-align: center;
+      margin-bottom: 10px;
+    }
+    .related-events-content .product-img2 {
+      height: 178px;
+    }
+    .individual-related-items-title {
+      text-align: center;
+    }
+    .wishlist-msg-individual.phone-individual-popup, .cart-msg-individual.phone-individual-popup, .cart-msg-already-added-individual.phone-individual-popup {
+      top: 35%;
+      left: 50%;
+      width: 240px;
+      min-width: 230px;
+      margin-left: -120px;
+
+    }
+    .wishlist-msg-individual.phone-individual-popup {
+      text-align: center;
     }
   }
 
