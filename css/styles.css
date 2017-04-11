@@ -7252,7 +7252,7 @@ input#product-year {
   padding-left: 30px;
 }
 .header-soc-icons .share-media-li {
-  margin-right: 33%;
+  margin-right: 42%;
 }
 .wishlist-msg-individual, .cart-msg-individual, .cart-msg-already-added-individual {
   position: absolute;
@@ -7379,6 +7379,71 @@ input#product-year {
 #product-quantity {
   height: 24px;
 }
+.individual-related-img.product-img2.my-prod-img {
+  width: 160px;
+  height: 150px;
+  float: none;
+  margin-right: 15px;
+  cursor: pointer;
+  border: 1px solid #d0cfcf;
+}
+.individual-art-description .product-cat-artist-name {
+  width: 500px;
+}
+.individual-art-description .product-about-text {
+  margin-bottom: 61.9px;
+}
+.mug-views {
+  overflow: hidden;
+  display: block;
+  width: 29%;
+  position: relative;
+  margin-top: 20px;
+  margin-bottom: 15px;
+  float: left;
+}
+.rel-back {
+    background: linear-gradient( #eeebeb, #f9f9f9);
+    border: 1px solid #d0cfcf;
+}
+.title-indv-rltd-item {
+  float: left;
+  margin: 0;
+  text-transform: uppercase;
+  line-height: 20px;
+  width: 205px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  text-align: left;
+}
+
+.price-indv-rltd-item {
+  float: right;
+  font-weight: bolder;
+  font-size: 1.2em;
+  margin: 0;
+  line-height: 20px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -8851,7 +8916,7 @@ li.ui-timepicker-selected .ui-timepicker-duration,
       width: 431px;
     }
     .header-soc-icons .share-media-li  {
-      margin-right: 15%;
+      margin-right: 27%;
     }
     .enquire_btn {
       height: 30px;
@@ -8886,6 +8951,22 @@ li.ui-timepicker-selected .ui-timepicker-duration,
     }
     .so-right .ui-spinner {
       width: 60%;
+    }
+    .individual-related-img.product-img2.my-prod-img {
+      width: 125px;
+      height: 125px;
+    }
+    .individual-art-description .product-cat-artist-name {
+      width: 380px;
+    }
+    .individual-art-description .product-about-text {
+      margin-bottom: 40px;
+    }
+    .mug-views {
+      width: 33.5%;
+    }
+    .title-indv-rltd-item {
+      width: 135px;
     }
 
 }
@@ -10546,6 +10627,7 @@ li.ui-timepicker-selected .ui-timepicker-duration,
     width: 100%;
     text-align: center;
     margin-bottom: 10px;
+    margin-left: 0;
   }
   .related-events-content .product-img2 {
     height: 150px;
@@ -10554,7 +10636,7 @@ li.ui-timepicker-selected .ui-timepicker-duration,
     text-align: center;
   }
   .wishlist-msg-individual.phone-individual-popup, .cart-msg-individual.phone-individual-popup, .cart-msg-already-added-individual.phone-individual-popup {
-    top: 38%;
+    top: 36%;
     left: 50%;
     width: 270px;
     min-width: 230px;
@@ -10563,6 +10645,24 @@ li.ui-timepicker-selected .ui-timepicker-duration,
   }
   .so-right .ui-spinner {
     width: 50%;
+  }
+  .individual-art-description .product-cat-artist-name {
+    width: 380px;
+  }
+  .individual-art-description .product-about-text {
+    margin-bottom: 30px;
+  }
+  #quantity-single-field {
+    width: 100%;
+  }
+  #quantity-single-field .ui-spinner {
+    width: 10%;
+  }
+  .mug-views {
+    width: 35%;
+  }
+  .title-indv-rltd-item {
+    width: 165px;
   }
 
 
@@ -12337,6 +12437,7 @@ li.ui-timepicker-selected .ui-timepicker-duration,
       width: 100%;
       text-align: center;
       margin-bottom: 10px;
+      margin-left: 0;
     }
     .related-events-content .product-img2 {
       height: 178px;
@@ -12345,7 +12446,7 @@ li.ui-timepicker-selected .ui-timepicker-duration,
       text-align: center;
     }
     .wishlist-msg-individual.phone-individual-popup, .cart-msg-individual.phone-individual-popup, .cart-msg-already-added-individual.phone-individual-popup {
-      top: 35%;
+      top: 32%;
       left: 50%;
       width: 240px;
       min-width: 230px;
@@ -12358,6 +12459,47 @@ li.ui-timepicker-selected .ui-timepicker-duration,
     .so-right .ui-spinner {
       width: 85%;
     }
+    .individual-art-description .product-cat-artist-name {
+      width: 200px;
+    }
+    .individual-related-img.product-img2.my-prod-img {
+      width: 131.5px;
+      height: 130px;
+    }
+    .individual-art-description .product-about-text {
+      margin-bottom: 30px;
+    }
+    #quantity-single-field {
+      width: 100%;
+    }
+    #quantity-single-field .ui-spinner {
+      width: 20%;
+    }
+    #postcard-size {
+      width: 75%;
+      margin-left: auto;
+      margin-right: auto;
+      padding-right: 10px;
+      padding-left: 10px;
+
+    }
+    .mug-views {
+      overflow: hidden;
+      display: block;
+      width: 48%;
+      position: relative;
+      margin-top: 20px;
+      margin-bottom: 15px;
+      float: left;
+      margin-right: 11px;
+    }
+    .mug-views:nth-of-type(2) {
+      margin-right: 0;
+    }
+    .title-indv-rltd-item {
+      width: 135px;
+    }
+
   }
 
 /* Custom, iPhone Retina */

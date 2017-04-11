@@ -1634,7 +1634,7 @@ var addProductToCartIndividual = function(e) {
 };
 
 var showPriceEnq = function() {
-  $().show();
+
 };
 
 var closePriceEnq = function() {
@@ -1645,4 +1645,12 @@ var quantitySpinner = function() {
   if ($('#product-quantity').length) {
     var spinner = $( "#product-quantity" ).spinner({ min: 1, max: 100000});
   }
+};
+var previewBackProductIndividual = function(e) {
+  var imgsrc = $(e).find(".cat-product-img").attr("src");
+  var imgsrc2 = $(".individual-main-img").find(".cat-product-img").attr("src");
+  $(e).find(".cat-product-img").attr("src", imgsrc2);
+  $('#bgPreviewImgVal').val(imgsrc);
+  $(".individual-main-img").find(".cat-product-img").attr("src", imgsrc);
+  productDimensions();
 };
