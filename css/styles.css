@@ -7292,6 +7292,7 @@ input#product-year {
   display: block;
   position: relative;
   cursor: pointer;
+  margin-top: 20px;
 }
 .vid-overlay {
   position: absolute;
@@ -7335,7 +7336,7 @@ input#product-year {
   border: 1px solid #d0cfcf;
   padding: 20px;
   z-index: 2000;
-  top: 15%;
+  top: 5%;
   left: 50%;
   margin-left: -270px;
   background: #eeebeb;
@@ -7425,9 +7426,46 @@ input#product-year {
   margin: 0;
   line-height: 20px;
 }
+.video-container {
+position: relative;
+padding-bottom: 56.25%;
+padding-top: 30px; height: 0; overflow: hidden;
+}
+.video-container-wrapper {
+  width: 45%;
+  height: auto;
+  position: absolute;
+  overflow: hidden;
+  border: 1px solid #d0cfcf;
+  padding: 30px;
+  z-index: 2000;
+  top: 15%;
+  background: #eeebeb;
+  -webkit-box-shadow: 0px 9px 59px 11px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 9px 59px 11px rgba(0,0,0,0.75);
+  box-shadow: 0px 9px 59px 11px rgba(0,0,0,0.75);
+}
+.video-container iframe,
+.video-container object,
+.video-container embed {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
 
-
-
+.video-container-wrapper .xIcon {
+  width: 15px;
+  height: 15px;
+  top: 10px;
+  right: 10px;
+  display: block;
+  cursor: pointer;
+  margin: 0;
+  float: none;
+  position: absolute;
+}
 
 
 
@@ -8967,6 +9005,22 @@ li.ui-timepicker-selected .ui-timepicker-duration,
     }
     .title-indv-rltd-item {
       width: 135px;
+    }
+    .art-price-enquiry {
+      width: 440px;
+      height: auto;
+      position: absolute;
+      overflow: hidden;
+      border: 1px solid #d0cfcf;
+      padding: 15px;
+      z-index: 2000;
+      top: 5%;
+      left: 50%;
+      margin-left: -220px;
+      background: #eeebeb;
+      -webkit-box-shadow: 0px 9px 59px 11px rgba(0,0,0,0.75);
+      -moz-box-shadow: 0px 9px 59px 11px rgba(0,0,0,0.75);
+      box-shadow: 0px 9px 59px 11px rgba(0,0,0,0.75);
     }
 
 }
@@ -10664,7 +10718,17 @@ li.ui-timepicker-selected .ui-timepicker-duration,
   .title-indv-rltd-item {
     width: 165px;
   }
-
+  .video-container-wrapper {
+    width: 65%;
+    top: 10%;
+    padding: 20px;
+  }
+  .video-container-wrapper .xIcon {
+    width: 10px;
+    height: 10px;
+    top: 7px;
+    right: 7px;
+  }
 
 }
 
@@ -12498,6 +12562,17 @@ li.ui-timepicker-selected .ui-timepicker-duration,
     }
     .title-indv-rltd-item {
       width: 135px;
+    }
+    .video-container-wrapper {
+      width: 85%;
+      top: 30%;
+      padding: 20px;
+    }
+    .video-container-wrapper .xIcon {
+      width: 10px;
+      height: 10px;
+      top: 7px;
+      right: 7px;
     }
 
   }

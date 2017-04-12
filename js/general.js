@@ -1634,11 +1634,19 @@ var addProductToCartIndividual = function(e) {
 };
 
 var showPriceEnq = function() {
-
+  $("#price-enquiry-panel").show();
 };
 
 var closePriceEnq = function() {
+  $("#price-enquiry-panel").hide();
+};
 
+var openVideoPanel = function() {
+  $("#video-panel").show();
+};
+
+var closeVideoPanel = function() {
+  $("#video-panel").hide();
 };
 
 var quantitySpinner = function() {
@@ -1652,5 +1660,34 @@ var previewBackProductIndividual = function(e) {
   $(e).find(".cat-product-img").attr("src", imgsrc2);
   $('#bgPreviewImgVal').val(imgsrc);
   $(".individual-main-img").find(".cat-product-img").attr("src", imgsrc);
+  productDimensions();
+};
+
+var previewBackPGreetingIndividual = function(e) {
+  var imgsrc = $(e).find(".cat-product-img").attr("src");
+  var imgsrc2 = $("#greeting-p").find(".cat-product-img").attr("src");
+  $(e).find(".cat-product-img").attr("src", imgsrc2);
+  $('#bgPreviewImgVal').val(imgsrc);
+  $("#greeting-p").find(".cat-product-img").attr("src", imgsrc);
+  if ($("#greeting-p").attr("style") === 'background: url("images/greetingcard-back-portrait-blank.png") no-repeat center 42% / auto 68%, linear-gradient( #eeebeb, #f9f9f9); position: relative;') {
+    $("#greeting-p").attr("style", "background: linear-gradient( #eeebeb, #f9f9f9); position: relative;");
+  }
+  else if ($("#greeting-p").attr("style") === "background: linear-gradient( #eeebeb, #f9f9f9); position: relative;") {
+    $("#greeting-p").attr("style", 'background: url("images/greetingcard-back-portrait-blank.png") no-repeat center 42% / auto 68%, linear-gradient( #eeebeb, #f9f9f9); position: relative;');
+  }
+  productDimensions();
+};
+var previewBackLSGreetingIndividual = function(e) {
+  var imgsrc = $(e).find(".cat-product-img").attr("src");
+  var imgsrc2 = $("#greeting-ls").find(".cat-product-img").attr("src");
+  $(e).find(".cat-product-img").attr("src", imgsrc2);
+  $('#bgPreviewImgVal').val(imgsrc);
+  $("#greeting-ls").find(".cat-product-img").attr("src", imgsrc);
+  if ($("#greeting-ls").attr("style") === 'background: url("images/greetingcard-back-blank.png") no-repeat 55% 49% / 68.5% auto, linear-gradient( #eeebeb, #f9f9f9); position: relative;') {
+    $("#greeting-ls").attr("style", "background: linear-gradient( #eeebeb, #f9f9f9); position: relative;");
+  }
+  else if ($("#greeting-ls").attr("style") === "background: linear-gradient( #eeebeb, #f9f9f9); position: relative;") {
+    $("#greeting-ls").attr("style", 'background: url("images/greetingcard-back-blank.png") no-repeat 55% 49% / 68.5% auto, linear-gradient( #eeebeb, #f9f9f9); position: relative;');
+  }
   productDimensions();
 };
