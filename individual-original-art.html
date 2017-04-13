@@ -371,9 +371,11 @@
 									<p>
 										<h3><b>Price: Enquiry</b></h3>
 									</p>
+									<!-- display this price if enquiry is not active for this painting -->
 									<p>
 										<h3 style="display: none;"><b>Price: $80</b></h3>
 									</p>
+									<!-- end display this price if enquiry is not active for this painting -->
 									<button class="enquire_btn" onclick="showPriceEnq();"></button>
 									<p style="font-style: italic; margin-bottom: 30px;">
 										Acrylic
@@ -386,6 +388,7 @@
 										<button class="btn" style="width: 75%; margin-bottom: 10px; color: #e74c3c; background: #fff; border: 1px solid #e74c3c" onclick="addProductToWishlistIndividual(this)">
 											Add to wishlist
 										</button>
+										<!-- button disabled if price enquiry is active -->
 										<button class="btn" style="width: 75%;" id="buynow-btn" disabled="true">
 											Buy now
 										</button>
