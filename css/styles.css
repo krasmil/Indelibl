@@ -7332,17 +7332,19 @@ input#product-year {
   width: 540px;
   height: auto;
   position: absolute;
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: auto;
   border: 1px solid #d0cfcf;
   padding: 20px;
   z-index: 2000;
-  top: 5%;
+  top: 20%;
   left: 50%;
   margin-left: -270px;
-  background: #eeebeb;
+  background: #fff;
   -webkit-box-shadow: 0px 9px 59px 11px rgba(0,0,0,0.75);
   -moz-box-shadow: 0px 9px 59px 11px rgba(0,0,0,0.75);
   box-shadow: 0px 9px 59px 11px rgba(0,0,0,0.75);
+  margin-bottom: 30px;
 }
 .select-options-wrapper {
   display: block;
@@ -7455,7 +7457,7 @@ padding-top: 30px; height: 0; overflow: hidden;
   height: 100%;
 }
 
-.video-container-wrapper .xIcon {
+.art-price-enquiry .xIcon, .video-container-wrapper .xIcon {
   width: 15px;
   height: 15px;
   top: 10px;
@@ -7466,10 +7468,29 @@ padding-top: 30px; height: 0; overflow: hidden;
   float: none;
   position: absolute;
 }
-
-
-
-
+.img-fullsize-wrapper {
+  top: 5%;
+  width: 1300px;
+  position: absolute;
+  margin-bottom: 40px;
+}
+.img-fullsize-wrapper img {
+  width: 100%;
+  height: auto;
+}
+.watching-ogart {
+  font-style: italic;
+  color: #e74c3c;
+  position: absolute;
+  top: -30px;
+  left: 0;
+}
+.og-art-details {
+  padding-top: 40px;
+}
+#og-art-wl-msg {
+  top: 26%;
+}
 
 
 
@@ -9008,19 +9029,18 @@ li.ui-timepicker-selected .ui-timepicker-duration,
     }
     .art-price-enquiry {
       width: 440px;
-      height: auto;
-      position: absolute;
-      overflow: hidden;
-      border: 1px solid #d0cfcf;
       padding: 15px;
       z-index: 2000;
-      top: 5%;
+      top: 15%;
       left: 50%;
       margin-left: -220px;
-      background: #eeebeb;
-      -webkit-box-shadow: 0px 9px 59px 11px rgba(0,0,0,0.75);
-      -moz-box-shadow: 0px 9px 59px 11px rgba(0,0,0,0.75);
-      box-shadow: 0px 9px 59px 11px rgba(0,0,0,0.75);
+      
+    }
+    .img-fullsize-wrapper {
+      width: 925px;
+    }
+    #og-art-wl-msg {
+      top: 25%;
     }
 
 }
@@ -10728,6 +10748,38 @@ li.ui-timepicker-selected .ui-timepicker-duration,
     height: 10px;
     top: 7px;
     right: 7px;
+  }
+  .zoom_btn {
+    width: 40px;
+    height: 40px;
+  }
+  .individual-related-video {
+    margin-bottom: 20px;
+  }
+  .art-price-enquiry {
+    margin-bottom: 30px;
+    top: 5%;
+  }
+  .clear-product-desc-wrapper {
+    padding: 20px;
+  }
+  .enquire_btn {
+    height: 25px;
+    width: 45px;
+    top: 92px;
+    left: 345px;
+  }
+  #og-art-wl-msg {
+    top: 28%;
+  }
+  .img-fullsize-wrapper {
+    width: 530px;
+  }
+  .watching-ogart {
+    left: auto;
+    position: relative;
+    text-align: center;
+    top: -5px;
   }
 
 }
@@ -12574,7 +12626,50 @@ li.ui-timepicker-selected .ui-timepicker-duration,
       top: 7px;
       right: 7px;
     }
-
+    .zoom_btn {
+      width: 30px;
+      height: 30px;
+      bottom: 5px;
+      right: 5px;
+    }
+    .play-arrow {
+      height: 30px;
+      width: 30px;
+      top: 30%;
+      left: 50%;
+      margin-left: -15px;
+    }
+    .individual-related-video {
+      margin-top: 10px;
+      width: 45%;
+    }
+    .enquire_btn {
+      height: 25px;
+      width: 45px;
+      top: 92px;
+      left: 225px;
+    }
+    .art-price-enquiry {
+      width: 290px;
+      margin-left: -145px;
+      top: 10%;
+    }
+    .art-price-enquiry .btn {
+      min-width: 100px;
+      width: 100px;
+    }
+    #og-art-wl-msg {
+      top: 25%;
+    }
+    .img-fullsize-wrapper {
+      width: 320px;
+    }
+    .watching-ogart {
+      left: auto;
+      position: relative;
+      text-align: center;
+      top: -5px;
+    }
   }
 
 /* Custom, iPhone Retina */
@@ -12623,6 +12718,12 @@ li.ui-timepicker-selected .ui-timepicker-duration,
     }
     .product-cat-wrapper .box-product3 .product-img2.my-prod-img {
       height: 290px;
+    }
+    .img-fullsize-wrapper {
+      width: 300px;
+    }
+    .watching-ogart {
+      left: 10px;
     }
 
 }

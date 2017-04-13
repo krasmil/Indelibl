@@ -1,9 +1,9 @@
 /******* Run functions when window is loaded ********/
-$(window).load(function(){
-  masonryEventWorks();
-  masonryCatOgArtWorks();
-  printDimensions();
-  productDimensions();
+$(window).load(function() {
+    masonryEventWorks();
+    masonryCatOgArtWorks();
+    printDimensions();
+    productDimensions();
 });
 
 /******* Run functions when document is ready ********/
@@ -54,100 +54,96 @@ $(document).ready(function() {
 /******* Run functions when document resize **********/
 $(window).resize(function() {
     if ($('#productTemplates').length) {
-      if ($(window).width() <= 1000 ) {
-        $('#productTemplates').hide();
-        $('#productTemplates_notAvail').show();
-      }
-      else if ($(window).width() > 1000 ) {
-        $('#productTemplates').show();
-        $('#productTemplates_notAvail').hide();
-      }
+        if ($(window).width() <= 1000) {
+            $('#productTemplates').hide();
+            $('#productTemplates_notAvail').show();
+        } else if ($(window).width() > 1000) {
+            $('#productTemplates').show();
+            $('#productTemplates_notAvail').hide();
+        }
     }
     if ($('#art-templates').length) {
-      if ($(window).width() <= 1000 ) {
-        $('#art-templates').hide();
-        $('#art-templates').removeClass("large-padding-bottom-y");
-        $('#add-art-not-avail').show();
-      }
-      else if ($(window).width() > 1000 ) {
-        $('#art-templates').show();
-        $('#art-templates').addClass("large-padding-bottom-y");
-        $('#add-art-not-avail').hide();
-      }
+        if ($(window).width() <= 1000) {
+            $('#art-templates').hide();
+            $('#art-templates').removeClass("large-padding-bottom-y");
+            $('#add-art-not-avail').show();
+        } else if ($(window).width() > 1000) {
+            $('#art-templates').show();
+            $('#art-templates').addClass("large-padding-bottom-y");
+            $('#add-art-not-avail').hide();
+        }
     }
     if ($(".my-prod-img").length) {
-      if ($(window).width() <= 1000 ) {
-        toggleProductLinks("off");
-      }
-      else if ($(window).width() > 1000 ) {
-        toggleProductLinks("on");
-      }
+        if ($(window).width() <= 1000) {
+            toggleProductLinks("off");
+        } else if ($(window).width() > 1000) {
+            toggleProductLinks("on");
+        }
     }
 
     if ($('#og_art_filter_wrapper').length) {
-      if ($(window).width() <= 1000 ) {
-        $('#og_art_filter_wrapper').hide();
-        $('.toggleFilterPanel').show();
-        $('.toggleFilterPanelUp').hide();
-      }
-      else if ($(window).width() > 1000 ) {
-        $('#og_art_filter_wrapper').show();
-        $('.toggleFilterPanel').hide();
-        $('.toggleFilterPanelUp').hide();
-      }
+        if ($(window).width() <= 1000) {
+            $('#og_art_filter_wrapper').hide();
+            $('.toggleFilterPanel').show();
+            $('.toggleFilterPanelUp').hide();
+        } else if ($(window).width() > 1000) {
+            $('#og_art_filter_wrapper').show();
+            $('.toggleFilterPanel').hide();
+            $('.toggleFilterPanelUp').hide();
+        }
     }
 
-  setTimeout(function () {
-    getRecentViewsSliderCoeff();
-    resetRecentViews();
-    scrollRecentViews();
-  }, 500);
-  if ($('.related-events-max-four').length) {
-    calcRelatedEventsWidth();
-  }
-  if ($('.related-events-over-four').length) {
-    calcRelatedEventsSliderWidth();
-  }
-  calcViewEventsHeight();
-  calcViewFollowsHeight();
-  calcViewGalleriesHeight();
-  calcViewInvitesHeight();
-  calcViewProductsHeight();
-  showProdCatButtonsMobile();
-  showProdCatButtonsMobileAll();
+    setTimeout(function() {
+        getRecentViewsSliderCoeff();
+        resetRecentViews();
+        scrollRecentViews();
+    }, 500);
+    if ($('.related-events-max-four').length) {
+        calcRelatedEventsWidth();
+    }
+    if ($('.related-events-over-four').length) {
+        calcRelatedEventsSliderWidth();
+    }
+    calcViewEventsHeight();
+    calcViewFollowsHeight();
+    calcViewGalleriesHeight();
+    calcViewInvitesHeight();
+    calcViewProductsHeight();
+    showProdCatButtonsMobile();
+    showProdCatButtonsMobileAll();
 });
 /******* Run functions when document orientation changed (handheld devices) **********/
-$(window).on("orientationchange",function(){
+$(window).on("orientationchange", function() {
 
-  setTimeout(function () {
-    getRecentViewsSliderCoeff();
-    resetRecentViews();
-    scrollRecentViews();
-  }, 500);
-  if ($('.related-events-max-four').length) {
-    calcRelatedEventsWidth();
-  }
-  if ($('.related-events-over-four').length) {
-    calcRelatedEventsSliderWidth();
-  }
-  calcViewEventsHeight();
-  calcViewFollowsHeight();
-  calcViewGalleriesHeight();
-  calcViewInvitesHeight();
+    setTimeout(function() {
+        getRecentViewsSliderCoeff();
+        resetRecentViews();
+        scrollRecentViews();
+    }, 500);
+    if ($('.related-events-max-four').length) {
+        calcRelatedEventsWidth();
+    }
+    if ($('.related-events-over-four').length) {
+        calcRelatedEventsSliderWidth();
+    }
+    calcViewEventsHeight();
+    calcViewFollowsHeight();
+    calcViewGalleriesHeight();
+    calcViewInvitesHeight();
 });
 
 var checkDeviceForAddProducts = function() {
-  if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
-    if ($('#productTemplates').length) {
-      $('#productTemplates').html("");
-      $('#productTemplates_notAvail').show();
+    if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+        if ($('#productTemplates').length) {
+            $('#productTemplates').html("");
+            $('#productTemplates_notAvail').show();
+        }
+        if ($('#art-templates').length) {
+            $('#art-templates').html("");
+            $('#art-templates').removeClass("large-padding-bottom-y");
+            $('#add-art-not-avail').show();
+        }
     }
-    if ($('#art-templates').length) {
-      $('#art-templates').html("");
-      $('#art-templates').removeClass("large-padding-bottom-y");
-      $('#add-art-not-avail').show();
-    }
-  }
 };
 /*****************************************************/
 /******************* FUNCTIONS ***********************/
@@ -297,24 +293,24 @@ var openRegPanel = function() {
 
 /************** open/close dashboard mobile menu ****************/
 var dashMenu = function() {
-  if ($('.navigation_toggle_dots').length) {
-    $(".navigation_toggle_dots").click(function(e) {
-      // hide main menu if it is open
-      if ($(".mob_menu").is(":visible")) {
-        $(".mob_menu").slideUp("fast");
-      }
-      // set z-index of profile pic so that it doesn't cover menu
-      if ($(".dashboard_menu").is(":visible")) {
-          setTimeout(function() {
-              $(".userprofile_img").css("z-index", "1100");
-          }, 600);
-      } else {
-          $(".userprofile_img").css("z-index", "0");
-      }
+    if ($('.navigation_toggle_dots').length) {
+        $(".navigation_toggle_dots").click(function(e) {
+            // hide main menu if it is open
+            if ($(".mob_menu").is(":visible")) {
+                $(".mob_menu").slideUp("fast");
+            }
+            // set z-index of profile pic so that it doesn't cover menu
+            if ($(".dashboard_menu").is(":visible")) {
+                setTimeout(function() {
+                    $(".userprofile_img").css("z-index", "1100");
+                }, 600);
+            } else {
+                $(".userprofile_img").css("z-index", "0");
+            }
 
-      $(".dashboard_menu").slideToggle("slow");
-    });
-  }
+            $(".dashboard_menu").slideToggle("slow");
+        });
+    }
 };
 
 /************** open/close mobile menu ****************/
@@ -322,7 +318,7 @@ var mobileMenu = function() {
     $(".navigation_toggle").click(function(e) {
         // hide dashboard menu if it is open
         if ($(".dashboard_menu").is(":visible")) {
-          $(".dashboard_menu").slideUp("fast");
+            $(".dashboard_menu").slideUp("fast");
         }
         // set z-index of profile pic and camera so that they don't cover menu
         if ($(".mob_menu").is(":visible")) {
@@ -341,12 +337,12 @@ var mobileMenu = function() {
     // hide mobile menus when start scrolling
     $(window).on("scroll", function() {
         if ($(window).scrollTop() > 2) {
-          // hide dashboard menu on scroll and restore cover img z-index
-          if ($(".dashboard_menu").not(":hidden")) {
-              $(".dashboard_menu").slideUp("fast");
-              setTimeout(function() {
-                  $(".userprofile_img").css("z-index", "1100");
-              }, 600);
+            // hide dashboard menu on scroll and restore cover img z-index
+            if ($(".dashboard_menu").not(":hidden")) {
+                $(".dashboard_menu").slideUp("fast");
+                setTimeout(function() {
+                    $(".userprofile_img").css("z-index", "1100");
+                }, 600);
             }
 
             if ($(".mob_menu").not(":hidden")) {
@@ -391,7 +387,7 @@ function hideSubscribeForm() {
     if ($('#hide-subscribe-form').length) {
 
         $('.subscribe-form').slideUp("slow", function() {
-          $('#showSubscribeFormButton').show();
+            $('#showSubscribeFormButton').show();
         });
     }
 }
@@ -682,35 +678,35 @@ function showOriginalArt(fileInput) {
             input = document.getElementById('art-input');
             getOrientation(input.files[0], function(orientation) {
 
-              if ([5, 6, 7, 8].indexOf(orientation) > -1 && [5, 6, 7, 8].indexOf(orientation) !== 3) {
-                  $('#original-art-rotator').attr('src', binImg);
-                  var c = document.getElementById("original-art-slice");
-                  c.width = $('#original-art-rotator').height();
-                  c.height = $('#original-art-rotator').width();
-                  var ctx = c.getContext("2d");
-                  ctx.transform(0, 1, -1, 0, $('#original-art-rotator').height(), 0);
-                  ctx.drawImage(document.getElementById('#original-art-rotator'), 0, 0);
-                  urlRot = c.toDataURL();
-                  // set Base64 string in src of positioner
-                  $('#original-art-preview').css("background-image", "url(" + urlRot + ")");
+                if ([5, 6, 7, 8].indexOf(orientation) > -1 && [5, 6, 7, 8].indexOf(orientation) !== 3) {
+                    $('#original-art-rotator').attr('src', binImg);
+                    var c = document.getElementById("original-art-slice");
+                    c.width = $('#original-art-rotator').height();
+                    c.height = $('#original-art-rotator').width();
+                    var ctx = c.getContext("2d");
+                    ctx.transform(0, 1, -1, 0, $('#original-art-rotator').height(), 0);
+                    ctx.drawImage(document.getElementById('#original-art-rotator'), 0, 0);
+                    urlRot = c.toDataURL();
+                    // set Base64 string in src of positioner
+                    $('#original-art-preview').css("background-image", "url(" + urlRot + ")");
 
-} else if ([5, 6, 7, 8].indexOf(orientation) === 3) {
-                              console.log(2);
-                              $('#original-art-rotator').attr('src', binImg);
-                              var c2 = document.getElementById("original-art-slice");
-                              c2.width = $('#original-art-rotator').height();
-                              c2.height = $('#original-art-rotator').width();
-                              var ctx2 = c2.getContext("2d");
-                              ctx2.transform(0, 1, -1, 0, $('#original-art-rotator').height(), 0);
-                              ctx2.rotate(Math.PI);
-                              ctx2.translate(-parseInt(c2.height), -parseInt(c2.width));
-                              ctx2.drawImage(document.getElementById('original-art-rotator'), 0, 0);
-                              urlRot2 = c2.toDataURL();
-                              $('#original-art-preview').css("background-image", "url(" + urlRot2 + ")");
-              } else {
-                  // set Base64 string in src of positioner
-                  $('#original-art-preview').css("background-image", "url(" + binImg + ")");
-              }
+                } else if ([5, 6, 7, 8].indexOf(orientation) === 3) {
+                    console.log(2);
+                    $('#original-art-rotator').attr('src', binImg);
+                    var c2 = document.getElementById("original-art-slice");
+                    c2.width = $('#original-art-rotator').height();
+                    c2.height = $('#original-art-rotator').width();
+                    var ctx2 = c2.getContext("2d");
+                    ctx2.transform(0, 1, -1, 0, $('#original-art-rotator').height(), 0);
+                    ctx2.rotate(Math.PI);
+                    ctx2.translate(-parseInt(c2.height), -parseInt(c2.width));
+                    ctx2.drawImage(document.getElementById('original-art-rotator'), 0, 0);
+                    urlRot2 = c2.toDataURL();
+                    $('#original-art-preview').css("background-image", "url(" + urlRot2 + ")");
+                } else {
+                    // set Base64 string in src of positioner
+                    $('#original-art-preview').css("background-image", "url(" + binImg + ")");
+                }
             });
         };
         reader.readAsDataURL(fileInput.files[0]);
@@ -746,35 +742,35 @@ function showArtPrint(fileInput) {
             input = document.getElementById('art-input');
             getOrientation(input.files[0], function(orientation) {
 
-              if ([5, 6, 7, 8].indexOf(orientation) > -1 && [5, 6, 7, 8].indexOf(orientation) !== 3) {
-                  $('#original-art-rotator').attr('src', binImg);
-                  var c = document.getElementById("original-art-slice");
-                  c.width = $('#original-art-rotator').height();
-                  c.height = $('#original-art-rotator').width();
-                  var ctx = c.getContext("2d");
-                  ctx.transform(0, 1, -1, 0, $('#original-art-rotator').height(), 0);
-                  ctx.drawImage(document.getElementById('#original-art-rotator'), 0, 0);
-                  urlRot = c.toDataURL();
-                  // set Base64 string in src of positioner
-                  $('#original-art-preview').css("background-image", "url(" + urlRot + ")");
+                if ([5, 6, 7, 8].indexOf(orientation) > -1 && [5, 6, 7, 8].indexOf(orientation) !== 3) {
+                    $('#original-art-rotator').attr('src', binImg);
+                    var c = document.getElementById("original-art-slice");
+                    c.width = $('#original-art-rotator').height();
+                    c.height = $('#original-art-rotator').width();
+                    var ctx = c.getContext("2d");
+                    ctx.transform(0, 1, -1, 0, $('#original-art-rotator').height(), 0);
+                    ctx.drawImage(document.getElementById('#original-art-rotator'), 0, 0);
+                    urlRot = c.toDataURL();
+                    // set Base64 string in src of positioner
+                    $('#original-art-preview').css("background-image", "url(" + urlRot + ")");
 
-} else if ([5, 6, 7, 8].indexOf(orientation) === 3) {
-                              console.log(2);
-                              $('#original-art-rotator').attr('src', binImg);
-                              var c2 = document.getElementById("original-art-slice");
-                              c2.width = $('#original-art-rotator').height();
-                              c2.height = $('#original-art-rotator').width();
-                              var ctx2 = c2.getContext("2d");
-                              ctx2.transform(0, 1, -1, 0, $('#original-art-rotator').height(), 0);
-                              ctx2.rotate(Math.PI);
-                              ctx2.translate(-parseInt(c2.height), -parseInt(c2.width));
-                              ctx2.drawImage(document.getElementById('original-art-rotator'), 0, 0);
-                              urlRot2 = c2.toDataURL();
-                              $('#original-art-preview').css("background-image", "url(" + urlRot2 + ")");
-              } else {
-                  // set Base64 string in src of positioner
-                  $('#original-art-preview').css("background-image", "url(" + binImg + ")");
-              }
+                } else if ([5, 6, 7, 8].indexOf(orientation) === 3) {
+                    console.log(2);
+                    $('#original-art-rotator').attr('src', binImg);
+                    var c2 = document.getElementById("original-art-slice");
+                    c2.width = $('#original-art-rotator').height();
+                    c2.height = $('#original-art-rotator').width();
+                    var ctx2 = c2.getContext("2d");
+                    ctx2.transform(0, 1, -1, 0, $('#original-art-rotator').height(), 0);
+                    ctx2.rotate(Math.PI);
+                    ctx2.translate(-parseInt(c2.height), -parseInt(c2.width));
+                    ctx2.drawImage(document.getElementById('original-art-rotator'), 0, 0);
+                    urlRot2 = c2.toDataURL();
+                    $('#original-art-preview').css("background-image", "url(" + urlRot2 + ")");
+                } else {
+                    // set Base64 string in src of positioner
+                    $('#original-art-preview').css("background-image", "url(" + binImg + ")");
+                }
             });
         };
         reader.readAsDataURL(fileInput.files[0]);
@@ -783,17 +779,17 @@ function showArtPrint(fileInput) {
 
 /*---------- remove art from add product ------------*/
 function removeArt() {
-  $('#original-art-preview').css("background-image", "none");
-  $('#art-input').val('');
+    $('#original-art-preview').css("background-image", "none");
+    $('#art-input').val('');
 }
 /*---------- hide size error in add product when click on cancel in error------------*/
 function hideSizeError() {
-  $('#size-error').hide();
+    $('#size-error').hide();
 }
 
 /*---------- hide extension error in add product when click on cancel in error------------*/
 function hideExtError() {
-  $('#ext-error').hide();
+    $('#ext-error').hide();
 }
 
 // get image orientation
@@ -853,11 +849,11 @@ var artistMenu = function() {
     var $trigger = $('[triggerLink]');
     // on hover menu item in dashboard menu
     $trigger.hover(function() {
-      var $data = $(this).attr("triggerLink");
-      var $popupLink =   $(document).find('[popLink= ' + $data + ']');
-      $popupLink.toggleClass("active");
+        var $data = $(this).attr("triggerLink");
+        var $popupLink = $(document).find('[popLink= ' + $data + ']');
+        $popupLink.toggleClass("active");
 
-  });
+    });
 };
 
 /************ product template overlays ******************************/
@@ -865,117 +861,131 @@ var productTemplateOverlay = function() {
     var $trigger = $('[triggerOL]');
     // on hover over product template selection box
     $trigger.hover(function() {
-      var $data = $(this).attr("triggerOL");
-      var $overlay =   $(document).find('[overlay= ' + $data + ']');
-    //  $overlay.fadeToggle( 400, "ease" );
-      $overlay.fadeToggle(350);
-  });
+        var $data = $(this).attr("triggerOL");
+        var $overlay = $(document).find('[overlay= ' + $data + ']');
+        //  $overlay.fadeToggle( 400, "ease" );
+        $overlay.fadeToggle(350);
+    });
 };
 
 /************ returns coefficient for scrollRecentViews ******************************/
 
 var getRecentViewsSliderCoeff = function() {
-  var coeff;
-  var numItems = $(".product-show > .column-4").length;
+    var coeff;
+    var numItems = $(".product-show > .column-4").length;
 
-  if ($(window).width() <= 999 && $(window).width() >= 510) {
-    coeff = numItems - 3;
-  }
-  else if ($(window).width() <= 509) {
-    coeff = numItems - 2;
-  }
-  else {
-    coeff = numItems - 5;
-  }
+    if ($(window).width() <= 999 && $(window).width() >= 510) {
+        coeff = numItems - 3;
+    } else if ($(window).width() <= 509) {
+        coeff = numItems - 2;
+    } else {
+        coeff = numItems - 5;
+    }
 
-  return coeff;
+    return coeff;
 };
 
 /************ resets product-show left position for scrollRecentViews when orientation changed or resize ******************************/
 var resetRecentViews = function() {
-  $(".product-show").css("left", 0);
+    $(".product-show").css("left", 0);
 };
 
 /************ returns move value for right and left button clicks ******************************/
 var getRecentViewMove = function() {
-  var a = $(".product-show > .column-4").outerWidth(true) + "px";
-  return a;
+    var a = $(".product-show > .column-4").outerWidth(true) + "px";
+    return a;
 };
 /************ returns sliderLimit value for right and left button clicks ******************************/
 var getRecentViewSliderLimit = function() {
-  var b = -($(".product-show > .column-4").outerWidth(true) * getRecentViewsSliderCoeff());
-  return b;
+    var b = -($(".product-show > .column-4").outerWidth(true) * getRecentViewsSliderCoeff());
+    return b;
 };
 
 var scrollRecentViews = function() {
-  var numItems = $(".product-show > .column-4").length;
+    var numItems = $(".product-show > .column-4").length;
 
 
-  var view = $(".product-view-container");
-  var show = $(".product-show");
-  var productBox = $(".product-show > .column-4");
-  var productBox_margin_right = parseInt(productBox.css("margin-right")) + 2;
-  var productBox_margin_left = parseInt(productBox.css("margin-left"));
-  show.css("width", (productBox.outerWidth(true) * numItems) + "px");
-  var move = productBox.outerWidth(true) + "px";
-  var sliderLimit = -(productBox.outerWidth(true) * getRecentViewsSliderCoeff());
+    var view = $(".product-view-container");
+    var show = $(".product-show");
+    var productBox = $(".product-show > .column-4");
+    var productBox_margin_right = parseInt(productBox.css("margin-right")) + 2;
+    var productBox_margin_left = parseInt(productBox.css("margin-left"));
+    show.css("width", (productBox.outerWidth(true) * numItems) + "px");
+    var move = productBox.outerWidth(true) + "px";
+    var sliderLimit = -(productBox.outerWidth(true) * getRecentViewsSliderCoeff());
 
 };
 
 var rightLeftArrows = function() {
-  /************ scrolls recent views to the right ******************************/
-  if ($(".right-arrow").length) {
-    $(".right-arrow").click(function(){
-      var show = $(".product-show");
-      var currentPosition = parseInt(show.css("left"));
-      if (currentPosition >= getRecentViewSliderLimit()) show.stop(false,true).animate({left:"-="+ getRecentViewMove()},{ duration: 400});
-    });
-  }
+    /************ scrolls recent views to the right ******************************/
+    if ($(".right-arrow").length) {
+        $(".right-arrow").click(function() {
+            var show = $(".product-show");
+            var currentPosition = parseInt(show.css("left"));
+            if (currentPosition >= getRecentViewSliderLimit()) show.stop(false, true).animate({
+                left: "-=" + getRecentViewMove()
+            }, {
+                duration: 400
+            });
+        });
+    }
 
-  /************ scrolls recent views to the left ******************************/
-  if ($(".left-arrow").length) {
-    $(".left-arrow").click(function(){
-      var show = $(".product-show");
-      var currentPosition = parseInt(show.css("left"));
-      if (currentPosition < 0) {
-        show.stop(false,true).animate({left:"+="+ getRecentViewMove()},{ duration: 400});
+    /************ scrolls recent views to the left ******************************/
+    if ($(".left-arrow").length) {
+        $(".left-arrow").click(function() {
+            var show = $(".product-show");
+            var currentPosition = parseInt(show.css("left"));
+            if (currentPosition < 0) {
+                show.stop(false, true).animate({
+                    left: "+=" + getRecentViewMove()
+                }, {
+                    duration: 400
+                });
 
-        if (show.position().left >= 0) {
-          show.stop(false,true).animate({left:0},{ duration: 400});
-        }
-      }
-    });
+                if (show.position().left >= 0) {
+                    show.stop(false, true).animate({
+                        left: 0
+                    }, {
+                        duration: 400
+                    });
+                }
+            }
+        });
 
-      }
+    }
 
 };
 
 /************ date and time pickers for create new event ******************************/
 var createDatePickers = function() {
 
-  if ($('#start-date').length) {
-    $( "#start-date" ).datepicker();
-  }
-  if ($('#end-date').length) {
-    $( "#end-date" ).datepicker();
-  }
-  if ($('#start-time').length) {
-    $( "#start-time" ).timepicker({ 'timeFormat': 'h:i A' });
-  }
-  if ($('#end-time').length) {
-    $( "#end-time" ).timepicker({ 'timeFormat': 'h:i A' });
-  }
+    if ($('#start-date').length) {
+        $("#start-date").datepicker();
+    }
+    if ($('#end-date').length) {
+        $("#end-date").datepicker();
+    }
+    if ($('#start-time').length) {
+        $("#start-time").timepicker({
+            'timeFormat': 'h:i A'
+        });
+    }
+    if ($('#end-time').length) {
+        $("#end-time").timepicker({
+            'timeFormat': 'h:i A'
+        });
+    }
 };
 /************ set up masonry layout for artworks featured in event ******************************/
 var masonryEventWorks = function() {
-  if ($('.events-works-wrapper').length) {
-    $('.events-works-wrapper').masonry({
-      // options
-      itemSelector: '.event-work-container',
-      columnWidth: '.event-work-container',
-      gutter: 25
-    });
-  }
+    if ($('.events-works-wrapper').length) {
+        $('.events-works-wrapper').masonry({
+            // options
+            itemSelector: '.event-work-container',
+            columnWidth: '.event-work-container',
+            gutter: 25
+        });
+    }
 };
 
 /**
@@ -985,9 +995,9 @@ var masonryEventWorks = function() {
  * @returns {String}
  */
 function getMobileOperatingSystem() {
-  var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+    var userAgent = navigator.userAgent || navigator.vendor || window.opera;
 
-      // Windows Phone must come first because its UA also contains "Android"
+    // Windows Phone must come first because its UA also contains "Android"
     if (/windows phone/i.test(userAgent)) {
         return "Windows Phone";
     }
@@ -1004,38 +1014,34 @@ function getMobileOperatingSystem() {
 }
 /************ calc width of related event slider for mobile portrait view ******************************/
 var calcRelatedEventsSliderWidth = function() {
-  if ($('.related-events-over-four').length) {
-    if ($(window).width() <= 509) {
+    if ($('.related-events-over-four').length) {
+        if ($(window).width() <= 509) {
 
-      if (getMobileOperatingSystem() == "Android" || getMobileOperatingSystem() == "Windows Phone") {
-        $('.product-show .column-4.profile-event').css('width', '198px');
-        $('.related-events-over-four .product-view-container').css('width', '218px');
-      }
-      else if (getMobileOperatingSystem() == "iOS") {
-        $('.product-show .column-4.profile-event').css('width', '178px');
-        $('.related-events-over-four .product-view-container').css('width', '198px');
-      }
-      else {
-        $('.product-show .column-4.profile-event').css('width', '198px');
-        $('.related-events-over-four .product-view-container').css('width', '218px');
-      }
-    }else if ($(window).width() >= 509 && $(window).width() < 1000) {
+            if (getMobileOperatingSystem() == "Android" || getMobileOperatingSystem() == "Windows Phone") {
+                $('.product-show .column-4.profile-event').css('width', '198px');
+                $('.related-events-over-four .product-view-container').css('width', '218px');
+            } else if (getMobileOperatingSystem() == "iOS") {
+                $('.product-show .column-4.profile-event').css('width', '178px');
+                $('.related-events-over-four .product-view-container').css('width', '198px');
+            } else {
+                $('.product-show .column-4.profile-event').css('width', '198px');
+                $('.related-events-over-four .product-view-container').css('width', '218px');
+            }
+        } else if ($(window).width() >= 509 && $(window).width() < 1000) {
 
-      $('.product-show .column-4.profile-event').css('width', '204.5px');
-      $('.related-events-over-four .product-view-container').css('width', '428.5px');
+            $('.product-show .column-4.profile-event').css('width', '204.5px');
+            $('.related-events-over-four .product-view-container').css('width', '428.5px');
+        } else if ($(window).width() >= 1000 && $(window).width() <= 1600) {
+
+            $('.product-show .column-4.profile-event').css('width', '179.5px');
+            $('.related-events-over-four .product-view-container').css('width', '778.5px');
+        } else if ($(window).width() > 1600) {
+
+            $('.product-show .column-4.profile-event').css('width', '273.5px');
+            $('.related-events-over-four .product-view-container').css('width', '1155px');
+        }
+
     }
-    else if ($(window).width() >= 1000 && $(window).width() <= 1600) {
-
-      $('.product-show .column-4.profile-event').css('width', '179.5px');
-      $('.related-events-over-four .product-view-container').css('width', '778.5px');
-    }
-    else if ($(window).width() > 1600) {
-
-      $('.product-show .column-4.profile-event').css('width', '273.5px');
-      $('.related-events-over-four .product-view-container').css('width', '1155px');
-    }
-
-  }
 };
 /************ calc width of related events wrapper if there are 4 or less related events ******************************/
 var calcRelatedEventsWidth = function() {
@@ -1047,647 +1053,683 @@ var calcRelatedEventsWidth = function() {
                 relatedEventsWidth = relatedEventsWidth + $(this).outerWidth(true);
             });
             $('.related-events-max-four').css("width", relatedEventsWidth);
-        }
-        else {
-          $('.related-events-max-four').css("width", "100%");
+        } else {
+            $('.related-events-max-four').css("width", "100%");
         }
     }
 };
 /************ calculate height of events wrapper ******************************/
 var calcViewEventsHeight = function() {
-  if ($('.view-current-events').length) {
-    var numEvents = $('.profile-event').length;
-    var eventHeight = $('.profile-event').outerHeight(true);
-    var eventsWidth = $('.view-current-events').outerWidth(true);
-    $('.view-current-events-scroll').css("width", eventsWidth + 18);
-    if (numEvents <= 4) {
-      $('.view-current-events').css("height", eventHeight);
-      $('.view-current-events-scroll').css("height", eventHeight);
+    if ($('.view-current-events').length) {
+        var numEvents = $('.profile-event').length;
+        var eventHeight = $('.profile-event').outerHeight(true);
+        var eventsWidth = $('.view-current-events').outerWidth(true);
+        $('.view-current-events-scroll').css("width", eventsWidth + 18);
+        if (numEvents <= 4) {
+            $('.view-current-events').css("height", eventHeight);
+            $('.view-current-events-scroll').css("height", eventHeight);
+        } else if (numEvents > 4 && numEvents <= 8) {
+            $('.view-current-events').css("height", eventHeight * 2);
+            $('.view-current-events-scroll').css("height", eventHeight * 2);
+        } else if (numEvents >= 9) {
+            $('.view-current-events').css("height", eventHeight * 3);
+            $('.view-current-events-scroll').css("height", eventHeight * 3);
+        }
+        if (numEvents > 12) {
+            bounceDownArrow();
+        }
     }
-    else if (numEvents > 4 && numEvents <= 8) {
-      $('.view-current-events').css("height", eventHeight*2);
-      $('.view-current-events-scroll').css("height", eventHeight*2);
-    }
-    else if (numEvents >= 9) {
-      $('.view-current-events').css("height", eventHeight*3);
-      $('.view-current-events-scroll').css("height", eventHeight*3);
-    }
-    if (numEvents > 12) {
-      bounceDownArrow();
-    }
-  }
 };
 
 /************ calculate height of products wrapper ******************************/
 var calcViewProductsHeight = function() {
-  if ($('#view-products-select').length) {
+    if ($('#view-products-select').length) {
 
-    var numEvents = $('.box-product3').length;
-    var eventHeight = $('.box-product3').outerHeight(true);
-    var eventsWidth = $('.view-current-events').outerWidth(true);
-    $('.view-current-events-scroll').css("width", eventsWidth + 18);
+        var numEvents = $('.box-product3').length;
+        var eventHeight = $('.box-product3').outerHeight(true);
+        var eventsWidth = $('.view-current-events').outerWidth(true);
+        $('.view-current-events-scroll').css("width", eventsWidth + 18);
 
-    if (numEvents === 0) {
-      $('.view-current-events').css("height", 0);
-      $('.view-current-events-scroll').css("height", 0);
+        if (numEvents === 0) {
+            $('.view-current-events').css("height", 0);
+            $('.view-current-events-scroll').css("height", 0);
+        } else if (numEvents >= 1 && numEvents <= 4) {
+            $('.view-current-events').css("height", eventHeight);
+            $('.view-current-events-scroll').css("height", eventHeight);
+        } else if (numEvents > 4 && numEvents <= 8) {
+            $('.view-current-events').css("height", eventHeight * 2);
+            $('.view-current-events-scroll').css("height", eventHeight * 2);
+        } else if (numEvents >= 9) {
+            $('.view-current-events').css("height", eventHeight * 3);
+            $('.view-current-events-scroll').css("height", eventHeight * 3);
+        }
+        if (numEvents > 12) {
+            bounceDownArrow();
+        }
     }
-    else if (numEvents >= 1  && numEvents <= 4) {
-      $('.view-current-events').css("height", eventHeight);
-      $('.view-current-events-scroll').css("height", eventHeight);
-    }
-    else if (numEvents > 4 && numEvents <= 8) {
-      $('.view-current-events').css("height", eventHeight*2);
-      $('.view-current-events-scroll').css("height", eventHeight*2);
-    }
-    else if (numEvents >= 9) {
-      $('.view-current-events').css("height", eventHeight*3);
-      $('.view-current-events-scroll').css("height", eventHeight*3);
-    }
-    if (numEvents > 12) {
-      bounceDownArrow();
-    }
-  }
 };
 
 /************ calc height of followings wrapper ******************************/
 var calcViewFollowsHeight = function() {
-  if ($('.view-follows').length) {
+    if ($('.view-follows').length) {
 
-    var numFollows = $('.follow-item-col').length;
-    var followsHeight = $('.follow-item-col').outerHeight(true);
-    var followsWidth = $('.view-follows').outerWidth(true);
-    $('.view-follows-scroll').css("width", followsWidth + 18);
+        var numFollows = $('.follow-item-col').length;
+        var followsHeight = $('.follow-item-col').outerHeight(true);
+        var followsWidth = $('.view-follows').outerWidth(true);
+        $('.view-follows-scroll').css("width", followsWidth + 18);
 
-    if (numFollows <= 5) {
-      $('.view-follows').css("height", followsHeight);
-      $('.view-follows-scroll').css("height", followsHeight);
+        if (numFollows <= 5) {
+            $('.view-follows').css("height", followsHeight);
+            $('.view-follows-scroll').css("height", followsHeight);
+        } else if (numFollows > 5 && numFollows <= 10) {
+            $('.view-follows').css("height", followsHeight * 2);
+            $('.view-follows-scroll').css("height", followsHeight * 2);
+        } else if (numFollows > 10 && numFollows <= 15) {
+            $('.view-follows').css("height", followsHeight * 3);
+            $('.view-follows-scroll').css("height", followsHeight * 3);
+        } else if (numFollows > 15 && numFollows <= 20) {
+            $('.view-follows').css("height", followsHeight * 4);
+            $('.view-follows-scroll').css("height", followsHeight * 4);
+        } else if (numFollows >= 21) {
+            $('.view-follows').css("height", followsHeight * 4);
+            $('.view-follows-scroll').css("height", followsHeight * 4);
+            bounceDownArrow();
+        }
+        // bounce arrow for mobile view
+        if (numFollows > 5 && $(window).width() < 1000 && $(window).width() > 509) {
+            bounceDownArrow();
+        } else if (numFollows > 4 && $(window).width() < 509) {
+            bounceDownArrow();
+        }
     }
-    else if (numFollows > 5 && numFollows <= 10) {
-      $('.view-follows').css("height", followsHeight*2);
-      $('.view-follows-scroll').css("height", followsHeight*2);
-    }
-    else if (numFollows > 10 && numFollows <= 15) {
-      $('.view-follows').css("height", followsHeight*3);
-      $('.view-follows-scroll').css("height", followsHeight*3);
-    }
-    else if (numFollows > 15 && numFollows <= 20) {
-      $('.view-follows').css("height", followsHeight*4);
-      $('.view-follows-scroll').css("height", followsHeight*4);
-    }
-    else if (numFollows >= 21) {
-      $('.view-follows').css("height", followsHeight*4);
-      $('.view-follows-scroll').css("height", followsHeight*4);
-      bounceDownArrow();
-    }
-    // bounce arrow for mobile view
-    if (numFollows > 5 && $(window).width() < 1000 && $(window).width() > 509) {
-      bounceDownArrow();
-    }
-    else if (numFollows > 4 && $(window).width() < 509) {
-      bounceDownArrow();
-    }
-  }
 
 };
 /************ calculate height of galleries wrapper ******************************/
 var calcViewGalleriesHeight = function() {
-  if ($('.view-galleries').length) {
-    var numGalls = $('.view-box-gallery').length;
-    var eventHeight = $('.view-box-gallery').outerHeight(true);
-    var eventsWidth = $('.view-galleries').outerWidth(true);
-    $('.view-galleries-scroll').css("width", eventsWidth + 18);
-    if (numGalls <= 3) {
-      $('.view-galleries').css("height", eventHeight);
-      $('.view-galleries-scroll').css("height", eventHeight);
+    if ($('.view-galleries').length) {
+        var numGalls = $('.view-box-gallery').length;
+        var eventHeight = $('.view-box-gallery').outerHeight(true);
+        var eventsWidth = $('.view-galleries').outerWidth(true);
+        $('.view-galleries-scroll').css("width", eventsWidth + 18);
+        if (numGalls <= 3) {
+            $('.view-galleries').css("height", eventHeight);
+            $('.view-galleries-scroll').css("height", eventHeight);
+        } else if (numGalls > 3 && numGalls <= 6) {
+            $('.view-galleries').css("height", eventHeight * 2);
+            $('.view-galleries-scroll').css("height", eventHeight * 2);
+        } else if (numGalls > 7) {
+            $('.view-galleries').css("height", eventHeight * 3);
+            $('.view-galleries-scroll').css("height", eventHeight * 3);
+        }
+        if (numGalls > 9) {
+            bounceDownArrow();
+        }
     }
-    else if (numGalls > 3 && numGalls <= 6) {
-      $('.view-galleries').css("height", eventHeight*2);
-      $('.view-galleries-scroll').css("height", eventHeight*2);
-    }
-    else if (numGalls > 7) {
-      $('.view-galleries').css("height", eventHeight*3);
-      $('.view-galleries-scroll').css("height", eventHeight*3);
-    }
-    if (numGalls > 9) {
-      bounceDownArrow();
-    }
-  }
 };
 
 /************ switch between tabs on invites page ******************************/
 var openTab = function() {
 
-  if ($('.tab-bar').length) {
-    $('.tab-bar li').first().addClass( "active-tab" );
-    $('.view-invites-received').hide();
+    if ($('.tab-bar').length) {
+        $('.tab-bar li').first().addClass("active-tab");
+        $('.view-invites-received').hide();
 
-    $('.tab-bar li').click(
-      function() {
-        $(this).addClass( "active-tab" );
-        $(this).siblings().removeClass( "active-tab" );
-        if ($(this).attr('id') == "sent-inv") {
-          $('.view-invites-sent').show();
-          $('.view-invites-received').hide();
-        }
-        else if ($(this).attr('id') == "rec-inv") {
-          $('.view-invites-sent').hide();
-          $('.view-invites-received').show();
-        }
-      });
-  }
+        $('.tab-bar li').click(
+            function() {
+                $(this).addClass("active-tab");
+                $(this).siblings().removeClass("active-tab");
+                if ($(this).attr('id') == "sent-inv") {
+                    $('.view-invites-sent').show();
+                    $('.view-invites-received').hide();
+                } else if ($(this).attr('id') == "rec-inv") {
+                    $('.view-invites-sent').hide();
+                    $('.view-invites-received').show();
+                }
+            });
+    }
 };
 
 
 /************ calculate height of invites wrappers ******************************/
 var calcViewInvitesHeight = function() {
-  var invitesSentHeight;
-  var invitesSentWidth;
-  var numInvitesSent;
+    var invitesSentHeight;
+    var invitesSentWidth;
+    var numInvitesSent;
 
-  if ($('.view-invites-sent').length) {
-    numInvitesSent = $('.view-invites-sent .artist-invite').length;
+    if ($('.view-invites-sent').length) {
+        numInvitesSent = $('.view-invites-sent .artist-invite').length;
 
-    if ($('.view-invites-sent').is(':visible')) {
-      invitesSentHeight = $('.view-invites-sent .artist-invite').outerHeight(true);
-      invitesSentWidth = $('.view-invites-sent').outerWidth(true);
-    }
-    else {
-      invitesSentHeight = $('.view-invites-received .artist-invite').outerHeight(true);
-      invitesSentWidth = $('.view-invites-received').outerWidth(true);
-    }
-
-      $('.view-invites-sent-scroll').css("width", invitesSentWidth + 18);
-
-    if (numInvitesSent <= 5) {
-      for (i = 1; i < 5; i++) {
-        if (numInvitesSent == i) {
-          $('.view-invites-sent').css("height", invitesSentHeight*i );
-          $('.view-invites-sent-scroll').css("height", invitesSentHeight*i );
+        if ($('.view-invites-sent').is(':visible')) {
+            invitesSentHeight = $('.view-invites-sent .artist-invite').outerHeight(true);
+            invitesSentWidth = $('.view-invites-sent').outerWidth(true);
+        } else {
+            invitesSentHeight = $('.view-invites-received .artist-invite').outerHeight(true);
+            invitesSentWidth = $('.view-invites-received').outerWidth(true);
         }
-      }
-    }
-    else {
-      $('.view-invites-sent').css("height", invitesSentHeight*5);
-      $('.view-invites-sent-scroll').css("height", invitesSentHeight*5);
-      bounceDownArrow();
-    }
-  }
 
-  if ($('.view-invites-received').length) {
+        $('.view-invites-sent-scroll').css("width", invitesSentWidth + 18);
 
-    var numInvitesRecd = $('.view-invites-received .artist-invite').length;
-    var invitesRecdHeight;
-    var invitesRecdWidth;
-
-    if ($('.view-invites-received').is(':visible')) {
-      invitesRecdHeight = $('.view-invites-received .artist-invite').outerHeight(true);
-      invitesRecdWidth = $('.view-invites-received').outerWidth(true);
-    }
-    else {
-      invitesRecdHeight = $('.view-invites-sent .artist-invite').outerHeight(true);
-      invitesRecdWidth = $('.view-invites-sent').outerWidth(true);
-    }
-      $('.view-invites-received-scroll').css("width", invitesRecdWidth + 18);
-    if (numInvitesRecd <= 5) {
-      for (i = 1; i < 5; i++) {
-        if (numInvitesSent === i) {
-          $('.view-invites-received').css("height", invitesRecdHeight*i);
-          $('.view-invites-received-scroll').css("height", invitesRecdHeight*i);
+        if (numInvitesSent <= 5) {
+            for (i = 1; i < 5; i++) {
+                if (numInvitesSent == i) {
+                    $('.view-invites-sent').css("height", invitesSentHeight * i);
+                    $('.view-invites-sent-scroll').css("height", invitesSentHeight * i);
+                }
+            }
+        } else {
+            $('.view-invites-sent').css("height", invitesSentHeight * 5);
+            $('.view-invites-sent-scroll').css("height", invitesSentHeight * 5);
+            bounceDownArrow();
         }
-      }
     }
-    else {
-      $('.view-invites-received').css("height", invitesRecdHeight*5);
-      $('.view-invites-received-scroll').css("height", invitesRecdHeight*5);
-      bounceDownArrowRecd();
+
+    if ($('.view-invites-received').length) {
+
+        var numInvitesRecd = $('.view-invites-received .artist-invite').length;
+        var invitesRecdHeight;
+        var invitesRecdWidth;
+
+        if ($('.view-invites-received').is(':visible')) {
+            invitesRecdHeight = $('.view-invites-received .artist-invite').outerHeight(true);
+            invitesRecdWidth = $('.view-invites-received').outerWidth(true);
+        } else {
+            invitesRecdHeight = $('.view-invites-sent .artist-invite').outerHeight(true);
+            invitesRecdWidth = $('.view-invites-sent').outerWidth(true);
+        }
+        $('.view-invites-received-scroll').css("width", invitesRecdWidth + 18);
+        if (numInvitesRecd <= 5) {
+            for (i = 1; i < 5; i++) {
+                if (numInvitesSent === i) {
+                    $('.view-invites-received').css("height", invitesRecdHeight * i);
+                    $('.view-invites-received-scroll').css("height", invitesRecdHeight * i);
+                }
+            }
+        } else {
+            $('.view-invites-received').css("height", invitesRecdHeight * 5);
+            $('.view-invites-received-scroll').css("height", invitesRecdHeight * 5);
+            bounceDownArrowRecd();
+        }
     }
-  }
 };
-
 /************ bounce downwards arrow to indicate scrolling possible ******************************/
 var bounceDownArrow = function() {
-  if ($('.down-arrow').length) {
-    $('.events-wrapper').hover(
-      function() {
-        $('.down-arrow').addClass( "active" );
-      }, function() {
-        $('.down-arrow').removeClass( "active" );
-      }
-    );
-    $('.follows-wrapper').hover(
-      function() {
-        $('.down-arrow').addClass( "active" );
-      }, function() {
-        $('.down-arrow').removeClass( "active" );
-      }
-    );
-    $('.galleries-wrapper').hover(
-      function() {
-        $('.down-arrow').addClass( "active" );
-      }, function() {
-        $('.down-arrow').removeClass( "active" );
-      }
-    );
-    $('.view-invites-sent').hover(
-      function() {
-        $('.down-arrow').addClass( "active" );
-      }, function() {
-        $('.down-arrow').removeClass( "active" );
-      }
-    );
-    $('.product-cat-wrapper').hover(
-      function() {
-        $('.down-arrow').addClass( "active" );
-      }, function() {
-        $('.down-arrow').removeClass( "active" );
-      }
-    );
-    if ($(window).width() < 1000) {
-        $('.down-arrow').addClass( "active" );
+    if ($('.down-arrow').length) {
+        $('.events-wrapper').hover(
+            function() {
+                $('.down-arrow').addClass("active");
+            },
+            function() {
+                $('.down-arrow').removeClass("active");
+            }
+        );
+        $('.follows-wrapper').hover(
+            function() {
+                $('.down-arrow').addClass("active");
+            },
+            function() {
+                $('.down-arrow').removeClass("active");
+            }
+        );
+        $('.galleries-wrapper').hover(
+            function() {
+                $('.down-arrow').addClass("active");
+            },
+            function() {
+                $('.down-arrow').removeClass("active");
+            }
+        );
+        $('.view-invites-sent').hover(
+            function() {
+                $('.down-arrow').addClass("active");
+            },
+            function() {
+                $('.down-arrow').removeClass("active");
+            }
+        );
+        $('.product-cat-wrapper').hover(
+            function() {
+                $('.down-arrow').addClass("active");
+            },
+            function() {
+                $('.down-arrow').removeClass("active");
+            }
+        );
+        if ($(window).width() < 1000) {
+            $('.down-arrow').addClass("active");
+        } else {
+            $('.down-arrow').removeClass("active");
+        }
     }
-    else {
-      $('.down-arrow').removeClass( "active" );
-    }
-  }
 };
-
 /************ for invites sent ******************************/
 var bounceDownArrowSent = function() {
-  $('.view-invites-sent').hover(
-    function() {
-      $('.down-arrow.sent-arrow').addClass( "active" );
-    }, function() {
-      $('.down-arrow.sent-arrow').removeClass( "active" );
-    }
-  );
+    $('.view-invites-sent').hover(
+        function() {
+            $('.down-arrow.sent-arrow').addClass("active");
+        },
+        function() {
+            $('.down-arrow.sent-arrow').removeClass("active");
+        }
+    );
 };
-
 /************ for invites received ******************************/
 var bounceDownArrowRecd = function() {
-  $('.view-invites-received').hover(
-    function() {
-      $('.down-arrow.recd-arrow').addClass( "active" );
-    }, function() {
-      $('.down-arrow.recd-arrow').removeClass( "active" );
-    }
-  );
+    $('.view-invites-received').hover(
+        function() {
+            $('.down-arrow.recd-arrow').addClass("active");
+        },
+        function() {
+            $('.down-arrow.recd-arrow').removeClass("active");
+        }
+    );
 };
-
 var addImagesSelect = function() {
-  if ($('#select-artists').length) {
-    $("#select-artists").msDropDown();
-  }
+    if ($('#select-artists').length) {
+        $("#select-artists").msDropDown();
+    }
 };
-
 var lightenYourPrice = function() {
-  $(".your-price").keyup(function(){
-       if ($(this).val() !== ''){
-           $(this).css('background-color', '#fff');
-       } else {
-           $(this).css('background-color', '#2d2d2d');
-       }
-   });
+    $(".your-price").keyup(function() {
+        if ($(this).val() !== '') {
+            $(this).css('background-color', '#fff');
+        } else {
+            $(this).css('background-color', '#2d2d2d');
+        }
+    });
 };
-
 var checkReqPrice = function() {
     $('#req-price').click(function() {
         var cb1 = $('#req-price').is(':checked');
         $('#prod-your-price').prop('disabled', (cb1));
     });
 };
-
 var yearSpinner = function() {
-  if ($('#product-year').length) {
-    var spinner = $( "#product-year" ).spinner({ min: new Date().getFullYear() - 100, max: new Date().getFullYear() });
-  }
-};
-
-var showMyProdBtns = function() {
-  $(".product-img2.my-prod-img").mouseover(function() {
-    $(this).parent().find(".my-product-buttons-wrapper").show();
-  });
-  $(".product-img2.my-prod-img").mouseout(function() {
-    $(this).parent().find(".my-product-buttons-wrapper").hide();
-  });
-};
-
-var showProductDesc = function(e) {
-  var id = e.id;
-  id = id.replace("productbox_", "");
-  $(".my-product-description-box").each(function() {
-    if ($(this).attr("id") != $("#descriptionbox_" + id)) {
-      $(this).hide();
+    if ($('#product-year').length) {
+        var spinner = $("#product-year").spinner({
+            min: new Date().getFullYear() - 100,
+            max: new Date().getFullYear()
+        });
     }
-  });
-$("#descriptionbox_" + id).parent().show();
-$("#descriptionbox_" + id).show();
-
-if ($(window).width() < 1000) {
-  $('body').css('overflow-y', 'hidden');
-}
-
 };
+var showMyProdBtns = function() {
+    $(".product-img2.my-prod-img").mouseover(function() {
+        $(this).parent().find(".my-product-buttons-wrapper").show();
+    });
+    $(".product-img2.my-prod-img").mouseout(function() {
+        $(this).parent().find(".my-product-buttons-wrapper").hide();
+    });
+};
+var showProductDesc = function(e) {
+    var id = e.id;
+    id = id.replace("productbox_", "");
+    $(".my-product-description-box").each(function() {
+        if ($(this).attr("id") != $("#descriptionbox_" + id)) {
+            $(this).hide();
+        }
+    });
+    $("#descriptionbox_" + id).parent().show();
+    $("#descriptionbox_" + id).show();
 
-
+    if ($(window).width() < 1000) {
+        $('body').css('overflow-y', 'hidden');
+    }
+};
 var hideProductDesc = function(e) {
-  $(e).parent().hide();
-  $(e).parent().parent().hide();
-  $('body').css('overflow', 'auto');
-  if ($(window).width() < 1000) {
-    $('body').css('overflow-y', 'visible');
-  }
+    $(e).parent().hide();
+    $(e).parent().parent().hide();
+    $('body').css('overflow', 'auto');
+    if ($(window).width() < 1000) {
+        $('body').css('overflow-y', 'visible');
+    }
 };
-
-
-var showEditRelatedItemMsg = function () {
-  if ($('.product-edit-btn').length) {
-    $('.product-edit-btn').mouseover(function() {
-      $(this).parent().parent().parent().find(".edit-notification").show();
-    });
-    $('.product-edit-btn').mouseout(function() {
-      $(this).parent().parent().parent().find(".edit-notification").hide();
-    });
-  }
+var showEditRelatedItemMsg = function() {
+    if ($('.product-edit-btn').length) {
+        $('.product-edit-btn').mouseover(function() {
+            $(this).parent().parent().parent().find(".edit-notification").show();
+        });
+        $('.product-edit-btn').mouseout(function() {
+            $(this).parent().parent().parent().find(".edit-notification").hide();
+        });
+    }
 };
-
-var showDeleteItemMsg = function () {
-  if ($('.product-delete-btn').length) {
-    $('.product-delete-btn').mouseover(function() {
-      $(this).parent().parent().parent().find(".delete-notification").show();
-    });
-    $('.product-delete-btn').mouseout(function() {
-      $(this).parent().parent().parent().find(".delete-notification").hide();
-    });
-  }
+var showDeleteItemMsg = function() {
+    if ($('.product-delete-btn').length) {
+        $('.product-delete-btn').mouseover(function() {
+            $(this).parent().parent().parent().find(".delete-notification").show();
+        });
+        $('.product-delete-btn').mouseout(function() {
+            $(this).parent().parent().parent().find(".delete-notification").hide();
+        });
+    }
 };
-
-var hoverOnProductButtons = function () {
+var hoverOnProductButtons = function() {
     $('.my-product-buttons-wrapper').mouseover(function() {
-      $(this).parent().attr('onclick','');
+        $(this).parent().attr('onclick', '');
     });
     $('.my-product-buttons-wrapper').mouseout(function() {
-      $(this).parent().attr('onclick','showProductDesc(this)');
+        $(this).parent().attr('onclick', 'showProductDesc(this)');
     });
 };
-
 var deleteProduct = function(e) {
-  $("#product-delete-popup").show();
-  $("#delete_prod_id").val($(e).parent().parent().attr("id"));
-  $("#prid").val($(e).parent().parent().attr("data-uid"));
+    $("#product-delete-popup").show();
+    $("#delete_prod_id").val($(e).parent().parent().attr("id"));
+    $("#prid").val($(e).parent().parent().attr("data-uid"));
 };
-
 var hideDeleteProduct = function() {
-  $("#product-delete-popup").hide();
-  $("#delete_prod_id").val("");
-  $("#prid").val("");
+    $("#product-delete-popup").hide();
+    $("#delete_prod_id").val("");
+    $("#prid").val("");
 };
-
 var confirmDeleteProduct = function() {
-  $("#product-delete-popup").hide();
-  $("#product-delete-confirmation-popup").show();
+    $("#product-delete-popup").hide();
+    $("#product-delete-confirmation-popup").show();
 
 };
 var hideDeleteConfirm = function(e) {
-  $("#product-delete-confirmation-popup").hide();
-  var p_box = $("#delete_prod_id").val();
-  $('#' + p_box).attr("onclick", "");
-  $('#' + p_box).html('<div class="overlay_product_delete"><h5>Pending deletion</h5></div>');
-  $('#' + p_box).css('cursor', 'auto');
-  if ($('#' + p_box).parent().is( "a" ) ) {
-    $('#' + p_box).unwrap("a");
-  }
-  $("#delete_prod_id").val("");
+    $("#product-delete-confirmation-popup").hide();
+    var p_box = $("#delete_prod_id").val();
+    $('#' + p_box).attr("onclick", "");
+    $('#' + p_box).html('<div class="overlay_product_delete"><h5>Pending deletion</h5></div>');
+    $('#' + p_box).css('cursor', 'auto');
+    if ($('#' + p_box).parent().is("a")) {
+        $('#' + p_box).unwrap("a");
+    }
+    $("#delete_prod_id").val("");
 };
-
 var previewBackProduct = function(e) {
-  var bg_img = $(e).css("background");
-  var lg_bg = $(e).parent().find('.pdb-main-img').css("background");
-  $(e).css("background", lg_bg);
-  $('#bgPreviewImgVal').val(bg_img);
-  $(e).parent().find('.pdb-main-img').css("background", $('#bgPreviewImgVal').val());
+    var bg_img = $(e).css("background");
+    var lg_bg = $(e).parent().find('.pdb-main-img').css("background");
+    $(e).css("background", lg_bg);
+    $('#bgPreviewImgVal').val(bg_img);
+    $(e).parent().find('.pdb-main-img').css("background", $('#bgPreviewImgVal').val());
 
 };
-
 var printDimensions = function() {
-  if ($(".art-print-product-home").length) {
-    $(".art-print-product-home").each(function(index) {
-        if (this.width < this.height) {
-          $(this).css({"width": "auto", "height": "65%"});
-        }
-        else if (this.width > this.height) {
-          $(this).css({"width": "65%", "height": "auto"});
-        }
-        else if (this.width === this.height) {
-          $(this).css({"width": "auto", "height": "65%"});
-        }
-        $(this).css("display", "inline-block");
-    });
-  }
+    if ($(".art-print-product-home").length) {
+        $(".art-print-product-home").each(function(index) {
+            if (this.width < this.height) {
+                $(this).css({
+                    "width": "auto",
+                    "height": "65%"
+                });
+            } else if (this.width > this.height) {
+                $(this).css({
+                    "width": "65%",
+                    "height": "auto"
+                });
+            } else if (this.width === this.height) {
+                $(this).css({
+                    "width": "auto",
+                    "height": "65%"
+                });
+            }
+            $(this).css("display", "inline-block");
+        });
+    }
 };
 // ------------ prepare my products for mobile display
 var checkDeviceForMyProducts = function() {
-  if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
-    if ($(".my-prod-img").length) {
-      toggleProductLinks("off");
+    if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+        if ($(".my-prod-img").length) {
+            toggleProductLinks("off");
+        }
     }
-  }
 };
 // ------------- show / hide links etc for my products on resize and for mobile display
 var toggleProductLinks = function(e) {
-  if (e == "on") {
-    $(".my-prod-img").each(function(index) {
-      $(this).find(".product-edit-btn").show();
-      $(this).find(".my-product-buttons-wrapper").hide();
-      $(this).mouseout(function() {
-        $(this).parent().find(".my-product-buttons-wrapper").hide();
-      });
-    });
-  }
-  else if (e == "off") {
-    $(".my-prod-img").each(function(index) {
+    if (e == "on") {
+        $(".my-prod-img").each(function(index) {
+            $(this).find(".product-edit-btn").show();
+            $(this).find(".my-product-buttons-wrapper").hide();
+            $(this).mouseout(function() {
+                $(this).parent().find(".my-product-buttons-wrapper").hide();
+            });
+        });
+    } else if (e == "off") {
+        $(".my-prod-img").each(function(index) {
 
-      $(this).find(".product-edit-btn").hide();
-      $(this).find(".my-product-buttons-wrapper").show();
-      $(this).off('mouseout');
-    });
-  }
+            $(this).find(".product-edit-btn").hide();
+            $(this).find(".my-product-buttons-wrapper").show();
+            $(this).off('mouseout');
+        });
+    }
 
 };
-
-
 /************ set up masonry layout for artworks featured in original art category ******************************/
 var masonryCatOgArtWorks = function() {
-  if ($('.cat-ogart-works-wrapper').length) {
-    $('.cat-ogart-works-wrapper').masonry({
-      // options
-      itemSelector: '.cat-ogart-work-container',
-      columnWidth: '.cat-ogart-work-container',
-      gutter: 25
-    });
-  }
+    if ($('.cat-ogart-works-wrapper').length) {
+        $('.cat-ogart-works-wrapper').masonry({
+            // options
+            itemSelector: '.cat-ogart-work-container',
+            columnWidth: '.cat-ogart-work-container',
+            gutter: 25
+        });
+    }
 };
 // ---------- this method is used by original art category
 var showCategoryProdButtons = function() {
-  $(".cat-ogart-work-container .product-img").mouseover(function() {
-    $(this).find(".my-product-cat-buttons-wrapper").show();
-  });
-  $(".cat-ogart-work-container .product-img").mouseout(function() {
-    $(this).find(".my-product-cat-buttons-wrapper").hide();
-  });
+    $(".cat-ogart-work-container .product-img").mouseover(function() {
+        $(this).find(".my-product-cat-buttons-wrapper").show();
+    });
+    $(".cat-ogart-work-container .product-img").mouseout(function() {
+        $(this).find(".my-product-cat-buttons-wrapper").hide();
+    });
 };
 // ---------- this method is used by original art category
-var showProdCatButtonsMobile =  function() {
-  if ($(".cat-ogart-work-container").length) {
-    if ($(window).width() <= 1000 ) {
-      $(".cat-ogart-work-container").find(".my-product-cat-buttons-wrapper").show();
-      $(".cat-ogart-work-container .product-img").off('mouseout');
+var showProdCatButtonsMobile = function() {
+    if ($(".cat-ogart-work-container").length) {
+        if ($(window).width() <= 1000) {
+            $(".cat-ogart-work-container").find(".my-product-cat-buttons-wrapper").show();
+            $(".cat-ogart-work-container .product-img").off('mouseout');
+        } else if ($(window).width() > 1000) {
+            $(".cat-ogart-work-container").find(".my-product-cat-buttons-wrapper").hide();
+            $(".cat-ogart-work-container .product-img").mouseout(function() {
+                $(".cat-ogart-work-container .product-img").find(".my-product-cat-buttons-wrapper").hide();
+            });
+        }
     }
-    else if ($(window).width() > 1000 ) {
-      $(".cat-ogart-work-container").find(".my-product-cat-buttons-wrapper").hide();
-      $(".cat-ogart-work-container .product-img").mouseout(function() {
-        $(".cat-ogart-work-container .product-img").find(".my-product-cat-buttons-wrapper").hide();
-      });
+};
+var showOgArtFilterMobile = function() {
+    if ($('.toggleFilterPanel').length) {
+        $('.toggleFilterPanel').on('click', function(e) {
+            $('#og_art_filter_wrapper').slideDown("slow", function() {
+                $('.toggleFilterPanel').hide();
+                $('.toggleFilterPanelUp').show();
+            });
+        });
     }
-  }
 };
-
-var showOgArtFilterMobile = function () {
-  if ($('.toggleFilterPanel').length) {
-      $('.toggleFilterPanel').on('click', function(e) {
-        $('#og_art_filter_wrapper').slideDown("slow", function() {
-          $('.toggleFilterPanel').hide();
-          $('.toggleFilterPanelUp').show();
+var hideOgArtFilterMobile = function() {
+    if ($('.toggleFilterPanel').length) {
+        $('.toggleFilterPanelUp').on('click', function(e) {
+            $('#og_art_filter_wrapper').slideUp("slow", function() {
+                $('.toggleFilterPanel').show();
+                $('.toggleFilterPanelUp').hide();
+            });
         });
-      });
-  }
+    }
 };
-
-var hideOgArtFilterMobile = function () {
-  if ($('.toggleFilterPanel').length) {
-      $('.toggleFilterPanelUp').on('click', function(e) {
-        $('#og_art_filter_wrapper').slideUp("slow", function() {
-          $('.toggleFilterPanel').show();
-          $('.toggleFilterPanelUp').hide();
-        });
-      });
-  }
-};
-
 var addProductToWishlist = function(e) {
-  $(e).parent().parent().find('.wishlist-msg').fadeIn().delay(2000).fadeOut();
-
+    $(e).parent().parent().find('.wishlist-msg').fadeIn().delay(2000).fadeOut();
 };
-
 var addProductToCart = function(e) {
-  $(e).parent().parent().find('.cart-msg').fadeIn().delay(2000).fadeOut();
+    $(e).parent().parent().find('.cart-msg').fadeIn().delay(2000).fadeOut();
 };
 // ---------- this method is used by all categories except original art category
 var showCategoryProdButtonsAll = function() {
-  if ($(".product-cat-wrapper").length) {
-    $(".column-3.box-product3").mouseover(function() {
-      $(this).find(".my-product-cat-buttons-wrapper").show();
-    });
-    $(".column-3.box-product3").mouseout(function() {
-      $(this).find(".my-product-cat-buttons-wrapper").hide();
-    });
-  }
+    if ($(".product-cat-wrapper").length) {
+        $(".column-3.box-product3").mouseover(function() {
+            $(this).find(".my-product-cat-buttons-wrapper").show();
+        });
+        $(".column-3.box-product3").mouseout(function() {
+            $(this).find(".my-product-cat-buttons-wrapper").hide();
+        });
+    }
 };
 // ---------- this method is used by all categories except original art category
-var showProdCatButtonsMobileAll =  function() {
-  if ($(".product-cat-wrapper").length) {
-    if ($(window).width() <= 1000 ) {
-      $(".column-3.box-product3").find(".my-product-cat-buttons-wrapper").show();
-      $(".column-3.box-product3").off('mouseout');
+var showProdCatButtonsMobileAll = function() {
+    if ($(".product-cat-wrapper").length) {
+        if ($(window).width() <= 1000) {
+            $(".column-3.box-product3").find(".my-product-cat-buttons-wrapper").show();
+            $(".column-3.box-product3").off('mouseout');
+        } else if ($(window).width() > 1000) {
+            $(".column-3.box-product3").find(".my-product-cat-buttons-wrapper").hide();
+            $(".column-3.box-product3").mouseout(function() {
+                $(".column-3.box-product3").find(".my-product-cat-buttons-wrapper").hide();
+            });
+        }
     }
-    else if ($(window).width() > 1000 ) {
-      $(".column-3.box-product3").find(".my-product-cat-buttons-wrapper").hide();
-      $(".column-3.box-product3").mouseout(function() {
-        $(".column-3.box-product3").find(".my-product-cat-buttons-wrapper").hide();
-      });
-    }
-  }
 };
 var productDimensions = function() {
-  if ($(".cat-product-img").length) {
-    $(".cat-product-img").each(function(index) {
-        if (this.width < this.height) {
-          $(this).css({"width": "auto", "height": "65%"});
-        }
-        else if (this.width > this.height) {
-          $(this).css({"width": "65%", "height": "auto"});
-        }
-        else if (this.width === this.height) {
-          $(this).css({"width": "auto", "height": "65%"});
-        }
-        $(this).css("display", "inline-block");
-    });
-  }
+    if ($(".cat-product-img").length) {
+        $(".cat-product-img").each(function(index) {
+            if (this.width < this.height) {
+                $(this).css({
+                    "width": "auto",
+                    "height": "65%"
+                });
+            } else if (this.width > this.height) {
+                $(this).css({
+                    "width": "65%",
+                    "height": "auto"
+                });
+            } else if (this.width === this.height) {
+                $(this).css({
+                    "width": "auto",
+                    "height": "65%"
+                });
+            }
+            $(this).css("display", "inline-block");
+        });
+    }
 };
-
 var addProductToWishlistIndividual = function(e) {
-  $(e).parent().parent().find('.wishlist-msg-individual').fadeIn().delay(2000).fadeOut();
-
+    $(e).parent().parent().find('.wishlist-msg-individual').fadeIn().delay(2000).fadeOut();
 };
-
 var addProductToCartIndividual = function(e) {
-  $(e).parent().parent().find('.cart-msg-individual').fadeIn().delay(2000).fadeOut();
+    $(e).parent().parent().find('.cart-msg-individual').fadeIn().delay(2000).fadeOut();
 };
-
 var showPriceEnq = function() {
-  $("#price-enquiry-panel").show();
+    $("#price-enquiry-panel").show();
+    if ($(window).width() < 1000) {
+        $('body').css('overflow-y', 'hidden');
+    }
 };
-
 var closePriceEnq = function() {
-  $("#price-enquiry-panel").hide();
+    $("#price-enquiry-panel").hide();
+    $("#enq_nature").val("");
+    $("#enq_msg").val("");
+    $("#enq_mail").val("");
+    $('body').css('overflow', 'auto');
+    if ($(window).width() < 1000) {
+        $('body').css('overflow-y', 'visible');
+    }
 };
-
 var openVideoPanel = function() {
-  $("#video-panel").show();
+    $("#video-panel").show();
+    if ($(window).width() < 1000) {
+        $('body').css('overflow-y', 'hidden');
+    }
 };
-
 var closeVideoPanel = function() {
-  $("#video-panel").hide();
+    $("#video-panel").hide();
+    var video = $("#og-art-vid").attr("src");
+    $("#og-art-vid").attr("src", "");
+    $("#og-art-vid").attr("src", video);
+    $('body').css('overflow', 'auto');
+    if ($(window).width() < 1000) {
+        $('body').css('overflow-y', 'visible');
+    }
 };
-
 var quantitySpinner = function() {
-  if ($('#product-quantity').length) {
-    var spinner = $( "#product-quantity" ).spinner({ min: 1, max: 100000});
-  }
+    if ($('#product-quantity').length) {
+        var spinner = $("#product-quantity").spinner({
+            min: 1,
+            max: 100000
+        });
+    }
 };
 var previewBackProductIndividual = function(e) {
-  var imgsrc = $(e).find(".cat-product-img").attr("src");
-  var imgsrc2 = $(".individual-main-img").find(".cat-product-img").attr("src");
-  $(e).find(".cat-product-img").attr("src", imgsrc2);
-  $('#bgPreviewImgVal').val(imgsrc);
-  $(".individual-main-img").find(".cat-product-img").attr("src", imgsrc);
-  productDimensions();
+    var imgsrc = $(e).find(".cat-product-img").attr("src");
+    var imgsrc2 = $(".individual-main-img").find(".cat-product-img").attr("src");
+    $(e).find(".cat-product-img").attr("src", imgsrc2);
+    $('#bgPreviewImgVal').val(imgsrc);
+    $(".individual-main-img").find(".cat-product-img").attr("src", imgsrc);
+    productDimensions();
 };
 
 var previewBackPGreetingIndividual = function(e) {
-  var imgsrc = $(e).find(".cat-product-img").attr("src");
-  var imgsrc2 = $("#greeting-p").find(".cat-product-img").attr("src");
-  $(e).find(".cat-product-img").attr("src", imgsrc2);
-  $('#bgPreviewImgVal').val(imgsrc);
-  $("#greeting-p").find(".cat-product-img").attr("src", imgsrc);
-  if ($("#greeting-p").attr("style") === 'background: url("images/greetingcard-back-portrait-blank.png") no-repeat center 42% / auto 68%, linear-gradient( #eeebeb, #f9f9f9); position: relative;') {
-    $("#greeting-p").attr("style", "background: linear-gradient( #eeebeb, #f9f9f9); position: relative;");
-  }
-  else if ($("#greeting-p").attr("style") === "background: linear-gradient( #eeebeb, #f9f9f9); position: relative;") {
-    $("#greeting-p").attr("style", 'background: url("images/greetingcard-back-portrait-blank.png") no-repeat center 42% / auto 68%, linear-gradient( #eeebeb, #f9f9f9); position: relative;');
-  }
-  productDimensions();
+    var imgsrc = $(e).find(".cat-product-img").attr("src");
+    var imgsrc2 = $("#greeting-p").find(".cat-product-img").attr("src");
+    $(e).find(".cat-product-img").attr("src", imgsrc2);
+    $('#bgPreviewImgVal').val(imgsrc);
+    $("#greeting-p").find(".cat-product-img").attr("src", imgsrc);
+    if ($("#greeting-p").attr("style") === 'background: url("images/greetingcard-back-portrait-blank.png") no-repeat center 42% / auto 68%, linear-gradient( #eeebeb, #f9f9f9); position: relative;') {
+        $("#greeting-p").attr("style", "background: linear-gradient( #eeebeb, #f9f9f9); position: relative;");
+    } else if ($("#greeting-p").attr("style") === "background: linear-gradient( #eeebeb, #f9f9f9); position: relative;") {
+        $("#greeting-p").attr("style", 'background: url("images/greetingcard-back-portrait-blank.png") no-repeat center 42% / auto 68%, linear-gradient( #eeebeb, #f9f9f9); position: relative;');
+    }
+    productDimensions();
 };
 var previewBackLSGreetingIndividual = function(e) {
-  var imgsrc = $(e).find(".cat-product-img").attr("src");
-  var imgsrc2 = $("#greeting-ls").find(".cat-product-img").attr("src");
-  $(e).find(".cat-product-img").attr("src", imgsrc2);
-  $('#bgPreviewImgVal').val(imgsrc);
-  $("#greeting-ls").find(".cat-product-img").attr("src", imgsrc);
-  if ($("#greeting-ls").attr("style") === 'background: url("images/greetingcard-back-blank.png") no-repeat 55% 49% / 68.5% auto, linear-gradient( #eeebeb, #f9f9f9); position: relative;') {
-    $("#greeting-ls").attr("style", "background: linear-gradient( #eeebeb, #f9f9f9); position: relative;");
-  }
-  else if ($("#greeting-ls").attr("style") === "background: linear-gradient( #eeebeb, #f9f9f9); position: relative;") {
-    $("#greeting-ls").attr("style", 'background: url("images/greetingcard-back-blank.png") no-repeat 55% 49% / 68.5% auto, linear-gradient( #eeebeb, #f9f9f9); position: relative;');
-  }
-  productDimensions();
+    var imgsrc = $(e).find(".cat-product-img").attr("src");
+    var imgsrc2 = $("#greeting-ls").find(".cat-product-img").attr("src");
+    $(e).find(".cat-product-img").attr("src", imgsrc2);
+    $('#bgPreviewImgVal').val(imgsrc);
+    $("#greeting-ls").find(".cat-product-img").attr("src", imgsrc);
+    if ($("#greeting-ls").attr("style") === 'background: url("images/greetingcard-back-blank.png") no-repeat 55% 49% / 68.5% auto, linear-gradient( #eeebeb, #f9f9f9); position: relative;') {
+        $("#greeting-ls").attr("style", "background: linear-gradient( #eeebeb, #f9f9f9); position: relative;");
+    } else if ($("#greeting-ls").attr("style") === "background: linear-gradient( #eeebeb, #f9f9f9); position: relative;") {
+        $("#greeting-ls").attr("style", 'background: url("images/greetingcard-back-blank.png") no-repeat 55% 49% / 68.5% auto, linear-gradient( #eeebeb, #f9f9f9); position: relative;');
+    }
+    productDimensions();
+};
+
+var showZoomedProduct = function() {
+    $("#zoomed-img").show();
+    if ($(window).width() < 1000) {
+        $('body').css('overflow-y', 'hidden');
+    }
+};
+
+var closeZoomedProduct = function() {
+    $("#zoomed-img").hide();
+    $('body').css('overflow', 'auto');
+    if ($(window).width() < 1000) {
+        $('body').css('overflow-y', 'visible');
+    }
+};
+
+// ---------- this method is used by individual art print and original art for zooming images
+var pswpElement = $('.pswp')[0];
+var openLightBox = function() {
+    console.log("aa");
+    var $pic = $('#full-size-img'),
+        getItems = function() {
+            var items = [];
+            $pic.each(function() {
+                var $href = $(this).attr('src'),
+                    $width = $(this).width(),
+                    $height = $(this).height();
+                var item = {
+                    src: $href,
+                    w: $width,
+                    h: $height
+                };
+                items.push(item);
+            });
+            return items;
+        };
+    var items = getItems();
+    var options = {
+        index: 1,
+        bgOpacity: 0.7,
+        shareEl: false,
+        fullscreenEl: false,
+        showHideOpacity: true
+    };
+
+    var lightBox = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, options);
+    lightBox.init();
+    return lightBox;
 };
