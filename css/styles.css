@@ -7414,7 +7414,7 @@ input#product-year {
   margin: 0;
   text-transform: uppercase;
   line-height: 20px;
-  width: 205px;
+  width: 175px;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -9025,7 +9025,7 @@ li.ui-timepicker-selected .ui-timepicker-duration,
       width: 33.5%;
     }
     .title-indv-rltd-item {
-      width: 135px;
+      width: 100px;
     }
     .art-price-enquiry {
       width: 440px;
@@ -9034,7 +9034,7 @@ li.ui-timepicker-selected .ui-timepicker-duration,
       top: 15%;
       left: 50%;
       margin-left: -220px;
-      
+
     }
     .img-fullsize-wrapper {
       width: 925px;
@@ -10736,7 +10736,7 @@ li.ui-timepicker-selected .ui-timepicker-duration,
     width: 35%;
   }
   .title-indv-rltd-item {
-    width: 165px;
+    width: 135px;
   }
   .video-container-wrapper {
     width: 65%;
@@ -12613,7 +12613,7 @@ li.ui-timepicker-selected .ui-timepicker-duration,
       margin-right: 0;
     }
     .title-indv-rltd-item {
-      width: 135px;
+      width: 105px;
     }
     .video-container-wrapper {
       width: 85%;
