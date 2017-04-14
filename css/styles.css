@@ -7491,6 +7491,136 @@ padding-top: 30px; height: 0; overflow: hidden;
 #og-art-wl-msg {
   top: 26%;
 }
+.gmail-icon {
+  width: 55px;
+  height: auto;
+  margin-bottom: 20px;
+}
+.subscribe-cell {
+    display: table-cell;
+    vertical-align: middle;
+}
+.subscribe-cell input {
+    font-size: 0.9em;
+    height: 30px;
+    border: none;
+    background: #fff;
+    width: 400px;
+    color: #333;
+    padding-left: 10px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border: 1px solid #acacac;
+    border-right: none;
+}
+.subscribe-cell button {
+    display: block;
+    border: none;
+    background-color: #f75d4c;
+    height: 30px;
+    vertical-align: top;
+    cursor: pointer;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    width: 100px;
+    color: #fff;
+}
+.referral-bar {
+    width: 95%;
+    position: relative;
+    color: #fff;
+    overflow: hidden;
+    border: 1px solid #000;
+    background: #fff;
+    border-radius: 5px;
+    height: 10px;
+}
+.referral-range-wrapper {
+  position: relative;
+  margin-top: 65px;
+  margin-bottom: 65px;
+  margin-left: 10px;
+}
+.referral-range {
+    position: absolute;
+    top: 0;
+    left:0;
+    z-index: 1;
+    display: block;
+    border: 0;
+    background-position: 0 0;
+    border: 1px solid #f75d4c;
+    background: #f75d4c;
+    border-top-right-radius: : 0;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 0;
+    height: 10px;
+    z-index: 2;
+}
+.ball-10, .ball-20, .ball-30, .ball-40, .ball-50  {
+  position: absolute;
+  z-index: 3;
+  width:50px;
+  height: 50px;
+  border-radius: 50%;
+  top: -20px;
+  border: 1px solid #f75d4c;
+  background: #f75d4c;
+  color: #fff;
+  font-size: 1.2em;
+  font-weight: bold;
+  line-height: 2.5em;
+  vertical-align: middle;
+}
+.ball-empty {
+  background: #fff;
+  color: #000;
+  border-width: 2px;
+}
+.referHowWorks {
+  width: 70%;
+  margin: 20px auto 40px auto;
+  display: block;
+  float: none;
+}
+.artist-invite.border-tb {
+  border: 0;
+  border-bottom: 1px solid #acacac;
+  margin-bottom: 10px;
+  border-left: none;
+  border-right: none;
+  border-radius: 0;
+}
+.artist-invite.border-tb:first-of-type {
+
+  border-top: 1px solid #acacac;
+  padding-top: 20px;
+
+}
+
+.invite-btns-wrapper.margin-e {
+  margin-top: 5px;
+}
+
+.refer-share-icons li {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0 3px;
+}
+.referral-half-panel {
+  width: 50%;
+  float: left;
+  padding-left: 60px;
+}
+.artist-invite.border-tb h4 {
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 900px;
+    text-align: left;
+}
 
 
 
@@ -7516,17 +7646,78 @@ padding-top: 30px; height: 0; overflow: hidden;
 
 
 
+.flipbook-viewport{
+	overflow:hidden;
+	width:100%;
+	height:100%;
+}
 
+.flipbook-viewport .container{
+	position:absolute;
+	top:50%;
+	left:50%;
+	margin:auto;
+}
 
+.flipbook-viewport .flipbook{
+	width:800px;
+	height:566px;
+	left:-400px;
+	top:-300px;
+}
 
+.flipbook-viewport .page{
+	width:400px;
+	height:566px;
+	background-color:white;
+	background-repeat:no-repeat;
+	background-size:100% 100%;
+}
 
+.flipbook .page{
+	-webkit-box-shadow:0 0 20px rgba(0,0,0,0.2);
+	-moz-box-shadow:0 0 20px rgba(0,0,0,0.2);
+	-ms-box-shadow:0 0 20px rgba(0,0,0,0.2);
+	-o-box-shadow:0 0 20px rgba(0,0,0,0.2);
+	box-shadow:0 0 20px rgba(0,0,0,0.2);
+}
 
+.flipbook-viewport .page img{
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	margin:0;
+}
 
+.flipbook-viewport .shadow{
+	-webkit-transition: -webkit-box-shadow 0.5s;
+	-moz-transition: -moz-box-shadow 0.5s;
+	-o-transition: -webkit-box-shadow 0.5s;
+	-ms-transition: -ms-box-shadow 0.5s;
 
-
-
-
-
+	-webkit-box-shadow:0 0 20px #ccc;
+	-moz-box-shadow:0 0 20px #ccc;
+	-o-box-shadow:0 0 20px #ccc;
+	-ms-box-shadow:0 0 20px #ccc;
+	box-shadow:0 0 20px #ccc;
+}
+.xIcon-white {
+  width: 35px;
+  height: 35px;
+  top: 20px;
+  right: 20px;
+  display: block;
+  cursor: pointer;
+  margin: 0;
+  float: none;
+  position: absolute;
+  background: url("../images/icons/close-white.png") no-repeat;
+  background-size: cover;
+  cursor: pointer;
+}
 
 .loader-process {
   color: #ffffff;
@@ -9042,6 +9233,33 @@ li.ui-timepicker-selected .ui-timepicker-duration,
     #og-art-wl-msg {
       top: 25%;
     }
+    .subscribe-cell input {
+        width: 300px;
+    }
+    .ball-10, .ball-20, .ball-30, .ball-40, .ball-50  {
+      width:40px;
+      height: 40px;
+      top: -15px;
+      font-size: 1.1em;
+      font-weight: bold;
+      line-height: 2.5em;
+      vertical-align: middle;
+    }
+    .referral-range-wrapper {
+      margin-top: 50px;
+      margin-bottom: 65px;
+      margin-left: 10px;
+    }
+    .invite-btns-wrapper.margin-e {
+      margin-top: 10px;
+    }
+    .referral-half-panel {
+      padding-left: 40px;
+    }
+    .artist-invite.border-tb h4 {
+        width: 600px;
+
+    }
 
 }
 
@@ -9621,6 +9839,7 @@ li.ui-timepicker-selected .ui-timepicker-duration,
     .bin img {
         height: 12px;
         vertical-align: middle;
+        margin-bottom: 5px;
     }
     .camera {
         min-width: 32px;
@@ -10781,6 +11000,63 @@ li.ui-timepicker-selected .ui-timepicker-duration,
     text-align: center;
     top: -5px;
   }
+  .referral-range-wrapper {
+    margin-left: 0;
+    margin-top: 20px;
+    margin-bottom: 40px;
+  }
+  .ball-10, .ball-20, .ball-30, .ball-40, .ball-50  {
+    width:35px;
+    height: 35px;
+    top: -12.5px;
+    font-size: 1.1em;
+    font-weight: bold;
+    line-height: 2.5em;
+    vertical-align: middle;
+  }
+  .referHowWorks {
+    width: 100%;
+    margin: 20px auto 10px auto;
+    display: block;
+    float: none;
+    text-align: left;
+  }
+  .invite-btns-wrapper.margin-e {
+    width: 170px;
+  }
+  .artist-invite .invite-btns-wrapper.margin-e .btn {
+    display: inline-block;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    text-align: right;
+  }
+  .artist-invite.border-tb h4 {
+    display: block;
+    line-height: 25px;
+    margin: 0;
+    font-size: 1em;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 200px;
+  }
+  .referral-half-panel {
+    width: 100%;
+    float: none;
+    margin-bottom: 30px;
+    padding-left: 0;
+  }
+  .referral-half-panel:nth-of-type(2) {
+      margin-bottom: 0;
+  }
+  .subscribe-cell {
+    margin-left: 20px;
+  }
+  .subscribe-cell input {
+    width: 360px;
+  }
+
+
 
 }
 
@@ -11353,6 +11629,7 @@ li.ui-timepicker-selected .ui-timepicker-duration,
     .bin img {
         height: 12px;
         vertical-align: middle;
+        margin-bottom: 5px;
     }
     .camera {
         min-width: 32px;
@@ -12669,6 +12946,55 @@ li.ui-timepicker-selected .ui-timepicker-duration,
       position: relative;
       text-align: center;
       top: -5px;
+    }
+    .gmail-icon {
+      width: 40px;
+      height: auto;
+    }
+    .referral-range-wrapper {
+      margin-left: 0;
+      margin-top: 20px;
+      margin-bottom: 40px;
+    }
+    .ball-10, .ball-20, .ball-30, .ball-40, .ball-50  {
+      width:30px;
+      height: 30px;
+      top: -10px;
+      font-size: 1.1em;
+      font-weight: bold;
+      line-height: 2.1em;
+      vertical-align: middle;
+    }
+    .referHowWorks {
+      width: 100%;
+      margin: 20px auto 10px auto;
+      display: block;
+      float: none;
+      text-align: left;
+    }
+    .referral-half-panel {
+      width: 100%;
+      float: none;
+      margin-bottom: 30px;
+      padding-left: 0;
+    }
+    .referral-half-panel:nth-of-type(2) {
+        margin-bottom: 0;
+    }
+    .invite-btns-wrapper.margin-e {
+      margin-top: 5px;
+      margin-left: auto;
+      margin-right: auto;
+      float: none;
+    }
+    .subscribe-cell input {
+      width: 170px;
+    }
+    .subscribe-cell button {
+      width: 60px;
+    }
+    .artist-invite.border-tb h4 {
+        width: 190px;
     }
   }
 
