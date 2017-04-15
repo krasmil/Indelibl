@@ -390,23 +390,16 @@
 
 				<section class="bg-lightest">
 					<div class="content-wrapper white" style="padding: 50px 30px 30px 30px; ">
-
 						<h5 style="margin-bottom: 5px;"><b>Send out invitations to galleries that represent you or to your supporters.</b></h5>
-						<img src="images/icons/gmail.png" class="gmail-icon" />
+						<img src="images/icons/gmail.png" class="gmail-icon" onclick="showGmp()"/>
 						<h2><b>Here's How it Works</b></h2>
-
-
 						<div class="referHowWorks" style="">
 							<b>To Galleries:</b> Once you’ve sent the invitation, they will receive an email notification to join Indelibl. Once they’ve successfully joined, their profile will automatically be integrated with yours and you will be notified.
 							<br/>
 							<b>To Supporters:</b> Once they have successfully joined, they will automatically be directed to your profile where they can browse your portfolio, events and the galleries that represent you.
 						</div>
-
-
-
-
 						<div style="width: 90%; height: auto; margin: auto; padding: 30px 0;">
-							<h5 style="margin-bottom: 5px; color: #e74c3c;"><b>Earn up to 50% off your very first purchase.</b></h5>
+							<h5 style="margin-bottom: 5px; color: #e74c3c;"><b>Earn a discount on your next purchase.</b></h5>
 							<h5 style="margin-bottom: 5px; color: #e74c3c;"><b>For every 10 people you invite you knock 10% off artworks, books, events and much more! Get sharing!</b></h5>
 						</div>
 						<div class="referral-range-wrapper">
@@ -416,19 +409,33 @@
 							<div class="ball-30 ball-empty" style="left: 55.5%;">30</div>
 							<div class="ball-40 ball-empty" style="left: 74%;">40</div>
 							<div class="ball-50 ball-empty" style="left: 92.5%;">50</div>
-							<div class="referral-bar" >
+							<div class="referral-bar">
 							</div>
 						</div>
-
-
-
 						<p style="font-size: 1.1em; margin-bottom: 0;"><b>Your next goal is <span style="color: #e74c3c;">20%</span></b></p>
 						<p style="margin-top: 5px;">10 more friends earns you 20%. Invite more friends or remind friends to unlock more discounts.</p>
 						<div style="width: 100%; overflow: hidden; height: auto;" class="large-padding-y">
-							<button type="submit" class="btn" style="border: 1px solid #e74c3c; color: #e74c3c; background: #fff;">
+							<button type="submit" class="btn" style="border: 1px solid #e74c3c; color: #e74c3c; background: #fff;" id="redeem-btn" onclick="showRdem()">
 								Redeem
 							</button>
 						</div>
+
+						<div style="display: none;" id="redmptn">
+							<div class="subscribe-cell">
+								<input type="text" name="q" style="width: 180px;" disabled="true" value="HF678DJHDFGNBF" />
+							</div>
+							<div class="subscribe-cell">
+								<button type="submit" style="background: #2d2d2d;">
+									<span>
+										Apply
+									</span>
+								</button>
+							</div>
+							<p style="font-size: 0.85em; margin-bottom: 30px; margin-top: 5px; text-align: left;">Once applied your referrals start from zero</p>
+						</div>
+
+
+
 						<hr class="separator" />
 						<div style="width: 100%; overflow: hidden; height: auto;" class="large-padding-y">
 							<div class="referral-half-panel" style="text-align: center;">
@@ -438,7 +445,7 @@
 									</b>
 								</h5>
 								<div class="subscribe-cell">
-									<input type="text" name="q" placeholder="Enter email addresses, separated by commas" />
+									<input type="text" name="q" placeholder="Enter email address" />
 								</div>
 								<div class="subscribe-cell">
 									<button type="submit">
@@ -474,7 +481,6 @@
 							<div class="row view-invites-sent">
 								<div class="row view-invites-sent-scroll">
 									<div class="artist-invite border-tb">
-
 										<div class="invite-text-wrapper" style="margin-top: 0;">
 											<h4 style="font-style: italic;">
 												<b>
@@ -487,13 +493,12 @@
 										</div>
 										<div class="invite-btns-wrapper margin-e">
 											<button class="btn dark" style="min-width: 90px; margin-right: 10px;">Remind</a>
-												<button class="btn bin" style="background: #fff; border: 1px solid #d0cfcf; margin-right: 0;">
+												<button class="btn bin" style="background: #fff; border: 1px solid #d0cfcf; margin-right: 0;" onclick="deleteReferral()">
 													<img src="images/icons/bin-red.png">
 												</button>
 										</div>
 									</div>
 									<div class="artist-invite border-tb">
-
 										<div class="invite-text-wrapper" style="margin-top: 0;">
 											<h4 style="font-style: italic;">
 												<b>
@@ -506,13 +511,12 @@
 										</div>
 										<div class="invite-btns-wrapper margin-e">
 											<button class="btn dark" style="min-width: 90px; margin-right: 10px;">Remind</a>
-												<button class="btn bin" style="background: #fff; border: 1px solid #d0cfcf; margin-right: 0;">
+												<button class="btn bin" style="background: #fff; border: 1px solid #d0cfcf; margin-right: 0;" onclick="deleteReferral()">
 													<img src="images/icons/bin-red.png">
 												</button>
 										</div>
 									</div>
 									<div class="artist-invite border-tb">
-
 										<div class="invite-text-wrapper" style="margin-top: 0;">
 											<h4 style="font-style: italic;">
 												<b>
@@ -525,13 +529,12 @@
 										</div>
 										<div class="invite-btns-wrapper margin-e">
 											<button class="btn dark" style="min-width: 90px; margin-right: 10px;">Remind</a>
-												<button class="btn bin" style="background: #fff; border: 1px solid #d0cfcf; margin-right: 0;">
+												<button class="btn bin" style="background: #fff; border: 1px solid #d0cfcf; margin-right: 0;" onclick="deleteReferral()">
 													<img src="images/icons/bin-red.png">
 												</button>
 										</div>
 									</div>
 									<div class="artist-invite border-tb">
-
 										<div class="invite-text-wrapper" style="margin-top: 0;">
 											<h4 style="font-style: italic;">
 												<b>
@@ -544,13 +547,12 @@
 										</div>
 										<div class="invite-btns-wrapper margin-e">
 											<button class="btn dark" style="min-width: 90px; margin-right: 10px;">Remind</a>
-												<button class="btn bin" style="background: #fff; border: 1px solid #d0cfcf; margin-right: 0;">
+												<button class="btn bin" style="background: #fff; border: 1px solid #d0cfcf; margin-right: 0;" onclick="deleteReferral()">
 													<img src="images/icons/bin-red.png">
 												</button>
 										</div>
 									</div>
 									<div class="artist-invite border-tb">
-
 										<div class="invite-text-wrapper" style="margin-top: 0;">
 											<h4 style="font-style: italic;">
 												<b>
@@ -563,13 +565,12 @@
 										</div>
 										<div class="invite-btns-wrapper margin-e">
 											<button class="btn dark" style="min-width: 90px; margin-right: 10px;">Remind</a>
-												<button class="btn bin" style="background: #fff; border: 1px solid #d0cfcf; margin-right: 0;">
+												<button class="btn bin" style="background: #fff; border: 1px solid #d0cfcf; margin-right: 0;" onclick="deleteReferral()">
 													<img src="images/icons/bin-red.png">
 												</button>
 										</div>
 									</div>
 									<div class="artist-invite border-tb">
-
 										<div class="invite-text-wrapper" style="margin-top: 0;">
 											<h4 style="font-style: italic;">
 												<b>
@@ -582,13 +583,12 @@
 										</div>
 										<div class="invite-btns-wrapper margin-e">
 											<button class="btn dark" style="min-width: 90px; margin-right: 10px;">Remind</a>
-												<button class="btn bin" style="background: #fff; border: 1px solid #d0cfcf; margin-right: 0;">
+												<button class="btn bin" style="background: #fff; border: 1px solid #d0cfcf; margin-right: 0;" onclick="deleteReferral()">
 													<img src="images/icons/bin-red.png">
 												</button>
 										</div>
 									</div>
 									<div class="artist-invite border-tb">
-
 										<div class="invite-text-wrapper" style="margin-top: 0;">
 											<h4 style="font-style: italic;">
 												<b>
@@ -601,13 +601,12 @@
 										</div>
 										<div class="invite-btns-wrapper margin-e">
 											<button class="btn dark" style="min-width: 90px; margin-right: 10px;">Remind</a>
-												<button class="btn bin" style="background: #fff; border: 1px solid #d0cfcf; margin-right: 0;">
+												<button class="btn bin" style="background: #fff; border: 1px solid #d0cfcf; margin-right: 0;" onclick="deleteReferral()">
 													<img src="images/icons/bin-red.png">
 												</button>
 										</div>
 									</div>
 									<div class="artist-invite border-tb">
-
 										<div class="invite-text-wrapper" style="margin-top: 0;">
 											<h4 style="font-style: italic;">
 												<b>
@@ -620,19 +619,17 @@
 										</div>
 										<div class="invite-btns-wrapper margin-e">
 											<button class="btn dark" style="min-width: 90px; margin-right: 10px;">Remind</a>
-												<button class="btn bin" style="background: #fff; border: 1px solid #d0cfcf; margin-right: 0;">
+												<button class="btn bin" style="background: #fff; border: 1px solid #d0cfcf; margin-right: 0;" onclick="deleteReferral()">
 													<img src="images/icons/bin-red.png">
 												</button>
 										</div>
 									</div>
-
 								</div>
 								<div class="row" style="display:none;">
 									<h3>
 											You do not have any reminders.
 									</h3>
 								</div>
-
 							</div>
 							<div class="down-arrow sent-arrow" style="bottom: 8px;"></div>
 						</div>
@@ -643,7 +640,6 @@
 		</section>
 		<!-- end  -->
 		<!-- end artist profile main section -->
-
 		<!-- start footer -->
 		<footer class="footer">
 			<div class="content-wrapper">
@@ -653,14 +649,11 @@
 							Sign up for our newsletter and stay up to date for the latest on Indelibl!
 						</h3>
 					</div>
-
 					<div class="subscribe-cell-button-holder">
 						<button type="submit" class="btn wide" onclick="showSubscribeForm()" id="showSubscribeFormButton">
 									Subscribe
 							</button>
 					</div>
-
-
 					<div class="subscribe-form">
 						<div class="subscribe_container">
 							<div class="xIcon" id="hide-subscribe-form" onclick="hideSubscribeForm()"></div>
@@ -689,7 +682,6 @@
 							</div>
 						-->
 					</div>
-
 				</div>
 				<hr class="separator-footer" />
 				<div class="footer-bottom">
@@ -1065,19 +1057,123 @@
 	</div>
 	<!-- notifications end -->
 
-	<!-- preloader -->
-	<div class="loader-mask">
-		<div class="loader">
+	<div class="popup-wrapper" id="gm-list" style="display: none;">
+		<div class="popup-inner ie-popup" style="border: 1px solid #b2a1a1; padding: 20px; background-color: #fff;">
+			<div class="xIcon" id="close-gm" onclick="closeGmp();"></div>
+			<div class="popup popup-gm-invite">
+
+					<h4 style="text-align: left;">
+						<b>
+							Choose friends to invite
+						</b>
+					</h4>
+
+					<div style="width: 100%; overflow: hidden; height: auto;">
+						<div class="search" id="s_gm" style="float: left;">
+							<input type="text" id="search-gm"/>
+							<button type="submit" style="position: absolute;" id="searcher">
+								<i class="icon-search1"></i>
+							</button>
+						</div>
+					</div>
+				<hr class="separator" />
+				<div class="modal-body" id="mdbd" style="overflow-y: auto; max-height: 300px;">
+					<div class="row" style="margin-left: 0;">
+						<div id="gcname" class="col-md-12">
+							<ul class="list-inline hdg" style="display: block;"><input class="himg" type="hidden" value="blank">
+								<li class="checkbox liw"><label><input id="g-1" class="goofr" type="checkbox" name="gconts" value="something@gmail.com" style="display: inline-block;">John Smith</label></li>
+								<li class="checkbox liw"><label>something@gmail.com</label></li>
+							</ul>
+							<ul class="list-inline hdg" style="display: block;"><input class="himg" type="hidden" value="blank">
+								<li class="checkbox liw"><label><input id="g-2" class="goofr" type="checkbox" name="gconts" value="something@gmail.com" style="display: inline-block;">John Smith</label></li>
+								<li class="checkbox liw"><label>something@gmail.com</label></li>
+							</ul>
+							<ul class="list-inline hdg" style="display: block;"><input class="himg" type="hidden" value="blank">
+								<li class="checkbox liw"><label><input id="g-1" class="goofr" type="checkbox" name="gconts" value="something@gmail.com" style="display: inline-block;">John Smith</label></li>
+								<li class="checkbox liw"><label>something@gmail.com</label></li>
+							</ul>
+							<ul class="list-inline hdg" style="display: block;"><input class="himg" type="hidden" value="blank">
+								<li class="checkbox liw"><label><input id="g-2" class="goofr" type="checkbox" name="gconts" value="something@gmail.com" style="display: inline-block;">John Smith</label></li>
+								<li class="checkbox liw"><label>something@gmail.com</label></li>
+							</ul>
+							<ul class="list-inline hdg" style="display: block;"><input class="himg" type="hidden" value="blank">
+								<li class="checkbox liw"><label><input id="g-1" class="goofr" type="checkbox" name="gconts" value="something@gmail.com" style="display: inline-block;">John Smith</label></li>
+								<li class="checkbox liw"><label>something@gmail.com</label></li>
+							</ul>
+							<ul class="list-inline hdg" style="display: block;"><input class="himg" type="hidden" value="blank">
+								<li class="checkbox liw"><label><input id="g-2" class="goofr" type="checkbox" name="gconts" value="something@gmail.com" style="display: inline-block;">John Smith</label></li>
+								<li class="checkbox liw"><label>something@gmail.com</label></li>
+							</ul>
+							<ul class="list-inline hdg" style="display: block;"><input class="himg" type="hidden" value="blank">
+								<li class="checkbox liw"><label><input id="g-1" class="goofr" type="checkbox" name="gconts" value="something@gmail.com" style="display: inline-block;">John Smith</label></li>
+								<li class="checkbox liw"><label>something@gmail.com</label></li>
+							</ul>
+							<ul class="list-inline hdg" style="display: block;"><input class="himg" type="hidden" value="blank">
+								<li class="checkbox liw"><label><input id="g-2" class="goofr" type="checkbox" name="gconts" value="something@gmail.com" style="display: inline-block;">John Smith</label></li>
+								<li class="checkbox liw"><label>something@gmail.com</label></li>
+							</ul>
+							<ul class="list-inline hdg" style="display: block;"><input class="himg" type="hidden" value="blank">
+								<li class="checkbox liw"><label><input id="g-1" class="goofr" type="checkbox" name="gconts" value="something@gmail.com" style="display: inline-block;">John Smith</label></li>
+								<li class="checkbox liw"><label>something@gmail.com</label></li>
+							</ul>
+							<ul class="list-inline hdg" style="display: block;"><input class="himg" type="hidden" value="blank">
+								<li class="checkbox liw"><label><input id="g-2" class="goofr" type="checkbox" name="gconts" value="something@gmail.com" style="display: inline-block;">John Smith</label></li>
+								<li class="checkbox liw"><label>something@gmail.com</label></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<hr class="separator" />
+				<div class="modal-footer">
+					<div style="text-align: left; width: 100%; display: block;">
+						<ul class="list-inline">
+							<li class="checkbox">
+								<label>
+									<input type="checkbox" id="chkall" onchange="checkall_gm(this)">Check All
+								</label>
+							</li>
+						</ul>
+					</div>
+					<div>
+						<ul class="list-inline">
+							<li class="low-btn-low">
+								<button type="button" class="btn dark" onclick="closeGmp();">Cancel</button>
+							</li>
+							<li class="low-btn-low">
+								<button id="sndgc" type="button" class="btn">Send 0 Invitation</button>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
 		</div>
 	</div>
+		<div class="popup-wrapper" id="referral-delete-popup" style="display: none;">
+			<div class="popup-inner ie-popup error-popup" style="border: 1px solid #b2a1a1; padding: 20px;">
 
-	<!-- SEO -->
-	<h1 style="display:none;">INDELIBL</h1>
-	<h2 style="display:none;">INDELIBL</h2>
-	<!--Custom Scripts-->
+				<img src="images/icons/trash.png" class="trash_img" style="float: left; margin-right: 10px;">
+				<p style="font-size: 0.9em; line-height: 28px; margin: 0; color: #000;">Are you sure you want to delete this friend?</p>
 
-	<script src="js/timepicker.js"></script>
-	<script src="js/general.js"></script>
+				<div style="float: right; margin-top: 25px;">
+					<button class="btn greyBtn" style="margin-right: 10px;" onclick="">Yes</button>
+					<button class="btn greyBtn" onclick="hideDeleteReferral()">No</button>
+				</div>
+			</div>
+		</div>
+
+		<!-- preloader -->
+		<div class="loader-mask">
+			<div class="loader">
+			</div>
+		</div>
+
+		<!-- SEO -->
+		<h1 style="display:none;">INDELIBL</h1>
+		<h2 style="display:none;">INDELIBL</h2>
+		<!--Custom Scripts-->
+
+		<script src="js/timepicker.js"></script>
+		<script src="js/general.js"></script>
 
 </body>
 

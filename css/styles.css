@@ -1791,7 +1791,7 @@ ripple.ripple::after {
     font-size: 16px;
 }
 
-.subscribe-form input[type="radio"], input[type="checkbox"] {
+.subscribe-form input[type="radio"], .subscribe-form input[type="checkbox"] {
     margin-top: 20px;
     margin-bottom: 10px;
     margin-right: 10px;
@@ -7495,6 +7495,7 @@ padding-top: 30px; height: 0; overflow: hidden;
   width: 55px;
   height: auto;
   margin-bottom: 20px;
+  cursor: pointer;
 }
 .subscribe-cell {
     display: table-cell;
@@ -7593,20 +7594,16 @@ padding-top: 30px; height: 0; overflow: hidden;
   border-radius: 0;
 }
 .artist-invite.border-tb:first-of-type {
-
   border-top: 1px solid #acacac;
   padding-top: 20px;
-
 }
-
 .invite-btns-wrapper.margin-e {
   margin-top: 5px;
 }
-
 .refer-share-icons li {
-    display: inline-block;
-    vertical-align: middle;
-    margin: 0 3px;
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0 3px;
 }
 .referral-half-panel {
   width: 50%;
@@ -7614,13 +7611,102 @@ padding-top: 30px; height: 0; overflow: hidden;
   padding-left: 60px;
 }
 .artist-invite.border-tb h4 {
-    display: block;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    width: 900px;
-    text-align: left;
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 900px;
+  text-align: left;
 }
+.list-inline {
+  padding-left: 0;
+  list-style: none;
+  margin-bottom: 10px;
+}
+.list-inline>li {
+  display: inline-block;
+  padding-right: 5px;
+  padding-left: 5px;
+}
+.checkbox.liw {
+  width: 49%;
+  text-align: left;
+}
+.checkbox.liw:nth-of-type(2) {
+  text-align: right;
+}
+#gcname .checkbox label, #gcname .radio label {
+  min-height: 20px;
+  margin-bottom: 0;
+  font-weight: 400;
+  cursor: pointer;
+  padding-left: 20px;
+}
+label {
+  display: inline-block;
+  max-width: 100%;
+  margin-bottom: 5px;
+  font-weight: 700;
+}
+#close-gm {
+  position: absolute;
+  float: none;
+  top: 15px;
+  right: 15px;
+  width: 15px;
+  height: 15px;
+  margin: 0;
+}
+#s_gm {
+  margin-bottom: 15px;
+}
+.modal-body {
+  position: relative;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+.goofr {
+  margin-right: 10px;
+  position: absolute;
+  margin-left: -20px;
+  margin-top: 5px;
+}
+#chkall {
+  margin-left: 20px;
+  margin-right: 10px;
+}
+#redmptn {
+  width: 320px;
+  overflow: hidden;
+  height: auto;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+.low-btn-low {
+  width: 49%;
+}
+.low-btn-low:nth-of-type(1) {
+  text-align: left;
+  padding-left: 20px;
+}
+.low-btn-low:nth-of-type(2) {
+  text-align: right;
+  padding-right: 20px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -9258,7 +9344,9 @@ li.ui-timepicker-selected .ui-timepicker-duration,
     }
     .artist-invite.border-tb h4 {
         width: 600px;
-
+    }
+    #redmptn {
+      width: 280px;
     }
 
 }
@@ -11055,8 +11143,22 @@ li.ui-timepicker-selected .ui-timepicker-duration,
   .subscribe-cell input {
     width: 360px;
   }
-
-
+  #s_gm {
+    margin-bottom: 0;
+  }
+  #searcher {
+    margin-top: 7px;
+    margin-right: 5px;
+  }
+  #gm-list .popup-inner {
+    max-width: 500px;
+    width: 100%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+  }
+  #redmptn {
+    width: 280px;
+  }
 
 }
 
@@ -12996,6 +13098,43 @@ li.ui-timepicker-selected .ui-timepicker-duration,
     .artist-invite.border-tb h4 {
         width: 190px;
     }
+    #s_gm {
+      margin-bottom: 0;
+      width: 100%;
+    }
+    #searcher {
+      margin-top: 7px;
+      margin-right: 5px;
+    }
+    .popup-gm-invite button {
+      margin-bottom: 10px;
+    }
+    .checkbox.liw:nth-of-type(1) {
+      width: 35%;
+    }
+    .checkbox.liw:nth-of-type(2) {
+      width: 63%;
+      text-align: left;
+    }
+    #search-gm {
+      width: 100%;
+    }
+    #redmptn {
+      width: 280px;
+    }
+    .low-btn-low {
+      width: 100%;
+    }
+    .low-btn-low:nth-of-type(1) {
+      text-align: center;
+      padding: 0;
+
+    }
+    .low-btn-low:nth-of-type(2) {
+      text-align: center;
+      padding: 0;
+    }
+
   }
 
 /* Custom, iPhone Retina */

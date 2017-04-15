@@ -1,5 +1,5 @@
 /******* Run functions when window is loaded ********/
-$(window).load(function() {
+$(window).on('load',function() {
     masonryEventWorks();
     masonryCatOgArtWorks();
     printDimensions();
@@ -1761,7 +1761,7 @@ var loadBook = function() {
 			autoCenter: true
 
 	   });
-     
+
   }
 };
 
@@ -1771,4 +1771,41 @@ var openBookPreview = function() {
 
 var closeBookPreview = function() {
   $('#book-wrapper').hide();
+};
+var deleteReferral = function() {
+  $('#referral-delete-popup').show();
+};
+var hideDeleteReferral = function() {
+  $('#referral-delete-popup').hide();
+};
+var checkall_gm = function(e) {
+  console.log("kjhgkdhkgdfhkg");
+
+  if ($(e).is(':checked'))  {
+    console.log("1");
+      $('.goofr').each(function( index ) {
+        console.log("2");
+        $(this).prop('checked', true);
+      });
+  }
+  else if ($(e).not(':checked'))  {
+    console.log("3");
+      $('.goofr').each(function( index ) {
+        console.log("4");
+        $(this).prop('checked', false);
+      });
+  }
+};
+var showGmp = function() {
+  $('#gm-list').show();
+};
+var closeGmp = function() {
+  $('#gm-list').hide();
+  $('.goofr').each(function( index ) {
+    $(this).prop('checked', false);
+  });
+};
+
+var showRdem = function() {
+  $("#redmptn").slideDown();
 };
