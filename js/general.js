@@ -49,6 +49,7 @@ $(document).ready(function() {
     showCategoryProdButtonsAll();
     showProdCatButtonsMobileAll();
     quantitySpinner();
+    loadBook();
 });
 
 /******* Run functions when document resize **********/
@@ -1732,4 +1733,42 @@ var openLightBox = function() {
     var lightBox = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, options);
     lightBox.init();
     return lightBox;
+};
+
+var loadBook = function() {
+
+	if ($('.flipbook').length) {
+
+	$('.flipbook').turn({
+			// Width
+
+			width:800,
+
+			// Height
+
+			height:566,
+
+			// Elevation
+
+			elevation: 0,
+
+			// Enable gradients
+
+			gradients: true,
+
+			// Auto center this flipbook
+
+			autoCenter: true
+
+	   });
+     
+  }
+};
+
+var openBookPreview = function() {
+  $('#book-wrapper').show();
+};
+
+var closeBookPreview = function() {
+  $('#book-wrapper').hide();
 };
