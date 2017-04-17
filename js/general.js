@@ -1778,32 +1778,12 @@ var deleteReferral = function() {
 var hideDeleteReferral = function() {
   $('#referral-delete-popup').hide();
 };
-var checkall_gm = function(e) {
-  console.log("kjhgkdhkgdfhkg");
 
-  if ($(e).is(':checked'))  {
-    console.log("1");
-      $('.goofr').each(function( index ) {
-        console.log("2");
-        $(this).prop('checked', true);
-      });
-  }
-  else if ($(e).not(':checked'))  {
-    console.log("3");
-      $('.goofr').each(function( index ) {
-        console.log("4");
-        $(this).prop('checked', false);
-      });
-  }
-};
 var showGmp = function() {
   $('#gm-list').show();
 };
 var closeGmp = function() {
   $('#gm-list').hide();
-  $('.goofr').each(function( index ) {
-    $(this).prop('checked', false);
-  });
 };
 
 var showRdem = function() {
