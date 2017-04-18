@@ -385,7 +385,11 @@
 
 				<section class="bg-lightest">
 					<div class="content-wrapper white" style="padding: 50px 30px 30px 30px; ">
-						<h5 style="margin-bottom: 5px;"><b>Invite others to join Indelibl and earn discounts towards next purchase <span style="font-style: italic;">or</span> share the discounts with your customers using the code when you click Redeem.</b></h5>						<img src="images/icons/gmail.png" class="gmail-icon" onclick="showGmp()"/>
+						<h5 style="margin-bottom: 5px;"><b>Invite others to join Indelibl and earn discounts towards next purchase <span style="font-style: italic;">or</span> share the discounts with your customers using the code when you click Redeem.</b></h5>
+						<img src="images/icons/gmail.png" class="gmail-icon" onclick="showGmp()"/>
+						<div class="ref-sent-msg" style="display: none;" id="gm_success">
+							Your e-mails have been sent successfully.
+						</div>
 						<h2><b>Here's How it Works</b></h2>
 						<div class="referHowWorks" style="">
 							For every 10 people you’ve invited who successfully join Indelibl, you earn 10% off your next purchase. By successfully inviting 50 people you can earn up to 50% in discounts! <a href="javascript:;" style="font-style: italic;">Referral Terms and Conditions.</a>
@@ -439,11 +443,17 @@
 									<input type="text" name="q" placeholder="Enter email address" />
 								</div>
 								<div class="subscribe-cell">
-									<button type="submit">
+									<button type="submit" onclick="sendReferralInvite()">
 										<span>
 											Send
 										</span>
 									</button>
+								</div>
+								<div class="ref-inv-msg" style="display: none;">
+									Invitation sent successfully!
+								</div>
+								<div class="ref-invf-msg" style="display: none;">
+									Invite sending failed. Please try again.
 								</div>
 							</div>
 							<div class="referral-half-panel">
@@ -466,7 +476,8 @@
 							</div>
 						</div>
 						<hr class="separator" />
-						<h2 class="large-padding-y" style="margin-bottom: 0;"><b>Remind friends</b></h2>
+						<h2 class="large-padding-y" style="margin-bottom: 0; padding-bottom: 10px;"><b>Remind friends</b></h2>
+						<p style="font-style: italic; margin-top: 0; font-size: 0.9em; margin-bottom: 20px;">* You may send a reminder once within a 24 hour period.</p>
 						<div class="row view-invites-wrapper" style="margin-left: 0; position: relative; border: none; padding-top: 0;">
 							<!-- display invites  -->
 							<div class="row view-invites-sent">
@@ -483,7 +494,13 @@
 											</h5>
 										</div>
 										<div class="invite-btns-wrapper margin-e">
-											<button class="btn dark" style="min-width: 90px; margin-right: 10px;">Remind</a>
+											<div class="ref-rem-msg" style="display: none;">
+												Reminder succesfully sent!
+											</div>
+											<div class="ref-remf-msg" style="display: none;">
+												Reminder sending failed. Please try again.
+											</div>
+											<button class="btn dark" style="min-width: 90px; margin-right: 10px;" onclick="sendReminder(this)">Remind</button>
 												<button class="btn bin" style="background: #fff; border: 1px solid #d0cfcf; margin-right: 0;" onclick="deleteReferral()">
 													<img src="images/icons/bin-red.png">
 												</button>
@@ -501,7 +518,13 @@
 											</h5>
 										</div>
 										<div class="invite-btns-wrapper margin-e">
-											<button class="btn dark" style="min-width: 90px; margin-right: 10px;">Remind</a>
+											<div class="ref-rem-msg" style="display: none;">
+												Reminder succesfully sent!
+											</div>
+											<div class="ref-remf-msg" style="display: none;">
+												Reminder sending failed. Please try again.
+											</div>
+											<button class="btn dark" style="min-width: 90px; margin-right: 10px;" onclick="sendReminder(this)">Remind</button>
 												<button class="btn bin" style="background: #fff; border: 1px solid #d0cfcf; margin-right: 0;" onclick="deleteReferral()">
 													<img src="images/icons/bin-red.png">
 												</button>
@@ -519,7 +542,13 @@
 											</h5>
 										</div>
 										<div class="invite-btns-wrapper margin-e">
-											<button class="btn dark" style="min-width: 90px; margin-right: 10px;">Remind</a>
+											<div class="ref-rem-msg" style="display: none;">
+												Reminder succesfully sent!
+											</div>
+											<div class="ref-remf-msg" style="display: none;">
+												Reminder sending failed. Please try again.
+											</div>
+											<button class="btn dark" style="min-width: 90px; margin-right: 10px;" onclick="sendReminder(this)">Remind</button>
 												<button class="btn bin" style="background: #fff; border: 1px solid #d0cfcf; margin-right: 0;" onclick="deleteReferral()">
 													<img src="images/icons/bin-red.png">
 												</button>
@@ -537,7 +566,13 @@
 											</h5>
 										</div>
 										<div class="invite-btns-wrapper margin-e">
-											<button class="btn dark" style="min-width: 90px; margin-right: 10px;">Remind</a>
+											<div class="ref-rem-msg" style="display: none;">
+												Reminder succesfully sent!
+											</div>
+											<div class="ref-remf-msg" style="display: none;">
+												Reminder sending failed. Please try again.
+											</div>
+											<button class="btn dark" style="min-width: 90px; margin-right: 10px;" onclick="sendReminder(this)">Remind</button>
 												<button class="btn bin" style="background: #fff; border: 1px solid #d0cfcf; margin-right: 0;" onclick="deleteReferral()">
 													<img src="images/icons/bin-red.png">
 												</button>
@@ -555,7 +590,13 @@
 											</h5>
 										</div>
 										<div class="invite-btns-wrapper margin-e">
-											<button class="btn dark" style="min-width: 90px; margin-right: 10px;">Remind</a>
+											<div class="ref-rem-msg" style="display: none;">
+												Reminder succesfully sent!
+											</div>
+											<div class="ref-remf-msg" style="display: none;">
+												Reminder sending failed. Please try again.
+											</div>
+											<button class="btn dark" style="min-width: 90px; margin-right: 10px;" onclick="sendReminder(this)">Remind</button>
 												<button class="btn bin" style="background: #fff; border: 1px solid #d0cfcf; margin-right: 0;" onclick="deleteReferral()">
 													<img src="images/icons/bin-red.png">
 												</button>
@@ -573,7 +614,13 @@
 											</h5>
 										</div>
 										<div class="invite-btns-wrapper margin-e">
-											<button class="btn dark" style="min-width: 90px; margin-right: 10px;">Remind</a>
+											<div class="ref-rem-msg" style="display: none;">
+												Reminder succesfully sent!
+											</div>
+											<div class="ref-remf-msg" style="display: none;">
+												Reminder sending failed. Please try again.
+											</div>
+											<button class="btn dark" style="min-width: 90px; margin-right: 10px;" onclick="sendReminder(this)">Remind</button>
 												<button class="btn bin" style="background: #fff; border: 1px solid #d0cfcf; margin-right: 0;" onclick="deleteReferral()">
 													<img src="images/icons/bin-red.png">
 												</button>
@@ -591,7 +638,13 @@
 											</h5>
 										</div>
 										<div class="invite-btns-wrapper margin-e">
-											<button class="btn dark" style="min-width: 90px; margin-right: 10px;">Remind</a>
+											<div class="ref-rem-msg" style="display: none;">
+												Reminder succesfully sent!
+											</div>
+											<div class="ref-remf-msg" style="display: none;">
+												Reminder sending failed. Please try again.
+											</div>
+											<button class="btn dark" style="min-width: 90px; margin-right: 10px;" onclick="sendReminder(this)">Remind</button>
 												<button class="btn bin" style="background: #fff; border: 1px solid #d0cfcf; margin-right: 0;" onclick="deleteReferral()">
 													<img src="images/icons/bin-red.png">
 												</button>
@@ -609,7 +662,13 @@
 											</h5>
 										</div>
 										<div class="invite-btns-wrapper margin-e">
-											<button class="btn dark" style="min-width: 90px; margin-right: 10px;">Remind</a>
+											<div class="ref-rem-msg" style="display: none;">
+												Reminder succesfully sent!
+											</div>
+											<div class="ref-remf-msg" style="display: none;">
+												Reminder sending failed. Please try again.
+											</div>
+											<button class="btn dark" style="min-width: 90px; margin-right: 10px;" onclick="sendReminder(this)">Remind</button>
 												<button class="btn bin" style="background: #fff; border: 1px solid #d0cfcf; margin-right: 0;" onclick="deleteReferral()">
 													<img src="images/icons/bin-red.png">
 												</button>
@@ -1062,9 +1121,9 @@
 					<div style="width: 100%; overflow: hidden; height: auto;">
 						<div class="search" id="s_gm" style="float: left;">
 							<input type="text" id="search-gm"/>
-							<button type="submit" style="position: absolute;" id="searcher">
+							<div class="mag-cont" id="searcher">
 								<i class="icon-search1"></i>
-							</button>
+							</div>
 						</div>
 					</div>
 				<hr class="separator" />

@@ -7593,6 +7593,7 @@ padding-top: 30px; height: 0; overflow: hidden;
   border-left: none;
   border-right: none;
   border-radius: 0;
+  position: relative;
 }
 .artist-invite.border-tb:first-of-type {
   border-top: 1px solid #acacac;
@@ -7610,6 +7611,7 @@ padding-top: 30px; height: 0; overflow: hidden;
   width: 50%;
   float: left;
   padding-left: 60px;
+  position: relative;
 }
 .artist-invite.border-tb h4 {
   display: block;
@@ -7718,13 +7720,75 @@ label {
     background-color: rgba(0, 0, 0, 0.6);
     z-index: 9999;
 }
+.ref-sent-msg {
+    position: relative;
+    width: 300px;
+    height: auto;
+    background: #fff;
+    border: 1px solid #d0cfcf;
+    margin: -12px auto 20px auto;
+    -webkit-box-shadow: 0px 0px 8px 3px rgba(0,0,0,0.2);
+    -moz-box-shadow: 0px 0px 8px 3px rgba(0,0,0,0.2);
+    box-shadow: 0px 0px 8px 3px rgba(0,0,0,0.2);
+    display: block;
+    padding: 5px;
+    text-align: center;
+    font-size: 0.9em;
+    z-index: 2000;
+}
+.ref-rem-msg, .ref-remf-msg {
+  position: absolute;
+  width: auto;
+  height: auto;
+  background: #fff;
+  border: 1px solid #d0cfcf;
+  top: 30%;
+  right: 16%;
+  -webkit-box-shadow: 0px 0px 8px 3px rgba(0,0,0,0.2);
+  -moz-box-shadow: 0px 0px 8px 3px rgba(0,0,0,0.2);
+  box-shadow: 0px 0px 8px 3px rgba(0,0,0,0.2);
+  display: block;
+  padding: 5px;
+  text-align: left;
+  font-size: 0.9em;
+  z-index: 2000;
+}
+.search .mag-cont {
+    position: absolute;
+    right: 0;
+    top: -2px;
+    border: none;
+    background: none;
+    width: 40px;
+    height: 32px;
+    line-height: 32px;
+    text-align: center;
+    color: #313b46;
+}
+.search .mag-cont i {
+    display: block;
+    font-size: 22px;
+    line-height: 32px;
+    z-index: 50;
+}
 
-
-
-
-
-
-
+.ref-inv-msg, .ref-invf-msg {
+  position: absolute;
+  top: 110%;
+  left: 30%;
+  text-align: left;
+  font-size: 1em;
+  width: auto;
+  height: auto;
+  background: #fff;
+  border: 1px solid #d0cfcf;
+  -webkit-box-shadow: 0px 0px 8px 3px rgba(0,0,0,0.2);
+  -moz-box-shadow: 0px 0px 8px 3px rgba(0,0,0,0.2);
+  box-shadow: 0px 0px 8px 3px rgba(0,0,0,0.2);
+  display: block;
+  padding: 5px;
+  z-index: 2000;
+}
 
 
 
@@ -9367,6 +9431,9 @@ li.ui-timepicker-selected .ui-timepicker-duration,
     }
     #redmptn {
       width: 280px;
+    }
+    .ref-rem-msg, .ref-remf-msg {
+      right: 22%;
     }
 
 }
@@ -11178,6 +11245,20 @@ li.ui-timepicker-selected .ui-timepicker-duration,
   }
   #redmptn {
     width: 280px;
+  }
+  .ref-rem-msg, .ref-remf-msg {
+    right: 10%;
+    top: 5%;
+  }
+  .search .mag-cont {
+    width: 14px;
+    height: 14px;
+    position: absolute;
+    float: right;
+    margin-top: 5px;
+    background: url(../images/icons/search.png);
+    background-size: 12px 12px;
+    background-repeat: no-repeat;
   }
 
 }
@@ -13153,6 +13234,24 @@ li.ui-timepicker-selected .ui-timepicker-duration,
     .low-btn-low:nth-of-type(2) {
       text-align: center;
       padding: 0;
+    }
+    .ref-rem-msg, .ref-remf-msg {
+      right: 12%;
+    }
+    .search .mag-cont {
+      width: 14px;
+      height: 14px;
+      position: initial;
+      float: right;
+      margin-top: 5px;
+      background: url(../images/icons/search.png);
+      background-size: 12px 12px;
+      background-repeat: no-repeat;
+      margin-bottom: 10px;
+      position: absolute;
+    }
+    .ref-inv-msg, .ref-invf-msg {
+      left: 12%;
     }
 
   }

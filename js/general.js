@@ -1789,3 +1789,9 @@ var closeGmp = function() {
 var showRdem = function() {
   $("#redmptn").slideDown();
 };
+var sendReminder = function(e) {
+    $(e).parent().find('.ref-rem-msg').fadeIn().delay(2000).fadeOut();
+};
+var sendReferralInvite = function() {
+    $('.ref-inv-msg').fadeIn().delay(2000).fadeOut();
+};
