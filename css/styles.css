@@ -3211,7 +3211,10 @@ ripple.ripple::after {
     height: 40px;
     width: 40px;
 }
-
+.headerSoc-icon-small img {
+    height: 28px;
+    width: 28px;
+}
 .share-content .headerSoc-icon img {
     height: 20px;
     width: 20px;
@@ -7789,9 +7792,17 @@ label {
   padding: 5px;
   z-index: 2000;
 }
-
-
-
+.rdmp_col {
+  width: 33%;
+  float: left;
+}
+.btn.rdmp_col_btn {
+  margin-top: 36px;
+}
+.rdmp_col button {
+  min-width: 100%;
+  width: 100%;
+}
 
 
 
@@ -8653,6 +8664,10 @@ li.ui-timepicker-selected .ui-timepicker-duration,
         height: 32px;
         width: 32px;
     }
+    .headerSoc-icon-small img {
+        height: 22px;
+        width: 22px;
+    }
     .profile_top_btns {
         height: 40px;
     }
@@ -9434,6 +9449,9 @@ li.ui-timepicker-selected .ui-timepicker-duration,
     }
     .ref-rem-msg, .ref-remf-msg {
       right: 22%;
+    }
+    .btn.rdmp_col_btn {
+      margin-top: 30px;
     }
 
 }
@@ -11244,7 +11262,7 @@ li.ui-timepicker-selected .ui-timepicker-duration,
     margin-bottom: 5%;
   }
   #redmptn {
-    width: 280px;
+    width: 330px;
   }
   .ref-rem-msg, .ref-remf-msg {
     right: 10%;
@@ -11259,6 +11277,9 @@ li.ui-timepicker-selected .ui-timepicker-duration,
     background: url(../images/icons/search.png);
     background-size: 12px 12px;
     background-repeat: no-repeat;
+  }
+  .btn.rdmp_col_btn {
+    margin-top: 27px;
   }
 
 }
@@ -13221,7 +13242,7 @@ li.ui-timepicker-selected .ui-timepicker-duration,
       width: 100%;
     }
     #redmptn {
-      width: 280px;
+      width: 240px;
     }
     .low-btn-low {
       width: 100%;
@@ -13252,6 +13273,18 @@ li.ui-timepicker-selected .ui-timepicker-duration,
     }
     .ref-inv-msg, .ref-invf-msg {
       left: 12%;
+    }
+    .rdmp_col {
+      width: 100%;
+      float: left;
+      margin-left: 45px;
+    }
+    .rdmp_col input {
+      float: left;
+    }
+    .rdmp_col button {
+      min-width: 150px;
+      width: 150px;
     }
 
   }

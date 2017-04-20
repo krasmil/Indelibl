@@ -50,6 +50,7 @@ $(document).ready(function() {
     showProdCatButtonsMobileAll();
     quantitySpinner();
     loadBook();
+    createDatePickersRefs();
 });
 
 /******* Run functions when document resize **********/
@@ -1791,4 +1792,34 @@ var showRdem = function() {
 };
 var sendReferralInvite = function() {
     $('.ref-inv-msg').fadeIn().delay(2000).fadeOut();
+};
+/************ date and time pickers for referrals ******************************/
+var createDatePickersRefs = function() {
+
+    var year = (new Date()).getFullYear();
+    var month = (new Date()).getMonth();
+    var day = (new Date()).getDate();
+
+    if ($('#start-date-ref').length) {
+        $("#start-date-ref").datepicker({
+          minDate: new Date(year, month, day),
+          maxDate: new Date(year, 11, 31),
+          onSelect: function (selectedDate) {
+            var newDate = new Date(selectedDate);
+            newDate.setDate(newDate.getDate() + 30);
+            $("#end-date-ref").datepicker({
+              minDate: selectedDate,
+              maxDate: newDate,
+              onSelect: function (selectedDate) {
+
+                $("#applyRdmp").prop("disabled", false);
+              }
+            });
+          }
+        });
+    }
+};
+
+var applyRedemption = function() {
+  $("#rdmptAppd").slideDown();
 };

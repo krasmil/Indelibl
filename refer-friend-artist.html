@@ -413,28 +413,65 @@
 							</div>
 						</div>
 						<p style="font-size: 1.1em; margin-bottom: 0;"><b>Your next goal is <span style="color: #e74c3c;">20%</span></b></p>
-						<p style="margin-top: 5px;">10 more friends earns you 20%. Invite more friends or remind friends to unlock more discounts.</p>
+						<p style="margin-top: 5px; margin-bottom: 5px;">10 more friends earns you 20%. Invite more friends or remind friends to unlock more discounts.</p>
+						<p style="margin-top: 0;">Discounts can be valid for a maximum of 30 days after which your referrals start from 0.</p>
 						<div style="width: 100%; overflow: hidden; height: auto;" class="large-padding-y">
 							<button type="submit" class="btn" style="border: 1px solid #e74c3c; color: #e74c3c; background: #fff;" id="redeem-btn" onclick="showRdem()">
 								Redeem
 							</button>
 						</div>
 
-						<div style="display: none;" id="redmptn">
-							<div class="subscribe-cell">
-								<input type="text" name="q" style="width: 180px;" disabled="true" value="HF678DJHDFGNBF" />
+						<div style="display: none; margin-bottom: 20px;" id="redmptn">
+							<input type="text" class="form-input" style="width: auto; text-align: center; padding-left: 0; margin-top: 0;" disabled="true" value="HF678DJHDFGNBF" />
+							<div style="width: 100%; overflow: hidden; margin-top: 20px;">
+								<div class="rdmp_col" style="padding-right: 10px;">
+									<p style="text-align: left; margin-bottom: 0; font-size: 0.9em;">Valid from</p>
+									<input style="width: 150px; margin: 0;" type="text" class="form-input date-time" id="start-date-ref" name="start-date" readonly="true" required>
+								</div>
+								<div class="rdmp_col" style="padding-right: 10px;">
+									<p style="text-align: left; margin-bottom: 0; font-size: 0.9em;">Until</p>
+									<input style="width: 150px; margin: 0;" type="text" class="form-input date-time" id="end-date-ref" name="start-date" readonly="true" required>
+								</div>
+								<div class="rdmp_col" style="margin-left: 0;">
+									<button type="submit" style="background: #2d2d2d; line-height: 30px;" class="btn rdmp_col_btn" disabled="true" id="applyRdmp" onclick="applyRedemption()">
+										<span>
+											Apply
+										</span>
+									</button>
+								</div>
 							</div>
-							<div class="subscribe-cell">
-								<button type="submit" style="background: #2d2d2d;">
-									<span>
-										Apply
-									</span>
-								</button>
+
+							<div style="margin-top: 20px; display: none;" id="rdmptAppd">
+								<h5>
+									<b>
+										This discount is now active.
+									</b>
+								</h5>
+								<hr class="separator"/>
+								<h5>
+										Share discount code
+								</h5>
+								<ul style="width: 100%;" class="refer-share-icons">
+									<li>
+										<a href="javascript:;" class="icon headerSoc-icon-small"><img src="images/icons/fb-blue.png" alt=""></a>
+									</li>
+									<li>
+										<a href="javascript:;" class="icon headerSoc-icon-small"><img src="images/icons/fb-msg.png" alt=""></a>
+									</li>
+									<li>
+										<a href="javascript:;" class="icon headerSoc-icon-small"><img src="images/icons/tw1.png" alt=""></a>
+									</li>
+								</ul>
 							</div>
-							<p style="font-size: 0.85em; margin-bottom: 30px; margin-top: 5px; text-align: left;">Once applied your referrals start from zero</p>
+							<!-- Display the following if there is an error-->
+							<div style="margin-top: 20px; display: none; border: 1px solid #acacac;" id="rdmptAppd-fail">
+								<p>
+									<b>
+										Something went wrong. Please try again later.
+									</b>
+								</p>
+							</div>
 						</div>
-
-
 
 						<hr class="separator" />
 						<div style="width: 100%; overflow: hidden; height: auto;" class="large-padding-y">
@@ -454,10 +491,14 @@
 										</span>
 									</button>
 								</div>
-								<div class="ref-inv-msg" style="display: none;">
+								<!-- display one of the following messages when click on send -->
+								<div class="ref-inv-msg" style="display: none;" id="ref-inv-msg-sucs">
 									Invitation sent successfully!
 								</div>
-								<div class="ref-invf-msg" style="display: none;">
+								<div class="ref-inv-msg" style="display: none;" id="ref-inv-msg-asent">
+									Invitation has already been sent to this email.
+								</div>
+								<div class="ref-invf-msg" style="display: none;" id="ref-inv-msg-fail">
 									Invite sending failed. Please try again.
 								</div>
 							</div>
