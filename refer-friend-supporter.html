@@ -381,24 +381,26 @@
 						</div>
 						<p style="font-size: 1.1em; margin-bottom: 0;"><b>Your next goal is <span style="color: #e74c3c;">20%</span></b></p>
 						<p style="margin-top: 5px;">10 more friends earns you 20%. Invite more friends or remind friends to unlock more discounts.</p>
+						<p style="margin-top: 0;">Once applied your referrals start from 0.</p>
 						<div style="width: 100%; overflow: hidden; height: auto;" class="large-padding-y">
 							<button type="submit" class="btn" style="border: 1px solid #e74c3c; color: #e74c3c; background: #fff;" id="redeem-btn" onclick="showRdem()">
 								Redeem
 							</button>
 						</div>
 
-						<div style="display: none;" id="redmptn">
+						<div style="display: none; margin-bottom: 20px;" id="redmptn">
 							<div class="subscribe-cell">
 								<input type="text" name="q" style="width: 180px;" disabled="true" value="HF678DJHDFGNBF" />
 							</div>
 							<div class="subscribe-cell">
-								<button type="submit" style="background: #2d2d2d;">
+								<button type="submit" style="background: #2d2d2d;" id="applyRdmp" onclick="applyRedemption()">
 									<span>
 										Apply
 									</span>
 								</button>
+
 							</div>
-							<p style="font-size: 0.85em; margin-bottom: 30px; margin-top: 5px; text-align: left;">Once applied your referrals start from zero</p>
+							<p id="rdmptAppd" style="font-size: 0.85em; margin-bottom: 30px; margin-top: 5px; text-align: left; display: none;">This discount has now been applied to your shopping cart.</p>
 						</div>
 
 
@@ -421,10 +423,14 @@
 										</span>
 									</button>
 								</div>
-								<div class="ref-inv-msg" style="display: none;">
+								<!-- display one of the following messages when click on send -->
+								<div class="ref-inv-msg" style="display: none;" id="ref-inv-msg-sucs">
 									Invitation sent successfully!
 								</div>
-								<div class="ref-invf-msg" style="display: none;">
+								<div class="ref-inv-msg" style="display: none;" id="ref-inv-msg-asent">
+									Invitation has already been sent to this email.
+								</div>
+								<div class="ref-invf-msg" style="display: none;" id="ref-inv-msg-fail">
 									Invite sending failed. Please try again.
 								</div>
 							</div>
@@ -1195,7 +1201,7 @@
 		<h2 style="display:none;">INDELIBL</h2>
 		<!--Custom Scripts-->
 
-		<script src="js/timepicker.js"></script>
+
 		<script src="js/general.js"></script>
 
 </body>
