@@ -51,6 +51,8 @@ $(document).ready(function() {
     quantitySpinner();
     loadBook();
     createDatePickersRefs();
+    quantitySpinnerCart();
+
 });
 
 /******* Run functions when document resize **********/
@@ -1812,7 +1814,7 @@ var createDatePickersRefs = function() {
               maxDate: newDate,
               onSelect: function (selectedDate) {
 
-                $("#applyRdmp").prop("disabled", false);
+                $("#get-cupon").prop("disabled", false);
               }
             });
           }
@@ -1822,4 +1824,16 @@ var createDatePickersRefs = function() {
 
 var applyRedemption = function() {
   $("#rdmptAppd").slideDown();
+};
+var quantitySpinnerCart = function() {
+    if ($('.cart-product-quantity').length) {
+
+      $('[id^="cpq_"]').each(function(index) {
+        var spinner = $(this).spinner({
+            min: 1,
+            max: 100000
+        });
+      });
+
+    }
 };
