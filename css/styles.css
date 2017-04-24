@@ -8061,11 +8061,22 @@ label {
   color: #000;
   z-index: 5000;
 }
-
-
-
-
-
+.checkout-ship-info label {
+  font-weight: normal;
+}
+.profile-form.checkout-ship-info {
+  margin-left: 30px;
+  padding-bottom: 40px;
+}
+#mobile-ship-pcode-label {
+  display: none;
+}
+#pc-ship-pcode-label {
+  display: block;
+}
+.cart-items .art-print-product-home {
+    border: 4px solid black;
+}
 
 
 
@@ -11774,6 +11785,18 @@ li.ui-timepicker-selected .ui-timepicker-duration,
   .bbkfq {
     margin-left: 8%;
   }
+  .profile-form.checkout-ship-info {
+    margin-left: 10px;
+  }
+  #mobile-ship-pcode-label {
+    display: block;
+  }
+  #pc-ship-pcode-label {
+    display: none;
+  }
+  .cart-items .art-print-product-home {
+      border: 2px solid black;
+  }
 
 }
 
@@ -13862,6 +13885,27 @@ li.ui-timepicker-selected .ui-timepicker-duration,
     #cart-c {
       margin-bottom: 20px;
     }
+    .profile-form.checkout-ship-info {
+      margin-left: 10px;
+    }
+    #mobile-ship-pcode-label {
+      display: block;
+    }
+    #pc-ship-pcode-label {
+      display: none;
+    }
+    .profile-form.checkout-ship-info input[type="checkbox"] {
+      margin-top: 10px;
+      margin-bottom: 5px;
+      margin-right: 5px;
+    }
+    .profile-form.checkout-ship-info .newsletter {
+      font-size: 0.85em;
+    }
+    .cart-items .art-print-product-home {
+        border: 2px solid black;
+    }
+
 
   }
 
