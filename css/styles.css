@@ -13833,7 +13833,7 @@ li.ui-timepicker-selected .ui-timepicker-duration,
       font-size: 1em;
     }
     #disc-code {
-      width: 164px;
+      width: 184px;
     }
     .cart-items-col1 h5 {
       width: 60px;
@@ -13917,6 +13917,9 @@ li.ui-timepicker-selected .ui-timepicker-duration,
     }
     .watching-ogart {
       left: 10px;
+    }
+    #disc-code {
+      width: 164px;
     }
 
 }
