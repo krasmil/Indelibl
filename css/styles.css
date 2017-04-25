@@ -8077,10 +8077,32 @@ label {
 .cart-items .art-print-product-home {
     border: 4px solid black;
 }
+.checkout-ship-info .errorMsg {
+  white-space: normal;
+  word-wrap: break-word;
+  overflow: hidden;
 
-
-
-
+}
+.thankyou-conf-msg {
+  width: 50%;
+  font-size: 1.2em;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 40px;
+}
+.thankyou-conf-msg.remember-msg {
+  width: 60%;
+  font-size: 1.1em;
+}
+.btn.wide.confirmation-btn {
+  margin-bottom: 30px;
+}
+.confirm-sep {
+  width: 95%;
+  margin-left: auto;
+  margin-right: auto;
+}
 
 
 
@@ -9886,6 +9908,10 @@ li.ui-timepicker-selected .ui-timepicker-duration,
     .cart-login .popup-registration_login {
       margin-bottom: 10px;
     }
+    .btn.wide.confirmation-btn {
+      width: 300px;
+    }
+
 
 }
 
@@ -11796,6 +11822,23 @@ li.ui-timepicker-selected .ui-timepicker-duration,
   }
   .cart-items .art-print-product-home {
       border: 2px solid black;
+  }
+  .checkout-ship-info .errorMsg {
+
+    overflow: hidden;
+    height: 30px;
+  }
+  .thankyou-conf-msg {
+    width: 85%;
+  }
+  .thankyou-conf-msg.remember-msg {
+    width: 85%;
+  }
+  .btn.wide.confirmation-btn {
+    margin-bottom: 10px;
+  }
+  .confirm-sep {
+    width: 100%;
   }
 
 }
@@ -13905,7 +13948,23 @@ li.ui-timepicker-selected .ui-timepicker-duration,
     .cart-items .art-print-product-home {
         border: 2px solid black;
     }
+    .checkout-ship-info .errorMsg {
 
+      overflow: hidden;
+      height: 30px;
+    }
+    .thankyou-conf-msg {
+      width: 100%;
+    }
+    .thankyou-conf-msg.remember-msg {
+      width: 100%;
+    }
+    .btn.wide.confirmation-btn {
+      margin-bottom: 10px;
+    }
+    .confirm-sep {
+      width: 100%;
+    }
 
   }
 
