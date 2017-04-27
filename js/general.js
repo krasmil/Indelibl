@@ -52,7 +52,7 @@ $(document).ready(function() {
     loadBook();
     createDatePickersRefs();
     quantitySpinnerCart();
-
+    shipDaysSpinner();
 });
 
 /******* Run functions when document resize **********/
@@ -1825,15 +1825,25 @@ var createDatePickersRefs = function() {
 var applyRedemption = function() {
   $("#rdmptAppd").slideDown();
 };
-var quantitySpinnerCart = function() {
-    if ($('.cart-product-quantity').length) {
 
-      $('[id^="cpq_"]').each(function(index) {
-        var spinner = $(this).spinner({
+var quantitySpinnerCart = function() {
+  if ($('.cart-product-quantity').length) {
+    $('[id^="cpq_"]').each(function(index) {
+      var spinner = $(this).spinner({
+        min: 1,
+        max: 100000,
+        stop: function(event, ui) {
+          addQuantity(this);
+        }
+      });
+    });
+  }
+};
+var shipDaysSpinner = function() {
+    if ($('#ship-days').length) {
+        var spinner = $("#ship-days").spinner({
             min: 1,
             max: 100000
         });
-      });
-
     }
 };
