@@ -1,5 +1,5 @@
 /******* Run functions when window is loaded ********/
-$(window).on('load',function() {
+$(window).on('load', function() {
     masonryEventWorks();
     masonryCatOgArtWorks();
     printDimensions();
@@ -52,7 +52,7 @@ $(document).ready(function() {
     loadBook();
     createDatePickersRefs();
     quantitySpinnerCart();
-    shipDaysSpinner();
+    initArtPrintSize();
 });
 
 /******* Run functions when document resize **********/
@@ -115,6 +115,7 @@ $(window).resize(function() {
     calcViewProductsHeight();
     showProdCatButtonsMobile();
     showProdCatButtonsMobileAll();
+    resizeArtPrintPage();
 });
 /******* Run functions when document orientation changed (handheld devices) **********/
 $(window).on("orientationchange", function() {
@@ -1603,7 +1604,9 @@ var productDimensions = function() {
                     "height": "65%"
                 });
             }
-            $(this).css("display", "inline-block");
+            if ($(this).attr("id") !== "print-main-small") {
+              $(this).css("display", "inline-block");
+            }
         });
     }
 };
@@ -1650,6 +1653,12 @@ var quantitySpinner = function() {
         var spinner = $("#product-quantity").spinner({
             min: 1,
             max: 100000
+        });
+    }
+    if ($('#prod-shipping-time').length) {
+        var spinner2 = $("#prod-shipping-time").spinner({
+            min: 1,
+            max: 1000
         });
     }
 };
@@ -1740,57 +1749,57 @@ var openLightBox = function() {
 
 var loadBook = function() {
 
-	if ($('.flipbook').length) {
+    if ($('.flipbook').length) {
 
-	$('.flipbook').turn({
-			// Width
+        $('.flipbook').turn({
+            // Width
 
-			width:800,
+            width: 800,
 
-			// Height
+            // Height
 
-			height:566,
+            height: 566,
 
-			// Elevation
+            // Elevation
 
-			elevation: 0,
+            elevation: 0,
 
-			// Enable gradients
+            // Enable gradients
 
-			gradients: true,
+            gradients: true,
 
-			// Auto center this flipbook
+            // Auto center this flipbook
 
-			autoCenter: true
+            autoCenter: true
 
-	   });
+        });
 
-  }
+    }
 };
 
 var openBookPreview = function() {
-  $('#book-wrapper').show();
+    $('#book-wrapper').show();
 };
 
 var closeBookPreview = function() {
-  $('#book-wrapper').hide();
+    $('#book-wrapper').hide();
 };
 var deleteReferral = function() {
-  $('#referral-delete-popup').show();
+    $('#referral-delete-popup').show();
 };
 var hideDeleteReferral = function() {
-  $('#referral-delete-popup').hide();
+    $('#referral-delete-popup').hide();
 };
 
 var showGmp = function() {
-  $('#gm-list').show();
+    $('#gm-list').show();
 };
 var closeGmp = function() {
-  $('#gm-list').hide();
+    $('#gm-list').hide();
 };
 
 var showRdem = function() {
-  $("#redmptn").slideDown();
+    $("#redmptn").slideDown();
 };
 var sendReferralInvite = function() {
     $('.ref-inv-msg').fadeIn().delay(2000).fadeOut();
@@ -1804,46 +1813,782 @@ var createDatePickersRefs = function() {
 
     if ($('#start-date-ref').length) {
         $("#start-date-ref").datepicker({
-          minDate: new Date(year, month, day),
-          maxDate: new Date(year, 11, 31),
-          onSelect: function (selectedDate) {
-            var newDate = new Date(selectedDate);
-            newDate.setDate(newDate.getDate() + 30);
-            $("#end-date-ref").datepicker({
-              minDate: selectedDate,
-              maxDate: newDate,
-              onSelect: function (selectedDate) {
+            minDate: new Date(year, month, day),
+            maxDate: new Date(year, 11, 31),
+            onSelect: function(selectedDate) {
+                var newDate = new Date(selectedDate);
+                newDate.setDate(newDate.getDate() + 30);
+                $("#end-date-ref").datepicker({
+                    minDate: selectedDate,
+                    maxDate: newDate,
+                    onSelect: function(selectedDate) {
 
-                $("#get-cupon").prop("disabled", false);
-              }
-            });
-          }
+                        $("#get-cupon").prop("disabled", false);
+                    }
+                });
+            }
         });
     }
 };
 
 var applyRedemption = function() {
-  $("#rdmptAppd").slideDown();
+    $("#rdmptAppd").slideDown();
 };
 
 var quantitySpinnerCart = function() {
-  if ($('.cart-product-quantity').length) {
-    $('[id^="cpq_"]').each(function(index) {
-      var spinner = $(this).spinner({
-        min: 1,
-        max: 100000,
-        stop: function(event, ui) {
-          addQuantity(this);
-        }
-      });
-    });
-  }
-};
-var shipDaysSpinner = function() {
-    if ($('#ship-days').length) {
-        var spinner = $("#ship-days").spinner({
-            min: 1,
-            max: 100000
+    if ($('.cart-product-quantity').length) {
+        $('[id^="cpq_"]').each(function(index) {
+            var spinner = $(this).spinner({
+                min: 1,
+                max: 100000,
+                stop: function(event, ui) {
+                    addQuantity(this);
+                }
+            });
         });
     }
+};
+var initArtPrintSize = function() {
+    if ($('#print-main').length) {
+        $('#init-img-width').val($('#print-main').css("width"));
+        $('#init-img-height').val($('#print-main').css("height"));
+    }
+};
+var paper_selected = false;
+var m_left = "";
+var printPaper = function(e) {
+
+
+    if ($(window).width() >= 1000) {
+        if (paper_selected === false) {
+          if ($(window).width() > 1600) {
+            $('#print-main').animate({
+                width: "173px",
+                height: "260px",
+                marginLeft: 0 - (173 / 2)
+            });
+          }
+
+          else if ($(window).width() >= 1000 && $(window).width() <= 1600) {
+            $('#print-main').animate({
+                width: "140px",
+                height: "211px",
+                marginLeft: 0 - (140 / 2)
+            });
+          }
+            paper_selected = true;
+            setTimeout(function() {
+                m_left = $("#print-main").css("margin-left");
+            }, 500);
+        }
+    }
+
+    if (e.value === "canvas") {
+        if ($(window).width() >= 1000) {
+            $('#indv-print-container').css("background", "url('images/room-bg.jpg') no-repeat center center / 100% 100%");
+            $('#print-main').addClass("print-medium-selected");
+            $('#print-main').addClass("print-medium-canvas");
+        }
+        $('#print-main').css("border", "none");
+        $('#print-size').prop('disabled', false);
+        $('#print-frame').prop('disabled', true);
+        $('#print-frame').val("select");
+
+
+    } else if (e.value === "matt") {
+        if ($(window).width() >= 1000) {
+            $('#indv-print-container').css("background", "url('images/room-bg.jpg') no-repeat center center / 100% 100%");
+            $('#print-main').addClass("print-medium-selected");
+        }
+        $('#print-size').prop('disabled', false);
+        $('#print-frame').prop('disabled', false);
+        $('#print-main').removeClass("print-medium-canvas");
+    } else if (e.value === "photo") {
+        if ($(window).width() >= 1000) {
+            $('#indv-print-container').css("background", "url('images/room-bg.jpg') no-repeat center center / 100% 100%");
+            $('#print-main').addClass("print-medium-selected");
+        }
+        $('#print-size').prop('disabled', false);
+        $('#print-frame').prop('disabled', false);
+        $('#print-main').removeClass("print-medium-canvas");
+    } else if (e.value === "select") {
+        if ($(window).width() >= 1000) {
+            $('#indv-print-container').css("background", "linear-gradient( #eeebeb, #f9f9f9)");
+            $('#print-main').animate({
+                width: $('#init-img-width').val(),
+                height: $('#init-img-height').val()
+            });
+            $('#print-main').removeClass("print-medium-selected");
+            $('#print-main').removeClass("print-medium-canvas");
+            $('#print-main').css("margin-left", 0);
+            $('#print-main').css("border", "none");
+        }
+        $('#print-size').prop('disabled', true);
+        $('#print-frame').prop('disabled', true);
+        $('#print-frame').val("select");
+        $('#print-size').val("24x36");
+        paper_selected = false;
+    }
+};
+
+var print_size = "";
+
+var printSize = function(e) {
+    if ($(window).width() >= 1000) {
+
+      if ($(window).width() > 1600) {
+
+          if (e.value === "select") {
+              $('#print-main').animate({
+                  width: "173px",
+                  height: "260px",
+                  //marginLeft: 0 - (173/2)
+              }, function() {
+                  $('#print-main').animate({
+                      marginLeft: 0 - ($('#print-main').outerWidth() / 2)
+                  }, 200);
+              });
+          } else if (e.value === "6x4") {
+              $('#print-main').animate({
+                  width: "44px",
+                  height: "29px",
+                  //marginLeft: 0 - (51/2)
+              }, function() {
+                  $('#print-main').animate({
+                      marginLeft: 0 - ($('#print-main').outerWidth() / 2)
+                  }, 200);
+              });
+          } else if (e.value === "7x5") {
+              $('#print-main').animate({
+                  width: "51px",
+                  height: "36px",
+                  //marginLeft: 0 - (51/2)
+              }, function() {
+                  $('#print-main').animate({
+                      marginLeft: 0 - ($('#print-main').outerWidth() / 2)
+                  }, 200);
+              });
+          } else if (e.value === "a5") {
+              $('#print-main').animate({
+                  width: "42px",
+                  height: "60px",
+                  //marginLeft: 0 - (42/2)
+              }, function() {
+                  $('#print-main').animate({
+                      marginLeft: 0 - ($('#print-main').outerWidth() / 2)
+                  }, 200);
+              });
+          } else if (e.value === "8x8") {
+              $('#print-main').animate({
+                  width: "58px",
+                  height: "58px",
+                  //marginLeft: 0 - (58/2)
+              }, function() {
+                  $('#print-main').animate({
+                      marginLeft: 0 - ($('#print-main').outerWidth() / 2)
+                  }, 200);
+              });
+          } else if (e.value === "6x12") {
+              $('#print-main').animate({
+                  width: "44px",
+                  height: "87px",
+                  //marginLeft: 0 - (44/2)
+              }, function() {
+                  $('#print-main').animate({
+                      marginLeft: 0 - ($('#print-main').outerWidth() / 2)
+                  }, 200);
+              });
+          } else if (e.value === "10x8") {
+              $('#print-main').animate({
+                  width: "72px",
+                  height: "58px",
+                  //marginLeft: 0 - (72/2)
+              }, function() {
+                  $('#print-main').animate({
+                      marginLeft: 0 - ($('#print-main').outerWidth() / 2)
+                  }, 200);
+              });
+          } else if (e.value === "12x8") {
+              $('#print-main').animate({
+                  width: "87px",
+                  height: "58px",
+                  //marginLeft: 0 - (87/2)
+              }, function() {
+                  $('#print-main').animate({
+                      marginLeft: 0 - ($('#print-main').outerWidth() / 2)
+                  }, 200);
+              });
+          } else if (e.value === "a4") {
+              $('#print-main').animate({
+                  width: "60px",
+                  height: "85px",
+                  //marginLeft: 0 - (60/2)
+              }, function() {
+                  $('#print-main').animate({
+                      marginLeft: 0 - ($('#print-main').outerWidth() / 2)
+                  }, 200);
+              });
+          } else if (e.value === "6x18") {
+              $('#print-main').animate({
+                  width: "44px",
+                  height: "130px",
+                  //marginLeft: 0 - (44/2)
+              }, function() {
+                  $('#print-main').animate({
+                      marginLeft: 0 - ($('#print-main').outerWidth() / 2)
+                  }, 200);
+              });
+          } else if (e.value === "8x16") {
+              $('#print-main').animate({
+                  width: "58px",
+                  height: "116px",
+                  //marginLeft: 0 - (58/2)
+              }, function() {
+                  $('#print-main').animate({
+                      marginLeft: 0 - ($('#print-main').outerWidth() / 2)
+                  }, 200);
+              });
+          } else if (e.value === "12x12") {
+              $('#print-main').animate({
+                  width: "87px",
+                  height: "87px",
+                  //      //marginLeft: 0 - (87/2)
+              }, function() {
+                  $('#print-main').animate({
+                      marginLeft: 0 - ($('#print-main').outerWidth() / 2)
+                  }, 200);
+              });
+          } else if (e.value === "14x11") {
+              $('#print-main').animate({
+                  width: "101px",
+                  height: "80px",
+                  //      //marginLeft: 0 - (101/2)
+              }, function() {
+                  $('#print-main').animate({
+                      marginLeft: 0 - ($('#print-main').outerWidth() / 2)
+                  }, 200);
+              });
+          } else if (e.value === "8x24") {
+              $('#print-main').animate({
+                  width: "58px",
+                  height: "173px",
+                  //    //marginLeft: 0 - (58/2)
+              }, function() {
+                  $('#print-main').animate({
+                      marginLeft: 0 - ($('#print-main').outerWidth() / 2)
+                  }, 200);
+              });
+          } else if (e.value === "16x12") {
+              $('#print-main').animate({
+                  width: "116px",
+                  height: "87px",
+                  //    //marginLeft: 0 - (116/2)
+              }, function() {
+                  $('#print-main').animate({
+                      marginLeft: 0 - ($('#print-main').outerWidth() / 2)
+                  }, 200);
+              });
+          } else if (e.value === "a3") {
+              $('#print-main').animate({
+                  width: "85px",
+                  height: "120px",
+                  //    //marginLeft: 0 - (85/2)
+              }, function() {
+                  $('#print-main').animate({
+                      marginLeft: 0 - ($('#print-main').outerWidth() / 2)
+                  }, 200);
+              });
+          } else if (e.value === "16x16") {
+              $('#print-main').animate({
+                  width: "116px",
+                  height: "116px",
+                  //    //marginLeft: 0 - (116/2)
+              }, function() {
+                  $('#print-main').animate({
+                      marginLeft: 0 - ($('#print-main').outerWidth() / 2)
+                  }, 200);
+              });
+          } else if (e.value === "12x24") {
+              $('#print-main').animate({
+                  width: "87px",
+                  height: "173px",
+                  //    //marginLeft: 0 - (87/2)
+              }, function() {
+                  $('#print-main').animate({
+                      marginLeft: 0 - ($('#print-main').outerWidth() / 2)
+                  }, 200);
+              });
+          } else if (e.value === "20x16") {
+              $('#print-main').animate({
+                  width: "144px",
+                  height: "116px",
+                  //    //marginLeft: 0 - (144/2)
+              }, function() {
+                  $('#print-main').animate({
+                      marginLeft: 0 - ($('#print-main').outerWidth() / 2)
+                  }, 200);
+              });
+          } else if (e.value === "a2") {
+              $('#print-main').animate({
+                  width: "120px",
+                  height: "169px",
+                  //    //marginLeft: 0 - (120/2)
+              }, function() {
+                  $('#print-main').animate({
+                      marginLeft: 0 - ($('#print-main').outerWidth() / 2)
+                  }, 200);
+              });
+          } else if (e.value === "24x16") {
+              $('#print-main').animate({
+                  width: "173px",
+                  height: "116px",
+                  //    //marginLeft: 0 - (173/2)
+              }, function() {
+                  $('#print-main').animate({
+                      marginLeft: 0 - ($('#print-main').outerWidth() / 2)
+                  }, 200);
+              });
+          } else if (e.value === "20x20") {
+              $('#print-main').animate({
+                  width: "144px",
+                  height: "144px",
+                  //    //marginLeft: 0 - (144/2)
+              }, function() {
+                  $('#print-main').animate({
+                      marginLeft: 0 - ($('#print-main').outerWidth() / 2)
+                  }, 200);
+              });
+          } else if (e.value === "12x36") {
+              $('#print-main').animate({
+                  width: "87px",
+                  height: "173px",
+                  //    //marginLeft: 0 - (87/2)
+              }, function() {
+                  $('#print-main').animate({
+                      marginLeft: 0 - ($('#print-main').outerWidth() / 2)
+                  }, 200);
+              });
+          } else if (e.value === "700x500") {
+              $('#print-main').animate({
+                  width: "199px",
+                  height: "142px",
+                  //  //marginLeft: 0 - (199/2)
+              }, function() {
+                  $('#print-main').animate({
+                      marginLeft: 0 - ($('#print-main').outerWidth() / 2)
+                  }, 200);
+              });
+          } else if (e.value === "20x30") {
+              $('#print-main').animate({
+                  width: "144px",
+                  height: "216px",
+                  //marginLeft: 0 - ($('#print-main').outerWidth()/2)
+              }, function() {
+                  $('#print-main').animate({
+                      marginLeft: 0 - ($('#print-main').outerWidth() / 2)
+                  }, 200);
+              });
+          } else if (e.value === "a1") {
+              $('#print-main').animate({
+                  width: "169px",
+                  height: "238px",
+                  //marginLeft: 0 - ($('#print-main').outerWidth()/2)
+              }, function() {
+                  $('#print-main').animate({
+                      marginLeft: 0 - ($('#print-main').outerWidth() / 2)
+                  }, 200);
+              });
+          } else if (e.value === "24x36") {
+              $('#print-main').animate({
+                  width: "173px",
+                  height: "260px",
+                  //marginLeft: 0 - ($('#print-main').outerWidth()/2)
+              }, function() {
+                  $('#print-main').animate({
+                      marginLeft: 0 - ($('#print-main').outerWidth() / 2)
+                  }, 200);
+              });
+
+          }
+      }
+
+      else if ($(window).width() >= 1000 && $(window).width() <= 1600) {
+
+            if (e.value === "select") {
+                $('#print-main').animate({
+                    width: "140px",
+                    height: "211px",
+                    //marginLeft: 0 - (173/2)
+                }, function() {
+                    $('#print-main').animate({
+                        marginLeft: 0 - ($('#print-main').outerWidth() / 2)
+                    }, 200);
+                });
+            } else if (e.value === "6x4") {
+                $('#print-main').animate({
+                    width: "34px",
+                    height: "24px",
+                    //marginLeft: 0 - (51/2)
+                }, function() {
+                    $('#print-main').animate({
+                        marginLeft: 0 - ($('#print-main').outerWidth() / 2)
+                    }, 200);
+                });
+            } else if (e.value === "7x5") {
+                $('#print-main').animate({
+                    width: "41px",
+                    height: "29px",
+                    //marginLeft: 0 - (51/2)
+                }, function() {
+                    $('#print-main').animate({
+                        marginLeft: 0 - ($('#print-main').outerWidth() / 2)
+                    }, 200);
+                });
+            } else if (e.value === "a5") {
+                $('#print-main').animate({
+                    width: "34px",
+                    height: "49px",
+                    //marginLeft: 0 - (42/2)
+                }, function() {
+                    $('#print-main').animate({
+                        marginLeft: 0 - ($('#print-main').outerWidth() / 2)
+                    }, 200);
+                });
+            } else if (e.value === "8x8") {
+                $('#print-main').animate({
+                    width: "47px",
+                    height: "47px",
+                    //marginLeft: 0 - (58/2)
+                }, function() {
+                    $('#print-main').animate({
+                        marginLeft: 0 - ($('#print-main').outerWidth() / 2)
+                    }, 200);
+                });
+            } else if (e.value === "6x12") {
+                $('#print-main').animate({
+                    width: "35px",
+                    height: "70px",
+                    //marginLeft: 0 - (44/2)
+                }, function() {
+                    $('#print-main').animate({
+                        marginLeft: 0 - ($('#print-main').outerWidth() / 2)
+                    }, 200);
+                });
+            } else if (e.value === "10x8") {
+                $('#print-main').animate({
+                    width: "58px",
+                    height: "47px",
+                    //marginLeft: 0 - (72/2)
+                }, function() {
+                    $('#print-main').animate({
+                        marginLeft: 0 - ($('#print-main').outerWidth() / 2)
+                    }, 200);
+                });
+            } else if (e.value === "12x8") {
+                $('#print-main').animate({
+                    width: "70px",
+                    height: "47px",
+                    //marginLeft: 0 - (87/2)
+                }, function() {
+                    $('#print-main').animate({
+                        marginLeft: 0 - ($('#print-main').outerWidth() / 2)
+                    }, 200);
+                });
+            } else if (e.value === "a4") {
+                $('#print-main').animate({
+                    width: "49px",
+                    height: "69px",
+                    //marginLeft: 0 - (60/2)
+                }, function() {
+                    $('#print-main').animate({
+                        marginLeft: 0 - ($('#print-main').outerWidth() / 2)
+                    }, 200);
+                });
+            } else if (e.value === "6x18") {
+                $('#print-main').animate({
+                    width: "36px",
+                    height: "105px",
+                    //marginLeft: 0 - (44/2)
+                }, function() {
+                    $('#print-main').animate({
+                        marginLeft: 0 - ($('#print-main').outerWidth() / 2)
+                    }, 200);
+                });
+            } else if (e.value === "8x16") {
+                $('#print-main').animate({
+                    width: "47px",
+                    height: "94px",
+                    //marginLeft: 0 - (58/2)
+                }, function() {
+                    $('#print-main').animate({
+                        marginLeft: 0 - ($('#print-main').outerWidth() / 2)
+                    }, 200);
+                });
+            } else if (e.value === "12x12") {
+                $('#print-main').animate({
+                    width: "70px",
+                    height: "70px",
+                    //      //marginLeft: 0 - (87/2)
+                }, function() {
+                    $('#print-main').animate({
+                        marginLeft: 0 - ($('#print-main').outerWidth() / 2)
+                    }, 200);
+                });
+            } else if (e.value === "14x11") {
+                $('#print-main').animate({
+                    width: "82px",
+                    height: "65px",
+                    //      //marginLeft: 0 - (101/2)
+                }, function() {
+                    $('#print-main').animate({
+                        marginLeft: 0 - ($('#print-main').outerWidth() / 2)
+                    }, 200);
+                });
+            } else if (e.value === "8x24") {
+                $('#print-main').animate({
+                    width: "47px",
+                    height: "140px",
+                    //    //marginLeft: 0 - (58/2)
+                }, function() {
+                    $('#print-main').animate({
+                        marginLeft: 0 - ($('#print-main').outerWidth() / 2)
+                    }, 200);
+                });
+            } else if (e.value === "16x12") {
+                $('#print-main').animate({
+                    width: "94px",
+                    height: "70px",
+                    //    //marginLeft: 0 - (116/2)
+                }, function() {
+                    $('#print-main').animate({
+                        marginLeft: 0 - ($('#print-main').outerWidth() / 2)
+                    }, 200);
+                });
+            } else if (e.value === "a3") {
+                $('#print-main').animate({
+                    width: "69px",
+                    height: "97px",
+                    //    //marginLeft: 0 - (85/2)
+                }, function() {
+                    $('#print-main').animate({
+                        marginLeft: 0 - ($('#print-main').outerWidth() / 2)
+                    }, 200);
+                });
+            } else if (e.value === "16x16") {
+                $('#print-main').animate({
+                    width: "94px",
+                    height: "94px",
+                    //    //marginLeft: 0 - (116/2)
+                }, function() {
+                    $('#print-main').animate({
+                        marginLeft: 0 - ($('#print-main').outerWidth() / 2)
+                    }, 200);
+                });
+            } else if (e.value === "12x24") {
+                $('#print-main').animate({
+                    width: "70px",
+                    height: "140px",
+                    //    //marginLeft: 0 - (87/2)
+                }, function() {
+                    $('#print-main').animate({
+                        marginLeft: 0 - ($('#print-main').outerWidth() / 2)
+                    }, 200);
+                });
+            } else if (e.value === "20x16") {
+                $('#print-main').animate({
+                    width: "116px",
+                    height: "94px",
+                    //    //marginLeft: 0 - (144/2)
+                }, function() {
+                    $('#print-main').animate({
+                        marginLeft: 0 - ($('#print-main').outerWidth() / 2)
+                    }, 200);
+                });
+            } else if (e.value === "a2") {
+                $('#print-main').animate({
+                    width: "97px",
+                    height: "137px",
+                    //    //marginLeft: 0 - (120/2)
+                }, function() {
+                    $('#print-main').animate({
+                        marginLeft: 0 - ($('#print-main').outerWidth() / 2)
+                    }, 200);
+                });
+            } else if (e.value === "24x16") {
+                $('#print-main').animate({
+                    width: "140px",
+                    height: "94px",
+                    //    //marginLeft: 0 - (173/2)
+                }, function() {
+                    $('#print-main').animate({
+                        marginLeft: 0 - ($('#print-main').outerWidth() / 2)
+                    }, 200);
+                });
+            } else if (e.value === "20x20") {
+                $('#print-main').animate({
+                    width: "116px",
+                    height: "116px",
+                    //    //marginLeft: 0 - (144/2)
+                }, function() {
+                    $('#print-main').animate({
+                        marginLeft: 0 - ($('#print-main').outerWidth() / 2)
+                    }, 200);
+                });
+            } else if (e.value === "12x36") {
+                $('#print-main').animate({
+                    width: "70px",
+                    height: "140px",
+                    //    //marginLeft: 0 - (87/2)
+                }, function() {
+                    $('#print-main').animate({
+                        marginLeft: 0 - ($('#print-main').outerWidth() / 2)
+                    }, 200);
+                });
+            } else if (e.value === "700x500") {
+                $('#print-main').animate({
+                    width: "161px",
+                    height: "115px",
+                    //  //marginLeft: 0 - (199/2)
+                }, function() {
+                    $('#print-main').animate({
+                        marginLeft: 0 - ($('#print-main').outerWidth() / 2)
+                    }, 200);
+                });
+            } else if (e.value === "20x30") {
+                $('#print-main').animate({
+                    width: "116px",
+                    height: "175px",
+                    //marginLeft: 0 - ($('#print-main').outerWidth()/2)
+                }, function() {
+                    $('#print-main').animate({
+                        marginLeft: 0 - ($('#print-main').outerWidth() / 2)
+                    }, 200);
+                });
+            } else if (e.value === "a1") {
+                $('#print-main').animate({
+                    width: "137px",
+                    height: "192px",
+                    //marginLeft: 0 - ($('#print-main').outerWidth()/2)
+                }, function() {
+                    $('#print-main').animate({
+                        marginLeft: 0 - ($('#print-main').outerWidth() / 2)
+                    }, 200);
+                });
+            } else if (e.value === "24x36") {
+                $('#print-main').animate({
+                    width: "140px",
+                    height: "211px",
+                    //marginLeft: 0 - ($('#print-main').outerWidth()/2)
+                }, function() {
+                    $('#print-main').animate({
+                        marginLeft: 0 - ($('#print-main').outerWidth() / 2)
+                    }, 200);
+                });
+
+            }
+        }
+    }
+};
+
+var attachPrintFrame = function(e) {
+
+    if ($(window).width() >= 1000) {
+        var wideFrame = false;
+        if (e.value === "select") {
+            $('#print-main').css("border", "none");
+            $('#print-main').css("padding", "0");
+            $('#print-main').css("margin-left", m_left);
+        } else if (e.value === "black1") {
+            $('#print-main').css("border", "7px solid #000");
+        } else if (e.value === "black2") {
+            $('#print-main').css("border", "10px solid #000");
+        } else if (e.value === "oak1") {
+            $('#print-main').css("border-style", "solid");
+            $('#print-main').css("border-width", "7px");
+            $('#print-main').css("border-image", 'url("images/pattern/35oak-large-img.jpg") 7 round');
+        } else if (e.value === "oak2") {
+            $('#print-main').css("border-style", "solid");
+            $('#print-main').css("border-width", "10px");
+            $('#print-main').css("border-image", 'url("images/pattern/35oak-large-img.jpg") 10 round');
+            //$('#print-main').css("margin-left", m_left2 - 10);
+        } else if (e.value === "b-black1") {
+            $('#print-main').css("border-style", "solid");
+            $('#print-main').css("border-width", "7px");
+            $('#print-main').css("border-image", 'url("images/pattern/35black-large-img.jpg") 7 round');
+            //$('#print-main').css("margin-left", m_left2 - 7);
+        } else if (e.value === "b-black2") {
+            $('#print-main').css("border-style", "solid");
+            $('#print-main').css("border-width", "10px");
+            $('#print-main').css("border-image", 'url("images/pattern/35black-large-img.jpg") 10 round');
+            //$('#print-main').css("margin-left", m_left2 - 10);
+        } else if (e.value === "grey1") {
+            $('#print-main').css("border-style", "solid");
+            $('#print-main').css("border-width", "7px");
+            $('#print-main').css("border-image", 'url("images/pattern/35grey-large-img.jpg") 7 round');
+            //$('#print-main').css("margin-left", m_left2 - 7);
+        } else if (e.value === "grey2") {
+            $('#print-main').css("border-style", "solid");
+            $('#print-main').css("border-width", "10px");
+            $('#print-main').css("border-image", 'url("images/pattern/35grey-large-img.jpg") 10 round');
+            //$('#print-main').css("margin-left", m_left2 - 10);
+        } else if (e.value === "p-grey1") {
+            $('#print-main').css("border-style", "solid");
+            $('#print-main').css("border-width", "7px");
+            $('#print-main').css("border-image", 'url("images/pattern/35palegrey-large-img.jpg") 7 round');
+            //$('#print-main').css("margin-left", m_left2 - 7);
+        } else if (e.value === "p-grey2") {
+            $('#print-main').css("border-style", "solid");
+            $('#print-main').css("border-width", "10px");
+            $('#print-main').css("border-image", 'url("images/pattern/35palegrey-large-img.jpg") 10 round');
+            //$('#print-main').css("margin-left", m_left2 - 10);
+        } else if (e.value === "white1") {
+            $('#print-main').css("border-style", "solid");
+            $('#print-main').css("border-width", "7px");
+            $('#print-main').css("border-image", 'url("images/pattern/35white-large-img.jpg") 7 round');
+            //$('#print-main').css("margin-left", m_left2 - 7);
+        } else if (e.value === "white2") {
+            $('#print-main').css("border-style", "solid");
+            $('#print-main').css("border-width", "10px");
+            $('#print-main').css("border-image", 'url("images/pattern/35white-large-img.jpg") 10 round');
+            //$('#print-main').css("margin-left", m_left2 - 10);
+        } else if (e.value === "ivory1") {
+            $('#print-main').css("border-style", "solid");
+            $('#print-main').css("border-width", "7px");
+            $('#print-main').css("border-image", 'url("images/pattern/35ivory-large-img.jpg") 7 round');
+            //$('#print-main').css("margin-left", m_left2 - 7);
+        } else if (e.value === "ivory2") {
+            $('#print-main').css("border-style", "solid");
+            $('#print-main').css("border-width", "10px");
+            $('#print-main').css("border-image", 'url("images/pattern/35ivory-large-img.jpg") 10 round');
+            //$('#print-main').css("margin-left", m_left2 - 10);
+        } else if (e.value === "walnut1") {
+            $('#print-main').css("border-style", "solid");
+            $('#print-main').css("border-width", "7px");
+            $('#print-main').css("border-image", 'url("images/pattern/35walnut-large-img.jpg") 7 round');
+            //$('#print-main').css("margin-left", m_left2 - 7);
+        } else if (e.value === "walnut2") {
+            $('#print-main').css("border-style", "solid");
+            $('#print-main').css("border-width", "10px");
+            $('#print-main').css("border-image", 'url("images/pattern/35walnut-large-img.jpg") 10 round');
+            //$('#print-main').css("margin-left", m_left2 - 10);
+        }
+        $('#print-main').animate({
+            marginLeft: 0 - ($('#print-main').outerWidth() / 2)
+        }, 200);
+    }
+};
+
+var resizeArtPrintPage = function() {
+  if ($(".print-medium-selected").length) {
+    if ($(window).width() < 1000) {
+      $('#indv-print-container').css("background", "linear-gradient( #eeebeb, #f9f9f9)");
+      $('#print-main').hide();
+      $('#print-main-small').show();
+    }
+    else if ($(window).width() >= 1000) {
+      $('#indv-print-container').css("background", "url('images/room-bg.jpg') no-repeat center center / 100% 100%");
+      $('#print-main').show();
+      $('#print-main-small').hide();
+    }
+  }
 };

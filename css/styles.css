@@ -8081,7 +8081,6 @@ label {
   white-space: normal;
   word-wrap: break-word;
   overflow: hidden;
-
 }
 .thankyou-conf-msg {
   width: 50%;
@@ -8116,13 +8115,21 @@ label {
   right: -15px;
   top: 10px;
 }
-
-
-
-
-
-
-
+.print-medium-selected {
+  position: absolute;
+  bottom: 300px;
+  left: 50%;
+  box-shadow: rgba(0, 0, 0, 0.3) 5px 5px 8px;
+  box-sizing: content-box;
+}
+select[disabled] {
+  color: #acacac;
+}
+.print-medium-canvas {
+  border-right: 5px solid rgb(255, 255, 255);
+  border-bottom: 5px solid rgb(255, 255, 255);
+  border-radius: 0px 5px;
+}
 
 
 
@@ -9921,6 +9928,10 @@ li.ui-timepicker-selected .ui-timepicker-duration,
     }
     .btn.wide.confirmation-btn {
       width: 300px;
+    }
+    .print-medium-selected {
+      position: absolute;
+      bottom: 185px;
     }
 
 
@@ -11851,7 +11862,16 @@ li.ui-timepicker-selected .ui-timepicker-duration,
   .confirm-sep {
     width: 100%;
   }
-
+  .art-print-options-wrapper .so-left {
+    float: none;
+    width: 100%;
+    margin-left: 0;
+  }
+  .art-print-options-wrapper .so-right {
+    float: none;
+    width: 100%;
+    margin-left: 0;
+  }
 }
 
 
@@ -13976,6 +13996,18 @@ li.ui-timepicker-selected .ui-timepicker-duration,
     .confirm-sep {
       width: 100%;
     }
+    .art-print-options-wrapper .so-left {
+      float: none;
+      width: 100%;
+      margin-left: 0;
+      padding-right: 0;
+    }
+    .art-print-options-wrapper .so-right {
+      float: none;
+      width: 100%;
+      margin-left: 0;
+    }
+
 
   }
 
