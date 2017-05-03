@@ -1857,78 +1857,74 @@ var initArtPrintSize = function() {
 var paper_selected = false;
 var m_left = "";
 var printPaper = function(e) {
+  if ($(window).width() >= 1000) {
+    if (paper_selected === false) {
+      if ($(window).width() > 1600) {
+        $('#print-main').animate({
+          width: "173px",
+          height: "260px",
+          marginLeft: 0 - (173 / 2)
+        });
+      } else if ($(window).width() >= 1000 && $(window).width() <= 1600) {
+        $('#print-main').animate({
+          width: "140px",
+          height: "211px",
+          marginLeft: 0 - (140 / 2)
+        });
+      }
+      paper_selected = true;
+      setTimeout(function() {
+        m_left = $("#print-main").css("margin-left");
+      }, 500);
+    }
+  }
 
-
+  if (e.value === "Canvas print") {
     if ($(window).width() >= 1000) {
-        if (paper_selected === false) {
-          if ($(window).width() > 1600) {
-            $('#print-main').animate({
-                width: "173px",
-                height: "260px",
-                marginLeft: 0 - (173 / 2)
-            });
-          }
-
-          else if ($(window).width() >= 1000 && $(window).width() <= 1600) {
-            $('#print-main').animate({
-                width: "140px",
-                height: "211px",
-                marginLeft: 0 - (140 / 2)
-            });
-          }
-            paper_selected = true;
-            setTimeout(function() {
-                m_left = $("#print-main").css("margin-left");
-            }, 500);
-        }
+      $('#indv-print-container').css("background", "url('images/print-view.png') no-repeat center center / 100% 100%");
+      $('#print-main').addClass("print-medium-selected");
+      $('#print-main').addClass("print-medium-canvas");
     }
-
-    if (e.value === "canvas") {
-        if ($(window).width() >= 1000) {
-            $('#indv-print-container').css("background", "url('images/room-bg.jpg') no-repeat center center / 100% 100%");
-            $('#print-main').addClass("print-medium-selected");
-            $('#print-main').addClass("print-medium-canvas");
-        }
-        $('#print-main').css("border", "none");
-        $('#print-size').prop('disabled', false);
-        $('#print-frame').prop('disabled', true);
-        $('#print-frame').val("select");
+    $('#print-main').css("border", "none");
+    $('#print-size').prop('disabled', false);
+    $('#print-frame').prop('disabled', true);
+    $('#print-frame').val("select");
 
 
-    } else if (e.value === "matt") {
-        if ($(window).width() >= 1000) {
-            $('#indv-print-container').css("background", "url('images/room-bg.jpg') no-repeat center center / 100% 100%");
-            $('#print-main').addClass("print-medium-selected");
-        }
-        $('#print-size').prop('disabled', false);
-        $('#print-frame').prop('disabled', false);
-        $('#print-main').removeClass("print-medium-canvas");
-    } else if (e.value === "photo") {
-        if ($(window).width() >= 1000) {
-            $('#indv-print-container').css("background", "url('images/room-bg.jpg') no-repeat center center / 100% 100%");
-            $('#print-main').addClass("print-medium-selected");
-        }
-        $('#print-size').prop('disabled', false);
-        $('#print-frame').prop('disabled', false);
-        $('#print-main').removeClass("print-medium-canvas");
-    } else if (e.value === "select") {
-        if ($(window).width() >= 1000) {
-            $('#indv-print-container').css("background", "linear-gradient( #eeebeb, #f9f9f9)");
-            $('#print-main').animate({
-                width: $('#init-img-width').val(),
-                height: $('#init-img-height').val()
-            });
-            $('#print-main').removeClass("print-medium-selected");
-            $('#print-main').removeClass("print-medium-canvas");
-            $('#print-main').css("margin-left", 0);
-            $('#print-main').css("border", "none");
-        }
-        $('#print-size').prop('disabled', true);
-        $('#print-frame').prop('disabled', true);
-        $('#print-frame').val("select");
-        $('#print-size').val("24x36");
-        paper_selected = false;
+  } else if (e.value === "Matt poster paper") {
+    if ($(window).width() >= 1000) {
+      $('#indv-print-container').css("background", "url('images/print-view.png') no-repeat center center / 100% 100%");
+      $('#print-main').addClass("print-medium-selected");
     }
+    $('#print-size').prop('disabled', false);
+    $('#print-frame').prop('disabled', false);
+    $('#print-main').removeClass("print-medium-canvas");
+  } else if (e.value === "Somerset photo paper") {
+    if ($(window).width() >= 1000) {
+      $('#indv-print-container').css("background", "url('images/print-view.png') no-repeat center center / 100% 100%");
+      $('#print-main').addClass("print-medium-selected");
+    }
+    $('#print-size').prop('disabled', false);
+    $('#print-frame').prop('disabled', false);
+    $('#print-main').removeClass("print-medium-canvas");
+  } else if (e.value === "select") {
+    if ($(window).width() >= 1000) {
+      $('#indv-print-container').css("background", "linear-gradient( #eeebeb, #f9f9f9)");
+      $('#print-main').animate({
+        width: $('#init-img-width').val(),
+        height: $('#init-img-height').val()
+      });
+      $('#print-main').removeClass("print-medium-selected");
+      $('#print-main').removeClass("print-medium-canvas");
+      $('#print-main').css("margin-left", 0);
+      $('#print-main').css("border", "none");
+    }
+    $('#print-size').prop('disabled', true);
+    $('#print-frame').prop('disabled', true);
+    $('#print-frame').val("select");
+    $('#print-size').val("24x36");
+    paper_selected = false;
+  }
 };
 
 var print_size = "";
@@ -2168,7 +2164,7 @@ var printSize = function(e) {
                       marginLeft: 0 - ($('#print-main').outerWidth() / 2)
                   }, 200);
               });
-          } else if (e.value === "700x500") {
+          } else if (e.value === "poster") {
               $('#print-main').animate({
                   width: "199px",
                   height: "142px",
@@ -2444,7 +2440,7 @@ var printSize = function(e) {
                         marginLeft: 0 - ($('#print-main').outerWidth() / 2)
                     }, 200);
                 });
-            } else if (e.value === "700x500") {
+            } else if (e.value === "poster") {
                 $('#print-main').animate({
                     width: "161px",
                     height: "115px",
@@ -2586,7 +2582,7 @@ var resizeArtPrintPage = function() {
       $('#print-main-small').show();
     }
     else if ($(window).width() >= 1000) {
-      $('#indv-print-container').css("background", "url('images/room-bg.jpg') no-repeat center center / 100% 100%");
+      $('#indv-print-container').css("background", "url('images/print-view.png') no-repeat center center / 100% 100%");
       $('#print-main').show();
       $('#print-main-small').hide();
     }

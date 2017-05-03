@@ -8130,8 +8130,17 @@ select[disabled] {
   border-bottom: 5px solid rgb(255, 255, 255);
   border-radius: 0px 5px;
 }
-
-
+.art-print-options-wrapper .errorMsg {
+    white-space: normal;
+    word-wrap: break-word;
+    overflow: hidden;
+    margin-top: 0;
+    text-align: left;
+}
+#print-qty-error {
+  position: absolute;
+  margin-top: -28px;
+}
 
 
 
@@ -11872,6 +11881,13 @@ li.ui-timepicker-selected .ui-timepicker-duration,
     width: 100%;
     margin-left: 0;
   }
+  .art-print-options-wrapper .errorMsg {
+      margin-left: 18%;
+  }
+  #print-qty-error {
+    margin-left: 25%;
+    margin-top: -8px;
+  }
 }
 
 
@@ -14007,7 +14023,10 @@ li.ui-timepicker-selected .ui-timepicker-duration,
       width: 100%;
       margin-left: 0;
     }
-
+    #print-qty-error {
+      margin-left: 8%;
+      margin-top: -8px;
+    }
 
   }
 
