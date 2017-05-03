@@ -7352,6 +7352,7 @@ input#product-year {
   float: left;
   padding-right: 20px;
   width: 50%;
+  min-height: 110px;
 }
 .so-right {
   float: left;
@@ -9942,7 +9943,9 @@ li.ui-timepicker-selected .ui-timepicker-duration,
       position: absolute;
       bottom: 185px;
     }
-
+    .so-left {
+      min-height: 100px;
+    }
 
 }
 
@@ -11887,6 +11890,9 @@ li.ui-timepicker-selected .ui-timepicker-duration,
   #print-qty-error {
     margin-left: 25%;
     margin-top: -8px;
+  }
+  .so-left {
+    min-height: 60px;
   }
 }
 
@@ -14026,6 +14032,9 @@ li.ui-timepicker-selected .ui-timepicker-duration,
     #print-qty-error {
       margin-left: 8%;
       margin-top: -8px;
+    }
+    .so-left {
+      min-height: 60px;
     }
 
   }
