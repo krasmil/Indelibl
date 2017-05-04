@@ -8149,16 +8149,14 @@ select[disabled] {
   display: table;
 }
 .wlc1 {
-  width: 66%;
+  width: 70%;
 }
 .wlc2 {
-  width: 4%;
+  width: 10%;
 }
-.wlc3 {
-  width: 15%;
-}
+
 .wlc4 {
-  width: 15%;
+  width: 20%;
 }
 .remove-wl-icon {
   width: 12px;

@@ -2597,7 +2597,3 @@ var removeWLItem = function(e) {
     $('.cart-items thead').hide();
   }
 };
-var addWlItemToCart = function(e) {
-  $(e).parent().parent().find('.n-avail').show();
-  $(e).remove();
-}
