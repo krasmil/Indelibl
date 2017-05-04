@@ -2588,3 +2588,16 @@ var resizeArtPrintPage = function() {
     }
   }
 };
+
+var removeWLItem = function(e) {
+  $(e).closest ('tr').remove();
+
+  if (!$('#wishlist-table tr').length) {
+    $('#empty-wl').show();
+    $('.cart-items thead').hide();
+  }
+};
+var addWlItemToCart = function(e) {
+  $(e).parent().parent().find('.n-avail').show();
+  $(e).remove();
+}

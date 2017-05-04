@@ -8142,20 +8142,75 @@ select[disabled] {
   position: absolute;
   margin-top: -28px;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.wishlist-container {
+  padding: 50px 30px 30px 30px;
+}
+.wishlist-container .cart-items {
+  display: table;
+}
+.wlc1 {
+  width: 66%;
+}
+.wlc2 {
+  width: 4%;
+}
+.wlc3 {
+  width: 15%;
+}
+.wlc4 {
+  width: 15%;
+}
+.remove-wl-icon {
+  width: 12px;
+  height: 12px;
+  margin-right: 5px;
+  vertical-align: middle;
+}
+.wlremove-btn {
+  background: #fff;
+  border: 1px solid #c10002;
+  color: #c10002;
+  line-height: 28px;
+  font-size: 0.85em;
+  font-style: italic;
+  vertical-align: middle;
+  padding: 0;
+}
+.wlremove-btn:hover {
+  background: #fff;
+}
+.wlc3 .icon-shopping-cart {
+  margin-right: 5px;
+}
+.wl-not-avail {
+  width: 12px;
+  height: 12px;
+  margin-right: 5px;
+  vertical-align: middle;
+  margin-top: -4px;
+}
+.n-avail {
+  float: none;
+  display: block;
+  overflow: hidden;
+  width: 100%;
+  font-size: 0.9em;
+  display: none;
+}
+.wlc1 .cart-prod-desc {
+  width: 60%;
+}
+.wlc1 .cart-prod-desc .small-link {
+    max-width: 230px;
+    width: 230px;
+}
+.wlc1 .cart-prod-desc .small-link.og-art-link {
+    max-width: 230px;
+    width: 230px;
+}
+th.wlc1 {
+  width: 790px;
+}
 
 
 
@@ -9945,6 +10000,10 @@ li.ui-timepicker-selected .ui-timepicker-duration,
     }
     .so-left {
       min-height: 100px;
+    }
+    .remove-wl-icon {
+      width: 12px;
+      height: 12px;
     }
 
 }
@@ -11893,6 +11952,55 @@ li.ui-timepicker-selected .ui-timepicker-duration,
   }
   .so-left {
     min-height: 60px;
+  }
+  .wlremove-btn {
+    line-height: 28px;
+  }
+  .wlc3 .btn {
+    max-width: 100%;
+    min-width: 28px;
+  }
+  .wlc4 .btn {
+    max-width: 100%;
+    min-width: 28px;
+  }
+  .wl-btn-text {
+    display: none;
+  }
+  .wlc3 .icon-shopping-cart {
+    margin-right: 0;
+  }
+  .remove-wl-icon {
+    margin-right: 0;
+  }
+  .wl-not-avail {
+    width: 10px;
+    height: 10px;
+    margin-top: 0;
+  }
+  .n-avail {
+    word-wrap: break-word;
+    white-space: normal;
+    overflow: hidden;
+    width: 120px;
+  }
+  th.wlc1 {
+     width: 600px;
+   }
+   .wlc1 .cart-prod-desc .small-link {
+    max-width: 80px;
+    width: 80px;
+  }
+  .wlc1 .cart-prod-desc .small-link.og-art-link {
+    max-width: 80px;
+    width: 80px;
+  }
+  .wl-na-left {
+    width: 15%;
+    vertical-align: top;
+  }
+  .wl-na-right {
+    width: 80%;
   }
 }
 
@@ -14036,7 +14144,60 @@ li.ui-timepicker-selected .ui-timepicker-duration,
     .so-left {
       min-height: 60px;
     }
+    .wlremove-btn {
+      line-height: 28px;
+    }
+    .wlc3 .btn {
+      max-width: 100%;
+      min-width: 30px;
+    }
+    .wlc4 .btn {
+      max-width: 100%;
+      min-width: 30px;
+    }
 
+    .wl-btn-text {
+      display: none;
+    }
+    .wlc3 .icon-shopping-cart {
+      margin-right: 0;
+    }
+    .remove-wl-icon {
+      margin-right: 0;
+    }
+    .wishlist-container {
+      padding: 50px 10px 30px 10px;
+    }
+    .wl-not-avail {
+      width: 10px;
+      height: 10px;
+      margin-top: 0;
+    }
+    .n-avail {
+
+      word-wrap: break-word;
+      white-space: normal;
+      overflow: hidden;
+      width: 120px;
+    }
+    .wlc1 .cart-prod-desc {
+      width: 100%;
+    }
+    .wlc1 .cart-prod-desc .small-link {
+      max-width: 60px;
+      width: 60px;
+    }
+    .wlc1 .cart-prod-desc .small-link.og-art-link {
+      max-width: 60px;
+      width: 60px;
+    }
+    .wl-na-left {
+      width: 15%;
+      vertical-align: top;
+    }
+    .wl-na-right {
+      width: 80%;
+    }
   }
 
 /* Custom, iPhone Retina */
