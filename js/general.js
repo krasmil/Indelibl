@@ -53,6 +53,9 @@ $(document).ready(function() {
     createDatePickersRefs();
     quantitySpinnerCart();
     initArtPrintSize();
+    showSearchWl();
+    showSearchWlMobile();
+    showSearchWlMsg();
 });
 
 /******* Run functions when document resize **********/
@@ -116,6 +119,7 @@ $(window).resize(function() {
     showProdCatButtonsMobile();
     showProdCatButtonsMobileAll();
     resizeArtPrintPage();
+    showSearchWlMobile();
 });
 /******* Run functions when document orientation changed (handheld devices) **********/
 $(window).on("orientationchange", function() {
@@ -2596,4 +2600,40 @@ var removeWLItem = function(e) {
     $('#empty-wl').show();
     $('.cart-items thead').hide();
   }
+};
+
+// ---------- this method is used by product search
+var showSearchWl = function() {
+    if ($(".view-products-search").length) {
+        $(".column-4.box-product3").mouseover(function() {
+            $(this).find(".my-product-cat-buttons-wrapper").show();
+        });
+        $(".column-4.box-product3").mouseout(function() {
+            $(this).find(".my-product-cat-buttons-wrapper").hide();
+        });
+    }
+};
+// ---------- this method is used by product search
+var showSearchWlMobile = function() {
+    if ($(".view-products-search").length) {
+        if ($(window).width() <= 1000) {
+            $(".column-4.box-product3").find(".my-product-cat-buttons-wrapper").show();
+            $(".column-4.box-product3").off('mouseout');
+        } else if ($(window).width() > 1000) {
+            $(".column-4.box-product3").find(".my-product-cat-buttons-wrapper").hide();
+            $(".column-4.box-product3").mouseout(function() {
+                $(".column-4.box-product3").find(".my-product-cat-buttons-wrapper").hide();
+            });
+        }
+    }
+};
+var showSearchWlMsg = function() {
+    if ($('.product-wishlist-btn').length) {
+        $('.product-wishlist-btn').mouseover(function() {
+            $(this).parent().parent().find(".edit-notification").show();
+        });
+        $('.product-wishlist-btn').mouseout(function() {
+            $(this).parent().parent().find(".edit-notification").hide();
+        });
+    }
 };

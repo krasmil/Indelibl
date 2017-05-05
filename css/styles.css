@@ -1255,42 +1255,58 @@ ripple.ripple::after {
 }
 
 .search {
-    display: inline-block;
+    display: block;
     position: relative
 }
 
 .search input {
     line-height: 32px;
     border: solid 1px #acacac;
-    border-radius: 5px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
     padding-left: 10px;
     padding-right: 40px;
     background: transparent;
     height: 30px;
-    min-width: 380px
+    min-width: 380px;
+
+    float: left;
 }
 
 .search input:focus {
     border-color: #e74c3c
 }
+.search-selector {
+  height: 30px;
+  border: 1px solid #acacac;
+  padding-left: 10px;
+  line-height: 30px;
+  font-size: 0.9em;
+  background: #fff;
+  border-left: 0;
+  float: left;
+}
 
 .search button {
-    position: absolute;
-    right: 0;
-    top: -2px;
+    position: relative;
+
     border: none;
     background: none;
     width: 40px;
-    height: 32px;
+    height: 30px;
     line-height: 32px;
     text-align: center;
-    color: #313b46
+    color: #313b46;
+    border: solid 1px #acacac;
+    border-left: 0;
+
+    float: left;
 }
 
 .search button i {
     display: block;
-    font-size: 22px;
-    line-height: 32px;
+    font-size: 20px;
+    vertical-align: middle;
     z-index: 50;
 }
 
@@ -2358,6 +2374,14 @@ ripple.ripple::after {
     width: 100%;
     height: 500px;
     color: #fff;
+}
+.search-result-header {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 200px;
+
 }
 
 .profile-cover_inner {
@@ -6716,7 +6740,7 @@ input#product-year {
 .box-product3 .price2 {
     margin: 0;
     position: absolute;
-    top: 10px;
+    top: 13px;
     right: 10px;
     font-weight: bolder;
 }
@@ -6724,8 +6748,8 @@ input#product-year {
     line-height: 25px;
     margin: 0;
     font-size: 1em;
-    width: 200px;
-    max-width: 200px;
+    width: 190px;
+    max-width: 190px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -6863,6 +6887,10 @@ input#product-year {
   z-index: 500;
   right: -30px;
   line-height: 1em;
+}
+.edit-notification.wl-notification {
+  width: 80px;
+  right: 0;
 }
 .edit-notification.right-edit-notification {
   right: 0;
@@ -8209,7 +8237,9 @@ select[disabled] {
 th.wlc1 {
   width: 790px;
 }
-
+.wlc1 .product-img2.my-prod-img {
+    cursor: auto;
+}
 
 
 
@@ -8829,7 +8859,7 @@ li.ui-timepicker-selected .ui-timepicker-duration,
         font-size: .87em;
     }
     .search input {
-        min-width: 280px;
+        min-width: 240px;
     }
     .right {
         margin-top: 7px;
@@ -8944,6 +8974,9 @@ li.ui-timepicker-selected .ui-timepicker-duration,
     }
     .profile-cover-save {
         height: 330px;
+    }
+    .profile-cover-save.search-result-header {
+        height: 190px;
     }
     .userprofile_img {
         height: 180px;
@@ -9743,8 +9776,8 @@ li.ui-timepicker-selected .ui-timepicker-duration,
       height: 200px;
     }
     .box-product3 h4, .box-product3 h5 {
-        width: 150px;
-        max-width: 150px;
+        width: 100px;
+        max-width: 100px;
     }
     .box-product3 .small-link {
       max-width: 90px;
@@ -9769,6 +9802,9 @@ li.ui-timepicker-selected .ui-timepicker-duration,
     .edit-notification {
       top: -22px;
       width: 120px;
+    }
+    .edit-notification.wl-notification {
+      width: 80px;
     }
     .delete-notification {
       top: -22px;
@@ -10059,13 +10095,23 @@ li.ui-timepicker-selected .ui-timepicker-duration,
         line-height: 0.8em;
         font-size: 0.8em;
         border: solid 1px #acacac;
-        border-radius: 5px;
+
         padding-left: 10px;
         padding-right: 40px;
         background: transparent;
         min-width: 50px;
         width: 150px;
         height: 18px;
+    }
+    .search-selector {
+      height:18px;
+      border: 1px solid #acacac;
+      padding-left: 10px;
+      line-height: 18px;
+
+      background: #fff;
+      border-left: 0;
+      float: left;
     }
     .dropdown .drop-trigger span {
         font-size: 0.8em;
@@ -10095,19 +10141,20 @@ li.ui-timepicker-selected .ui-timepicker-duration,
     }
     #searchMob {
         display: block;
-        width: 185px;
+
         float: right;
-        margin-top: -2px;
+
     }
     .search button {
-        width: 14px;
-        height: 14px;
+        width: 18px;
+        height: 18px;
         position: initial;
-        float: right;
-        margin-top: 5px;
+        float: left;
+
         background: url('../images/icons/search.png');
         background-size: 12px 12px;
         background-repeat: no-repeat;
+        background-position: center;
     }
     .navigation_toggle {
         z-index: 50;
@@ -11486,8 +11533,8 @@ li.ui-timepicker-selected .ui-timepicker-duration,
 
     }
     .small-link {
-      width: 140px;
-      max-width: 140px;
+      width: 130px;
+      max-width: 130px;
     }
     .box-product2 h4, .box-product2 h5 {
 
@@ -11501,8 +11548,8 @@ li.ui-timepicker-selected .ui-timepicker-duration,
     height: 235px;
   }
   .box-product3 h4, .box-product3 h5 {
-    width: 190px;
-    max-width: 190px;
+    width: 150px;
+    max-width: 150px;
   }
   .box-product3:nth-of-type(4n+1) {
     margin: 0 12px 25px 12px;
@@ -12054,13 +12101,24 @@ li.ui-timepicker-selected .ui-timepicker-duration,
         line-height: 0.8em;
         font-size: 0.8em;
         border: solid 1px #acacac;
-        border-radius: 5px;
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;
         padding-left: 10px;
         padding-right: 40px;
         background: transparent;
         min-width: 50px;
-        width: 150px;
+        width: 140px;
         height: 18px;
+    }
+    .search-selector {
+      height:18px;
+      border: 1px solid #acacac;
+      padding-left: 10px;
+      line-height: 18px;
+
+      background: #fff;
+      border-left: 0;
+      float: left;
     }
     .dropdown .drop-trigger span {
         font-size: 0.8em;
@@ -12089,19 +12147,20 @@ li.ui-timepicker-selected .ui-timepicker-duration,
     }
     #searchMob {
         display: block;
-        width: 185px;
+
         float: right;
         margin-top: -2px;
     }
     .search button {
-        width: 14px;
-        height: 14px;
+        width: 18px;
+        height: 18px;
         position: initial;
         float: right;
-        margin-top: 5px;
+
         background: url('../images/icons/search.png');
         background-size: 12px 12px;
         background-repeat: no-repeat;
+        background-position: center;
     }
     .navigation_toggle {
         z-index: 50;
