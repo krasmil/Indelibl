@@ -40,10 +40,10 @@
 		<!-- start gallery application form main section -->
 		<section class="bg-lightest large-padding-y">
 			<div class="content-wrapper app_form white">
-				<div class="row">
+				<div class="row" style="margin-left: 0;">
 					<div class="profile-form gallery_application">
 						<h2>
-							Application for Galleries and Publishers
+							Application for Galleries &amp; Publishers
 						</h2>
 						<!-- organisation name -->
 						<div class="form-row appForm_row1">
@@ -79,15 +79,13 @@
 							</div>
 					</div>
 				</div>
-				<div class="row">
+				<div class="row" style="margin-left: 0;">
 					<div class="profile-form gallery_application">
-						<div class="form-row">
-							<h3>
-								<b>
-									Contact Details
-								</b>
-							</h3>
-						</div>
+						<h3>
+							<b>
+								Contact Details
+							</b>
+						</h3>
 						<!-- Contact person name -->
 						<div class="form-row">
 
@@ -123,6 +121,52 @@
 
 						<!-- country state -->
 						<div class="form-row">
+
+
+
+
+
+
+
+
+
+							<div class="form-item form-item_full">
+							<label class="form-label">
+								Upload your ID
+							</label>
+							</div>
+
+							<div class="form-item form-item_full">
+								<div class="userID_img" id="id-image-preview"></div>
+								<div class="id_select_button_wrapper">
+									<div class="id_upload_desc">
+										<span>
+											In order to verify your account, we need a digital
+											copy of your government issued ID. This will help
+											us ensure that you are who you say you are, and also
+											that payments are made to the rightful owner.
+										</span>
+									</div>
+									<label for="id-img-file-input" class="btn dark mobLeft">
+											Choose
+									</label>
+									<input id="id-img-file-input" type="file" accept="image/*" onchange="showMyID(this)"/>
+								</div>
+								<div class="form-item form-item_full">
+									<div class="errorMsg">
+										<div class="errorIcon"></div>Please select an image for your ID
+									</div>
+								</div>
+							</div>
+
+
+
+
+
+
+
+
+
 								<div class="form-item form-item_half">
 									<div class="form-item form-item_full">
 										<label for="profileCountry" class="form-label">
@@ -149,7 +193,7 @@
 								<div class="form-item form-item_half">
 									<div class="form-item form-item_full">
 										<label for="profileState" class="form-label">
-											State *
+											State
 										</label>
 									</div>
 
@@ -180,14 +224,14 @@
 								<div class="form-item form-item_half">
 									<input type="text" class="form-input" id="userStreet" name="userStreet" placeholder="Street">
 									<div class="errorMsg">
-										<div class="errorIcon"></div>
+										<div class="errorIcon"></div>Please fill this field appropriately
 									</div>
 								</div>
 								<div class="form-item form-item_half">
 									<div class="form-item form-item_half">
 										<input type="text" class="form-input" id="StreetNo" name="StreetNo" placeholder="Number">
 										<div class="errorMsg">
-											<div class="errorIcon"></div>
+											<div class="errorIcon"></div>Please fill this field appropriately
 										</div>
 									</div>
 								</div>　
@@ -202,14 +246,14 @@
 								<div class="form-item form-item_half">
 									<input type="text" class="form-input" id="userCity" name="userCity" placeholder="City">
 									<div class="errorMsg">
-										<div class="errorIcon"></div>
+										<div class="errorIcon"></div>Please fill this field appropriately
 									</div>
 								</div>
 								<div class="form-item form-item_half">
 									<div class="form-item form-item_half">
 										<input type="text" class="form-input" id="pCode" name="pCode" placeholder="Postcode">
 										<div class="errorMsg">
-											<div class="errorIcon"></div>
+											<div class="errorIcon"></div>Please fill this field appropriately
 										</div>
 									</div>
 								</div>　
@@ -249,7 +293,7 @@
 									<div class="form-item form-item_full">
 										<input type="text" class="form-input" id="galleryWebsite" name="galleryWebsite" placeholder="Website">
 										<div class="errorMsg">
-											<div class="errorIcon"></div>
+											<div class="errorIcon"></div>Please fill this field appropriately
 										</div>
 									</div>
 								</div>
@@ -268,7 +312,7 @@
 									<div class="form-item form-item_full">
 									<input type="text" class="form-input" id="galleryPhone" name="galleryPhone" placeholder="Phone">
 										<div class="errorMsg">
-											<div class="errorIcon"></div>
+											<div class="errorIcon"></div>Please fill this field appropriately
 										</div>
 									</div>
 								</div>
@@ -286,7 +330,7 @@
 							</div>
 					</div>
 				</div>
-				<div class="row">
+				<div class="row" style="margin-left: 0;">
 					<div class="profile-form gallery_application">
 						<div class="form-row">
 							<div class="checkBox_privacy_container">
