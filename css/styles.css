@@ -1941,6 +1941,10 @@ ripple.ripple::after {
     z-index: 2000;
     border-radius: 6px
 }
+.popup-inner.registration-popup {
+    max-width: 850px;
+    margin-bottom: 30px;
+}
 
 .login-popup-button-icon {
     height: 32px;
@@ -2014,9 +2018,7 @@ ripple.ripple::after {
     margin-top: 1em;
 }
 
-.popup-registration_signup span {
-    margin-left: 25px;
-}
+
 
 .popup-registration-content {
     background-color: #fff;
@@ -2032,16 +2034,17 @@ ripple.ripple::after {
     margin-bottom: 20px
 }
 
-.popup-registration-content .top {
-    width: 50%;
-}
-
 .popup-registration-content .bottom {
     width: 100%;
 }
 
 .popup-registration-content .top {
-    padding-bottom: 30px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    width: 35%;
+    float: left;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
 .popup-registration-content .top a {
@@ -2055,7 +2058,6 @@ ripple.ripple::after {
 
 .popup-registration-content .top .facebook {
     background-color: #4466b0;
-    margin-bottom: 30px
 }
 
 .popup-registration-content .top .googleplus {
@@ -2111,7 +2113,7 @@ ripple.ripple::after {
     display: block;
     top: 0;
     height: 1px;
-    width: 600px;
+    width: 1000px;
     position: absolute;
     background-color: #b2a0a0;
     z-index: 5
@@ -2213,15 +2215,17 @@ ripple.ripple::after {
 }
 
 #registerForm {
-    width: calc(50% - 30px);
+    width: 100%;
+    margin-left: 0;
 }
 
 #loginForm {
     width: calc(50% - 30px);
 }
 
-#registerForm-bottom {
+.registerForm-bottom {
     width: 100%;
+    margin-top: 40px;
 }
 
 #artistProfession {
@@ -2229,7 +2233,7 @@ ripple.ripple::after {
 }
 
 #registerForm .form-row {
-    height: 80px;
+    height: auto;
 }
 
 .errorIcon {
@@ -2563,6 +2567,7 @@ ripple.ripple::after {
     font-size: 0.9em;
     line-height: 17px;
     padding-top: 10px;
+    margin-left: 0;
 }
 
 .profile-form {
@@ -8271,7 +8276,7 @@ th.wlc1 {
     max-width: 680px;
     height: auto;
     overflow: hidden;
-    margin-bottom: 25px;
+    margin-bottom: 0;
 }
 .profile-form.gallery_application input[type="checkbox"], .profile-form input[type="radio"] {
     margin-top: 20px;
@@ -8286,12 +8291,32 @@ th.wlc1 {
   margin-top: 0;
 }
 
+.popup-registration_signup .profile-form.gallery_application .form-row {
+    max-width: 100%;
 
+}
+.popup-registration_signup .id_select_button_wrapper {
+  width: 43%;
 
+}
+.popup-registration_signup .id_upload_desc {
+  width: auto;
+}
+.popup-registration_signup .form-item_third .form-item_full {
+    padding-right: 0;
+}
+.add-art-form-left .search input {
+    border-radius: 5px;
+    float: none;
+}
 
+.add-art-form-left .search.search-artist {
+    display: block;
 
-
-
+}
+.popup-registration_signup .id_upload_desc span {
+    font-size: 0.8em;
+}
 
 
 
@@ -9539,6 +9564,7 @@ li.ui-timepicker-selected .ui-timepicker-duration,
       float: left;
       margin-bottom: 0;
       margin-left: 0;
+      margin-right: 5px;
     }
     .add-art-main-wrapper {
       width: 685px;
@@ -10070,7 +10096,12 @@ li.ui-timepicker-selected .ui-timepicker-duration,
       width: 12px;
       height: 12px;
     }
-
+    .popup-registration_signup .id_select_button_wrapper {
+      width: 50%;
+    }
+    .popup-registration_signup .id_upload_desc span {
+        font-size: 0.9em;
+    }
 }
 
 
@@ -10534,6 +10565,11 @@ li.ui-timepicker-selected .ui-timepicker-duration,
         height: 30px;
         display: block;
     }
+    .popup-registration_signup button.btn {
+        width: 95%;
+        height: 30px;
+        display: block;
+    }
     .popup-inner {
         max-width: 300px;
         width: 100%;
@@ -10695,6 +10731,9 @@ li.ui-timepicker-selected .ui-timepicker-duration,
         float: left;
         margin-left: 20px;
     }
+    .popup-registration_signup .id_select_button_wrapper {
+      width: 50%;
+    }
     .id_upload_desc {
         width: 300px;
         text-align: justify;
@@ -10707,6 +10746,9 @@ li.ui-timepicker-selected .ui-timepicker-duration,
         line-height: 17px;
         padding-top: 10px;
         margin-bottom: 35px;
+    }
+    .popup-registration_signup .id_upload_desc span {
+        margin-bottom: 10px;
     }
     .profile-form {
         width: 100%;
@@ -10757,10 +10799,17 @@ li.ui-timepicker-selected .ui-timepicker-duration,
         font-size: 0.9em;
         margin-bottom: 20px;
     }
+    .profile-form.gallery_application .form-row {
+      margin-bottom: 0;
+    }
     .form-item_half {
         width: 100%;
         float: left;
         padding-right: 20px;
+    }
+    .popup-registration_signup .form-item_half {
+      padding-right: 0;
+      margin-bottom: 10px;
     }
     .form-item_half img {
         width: 30px;
@@ -12078,6 +12127,12 @@ li.ui-timepicker-selected .ui-timepicker-duration,
   .wl-na-right {
     width: 80%;
   }
+  .popup-registration_signup .id_upload_desc span {
+      font-size: 0.9em;
+  }
+  .registerForm-bottom {
+      margin-top: 20px;
+  }
 }
 
 
@@ -12698,6 +12753,10 @@ li.ui-timepicker-selected .ui-timepicker-duration,
     .id_select_button_wrapper {
         float: left;
         margin-left: 0;
+
+    }
+    .popup-registration_signup .id_select_button_wrapper {
+      width: 100%;
     }
     .id_upload_desc {
         width: 100%;
@@ -12758,6 +12817,10 @@ li.ui-timepicker-selected .ui-timepicker-duration,
         width: 100%;
         float: left;
         padding-right: 20px;
+    }
+    .popup-registration_signup .form-item_half {
+        padding-right: 0;
+        margin-bottom: 10px;
     }
     .form-item_half img {
         width: 30px;
@@ -14302,6 +14365,16 @@ li.ui-timepicker-selected .ui-timepicker-duration,
       cursor: pointer;
       min-width: 100px;
       height: 22px;
+    }
+    .profile-form.gallery_application .form-row {
+
+      margin-bottom: 0;
+    }
+    .popup-registration_signup .id_upload_desc span {
+        font-size: 0.9em;
+    }
+    .registerForm-bottom {
+        margin-top: 20px;
     }
   }
 

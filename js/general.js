@@ -248,14 +248,16 @@ var openRegPanel = function() {
     if ($("#artistButton").length) {
         var f = $("#artistButton");
         f.click(function() {
-            $("#artistProfession").show();
+            $("#registerForm_supp").hide();
+            $("#registerForm").show();
         });
     }
     //*********************
     if ($("#supportButton").length) {
         var fs = $("#supportButton");
         fs.click(function() {
-            $("#artistProfession").hide();
+            $("#registerForm_supp").show();
+            $("#registerForm").hide();
         });
     }
     //*********************
