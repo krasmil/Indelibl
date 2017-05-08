@@ -1064,49 +1064,11 @@
 
 										<div class="form-item form-item_full">
 											<input type="text" class="form-input" id="lastName" name="lastName" placeholder="Last name">
-											<div class="errorMsg" style="display: block;">
+											<div class="errorMsg">
 												<div class="errorIcon"></div>Please fill this field appropriately
 											</div>
 										</div>
 									</div>
-								</div>
-
-								<!-- country state -->
-								<div class="form-row">
-
-									<div class="form-item form-item_half" style="padding-right: 0;">
-
-										<div class="form-item form-item_full">
-											<label class="form-label">
-													Upload your ID
-												</label>
-										</div>
-
-										<div class="form-item form-item_full" style="padding-right: 0;">
-											<div class="userID_img" id="id-image-preview"></div>
-											<div class="id_select_button_wrapper">
-												<div class="id_upload_desc">
-													<span>
-																In order to verify your account, we need a digital
-																copy of your government issued ID. This will help
-																us ensure that you are who you say you are, and also
-																that payments are made to the rightful owner.
-															</span>
-												</div>
-												<label for="id-img-file-input" class="btn dark mobLeft">
-																Choose
-														</label>
-												<input id="id-img-file-input" type="file" accept="image/*" onchange="showMyID(this)" />
-											</div>
-											<div class="form-item form-item_full">
-												<div class="errorMsg">
-													<div class="errorIcon"></div>Please select an image for your ID
-												</div>
-											</div>
-										</div>
-
-									</div>
-
 								</div>
 
 								<div class="form-row">
@@ -1127,7 +1089,7 @@
 																<option value="Angola">Angola</option>
 																<option value="Anguilla">Anguilla</option>
 															</select>
-											<div class="errorMsg" style="display: block;">
+											<div class="errorMsg">
 												<div class="errorIcon"></div>Please fill this field appropriately
 											</div>
 										</div>
@@ -1166,7 +1128,7 @@
 
 										<div class="form-item form-item_full">
 											<input type="email" class="form-input" id="galleryEmail" name="galleryEmail" placeholder="Email">
-											<div class="errorMsg" style="display: block;">
+											<div class="errorMsg">
 												<div class="errorIcon"></div>Please fill this field appropriately
 											</div>
 										</div>
@@ -1227,7 +1189,7 @@
 
 										<div class="form-item form-item_full">
 											<input type="password" class="form-input" id="reg-pass" name="reg-pass">
-											<div class="errorMsg" style="display: block;">
+											<div class="errorMsg">
 												<div class="errorIcon"></div>Please fill this field appropriately
 											</div>
 										</div>
@@ -1259,6 +1221,44 @@
 										</div>
 									</div>
 								</div>
+								<!-- id photo upload -->
+								<div class="form-row">
+
+									<div class="form-item form-item_half" style="padding-right: 0;">
+
+										<div class="form-item form-item_full">
+											<label class="form-label">
+													Upload your ID
+												</label>
+										</div>
+
+										<div class="form-item form-item_full" style="padding-right: 0;">
+											<div class="userID_img" id="id-image-preview"></div>
+											<div class="id_select_button_wrapper">
+												<div class="id_upload_desc">
+													<span>
+																In order to verify your account, we need a digital
+																copy of your government issued ID. This will help
+																us ensure that you are who you say you are, and also
+																that payments are made to the rightful owner.
+															</span>
+												</div>
+												<label for="id-img-file-input" class="btn dark mobLeft">
+																Choose
+														</label>
+												<input id="id-img-file-input" type="file" accept="image/*" onchange="showMyID(this)" />
+											</div>
+											<div class="form-item form-item_full">
+												<div class="errorMsg">
+													<div class="errorIcon"></div>Please select an image for your ID
+												</div>
+											</div>
+										</div>
+
+									</div>
+
+								</div>
+
 								<div class="registerForm-bottom">
 
 									<span style="font-size: 0.9em;">

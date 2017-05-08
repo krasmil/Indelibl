@@ -2228,9 +2228,7 @@ ripple.ripple::after {
     margin-top: 40px;
 }
 
-#artistProfession {
-    display: none;
-}
+
 
 #registerForm .form-row {
     height: auto;
@@ -8317,9 +8315,15 @@ th.wlc1 {
 .popup-registration_signup .id_upload_desc span {
     font-size: 0.8em;
 }
-
-
-
+.popup-registration_signup #registerForm .form-row {
+  margin-bottom: 20px;
+}
+.popup-registration_signup .gallery_application .errorMsg {
+    position: absolute;
+}
+.popup-registration_signup .gallery_application .form-row .form-item_half:nth-of-type(2) {
+  padding-right: 0;
+}
 
 
 
@@ -12133,6 +12137,12 @@ li.ui-timepicker-selected .ui-timepicker-duration,
   .registerForm-bottom {
       margin-top: 20px;
   }
+  .popup-registration_signup #registerForm .form-row {
+    margin-bottom: 0;
+  }
+  .popup-registration_signup .gallery_application .errorMsg {
+    position: relative;
+  }
 }
 
 
@@ -14374,7 +14384,13 @@ li.ui-timepicker-selected .ui-timepicker-duration,
         font-size: 0.9em;
     }
     .registerForm-bottom {
-        margin-top: 20px;
+        margin-top: 10px;
+    }
+    .popup-registration_signup #registerForm .form-row {
+      margin-bottom: 0;
+    }
+    .popup-registration_signup .gallery_application .errorMsg {
+      position: relative;
     }
   }
 
