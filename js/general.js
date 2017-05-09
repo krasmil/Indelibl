@@ -238,6 +238,8 @@ var openRegPanel = function() {
             a.addClass("active");
             $("[data-tab-id]").hide();
             $('[data-tab-id="' + t + '"]').show();
+          //  $('.popup-inner.registration-popup').css("max-width", "650px");
+            $('.popup-inner.registration-popup').removeClass("artist-rego");
             if (t != "register") {
                 e.removeClass("active");
                 a.addClass("active");
@@ -248,8 +250,13 @@ var openRegPanel = function() {
     if ($("#artistButton").length) {
         var f = $("#artistButton");
         f.click(function() {
+
+          $('.popup-inner.registration-popup').addClass("artist-rego");
             $("#registerForm_supp").hide();
             $("#registerForm").show();
+            $("#reg-artist-top").show();
+            $("#reg-supp-top").hide();
+
         });
     }
     //*********************
@@ -258,6 +265,10 @@ var openRegPanel = function() {
         fs.click(function() {
             $("#registerForm_supp").show();
             $("#registerForm").hide();
+            $("#reg-artist-top").hide();
+            $("#reg-supp-top").show();
+          //  $('.popup-inner.registration-popup').css("max-width", "650px");
+            $('.popup-inner.registration-popup').removeClass("artist-rego");
         });
     }
     //*********************
