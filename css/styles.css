@@ -2733,6 +2733,10 @@ ripple.ripple::after {
     margin: 20px 20px 20px 0;
     cursor: pointer;
 }
+.profile-form.creative_application .btn.mobLeft {
+    margin: 27px 20px 20px 0;
+    cursor: pointer;
+}
 
 .btn.blackWhite {
     background: #fff;
@@ -4869,10 +4873,10 @@ li.active-tab {
 .creative_application h2 {
   font-size: 1.8em;
   margin-top: 0;
-  margin-bottom: 60px;
+  margin-bottom: 40px;
 }
 .creative_application .top {
-  width: 100%;
+  width: 60%;
   overflow: hidden;
   padding-bottom: 20px;
 }
@@ -4887,7 +4891,7 @@ li.active-tab {
 }
 .creative_application .top .facebook {
   background-color: #4466b0;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
 }
 .creative_application .top .googleplus {
   background-color: #cf4331;
@@ -4960,12 +4964,12 @@ li.active-tab {
   text-decoration: underline;
 }
 .creative_application .bottom span {
-  margin-left: 25px;
+  margin-left: 0;
   white-space: normal;
 }
 .creative_application .bottom .bottom-row button {
-  margin-top: 60px;
-  min-width: 140px;
+  margin-top: 40px;
+  min-width: 220px;
 }
 
 .view-current-events .column-4.profile-event.mproduct {
@@ -10123,6 +10127,13 @@ li.ui-timepicker-selected .ui-timepicker-duration,
     .popup-registration_signup .id_upload_desc span {
         font-size: 0.9em;
     }
+    .creative_application .top {
+      width: 80%;
+    }
+    .profile-form.creative_application .btn.mobLeft {
+        margin: 22px 20px 20px 0;
+        cursor: pointer;
+    }
 }
 
 
@@ -10755,6 +10766,11 @@ li.ui-timepicker-selected .ui-timepicker-duration,
         float: left;
         margin-left: 20px;
     }
+    .creative_application .id_select_button_wrapper {
+        float: left;
+        margin-left: 20px;
+        width: 40%;
+    }
     .popup-registration_signup .id_select_button_wrapper {
       width: 100%;
       margin-left: 0;
@@ -10762,6 +10778,9 @@ li.ui-timepicker-selected .ui-timepicker-duration,
     .id_upload_desc {
         width: 300px;
         text-align: justify;
+    }
+    .creative_application .id_upload_desc {
+        width: 250px;
     }
     .id_upload_desc span {
         width: 100%;
@@ -10771,6 +10790,9 @@ li.ui-timepicker-selected .ui-timepicker-duration,
         line-height: 17px;
         padding-top: 10px;
         margin-bottom: 35px;
+    }
+    .creative_application .id_upload_desc span {
+      margin-bottom: 18px;
     }
     .popup-registration_signup .id_upload_desc span {
         margin-bottom: 10px;
@@ -14445,6 +14467,10 @@ li.ui-timepicker-selected .ui-timepicker-duration,
     .popup-registration-content .top {
       padding-top: 10px;
       padding-bottom: 10px;
+    }
+    .creative_application .top {
+      width: 100%;
+
     }
   }
 
