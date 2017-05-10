@@ -120,6 +120,14 @@ $(window).resize(function() {
     showProdCatButtonsMobileAll();
     resizeArtPrintPage();
     showSearchWlMobile();
+    if ($('#artistProfession').is(":visible")) {
+      resizeRegPasswordArtist();
+    }
+    else if ($('#artistProfession').not(":visible")) {
+      resizeRegPasswordSupporter();
+    }
+
+
 });
 /******* Run functions when document orientation changed (handheld devices) **********/
 $(window).on("orientationchange", function() {
@@ -233,6 +241,8 @@ var openRegPanel = function() {
     if ($("[data-tab]").length) {
         var e = $("[data-tab]");
         e.click(function() {
+          //  getCountries();
+        //    getStates();
             var a = $(this);
             t = a.data("tab");
             a.addClass("active");
@@ -250,12 +260,15 @@ var openRegPanel = function() {
     if ($("#artistButton").length) {
         var f = $("#artistButton");
         f.click(function() {
-
           $('.popup-inner.registration-popup').addClass("artist-rego");
-            $("#registerForm_supp").hide();
-            $("#registerForm").show();
-            $("#reg-artist-top").show();
-            $("#reg-supp-top").hide();
+          $("#regCountryState").show();
+          $("#regPhoneSkype").show();
+          $("#regFLName").show();
+          $("#artistProfession").show();
+          $("#regId").show();
+          resizeRegPasswordArtist();
+          $("#regPassword").css("float", "left");
+          $("#regPassword").css("margin-top", "0");
 
         });
     }
@@ -263,12 +276,18 @@ var openRegPanel = function() {
     if ($("#supportButton").length) {
         var fs = $("#supportButton");
         fs.click(function() {
-            $("#registerForm_supp").show();
-            $("#registerForm").hide();
-            $("#reg-artist-top").hide();
-            $("#reg-supp-top").show();
-          //  $('.popup-inner.registration-popup').css("max-width", "650px");
+            $("#regCountryState").hide();
+            $("#regPhoneSkype").hide();
+            $("#regFLName").hide();
+            $("#artistProfession").hide();
+            $("#regId").hide();
             $('.popup-inner.registration-popup').removeClass("artist-rego");
+            resizeRegPasswordSupporter();
+
+
+            $("#regPassword").css("float", "none");
+            $("#regPassword").css("margin-top", "20px");
+
         });
     }
     //*********************
@@ -313,6 +332,27 @@ var openRegPanel = function() {
     });
 };
 
+var resizeRegPasswordArtist = function() {
+  if ($(window).width() <= 1000) {
+    $("#regPassword").css("padding-right", "0");
+    $("#regUsername").css("margin-bottom", "10px");
+  }
+  else if ($(window).width() > 1000) {
+    $("#regUsername").css("margin-bottom", "0");
+    $("#regPassword").css("padding-right", "0");
+  }
+};
+
+var resizeRegPasswordSupporter = function() {
+  if ($(window).width() <= 1000) {
+    $("#regPassword").css("padding-right", "0");
+    $("#regUsername").css("margin-bottom", "10px");
+  }
+  else if ($(window).width() > 1000) {
+    $("#regUsername").css("margin-bottom", "20px");
+    $("#regPassword").css("padding-right", "20px");
+  }
+};
 /************** open/close dashboard mobile menu ****************/
 var dashMenu = function() {
     if ($('.navigation_toggle_dots').length) {
