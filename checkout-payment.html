@@ -272,7 +272,7 @@
 			<div class="content-wrapper large-padding-y">
 				<h2>
 					<b>
-						Shipping info
+						Payment
 					</b>
 				</h2>
 			</div>
@@ -287,11 +287,11 @@
 					--><li class="pr-i">
 						<img src="images/check1.png" alt="" class="icon checked-icon"><span>Shipping info</span>
 					</li>
-					<li class="chk-prg-sep ">
+					<li class="chk-prg-sep orange">
 						<hr class="separator-thin">
 					</li><!--
 					--><li class="pr-i">
-						<div class="icon unchecked-icon">3</div><span style="color: #acadad;">Payment</span>
+						<img src="images/check1.png" alt="" class="icon checked-icon"><span>Payment</span>
 					</li>
 					<li class="chk-prg-sep ">
 						<hr class="separator-thin">
@@ -310,14 +310,18 @@
 		<section class="bg-lightest large-padding-bottom-y">
 			<div class="content-wrapper">
 
-					<div class="content-wrapper white">
+					<div class="content-wrapper white ch-pay-wrapper">
 						<div style="overflow: hidden; width: 100%;">
-							<div class="profile-form checkout-ship-info">
+							<div class="profile-form checkout-ship-info" style="margin-left: 0;">
 								<h3>
 									<b>
-										Shipping Address
+										Billing Address
 									</b>
 								</h3>
+								<label for="billing-chkout" class="newsletter" style="line-height: 1.2em;">
+									<input type="checkbox" id="billing-chkout" name="billing-chkout" style="margin-left: 0;">
+										My billing address is same as shipping
+								</label>
 								<!-- display name -->
 								<div class="form-row">
 									<div class="form-item form-item_half">
@@ -476,17 +480,181 @@
 										</div>
 									</div>
 								</div>
-								<label for="nxt-chkout" class="newsletter" style="line-height: 1.2em;">
-									<input type="checkbox" id="nxt-chkout" name="nxt-chkout" style="margin-left: 0;">
-										Save this information for faster checkout next time
-								</label>
+
+							</div>
+
+						</div>
+						<div style="overflow: hidden; width: 100%;">
+							<hr class="separator">
+						</div>
+						<div style="overflow: hidden; width: 100%;" class="payment-amount-fig">
+							<h5>Payment amount:<h5>
+							<h1><b>&pound;346</b></h1>
+							<hr class="separator">
+						</div>
+						<div style="overflow: hidden; width: 100%;" class="payment-amount-fig">
+							<h3>
+								<b>
+									Payment method
+								</b>
+							</h3>
+							<p>Please choose your method here</p>
+						</div>
+
+						<div class="pay-methods-select">
+							<div class="paymethod-hlf">
+								<input type="radio" name="pay-methods" value="PayPal" id="payp" checked><label for="payp">PayPal</label>
+								<ul class="shipping-via">
+									<li class="shipping-via-item">
+										<span class="helper"></span>
+										<img src="images/PayPal.png" alt="" class="">
+									</li>
+								</ul>
+							</div>
+							<div class="paymethod-hlf">
+								<input type="radio" name="pay-methods" value="Credit card" id="credc"><label for="credc">Credit card</label>
+
+								<ul class="shipping-via">
+									<li class="shipping-via-item">
+										<span class="helper"></span>
+										<img src="images/visa.png" alt="" class="">
+									</li>
+									<li class="shipping-via-item">
+										<span class="helper"></span>
+										<img src="images/masterc.png" alt="" class="">
+									</li>
+									<li class="shipping-via-item">
+										<span class="helper"></span>
+										<img src="images/amex.png" alt="" class="">
+									</li>
+									<li class="shipping-via-item">
+										<span class="helper"></span>
+										<img src="images/discover.png" alt="" class="">
+									</li>
+									<ul>
+
+							</div>
+						</div>
+						<hr class="separator">
+						<div style="overflow: hidden; width: 100%; display: none;" class="payment-amount-fig" id="cc-method">
+							<h3>
+								<b>
+									Payment by Credit Card
+								</b>
+							</h3>
+							<p>Please enter your credit card details below</p>
+
+							<div class="cc-method-dts">
+								<div class="form-item form-item_full">
+									<div class="form-item form-item_third">
+										<label for="cardType" class="form-label">
+											Card type *
+										</label>
+									</div>
+									<div class="form-item form-item_half">
+										<select id="cardType" name="cardType" class="form-input" style="width: auto;">
+											<option value="Select" selected="true" disabled="disabled">Select</option>
+											<option value="Visa">Visa</option>
+											<option value="MasterCard">MasterCard</option>
+											<option value="American Express">American Express</option>
+											<option value="Discover">Discover</option>
+										</select>
+										<div class="errorMsg form-item_full">
+											<div class="errorIcon"></div>
+											<div style="margin: 0 0 0 15px; word-wrap: break-word; max-width: 100%;">Please fill this field appropriately.</div>
+										</div>
+									</div>
+
+								</div>
+								<div class="form-item form-item_full">
+									<div class="form-item form-item_third">
+										<label for="cc-num" class="form-label">
+											Card number *
+										</label>
+									</div>
+									<div class="form-item form-item_half">
+										<input type="text" class="form-input" id="cc-num" name="cc-num">
+										<div class="errorMsg">
+											<div class="errorIcon"></div>
+											<div style="margin: 0 0 0 15px; word-wrap: break-word; max-width: 100%;">Please fill this field appropriately.</div>
+										</div>
+									</div>
+								</div>
+								<div class="form-item form-item_full">
+									<div class="form-item form-item_third">
+										<label for="cc-month" class="form-label">
+											Expiration date *
+										</label>
+									</div>
+									<div class="form-item form-item_half">
+										<select id="cc-month" name="cc-month" class="form-input" style="width: auto;">
+											<option value="Select" selected="true" disabled="disabled">Select</option>
+											<option value="01">01</option>
+											<option value="02">02</option>
+											<option value="03">03</option>
+											<option value="04">04</option>
+											<option value="05">05</option>
+											<option value="06">06</option>
+											<option value="07">07</option>
+											<option value="08">08</option>
+											<option value="09">09</option>
+											<option value="10">10</option>
+											<option value="11">11</option>
+											<option value="12">12</option>
+										</select>
+										<input type="text" class="form-input" id="cc-year" name="cc-year">
+										<div class="errorMsg form-item_full">
+											<div class="errorIcon"></div>
+											<div style="margin: 0 0 0 15px; word-wrap: break-word; max-width: 100%;">Please fill this field appropriately.</div>
+										</div>
+									</div>
+
+								</div>
+								<div class="form-item form-item_full">
+									<div class="form-item form-item_third">
+										<label for="cc-code" class="form-label">
+											Security code *
+										</label>
+									</div>
+									<div class="form-item form-item_half">
+										<input type="text" class="form-input" id="cc-code" name="cc-code" style="width: 60%;">
+										<img src="images/CreditCardSample.png" class="ccSample">
+										<div class="errorMsg">
+											<div class="errorIcon"></div>
+											<div style="margin: 0 0 0 15px; word-wrap: break-word; max-width: 100%;">Please fill this field appropriately.</div>
+										</div>
+									</div>
+								</div>
+								<div class="form-item form-item_full">
+									<div class="form-item form-item_third">
+										<label for="cc-name" class="form-label">
+											Cardholder name *
+										</label>
+									</div>
+									<div class="form-item form-item_half">
+										<input type="text" class="form-input" id="cc-name" name="cc-name">
+										<div class="errorMsg">
+											<div class="errorIcon"></div>
+											<div style="margin: 0 0 0 15px; word-wrap: break-word; max-width: 100%;">Please fill this field appropriately.</div>
+										</div>
+									</div>
+								</div>
+							</div>
+
+						</div>
+						<div class="payp-method-dts" id="pp-method" >
+							<a href="javascript:;"><img src="images/payp.png"></a>
+							<div class="errorMsg">
+								<div class="errorIcon"></div>
+								<div style="margin: 0 0 0 15px; word-wrap: break-word; max-width: 100%;">Paypal error.</div>
 							</div>
 						</div>
 					</div>
 
+
 				<div class="add-art-nav-buttons" style="margin-top: 40px;">
-					<a href="javascript:;" class="btn right" style="width: 18%;">
-						Continue
+					<a href="javascript:;" class="btn right cmplt-trans">
+						Complete Transaction
 					</a>
 				</div>
 			</div>

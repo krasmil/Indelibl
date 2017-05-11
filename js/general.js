@@ -56,6 +56,8 @@ $(document).ready(function() {
     showSearchWl();
     showSearchWlMobile();
     showSearchWlMsg();
+    ccSpinner();
+    changePayMethod();
 });
 
 /******* Run functions when document resize **********/
@@ -276,18 +278,15 @@ var openRegPanel = function() {
     if ($("#supportButton").length) {
         var fs = $("#supportButton");
         fs.click(function() {
-            $("#regCountryState").hide();
-            $("#regPhoneSkype").hide();
-            $("#regFLName").hide();
-            $("#artistProfession").hide();
-            $("#regId").hide();
-            $('.popup-inner.registration-popup').removeClass("artist-rego");
-            resizeRegPasswordSupporter();
-
-
-            $("#regPassword").css("float", "none");
-            $("#regPassword").css("margin-top", "20px");
-
+          $("#regCountryState").hide();
+          $("#regPhoneSkype").hide();
+          $("#regFLName").hide();
+          $("#artistProfession").hide();
+          $("#regId").hide();
+          $('.popup-inner.registration-popup').removeClass("artist-rego");
+          resizeRegPasswordSupporter();
+          $("#regPassword").css("float", "none");
+          $("#regPassword").css("margin-top", "20px");
         });
     }
     //*********************
@@ -2689,4 +2688,25 @@ var showSearchWlMsg = function() {
             $(this).parent().parent().find(".edit-notification").hide();
         });
     }
+};
+var ccSpinner = function() {
+    if ($('#cc-year').length) {
+        var spinner = $("#cc-year").spinner({
+            min: new Date().getFullYear(),
+            max: new Date().getFullYear() + 100
+        });
+    }
+};
+var changePayMethod = function() {
+  $("input[name=pay-methods]").on( "change", function() {
+    var pay_type = $(this).val();
+    if (pay_type == "Credit card") {
+      $('#pp-method').hide();
+      $('#cc-method').show();
+    }
+    else if (pay_type == "PayPal") {
+      $('#pp-method').show();
+      $('#cc-method').hide();
+    }
+  });
 };

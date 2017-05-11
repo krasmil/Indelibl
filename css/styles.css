@@ -7926,31 +7926,35 @@ label {
   font-style: italic;
 }
 .checked-icon {
-  height: 16px;
-  width: 16px;
+  height: 20px;
+  width: 20px;
   margin-right: 5px;
-  margin-bottom: -2px;
+  margin-left: 0;
+  margin-bottom: -4px;
 }
 .unchecked-icon {
-  height: 16px;
-  width: 16px;
+  height: 20px;
+  width: 20px;
   margin-right: 5px;
-  margin-top: 4px;
+  margin-top: 2px;
   border-radius: 50%;
-  border: 1px solid #e75141;
+  border: 1px solid #acadad;
   float: left;
-  color: #e75141;
+  color: #fff;
+  background: #acadad;
   font-size: 12px;
   text-align: center;
-  line-height: 14px;
+  line-height: 16px;
+}
+.pr-i {
+  margin-right: 10px;
 }
 .content-wrapper.checkout-progress-wrapper {
   padding-bottom: 20px;
 }
 .checkout-progress-wrapper ul li {
   display: inline-block;
-  margin-left: 5px;
-  margin-right: 5px;
+  white-space: nowrap;
 }
 .chk-prg-sep {
   width: 70px;
@@ -8060,14 +8064,17 @@ label {
 .cart-items tbody {
 
 }
-.cart-items td, .cart-items th {
+.cart-items tr, .cart-items th {
     border-bottom: 1px solid #d0cfcf;
+
 }
 .cart-items th {
   text-transform: uppercase;
   font-weight: bold;
-  padding: 8px;
+  padding-top: 8px;
+  padding-bottom: 8px;
   text-align: center;
+  border-top: 1px solid #d0cfcf;
 }
 .cart-items th:first-of-type {
   text-align: left;
@@ -8431,18 +8438,142 @@ th.wlc1 {
 #error-email-social {
   margin-top: -20px;
 }
+.tw4 p {
 
+}
+.remove-cart-icon {
+  display: none;
+}
+.remove-cart-span {
+  display: block;
+}
 
-
-
-
-
-
-
-
-
-
-
+.ch-pay-wrapper {
+  padding: 0 30px;
+}
+.ch-pay-wrapper .profile-form.checkout-ship-info {
+  padding-bottom: 0;
+}
+.payment-amount-fig {
+  text-align: left;
+}
+.payment-amount-fig h5 {
+  margin-bottom: 5px;
+  margin-top: 10px;
+}
+.payment-amount-fig h1 {
+  margin-bottom: 20px;
+}
+.payment-amount-fig h3 {
+  margin-top: 20px;
+  margin-bottom: 5px;
+}
+.payment-amount-fig p {
+  margin-top: 5px;
+}
+.pay-methods-select {
+  width: 60%;
+  overflow: hidden;
+}
+.paymethod-hlf {
+  width: 50%;
+  float: left;
+  text-align: left;
+}
+.paymethod-hlf input[type="radio"] {
+  margin-right: 5px;
+}
+.paymethod-hlf:nth-of-type(2) .shipping-via li img {
+  width: 55px;
+}
+.paymethod-hlf:nth-of-type(1) .shipping-via li img {
+  width: 85px;
+}
+.cart-remove {
+  height: 18px;
+  width: 18px;
+  border-radius: 50%;
+  border: 1px solid #e75141;
+  float: left;
+  background: #e75141;
+  color: #fff;
+  font-size: 12px;
+  text-align: center;
+  line-height: 14px;
+  font-family: sans-serif;
+  font-style: normal;
+}
+.profile-form.cart-shipping-form .form-item_half .form-input {
+    margin-bottom: 0;
+}
+.profile-form.cart-shipping-form .form-row {
+  overflow: hidden;
+  height: auto;
+  min-height: auto;
+}
+.cart-items-col1.tw1 img {
+  display: none;
+}
+.cmplt-trans {
+  width: 25%;
+}
+.cc-method-dts {
+  width: 50%;
+  overflow: hidden;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+.cc-method-dts .form-item_full {
+  margin-bottom: 15px;
+}
+.cc-method-dts .form-input {
+  margin-top: 0;
+}
+.form-item_half img.ccSample {
+  height: 30px;
+  width: auto;
+  margin-left: 5px;
+  display: inline-block;
+}
+.cart-items tr:last-child {
+    border-bottom: 0;
+}
+input#ccSpinner {
+  margin: 0;
+  border: none;
+  width: 50%;
+}
+.cc-method-dts .ui-spinner {
+  width: 50%;
+  float: left;
+  margin-top: 0;
+  margin-left: 5px;
+  margin-bottom: 0;
+}
+#cc-month {
+  float: left;
+}
+#cc-year {
+  font-size: 0.85em;
+}
+.cc-method-dts .errorMsg {
+  margin-top: 0;
+}
+.cc-method-dts .errorMsg.form-item_full {
+  margin-bottom: 0;
+}
+.payp-method-dts {
+  margin-top: 30px;
+  text-align: left;
+  margin-bottom: 60px;
+}
+.orange .separator-thin {
+  background: #e74c3c;
+  border: #e74c3c;
+}
+.payp-method-dts .errorMsg {
+  margin-top: -8px;
+}
 
 
 
@@ -10129,7 +10260,7 @@ li.ui-timepicker-selected .ui-timepicker-duration,
       height: 22px;
     }
     .unchecked-icon {
-      margin-top: 2px;
+      margin-top: 0;
     }
     .cart-items-col1 h5 {
       width: 370px;
@@ -10189,6 +10320,9 @@ li.ui-timepicker-selected .ui-timepicker-duration,
     .profile-form.creative_application .btn.mobLeft {
         margin: 22px 20px 20px 0;
         cursor: pointer;
+    }
+    .cc-method-dts {
+      width: 60%;
     }
 }
 
@@ -12078,7 +12212,7 @@ li.ui-timepicker-selected .ui-timepicker-duration,
     height: 22px;
   }
   .unchecked-icon {
-    margin-top: 0;
+    margin-top: -2px;
   }
   .chk-prg-sep {
     width: 30px;
@@ -12106,7 +12240,7 @@ li.ui-timepicker-selected .ui-timepicker-duration,
     margin-bottom: 15px;
   }
   .my-cart {
-    padding: 50px 10px 30px 10px;
+    padding: 30px 10px 30px 10px;
   }
   .cart-ship-mtd {
     padding-left: 120px;
@@ -12118,16 +12252,16 @@ li.ui-timepicker-selected .ui-timepicker-duration,
     width: 252px;
   }
   .tw2 {
-    width: 62px;
+    width: 78px;
   }
   .tw3 {
     width: 56px;
   }
   .tw4 {
-    width: 63px;
+    width: 78px;
   }
   .tw5 {
-    width: 59px;
+    width: 30px;
   }
   .bbkfq {
     margin-left: 8%;
@@ -12273,6 +12407,65 @@ li.ui-timepicker-selected .ui-timepicker-duration,
   #error-email-social {
     margin-top: 0;
   }
+  .remove-cart-icon {
+    display: block;
+  }
+  .remove-cart-span {
+    display: none;
+  }
+  .shipping-via {
+    margin-left: -60px;
+  }
+  .ch-pay-wrapper {
+    padding: 0 10px;
+  }
+  .ch-pay-wrapper .form-item_half {
+    padding-right: 0;
+  }
+  .ch-pay-wrapper .profile-form.checkout-ship-info {
+    padding-bottom: 0;
+  }
+  .payment-amount-fig {
+    text-align: left;
+  }
+  .payment-amount-fig h5 {
+    margin-top: 0;
+  }
+  .pay-methods-select {
+    width: 100%;
+
+  }
+  .paymethod-hlf .shipping-via {
+    margin-left: 0;
+  }
+  .paymethod-hlf:nth-of-type(2) {
+    width: 75%;
+  }
+  .paymethod-hlf:nth-of-type(1) {
+    width: 25%;
+  }
+  .cmplt-trans {
+    width: 35%;
+  }
+  .cc-method-dts {
+    width: 100%;
+  }
+  .cc-method-dts .form-item_full {
+    text-align: left;
+  }
+  .cc-method-dts .form-item_third {
+    width: 100%;
+  }
+  .cc-method-dts label {
+    margin-bottom: 5px;
+  }
+  .cc-method-dts .errorMsg {
+    margin-top: 0;
+  }
+  .payp-method-dts .errorMsg {
+    margin-top: -3px;
+  }
+
 }
 
 
@@ -14330,7 +14523,7 @@ li.ui-timepicker-selected .ui-timepicker-duration,
       display: none;
     }
     .my-cart {
-      padding: 50px 10px 30px 10px;
+      padding: 30px 10px 30px 10px;
     }
     .discount-code-panel {
       width: 100%;
@@ -14348,9 +14541,7 @@ li.ui-timepicker-selected .ui-timepicker-duration,
       width: 45px;
       height: auto;
     }
-    .shipping-via {
-      text-align: center;
-    }
+
     .buttons-cart-c .btn {
       margin-bottom: 15px;
       width: 100%;
@@ -14366,16 +14557,16 @@ li.ui-timepicker-selected .ui-timepicker-duration,
       width: 63px;
     }
     .tw2 {
-      width: 51px;
+      width: 72px;
     }
     .tw3 {
       width: 42px;
     }
     .tw4 {
-      width: 51px;
+      width: 72px;
     }
     .tw5 {
-      width: 66px;
+      width: 32px;
     }
     .product-desc-bottom {
       margin-bottom: 0;
@@ -14576,6 +14767,68 @@ li.ui-timepicker-selected .ui-timepicker-duration,
     }
     #error-email-social {
       margin-top: 0;
+    }
+    .remove-cart-icon {
+      display: block;
+    }
+    .remove-cart-span {
+      display: none;
+    }
+    .my-cart .form-item_half {
+      padding-right: 0;
+    }
+    .ch-pay-wrapper {
+      padding: 0 10px;
+    }
+    .ch-pay-wrapper .form-item_half {
+      padding-right: 0;
+    }
+    .ch-pay-wrapper .profile-form.checkout-ship-info {
+      padding-bottom: 0;
+    }
+    .payment-amount-fig {
+      text-align: center;
+    }
+    .payment-amount-fig h5 {
+      margin-top: 0;
+    }
+    .pay-methods-select {
+      width: 100%;
+
+    }
+    .paymethod-hlf .shipping-via {
+      margin-left: 0;
+    }
+    .paymethod-hlf:nth-of-type(2) {
+      width: 50%;
+    }
+    .paymethod-hlf:nth-of-type(1) {
+      width: 45%;
+      margin-left: 10px;
+    }
+    .cmplt-trans {
+      width: 50%;
+    }
+    .cc-method-dts {
+      width: 100%;
+    }
+    .cc-method-dts .form-item_full {
+      text-align: left;
+    }
+    .cc-method-dts .form-item_third {
+      width: 100%;
+    }
+    .cc-method-dts label {
+      margin-bottom: 5px;
+    }
+    .cc-method-dts .errorMsg {
+      margin-top: 0;
+    }
+    .payp-method-dts {
+      text-align: center;
+    }
+    .payp-method-dts .errorMsg {
+      text-align: left;
     }
   }
 

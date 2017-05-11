@@ -177,7 +177,7 @@
 											You have 5 items in your shopping cart
 										</span>
 									<span class="total">
-											Total: $567
+											Total: &pound;<span>56</span>7
 										</span>
 									<a class="btn wide" href="javascript:;">My cart</a>
 								</div>
@@ -278,26 +278,27 @@
 				</h2>
 			</div>
 			<div class="content-wrapper checkout-progress-wrapper">
+
 				<ul>
-					<li>
+					<li class="pr-i">
 						<img src="images/check1.png" alt="" class="icon checked-icon"><span>My cart</span>
 					</li>
-					<li class="chk-prg-sep">
+					<li class="chk-prg-sep ">
 						<hr class="separator-thin">
-					</li>
-					<li>
+					</li><!--
+					--><li class="pr-i">
 						<div class="icon unchecked-icon">2</div><span style="color: #acadad;">Shipping info</span>
 					</li>
-					<li class="chk-prg-sep">
+					<li class="chk-prg-sep ">
 						<hr class="separator-thin">
-					</li>
-					<li>
+					</li><!--
+					--><li class="pr-i">
 						<div class="icon unchecked-icon">3</div><span style="color: #acadad;">Payment</span>
 					</li>
-					<li class="chk-prg-sep">
+					<li class="chk-prg-sep ">
 						<hr class="separator-thin">
-					</li>
-					<li>
+					</li><!--
+					--><li class="pr-i">
 						<div class="icon unchecked-icon">4</div><span style="color: #acadad;">Confirmation</span>
 					</li>
 				</ul>
@@ -312,13 +313,71 @@
 			<div class="content-wrapper">
 				<section class="bg-lightest">
 					<div class="content-wrapper white my-cart">
+						<div class="profile-form cart-shipping-form" style="margin-left: 0;">
+							<h3 style="padding-top: 0;">
+								<b>
+									Please select your shipping country
+								</b>
+							</h3>
+							<!-- country state -->
+							<div class="form-row">
+
+								<div class="form-item form-item_half">
+									<div class="form-item form-item_full">
+										<label for="profileCountry" class="form-label">
+											Country *
+										</label>
+									</div>
+
+									<div class="form-item form-item_full">
+										<select id="profileCountry" name="profileCountry" class="form-input">
+											<option value="Select Country" selected="true" disabled="disabled">Select Country</option>
+											<option value="Afghanistan">Afghanistan</option>
+											<option value="Albania">Albania</option>
+											<option value="Algeria">Algeria</option>
+											<option value="Andorra">Andorra</option>
+											<option value="Angola">Angola</option>
+											<option value="Anguilla">Anguilla</option>
+
+										</select>
+										<div class="errorMsg">
+											<div class="errorIcon"></div>
+										</div>
+									</div>
+								</div>
+								<div class="form-item form-item_half">
+									<div class="form-item form-item_full">
+										<label for="profileState" class="form-label">
+											State *
+										</label>
+									</div>
+
+									<div class="form-item form-item_full">
+										<select id="profileState" name="profileState" class="form-input">
+											<option value="Select State" selected="true" disabled="disabled">Select State</option>
+											<option value="State 1">State 1</option>
+											<option value="State 2">State 2</option>
+											<option value="State 3">State 3</option>
+											<option value="State 4">State 4</option>
+											<option value="State 5">State 5</option>
+											<option value="State 6">State 6</option>
+											<option value="State 7">State 7</option>
+										</select>
+									</div>
+								</div>
+							</div>
+							<p style="margin-bottom: 30px;">*Shipping rates are calculated based on the country of receipt</p>
+						</div>
+
+
+
 						<table class="cart-items">
 							<thead>
 								<tr>
 									<th class="tw1">item</th>
-									<th class="tw2">price</th>
+									<th class="tw2">shipping</th>
 									<th class="tw3">qty</th>
-									<th class="tw4">total</th>
+									<th class="tw4">price</th>
 									<th class="tw5"></th>
 								</tr>
 							</thead>
@@ -343,16 +402,16 @@
 											</div>
 										</td>
 										<td class="cart-items-col2 tw2">
-											<p style="margin-top: 7px;"><b>$56</b></p>
+											<p style="margin-top: 7px;"><b>&pound;<span>56</span></b></p>
 										</td>
 										<td class="cart-items-col3 tw3">
 											<input type="text" class="cart-product-quantity" name="product-quantity" value="1" style="height: 14px;" id="cpq_1">
 										</td>
 										<td class="cart-items-col4 tw4">
-											<p style="margin-top: 7px;"><b>$56</b></p>
+											<p style="margin-top: 7px;"><b>&pound;<span>56</span></b></p>
 										</td>
 										<td class="cart-items-col5 tw5">
-											<button>Remove</button>
+											<button><div class="cart-remove">x</div></button>
 										</td>
 									</tr>
 									<tr>
@@ -371,16 +430,16 @@
 											</div>
 										</td>
 										<td class="cart-items-col2 tw2">
-											<p style="margin-top: 7px;"><b>$56</b></p>
+											<p style="margin-top: 7px;"><b>&pound;<span>56</span></b></p>
 										</td>
 										<td class="cart-items-col3 tw3">
 											<input type="text" class="cart-product-quantity" name="product-quantity" value="1" style="height: 14px;" id="cpq_1">
 										</td>
 										<td class="cart-items-col4 tw4">
-											<p style="margin-top: 7px;"><b>$56</b></p>
+											<p style="margin-top: 7px;"><b>&pound;<span>56</span></b></p>
 										</td>
 										<td class="cart-items-col5 tw5">
-											<button>Remove</button>
+											<button><div class="cart-remove">x</div></button>
 										</td>
 									</tr>
 									<tr>
@@ -399,16 +458,16 @@
 											</div>
 										</td>
 										<td class="cart-items-col2 tw2">
-											<p style="margin-top: 7px;"><b>$56000000</b></p>
+											<p style="margin-top: 7px;"><b>&pound;<span>56000000</span></b></p>
 										</td>
 										<td class="cart-items-col3 tw3">
 											<input type="text" class="cart-product-quantity" name="product-quantity" value="1" style="height: 14px;" id="cpq_2">
 										</td>
 										<td class="cart-items-col4 tw4">
-											<p style="margin-top: 7px;"><b>$56000000</b></p>
+											<p style="margin-top: 7px;"><b>&pound;<span>56000000</span></b></p>
 										</td>
 										<td class="cart-items-col5 tw5">
-											<button>Remove</button>
+											<button><div class="cart-remove">x</div></button>
 										</td>
 									</tr>
 									<tr>
@@ -427,16 +486,16 @@
 											</div>
 										</td>
 										<td class="cart-items-col2 tw2">
-											<p style="margin-top: 7px;"><b>$56</b></p>
+											<p style="margin-top: 7px;"><b>&pound;<span>56</span></b></p>
 										</td>
 										<td class="cart-items-col3 tw3">
 											<input type="text" class="cart-product-quantity" name="product-quantity" value="1" style="height: 14px;"  id="cpq_3">
 										</td>
 										<td class="cart-items-col4 tw4">
-											<p style="margin-top: 7px;"><b>$56</b></p>
+											<p style="margin-top: 7px;"><b>&pound;<span>56</span></b></p>
 										</td>
 										<td class="cart-items-col5 tw5">
-											<button>Remove</button>
+											<button><div class="cart-remove">x</div></button>
 										</td>
 									</tr>
 									<tr>
@@ -455,16 +514,16 @@
 											</div>
 										</td>
 										<td class="cart-items-col2 tw2">
-											<p style="margin-top: 7px;"><b>$56</b></p>
+											<p style="margin-top: 7px;"><b>&pound;<span>56</span></b></p>
 										</td>
 										<td class="cart-items-col3 tw3">
 											<input type="text" class="cart-product-quantity" name="product-quantity" value="1" style="height: 14px;"  id="cpq_4">
 										</td>
 										<td class="cart-items-col4 tw4">
-											<p style="margin-top: 7px;"><b>$56</b></p>
+											<p style="margin-top: 7px;"><b>&pound;<span>56</span></b></p>
 										</td>
 										<td class="cart-items-col5 tw5">
-											<button>Remove</button>
+											<button><div class="cart-remove">x</div></button>
 										</td>
 									</tr>
 									<tr>
@@ -483,16 +542,16 @@
 											</div>
 										</td>
 										<td class="cart-items-col2 tw2">
-											<p style="margin-top: 7px;"><b>$56</b></p>
+											<p style="margin-top: 7px;"><b>&pound;<span>56</span></b></p>
 										</td>
 										<td class="cart-items-col3 tw3">
 											<input type="text" class="cart-product-quantity" name="product-quantity" value="1" style="height: 14px;"  id="cpq_5">
 										</td>
 										<td class="cart-items-col4 tw4">
-											<p style="margin-top: 7px;"><b>$56</b></p>
+											<p style="margin-top: 7px;"><b>&pound;<span>56</span></b></p>
 										</td>
 										<td class="cart-items-col5 tw5">
-											<button>Remove</button>
+											<button><div class="cart-remove">x</div></button>
 										</td>
 									</tr>
 									<tr>
@@ -511,39 +570,20 @@
 											</div>
 										</td>
 										<td class="cart-items-col2 tw2">
-											<p style="margin-top: 7px;"><b>$56</b></p>
+											<p style="margin-top: 7px;"><b>&pound;<span>56</span></b></p>
 										</td>
 										<td class="cart-items-col3 tw3">
 											<input type="text" class="cart-product-quantity" name="product-quantity" value="1" style="height: 14px;"  id="cpq_6">
 										</td>
 										<td class="cart-items-col4 tw4">
-											<p style="margin-top: 7px;"><b>$56</b></p>
+											<p style="margin-top: 7px;"><b>&pound;<span>56</span></b></p>
 										</td>
 										<td class="cart-items-col5 tw5">
-											<button>Remove</button>
+											<button><div class="cart-remove">x</div></button>
 										</td>
 									</tr>
 								</tbody>
 							</table>
-						</div>
-						<div class="cart-ship-mtd">
-							<h5>
-								<b>
-									Select shipping method
-								</b>
-							</h5>
-							<div style="width: 100%; overflow: hidden;">
-								<input type="radio" name="shipping" value="fedex" id="shipping1" checked>
-								<label for="shipping1">Express delivery (Fedex)</label>
-							</div>
-							<div style="width: 100%; overflow: hidden;">
-								<input type="radio" name="shipping" value="ups" id="shipping2">
-								<label for="shipping2">UPS (1 day delivery)</label>
-							</div>
-							<div style="width: 100%; overflow: hidden;">
-								<input type="radio" name="shipping" value="2day" id="shipping3">
-								<label for="shipping3">2 day delivery</label>
-							</div>
 						</div>
 						<hr class="separator" />
 						<div style="width: 100%; overflow: hidden; margin-top: 20px;">
@@ -578,6 +618,10 @@
 												<span class="helper"></span>
 												<img src="images/Logo_DPD.png" alt="" class="">
 											</li>
+											<li class="shipping-via-item">
+												<span class="helper"></span>
+												<img src="images/dhl.png" alt="" class="">
+											</li>
 											<ul>
 							</div>
 							<div class="referral-half-panel cart-right-panel" style="padding-left: 0;">
@@ -599,7 +643,7 @@
 												<p style="text-transform: uppercase;">subtotal</p>
 											</td>
 											<td>
-												<p>$569.00</p>
+												<p>&pound;<span>56</span>9.00</p>
 											</td>
 										</tr>
 										<tr>
@@ -607,7 +651,7 @@
 												<p style="text-transform: uppercase;">discount</p>
 											</td>
 											<td>
-												<p>$0.00</p>
+												<p>&pound;0.00</p>
 											</td>
 										</tr>
 										<tr>
@@ -615,7 +659,7 @@
 												<p style="text-transform: uppercase;">shipping</p>
 											</td>
 											<td>
-												<p>$20.00</p>
+												<p>&pound;20.00</p>
 											</td>
 										</tr>
 										<tr>
@@ -623,7 +667,7 @@
 												<p style="text-transform: uppercase;">tax</p>
 											</td>
 											<td>
-												<p>$10.00</p>
+												<p>&pound;10.00</p>
 											</td>
 										</tr>
 										<tr>
@@ -631,7 +675,7 @@
 												<p style="text-transform: uppercase; font-weight: bold; color: #e74c3c;">total</p>
 											</td>
 											<td>
-												<p style="font-weight: bold; color: #e74c3c;">$599.00</p>
+												<p style="font-weight: bold; color: #e74c3c;">&pound;599.00</p>
 											</td>
 										</tr>
 									</table>
@@ -668,7 +712,7 @@
 												<div class="event-desc" style="padding: 5px;">
 													<div style="width: 100%; display: block; overflow: hidden;">
 														<h5 class="title-indv-rltd-item">Stitch</h5>
-														<h5 class="price-indv-rltd-item">$25</h5>
+														<h5 class="price-indv-rltd-item">&pound;25</h5>
 														<p class="product-desc-bottom"><span style="display: inline-block;"><a href="javascript:;" style="color: #acacac;">Art print</a></span> by</p>
 														<p class="small-link"><a href="javascript:;">Kanye Westfjksdfhjskdfhksdhfksdhfksdjfhkjsdfhksdjfhjkdsfhksjdfhksdjfhksdhfk</a></p>
 													</div>
@@ -684,7 +728,7 @@
 												<div class="event-desc" style="padding: 5px;">
 													<div style="width: 100%; display: block; overflow: hidden;">
 														<h5 class="title-indv-rltd-item">Stitch</h5>
-														<h5 class="price-indv-rltd-item">$25</h5>
+														<h5 class="price-indv-rltd-item">&pound;25</h5>
 														<p class="product-desc-bottom"><span style="display: inline-block;"><a href="javascript:;" style="color: #acacac;">Art print</a></span> by</p>
 														<p class="small-link"><a href="javascript:;">Kanye Westfjksdfhjskdfhksdhfksdhfksdjfhkjsdfhksdjfhjkdsfhksjdfhksdjfhksdhfk</a></p>
 													</div>
@@ -700,7 +744,7 @@
 												<div class="event-desc" style="padding: 5px;">
 													<div style="width: 100%; display: block; overflow: hidden;">
 														<h5 class="title-indv-rltd-item">Stitch</h5>
-														<h5 class="price-indv-rltd-item">$25</h5>
+														<h5 class="price-indv-rltd-item">&pound;25</h5>
 														<p class="product-desc-bottom"><span style="display: inline-block;"><a href="javascript:;" style="color: #acacac;">Art print</a></span> by</p>
 														<p class="small-link"><a href="javascript:;">Kanye Westfjksdfhjskdfhksdhfksdhfksdjfhkjsdfhksdjfhjkdsfhksjdfhksdjfhksdhfk</a></p>
 													</div>
@@ -716,7 +760,7 @@
 												<div class="event-desc" style="padding: 5px;">
 													<div style="width: 100%; display: block; overflow: hidden;">
 														<h5 class="title-indv-rltd-item">Stitch</h5>
-														<h5 class="price-indv-rltd-item">$25</h5>
+														<h5 class="price-indv-rltd-item">&pound;25</h5>
 														<p class="product-desc-bottom"><span style="display: inline-block;"><a href="javascript:;" style="color: #acacac;">Art print</a></span> by</p>
 														<p class="small-link"><a href="javascript:;">Kanye Westfjksdfhjskdfhksdhfksdhfksdjfhkjsdfhksdjfhjkdsfhksjdfhksdjfhksdhfk</a></p>
 													</div>
@@ -732,7 +776,7 @@
 												<div class="event-desc" style="padding: 5px;">
 													<div style="width: 100%; display: block; overflow: hidden;">
 														<h5 class="title-indv-rltd-item">Stitch</h5>
-														<h5 class="price-indv-rltd-item">$25</h5>
+														<h5 class="price-indv-rltd-item">&pound;25</h5>
 														<p class="product-desc-bottom"><span style="display: inline-block;"><a href="javascript:;" style="color: #acacac;">Art print</a></span> by</p>
 														<p class="small-link"><a href="javascript:;">Kanye Westfjksdfhjskdfhksdhfksdhfksdjfhkjsdfhksdjfhjkdsfhksjdfhksdjfhksdhfk</a></p>
 													</div>
@@ -748,7 +792,7 @@
 												<div class="event-desc" style="padding: 5px;">
 													<div style="width: 100%; display: block; overflow: hidden;">
 														<h5 class="title-indv-rltd-item">Stitch</h5>
-														<h5 class="price-indv-rltd-item">$25</h5>
+														<h5 class="price-indv-rltd-item">&pound;25</h5>
 														<p class="product-desc-bottom"><span style="display: inline-block;"><a href="javascript:;" style="color: #acacac;">Art print</a></span> by</p>
 														<p class="small-link"><a href="javascript:;">Kanye Westfjksdfhjskdfhksdhfksdhfksdjfhkjsdfhksdjfhjkdsfhksjdfhksdjfhksdhfk</a></p>
 													</div>
@@ -764,7 +808,7 @@
 												<div class="event-desc" style="padding: 5px;">
 													<div style="width: 100%; display: block; overflow: hidden;">
 														<h5 class="title-indv-rltd-item">Stitch</h5>
-														<h5 class="price-indv-rltd-item">$25</h5>
+														<h5 class="price-indv-rltd-item">&pound;25</h5>
 														<p class="product-desc-bottom"><span style="display: inline-block;"><a href="javascript:;" style="color: #acacac;">Art print</a></span> by</p>
 														<p class="small-link"><a href="javascript:;">Kanye Westfjksdfhjskdfhksdhfksdhfksdjfhkjsdfhksdjfhjkdsfhksjdfhksdjfhksdhfk</a></p>
 													</div>
@@ -780,7 +824,7 @@
 												<div class="event-desc" style="padding: 5px;">
 													<div style="width: 100%; display: block; overflow: hidden;">
 														<h5 class="title-indv-rltd-item">Stitch</h5>
-														<h5 class="price-indv-rltd-item">$25</h5>
+														<h5 class="price-indv-rltd-item">&pound;25</h5>
 														<p class="product-desc-bottom"><span style="display: inline-block;"><a href="javascript:;" style="color: #acacac;">Art print</a></span> by</p>
 														<p class="small-link"><a href="javascript:;">Kanye Westfjksdfhjskdfhksdhfksdhfksdjfhkjsdfhksdjfhjkdsfhksjdfhksdjfhksdhfk</a></p>
 													</div>
@@ -802,7 +846,7 @@
 										<div class="event-desc" style="padding: 5px;">
 											<div style="width: 100%; display: block; overflow: hidden;">
 												<h5 class="title-indv-rltd-item">Stitch</h5>
-												<h5 class="price-indv-rltd-item">$25</h5>
+												<h5 class="price-indv-rltd-item">&pound;25</h5>
 												<p class="product-desc-bottom"><span style="display: inline-block;"><a href="javascript:;" style="color: #acacac;">Art print</a></span> by</p>
 												<p class="small-link"><a href="javascript:;">Kanye Westfjksdfhjskdfhksdhfksdhfksdjfhkjsdfhksdjfhjkdsfhksjdfhksdjfhksdhfk</a></p>
 											</div>
@@ -818,7 +862,7 @@
 										<div class="event-desc" style="padding: 5px;">
 											<div style="width: 100%; display: block; overflow: hidden;">
 												<h5 class="title-indv-rltd-item">Stitch</h5>
-												<h5 class="price-indv-rltd-item">$25</h5>
+												<h5 class="price-indv-rltd-item">&pound;25</h5>
 												<p class="product-desc-bottom"><span style="display: inline-block;"><a href="javascript:;" style="color: #acacac;">Art print</a></span> by</p>
 												<p class="small-link"><a href="javascript:;">Kanye Westfjksdfhjskdfhksdhfksdhfksdjfhkjsdfhksdjfhjkdsfhksjdfhksdjfhksdhfk</a></p>
 											</div>
@@ -834,7 +878,7 @@
 										<div class="event-desc" style="padding: 5px;">
 											<div style="width: 100%; display: block; overflow: hidden;">
 												<h5 class="title-indv-rltd-item">Stitch</h5>
-												<h5 class="price-indv-rltd-item">$25</h5>
+												<h5 class="price-indv-rltd-item">&pound;25</h5>
 												<p class="product-desc-bottom"><span style="display: inline-block;"><a href="javascript:;" style="color: #acacac;">Art print</a></span> by</p>
 												<p class="small-link"><a href="javascript:;">Kanye Westfjksdfhjskdfhksdhfksdhfksdjfhkjsdfhksdjfhjkdsfhksjdfhksdjfhksdhfk</a></p>
 											</div>
@@ -1279,63 +1323,80 @@
 					</button>
 				</div>
 				<div class="popup-registration-content">
+
+
+
 					<div class="popup-registration_login" data-tab-id="login">
-						<div class="top">
-							<a href="javascript:;" class="facebook">
-								<i></i><img class="login-popup-button-icon" src="images/fb-logo.png">Log In with Facebook</a>
-							<a href="javascript:;" class="googleplus">
-								<i></i><img class="login-popup-button-icon" src="images/gp-logo.png">Log In with Google+</a>
+
+						<div class="popup-registration_signup">
+							<div class="top login-top">
+								<a href="javascript:;" class="facebook">
+									<i></i><img class="login-popup-button-icon" src="images/fb-logo.png">Log In with Facebook</a>
+								<a href="javascript:;" class="googleplus">
+									<i></i><img class="login-popup-button-icon" src="images/gp-logo.png">Log In with Google+</a>
+
+									<div class="errorMsg">
+										<div class="errorIcon"></div>You are not registered
+									</div>
+							</div>
+
 						</div>
+
 						<div class="middle">
 							<span>
-								or
-							</span>
+									or
+								</span>
 						</div>
 						<div class="bottom form">
 							<div id="loginForm" name="loginForm">
 								<div class="form-row">
 									<div class="form-item form-item_full">
 										<label for="usernamelogin" class="form-label">
-											Username or Email
-										</label>
+												Username or Email
+											</label>
+											<br />
 										<input type="text" class="form-input" id="usernamelogin" name="usernamelogin">
 										<div id="error0" class="errorMsg">
-											<div class="errorIcon"></div>
+											<div class="errorIcon"></div>Please fill this field appropriately
 										</div>
 									</div>
 								</div>
 								<div class="form-row">
 									<div class="form-item form-item_full">
 										<label for="passwordlogin" class="form-label">
-											Password
-										</label>
+												Password
+											</label>
+										<br />
 										<input type="passwordlogin" class="form-input" id="passwordlogin" name="passwordlogin">
 										<div id="error1" class="errorMsg">
-											<div class="errorIcon"></div>
+											<div class="errorIcon"></div>Please fill this field appropriately
 										</div>
 									</div>
 								</div>
 								<a href="forgot-pass.html">Forgot your password?</a>
+								<br />
 								<button class="btn" type="submit">
-									Log in
-								</button>
+										Log in
+									</button>
 							</div>
-						</div>
-						<div class="kkk">
-							<div class="middle">
-								<span>
-									or
-								</span>
+							<div class="kkk">
+								<div class="middle">
+									<span>
+										or
+									</span>
+								</div>
 							</div>
-						</div>
-						<div class="jjj">
-							<b><a href="javascript:;" >Continue as guest</a></b>
+							<div class="jjj">
+								<b><a href="javascript:;" >Continue as guest</a></b>
+							</div>
 						</div>
 					</div>
+
 				</div>
 			</div>
 		</div>
 	</div>
+
 
 	<!-- preloader -->
 	<div class="loader-mask">
