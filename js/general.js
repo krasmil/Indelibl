@@ -1717,6 +1717,12 @@ var quantitySpinner = function() {
             max: 1000
         });
     }
+    if ($('#product-quantity-cards').length) {
+        var spinner = $("#product-quantity-cards").spinner({
+            min: 1,
+            max: 2
+        });
+    }
 };
 var previewBackProductIndividual = function(e) {
     var imgsrc = $(e).find(".cat-product-img").attr("src");
@@ -1733,23 +1739,55 @@ var previewBackPGreetingIndividual = function(e) {
     $(e).find(".cat-product-img").attr("src", imgsrc2);
     $('#bgPreviewImgVal').val(imgsrc);
     $("#greeting-p").find(".cat-product-img").attr("src", imgsrc);
-    if ($("#greeting-p").attr("style") === 'background: url("images/greetingcard-back-portrait-blank.png") no-repeat center 42% / auto 68%, linear-gradient( #eeebeb, #f9f9f9); position: relative;') {
-        $("#greeting-p").attr("style", "background: linear-gradient( #eeebeb, #f9f9f9); position: relative;");
-    } else if ($("#greeting-p").attr("style") === "background: linear-gradient( #eeebeb, #f9f9f9); position: relative;") {
-        $("#greeting-p").attr("style", 'background: url("images/greetingcard-back-portrait-blank.png") no-repeat center 42% / auto 68%, linear-gradient( #eeebeb, #f9f9f9); position: relative;');
+
+    if (imgsrc.includes("-back")) {
+      $("#greeting-p").attr("style", "background: linear-gradient( #eeebeb, #f9f9f9); position: relative;");
+      if (imgsrc2.includes("-back")) {
+        $(e).attr("style", "background: linear-gradient( #eeebeb, #f9f9f9); position: relative;");
+      }
+      else {
+        $(e).attr("style", 'background: url("images/greetingcard-back-portrait-blank.png") no-repeat center 42% / auto 68%, linear-gradient( #eeebeb, #f9f9f9); position: relative;');
+      }
     }
+    else {
+      $("#greeting-p").attr("style", 'background: url("images/greetingcard-back-portrait-blank.png") no-repeat center 42% / auto 68%, linear-gradient( #eeebeb, #f9f9f9); position: relative;');
+      if (imgsrc2.includes("-back")) {
+        $(e).attr("style", "background: linear-gradient( #eeebeb, #f9f9f9); position: relative;");
+      }
+      else {
+        $(e).attr("style", 'background: url("images/greetingcard-back-portrait-blank.png") no-repeat center 42% / auto 68%, linear-gradient( #eeebeb, #f9f9f9); position: relative;');
+      }
+    }
+
     productDimensions();
 };
+
+
+
 var previewBackLSGreetingIndividual = function(e) {
     var imgsrc = $(e).find(".cat-product-img").attr("src");
     var imgsrc2 = $("#greeting-ls").find(".cat-product-img").attr("src");
     $(e).find(".cat-product-img").attr("src", imgsrc2);
     $('#bgPreviewImgVal').val(imgsrc);
     $("#greeting-ls").find(".cat-product-img").attr("src", imgsrc);
-    if ($("#greeting-ls").attr("style") === 'background: url("images/greetingcard-back-blank.png") no-repeat 55% 49% / 68.5% auto, linear-gradient( #eeebeb, #f9f9f9); position: relative;') {
-        $("#greeting-ls").attr("style", "background: linear-gradient( #eeebeb, #f9f9f9); position: relative;");
-    } else if ($("#greeting-ls").attr("style") === "background: linear-gradient( #eeebeb, #f9f9f9); position: relative;") {
-        $("#greeting-ls").attr("style", 'background: url("images/greetingcard-back-blank.png") no-repeat 55% 49% / 68.5% auto, linear-gradient( #eeebeb, #f9f9f9); position: relative;');
+
+    if (imgsrc.includes("-back")) {
+      $("#greeting-ls").attr("style", "background: linear-gradient( #eeebeb, #f9f9f9); position: relative;");
+      if (imgsrc2.includes("-back")) {
+        $(e).attr("style", "background: linear-gradient( #eeebeb, #f9f9f9); position: relative;");
+      }
+      else {
+        $(e).attr("style", 'background: url("images/greetingcard-back-blank.png") no-repeat 55% 49% / 68.5% auto, linear-gradient( #eeebeb, #f9f9f9); position: relative;');
+      }
+    }
+    else {
+      $("#greeting-ls").attr("style", 'background: url("images/greetingcard-back-blank.png") no-repeat 55% 49% / 68.5% auto, linear-gradient( #eeebeb, #f9f9f9); position: relative;');
+      if (imgsrc2.includes("-back")) {
+        $(e).attr("style", "background: linear-gradient( #eeebeb, #f9f9f9); position: relative;");
+      }
+      else {
+        $(e).attr("style", 'background: url("images/greetingcard-back-blank.png") no-repeat 55% 49% / 68.5% auto, linear-gradient( #eeebeb, #f9f9f9); position: relative;');
+      }
     }
     productDimensions();
 };
@@ -1898,7 +1936,7 @@ var quantitySpinnerCart = function() {
                 min: 1,
                 max: 100000,
                 stop: function(event, ui) {
-                    addQuantity(this);
+                    //addQuantity(this);
                 }
             });
         });

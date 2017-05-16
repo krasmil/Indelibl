@@ -6328,6 +6328,20 @@ input#product-year {
 #max-file-1366b {
   display: none;
 }
+
+#add4-1920 {
+  display: block;
+}
+#add4-1366 {
+  display: none;
+}
+#add4-1920b {
+  display: block;
+}
+#add4-1366b {
+  display: none;
+}
+
 .postcard-area {
   margin-top: 40px;
 
@@ -7434,6 +7448,9 @@ input#product-year {
 #product-quantity {
   height: 24px;
 }
+#product-quantity-cards {
+  height: 24px;
+}
 .individual-related-img.product-img2.my-prod-img {
   width: 160px;
   height: 150px;
@@ -8057,16 +8074,17 @@ label {
   overflow-y: scroll;
 }
 .cart-items {
-    border-collapse: collapse;
+    overflow: hidden;
     width: 100%;
     display: block;
 }
-.cart-items tbody {
-
+.cart-items ul {
+  overflow: hidden;
+  border-bottom: 1px solid #d0cfcf;
 }
-.cart-items tr, .cart-items th {
-    border-bottom: 1px solid #d0cfcf;
 
+.cart-items tr, .cart-items th {
+  border-bottom: 1px solid #d0cfcf;
 }
 .cart-items th {
   text-transform: uppercase;
@@ -8085,20 +8103,44 @@ label {
   text-align: left;
 }
 .tw1 {
-  width: 814px;
+  width: 70%;
 }
 .tw2 {
-  width: 113px;
+  width: 25%;
 }
 .tw3 {
-  width: 90px;
+  width: 5%;
 }
-.tw4 {
+.tw2 .form-item_full {
+  padding-right: 0;
+}
+.tw2 .form-item_third {
+  padding-right: 0;
+  text-align: left;
+}
+.tw2 .form-item_half {
+  padding-right: 0;
+  text-align: left;
+  padding-left: 10px;
+}
+.tw2 p {
+  margin-top: 5px;
+  margin-bottom: 0;
+}
+.tw2 .form-input {
+  margin-top: 3px;
+}
+.tw2 .ui-spinner {
+  margin-top: 3px;
+  margin-bottom: 0;
+  width: 60px;
+}
+/*.tw4 {
   width: 113px;
 }
 .tw5 {
   width: 100px;
-}
+} */
 .bbkfq {
   margin-left: 5%;
   margin-top: 20px;
@@ -8114,7 +8156,14 @@ label {
   font-size: 1.2em;
 
 }
+.jjj button {
+  font-style: italic;
+  color: #e74c3c;
+}
 .popup-registration-content .bottom .jjj a {
+  color: #e74c3c;
+}
+.popup-registration-content .bottom .jjj button {
   color: #e74c3c;
 }
 .kkk {
@@ -8574,12 +8623,41 @@ input#ccSpinner {
 .payp-method-dts .errorMsg {
   margin-top: -8px;
 }
-
-
-
-
-
-
+.row.f-p-r {
+  margin-left: 0;
+  margin-top: 20px;
+}
+.cart-items-wrapper ul li {
+  float: left;
+}
+.cart-items ul li {
+    text-transform: uppercase;
+    font-weight: bold;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    text-align: center;
+    border-top: 1px solid #d0cfcf;
+    float: left;
+}
+.ght {
+  margin-top: -20px;
+}
+.card-views {
+  overflow: hidden;
+  display: block;
+  position: relative;
+  margin-top: 20px;
+  margin-bottom: 15px;
+  float: left;
+  margin-right: 11px;
+}
+.card-views:nth-of-type(4) {
+  margin-right: 0;
+}
+.card-views .individual-related-img.product-img2.my-prod-img {
+  width: 146px;
+  height: 146px;
+}
 
 
 
@@ -9984,6 +10062,19 @@ li.ui-timepicker-selected .ui-timepicker-duration,
     #max-file-1366b {
       display: block;
     }
+
+    #add4-1920 {
+      display: none;
+    }
+    #add4-1366 {
+      display: block;
+    }
+    #add4-1920b {
+      display: none;
+    }
+    #add4-1366b {
+      display: block;
+    }
     .cards-info-icon {
       width: 20px;
       height: 20px;
@@ -10186,6 +10277,10 @@ li.ui-timepicker-selected .ui-timepicker-duration,
       width: 125px;
       height: 125px;
     }
+    .card-views .individual-related-img.product-img2.my-prod-img {
+      width: 99px;
+      height: 99px;
+    }
     .individual-art-description .product-cat-artist-name {
       width: 380px;
     }
@@ -10265,6 +10360,7 @@ li.ui-timepicker-selected .ui-timepicker-duration,
     .cart-items-col1 h5 {
       width: 370px;
     }
+    /*
     .tw1 {
       width: 578px;
     }
@@ -10280,6 +10376,7 @@ li.ui-timepicker-selected .ui-timepicker-duration,
     .tw5 {
       width: 68px;
     }
+    */
     .bbkfq {
       margin-left: 7%;
     }
@@ -12248,6 +12345,7 @@ li.ui-timepicker-selected .ui-timepicker-duration,
   .cart-items-col1 h5 {
     width: 145px;
   }
+  /*
   .tw1 {
     width: 252px;
   }
@@ -12263,6 +12361,7 @@ li.ui-timepicker-selected .ui-timepicker-duration,
   .tw5 {
     width: 30px;
   }
+  */
   .bbkfq {
     margin-left: 8%;
   }
@@ -12399,7 +12498,7 @@ li.ui-timepicker-selected .ui-timepicker-duration,
   }
   .footer-contact-form .profile-form.gallery_application .btn {
     margin-top: 10px;
-    margin-bottom: 20px;
+    margin-bottom: 0;
   }
   #gm-list .popup-inner {
     width: 100%;
@@ -12464,6 +12563,23 @@ li.ui-timepicker-selected .ui-timepicker-duration,
   }
   .payp-method-dts .errorMsg {
     margin-top: -3px;
+  }
+  #footer-company-menu {
+    display: none;
+  }
+  .footer-contact-form .profile-form textarea {
+    margin-bottom: 10px;
+  }
+  #f-send-wrapper {
+    height: auto;
+    min-height: auto;
+  }
+  .ght {
+    margin-top: 0;
+  }
+  .card-views .individual-related-img.product-img2.my-prod-img {
+    width: 118px;
+    height: 118px;
   }
 
 }
@@ -14308,7 +14424,6 @@ li.ui-timepicker-selected .ui-timepicker-duration,
       margin-right: auto;
       padding-right: 10px;
       padding-left: 10px;
-
     }
     .mug-views {
       overflow: hidden;
@@ -14553,6 +14668,7 @@ li.ui-timepicker-selected .ui-timepicker-duration,
     .cart-items-col1 h5 {
       width: 60px;
     }
+    /*
     .tw1 {
       width: 63px;
     }
@@ -14568,6 +14684,7 @@ li.ui-timepicker-selected .ui-timepicker-duration,
     .tw5 {
       width: 32px;
     }
+    */
     .product-desc-bottom {
       margin-bottom: 0;
     }
@@ -14750,10 +14867,10 @@ li.ui-timepicker-selected .ui-timepicker-duration,
     }
     .footer-contact-form .profile-form.gallery_application .btn {
       width: 70%;
-      margin-top: 30px;
+      margin-top: 25px;
       margin-left: auto;
       margin-right: auto;
-      margin-bottom: 20px;
+      margin-bottom: 10px;
       float: none;
     }
     .footer-contact-form .form-item_half {
@@ -14829,6 +14946,34 @@ li.ui-timepicker-selected .ui-timepicker-duration,
     }
     .payp-method-dts .errorMsg {
       text-align: left;
+    }
+    #footer-company-menu {
+      display: none;
+    }
+    .footer-contact-form h2 {
+      margin-top: 20px;
+    }
+    .ght {
+      margin-top: 0;
+    }
+    .card-views .individual-related-img.product-img2.my-prod-img {
+      width: 130px;
+      height: 130px;
+    }
+    .card-views {
+      overflow: hidden;
+      display: block;
+      position: relative;
+      margin-top: 20px;
+      margin-bottom: 15px;
+      float: left;
+      margin-right: 11px;
+    }
+    .card-views:nth-of-type(4) {
+      margin-right: 0;
+    }
+    .card-views:nth-of-type(2) {
+      margin-right: 0;
     }
   }
 
