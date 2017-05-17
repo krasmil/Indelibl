@@ -8658,11 +8658,24 @@ input#ccSpinner {
   width: 146px;
   height: 146px;
 }
+#quantity-single-field-cards {
+  width: 50%;
+}
+#quantity-single-field-cards .ui-spinner {
+  width: 18%;
+}
+.x25 {
+  margin-bottom: 10px;
+  display: inline-block;
+  vertical-align: middle;
+}
+#quantity-single-field2 {
+  width: 50%;
+}
 
-
-
-
-
+#quantity-single-field2 .ui-spinner {
+  width: 18%;
+}
 
 
 
@@ -10421,6 +10434,12 @@ li.ui-timepicker-selected .ui-timepicker-duration,
     .cc-method-dts {
       width: 60%;
     }
+    #quantity-single-field-cards .ui-spinner {
+      width: 22%;
+    }
+    #quantity-single-field2 .ui-spinner {
+      width: 22%;
+    }
 }
 
 
@@ -12152,7 +12171,13 @@ li.ui-timepicker-selected .ui-timepicker-duration,
   #quantity-single-field {
     width: 100%;
   }
+  #quantity-single-field-cards {
+    width: 100%;
+  }
   #quantity-single-field .ui-spinner {
+    width: 10%;
+  }
+  #quantity-single-field-cards .ui-spinner {
     width: 10%;
   }
   .mug-views {
@@ -12580,6 +12605,16 @@ li.ui-timepicker-selected .ui-timepicker-duration,
   .card-views .individual-related-img.product-img2.my-prod-img {
     width: 118px;
     height: 118px;
+  }
+  .x25 {
+    margin-bottom: 8px;
+    vertical-align: bottom;
+  }
+  #quantity-single-field2 .ui-spinner {
+     width: 27%;
+  }
+  #quantity-single-field2 {
+    width: 35%;
   }
 
 }
@@ -14418,6 +14453,12 @@ li.ui-timepicker-selected .ui-timepicker-duration,
     #quantity-single-field .ui-spinner {
       width: 20%;
     }
+    #quantity-single-field-cards {
+      width: 100%;
+    }
+    #quantity-single-field-cards .ui-spinner {
+      width: 20%;
+    }
     #postcard-size {
       width: 75%;
       margin-left: auto;
@@ -14974,6 +15015,16 @@ li.ui-timepicker-selected .ui-timepicker-duration,
     }
     .card-views:nth-of-type(2) {
       margin-right: 0;
+    }
+    .x25 {
+      margin-bottom: 8px;
+      vertical-align: bottom;
+    }
+    #quantity-single-field2 .ui-spinner {
+       width: 85%;
+    }
+    #quantity-single-field2 {
+      width: 20%;
     }
   }
 

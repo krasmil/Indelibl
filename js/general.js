@@ -1733,62 +1733,38 @@ var previewBackProductIndividual = function(e) {
     productDimensions();
 };
 
-var previewBackPGreetingIndividual = function(e) {
+var previewBackGreetingIndividual = function(e) {
+    var portrait = false;
+    var portrait2 = false;
+    // check orientation of thumbnail pic
+    if ($(e).find(".cat-product-img").width() <  $(e).find(".cat-product-img").height()) {
+      portrait = true;
+    }
+    // check orientation of main pic
+    if ($("#greeting").find(".cat-product-img").width() <  $("#greeting").find(".cat-product-img").height()) {
+      portrait2 = true;
+    }
     var imgsrc = $(e).find(".cat-product-img").attr("src");
-    var imgsrc2 = $("#greeting-p").find(".cat-product-img").attr("src");
+    var imgsrc2 = $("#greeting").find(".cat-product-img").attr("src");
     $(e).find(".cat-product-img").attr("src", imgsrc2);
     $('#bgPreviewImgVal').val(imgsrc);
-    $("#greeting-p").find(".cat-product-img").attr("src", imgsrc);
+    $("#greeting").find(".cat-product-img").attr("src", imgsrc);
 
-    if (imgsrc.includes("-back")) {
-      $("#greeting-p").attr("style", "background: linear-gradient( #eeebeb, #f9f9f9); position: relative;");
-      if (imgsrc2.includes("-back")) {
-        $(e).attr("style", "background: linear-gradient( #eeebeb, #f9f9f9); position: relative;");
-      }
-      else {
-        $(e).attr("style", 'background: url("images/greetingcard-back-portrait-blank.png") no-repeat center 42% / auto 68%, linear-gradient( #eeebeb, #f9f9f9); position: relative;');
-      }
+    // adjust bg of main pic
+    if (portrait === true) {
+      $("#greeting").attr("style", 'background: url("images/greetingcard-back-portrait-blank.png") no-repeat center 42% / auto 68%, linear-gradient( #eeebeb, #f9f9f9); position: relative;');
     }
-    else {
-      $("#greeting-p").attr("style", 'background: url("images/greetingcard-back-portrait-blank.png") no-repeat center 42% / auto 68%, linear-gradient( #eeebeb, #f9f9f9); position: relative;');
-      if (imgsrc2.includes("-back")) {
-        $(e).attr("style", "background: linear-gradient( #eeebeb, #f9f9f9); position: relative;");
-      }
-      else {
-        $(e).attr("style", 'background: url("images/greetingcard-back-portrait-blank.png") no-repeat center 42% / auto 68%, linear-gradient( #eeebeb, #f9f9f9); position: relative;');
-      }
+    else if (portrait === false) {
+      $("#greeting").attr("style", 'background: url("images/greetingcard-back-blank.png") no-repeat 55% 49% / 68.5% auto, linear-gradient( #eeebeb, #f9f9f9); position: relative;');
     }
-
-    productDimensions();
-};
-
-
-
-var previewBackLSGreetingIndividual = function(e) {
-    var imgsrc = $(e).find(".cat-product-img").attr("src");
-    var imgsrc2 = $("#greeting-ls").find(".cat-product-img").attr("src");
-    $(e).find(".cat-product-img").attr("src", imgsrc2);
-    $('#bgPreviewImgVal').val(imgsrc);
-    $("#greeting-ls").find(".cat-product-img").attr("src", imgsrc);
-
-    if (imgsrc.includes("-back")) {
-      $("#greeting-ls").attr("style", "background: linear-gradient( #eeebeb, #f9f9f9); position: relative;");
-      if (imgsrc2.includes("-back")) {
-        $(e).attr("style", "background: linear-gradient( #eeebeb, #f9f9f9); position: relative;");
-      }
-      else {
-        $(e).attr("style", 'background: url("images/greetingcard-back-blank.png") no-repeat 55% 49% / 68.5% auto, linear-gradient( #eeebeb, #f9f9f9); position: relative;');
-      }
+    // adjust bg of thumbnail pic
+    if (portrait2 === false) {
+      $(e).attr("style", 'background: url("images/greetingcard-back-blank.png") no-repeat 55% 49% / 68.5% auto, linear-gradient( #eeebeb, #f9f9f9); position: relative;');
     }
-    else {
-      $("#greeting-ls").attr("style", 'background: url("images/greetingcard-back-blank.png") no-repeat 55% 49% / 68.5% auto, linear-gradient( #eeebeb, #f9f9f9); position: relative;');
-      if (imgsrc2.includes("-back")) {
-        $(e).attr("style", "background: linear-gradient( #eeebeb, #f9f9f9); position: relative;");
-      }
-      else {
-        $(e).attr("style", 'background: url("images/greetingcard-back-blank.png") no-repeat 55% 49% / 68.5% auto, linear-gradient( #eeebeb, #f9f9f9); position: relative;');
-      }
+    else if (portrait2 === true) {
+      $(e).attr("style", 'background: url("images/greetingcard-back-portrait-blank.png") no-repeat center 42% / auto 68%, linear-gradient( #eeebeb, #f9f9f9); position: relative;');
     }
+    //resize images
     productDimensions();
 };
 
