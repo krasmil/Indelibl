@@ -348,7 +348,7 @@
 								<div class="form-item form-item_half">
 									<div class="form-item form-item_full">
 										<label for="profileState" class="form-label">
-											State *
+											State
 										</label>
 									</div>
 
@@ -371,23 +371,17 @@
 
 
 
-						<table class="cart-items">
-							<thead>
-								<tr>
-									<th class="tw1">item</th>
-									<th class="tw2">shipping</th>
-									<th class="tw3">qty</th>
-									<th class="tw4">price</th>
-									<th class="tw5"></th>
-								</tr>
-							</thead>
-						</table>
+						<div class="cart-items">
+							<ul>
+								<li class="tw1" style="text-align: left;">item</li>
+								<li class="tw2"></li>
+								<li class="tw3"></li>
+							</ul>
+						</div>
 						<div class="cart-items-wrapper">
-							<table class="cart-items">
 
-								<tbody>
-									<tr>
-										<td class="cart-items-col1 tw1">
+									<ul>
+										<li class="cart-items-col1 tw1">
 											<div style="overflow: hidden;">
 												<div style="float: left; margin-right: 15px;">
 													<div class="product-img2 my-prod-img">
@@ -397,25 +391,69 @@
 												<div class="cart-prod-desc">
 													<a href="javascript:;"><h5>Stitch</h5></a>
 													<p class="product-desc-bottom"><span style="display: inline-block;"><a href="javascript:;" style="color: #acacac;">Phone case</a></span> by</p>
+													<br class="invbr" />
 													<p class="small-link"><a href="javascript:;">Kanye Westfjksdfhjskdfhksdhfksdhfksdjfhkjsdfhksdjfhjkdsfhksjdfhksdjfhksdhfk</a></p>
 												</div>
 											</div>
-										</td>
-										<td class="cart-items-col2 tw2">
-											<p style="margin-top: 7px;"><b>&pound;<span>56</span></b></p>
-										</td>
-										<td class="cart-items-col3 tw3">
-											<input type="text" class="cart-product-quantity" name="product-quantity" value="1" style="height: 14px;" id="cpq_1">
-										</td>
-										<td class="cart-items-col4 tw4">
-											<p style="margin-top: 7px;"><b>&pound;<span>56</span></b></p>
-										</td>
-										<td class="cart-items-col5 tw5">
+										</li>
+										<li class="cart-items-col2 tw2">
+											<div class="">
+												<div class="form-item form-item_full">
+													<div class="form-item form-item_third">
+														<label class="form-label">
+															PRICE
+														</label>
+													</div>
+													<div class="form-item form-item_half">
+														<p><b>&pound;<span>56</span></b></p>
+													</div>
+
+												</div>
+												<div class="form-item form-item_full">
+													<div class="form-item form-item_third">
+														<label class="form-label">
+															SHIPPING
+														</label>
+													</div>
+													<div class="form-item form-item_half">
+														<p style="float: left;"><b>&pound;<span class="cart-ship-spn">56</span></b></p>
+														<select id="shp-time" name="shp-time" class="form-input" style="width: auto;">
+															<option value="2 days">2 days</option>
+															<option value="4 days">4 days</option>
+															<option value="8 days">8 days</option>
+															<option value="14 days">14 days</option>
+														</select>
+													</div>
+												</div>
+												<div class="form-item form-item_full">
+													<div class="form-item form-item_third">
+														<label class="form-label">
+															QTY
+														</label>
+													</div>
+													<div class="form-item form-item_half">
+														<input type="text" class="cart-product-quantity" name="product-quantity" value="1" style="height: 14px;" id="cpq_1">
+													</div>
+												</div>
+												<div class="form-item form-item_full">
+													<div class="form-item form-item_third">
+														<label class="form-label">
+															SUBTOTAL
+														</label>
+													</div>
+													<div class="form-item form-item_half">
+														<p><b>&pound;<span>56</span></b></p>
+													</div>
+												</div>
+											</div>
+										</li>
+										<li class="cart-items-col5 tw3">
 											<button><div class="cart-remove">x</div></button>
-										</td>
-									</tr>
-									<tr>
-										<td class="cart-items-col1 tw1">
+										</li>
+									</ul>
+
+									<ul>
+										<li class="cart-items-col1 tw1">
 											<div style="overflow: hidden;">
 												<div style="float: left; margin-right: 15px;">
 													<div class="product-img2 my-prod-img art-print-img">
@@ -424,54 +462,143 @@
 												</div>
 												<div class="cart-prod-desc">
 													<a href="javascript:;"><h5>Stitch</h5></a>
-													<p class="product-desc-bottom"><span style="display: inline-block;"><a href="javascript:;" style="color: #acacac;">Phone case</a></span> by</p>
+													<p class="product-desc-bottom"><span style="display: inline-block;"><a href="javascript:;" style="color: #acacac;">Art Print</a></span> by</p>
+													<br class="invbr" />
 													<p class="small-link"><a href="javascript:;">Kanye Westfjksdfhjskdfhksdhfksdhfksdjfhkjsdfhksdjfhjkdsfhksjdfhksdjfhksdhfk</a></p>
 												</div>
 											</div>
-										</td>
-										<td class="cart-items-col2 tw2">
-											<p style="margin-top: 7px;"><b>&pound;<span>56</span></b></p>
-										</td>
-										<td class="cart-items-col3 tw3">
-											<input type="text" class="cart-product-quantity" name="product-quantity" value="1" style="height: 14px;" id="cpq_1">
-										</td>
-										<td class="cart-items-col4 tw4">
-											<p style="margin-top: 7px;"><b>&pound;<span>56</span></b></p>
-										</td>
-										<td class="cart-items-col5 tw5">
+										</li>
+										<li class="cart-items-col2 tw2">
+											<div class="">
+												<div class="form-item form-item_full">
+													<div class="form-item form-item_third">
+														<label class="form-label">
+															PRICE
+														</label>
+													</div>
+													<div class="form-item form-item_half">
+														<p><b>&pound;<span>56</span></b></p>
+													</div>
+
+												</div>
+												<div class="form-item form-item_full">
+													<div class="form-item form-item_third">
+														<label class="form-label">
+															SHIPPING
+														</label>
+													</div>
+													<div class="form-item form-item_half">
+														<p style="float: left;"><b>&pound;<span class="cart-ship-spn">5600000</span></b></p>
+														<select id="shp-time" name="shp-time" class="form-input" style="width: auto;">
+															<option value="2 days">2 days</option>
+															<option value="4 days">4 days</option>
+															<option value="8 days">8 days</option>
+															<option value="14 days">14 days</option>
+														</select>
+													</div>
+												</div>
+												<div class="form-item form-item_full">
+													<div class="form-item form-item_third">
+														<label class="form-label">
+															QTY
+														</label>
+													</div>
+													<div class="form-item form-item_half">
+														<input type="text" class="cart-product-quantity" name="product-quantity" value="1" style="height: 14px;" id="cpq_2">
+													</div>
+												</div>
+												<div class="form-item form-item_full">
+													<div class="form-item form-item_third">
+														<label class="form-label">
+															SUBTOTAL
+														</label>
+													</div>
+													<div class="form-item form-item_half">
+														<p><b>&pound;<span>5600400</span></b></p>
+													</div>
+												</div>
+											</div>
+										</li>
+										<li class="cart-items-col5 tw3">
 											<button><div class="cart-remove">x</div></button>
-										</td>
-									</tr>
-									<tr>
-										<td class="cart-items-col1 tw1">
+										</li>
+									</ul>
+
+									<ul>
+										<li class="cart-items-col1 tw1">
 											<div style="overflow: hidden;">
 												<div style="float: left; margin-right: 15px;">
 													<div class="product-img2 my-prod-img">
-														<img class="cat-product-img" src="images/bp1.png">
+														<img class="cat-product-img" src="images/small3d.png">
 													</div>
 												</div>
 												<div class="cart-prod-desc">
-													<a href="javascript:;"><h5>Stitchsdgdfgsdhdhgdhdfhsdkfjsdgfsjdfgsfjsgfjdsagfasdgfjdsdsgfdsahfjsgfjdsagf</h5></a>
-													<p class="product-desc-bottom"><span style="display: inline-block;"><a href="javascript:;" style="color: #acacac;">Phone case</a></span> by</p>
+													<a href="javascript:;"><h5>Stitch</h5></a>
+													<p class="product-desc-bottom"><span style="display: inline-block;"><a href="javascript:;" style="color: #acacac;">Card</a></span> by</p>
+													<br class="invbr" />
 													<p class="small-link"><a href="javascript:;">Kanye Westfjksdfhjskdfhksdhfksdhfksdjfhkjsdfhksdjfhjkdsfhksjdfhksdjfhksdhfk</a></p>
 												</div>
 											</div>
-										</td>
-										<td class="cart-items-col2 tw2">
-											<p style="margin-top: 7px;"><b>&pound;<span>56000000</span></b></p>
-										</td>
-										<td class="cart-items-col3 tw3">
-											<input type="text" class="cart-product-quantity" name="product-quantity" value="1" style="height: 14px;" id="cpq_2">
-										</td>
-										<td class="cart-items-col4 tw4">
-											<p style="margin-top: 7px;"><b>&pound;<span>56000000</span></b></p>
-										</td>
-										<td class="cart-items-col5 tw5">
+										</li>
+										<li class="cart-items-col2 tw2">
+											<div class="">
+												<div class="form-item form-item_full">
+													<div class="form-item form-item_third">
+														<label class="form-label">
+															PRICE
+														</label>
+													</div>
+													<div class="form-item form-item_half">
+														<p><b>&pound;<span>56</span></b></p>
+													</div>
+
+												</div>
+												<div class="form-item form-item_full">
+													<div class="form-item form-item_third">
+														<label class="form-label">
+															SHIPPING
+														</label>
+													</div>
+													<div class="form-item form-item_half">
+														<p style="float: left;"><b>&pound;<span class="cart-ship-spn">56</span></b></p>
+														<select id="shp-time" name="shp-time" class="form-input" style="width: auto;">
+															<option value="2 days">2 days</option>
+															<option value="4 days">4 days</option>
+															<option value="8 days">8 days</option>
+															<option value="14 days">14 days</option>
+														</select>
+													</div>
+												</div>
+												<div class="form-item form-item_full">
+													<div class="form-item form-item_third">
+														<label class="form-label">
+															QTY
+														</label>
+													</div>
+													<div class="form-item form-item_half">
+														<input type="text" class="cart-product-quantity" id="product-quantity-cards" name="product-quantity" value="1" style="height: 14px;" id="cpq_3">
+														<span class="x25">&nbsp;&nbsp;x 25 cards</span>
+													</div>
+												</div>
+												<div class="form-item form-item_full">
+													<div class="form-item form-item_third">
+														<label class="form-label">
+															SUBTOTAL
+														</label>
+													</div>
+													<div class="form-item form-item_half">
+														<p><b>&pound;<span>56</span></b></p>
+													</div>
+												</div>
+											</div>
+										</li>
+										<li class="cart-items-col5 tw3">
 											<button><div class="cart-remove">x</div></button>
-										</td>
-									</tr>
-									<tr>
-										<td class="cart-items-col1 tw1">
+										</li>
+									</ul>
+									
+									<ul>
+										<li class="cart-items-col1 tw1">
 											<div style="overflow: hidden;">
 												<div style="float: left; margin-right: 15px;">
 													<div class="product-img2 my-prod-img">
@@ -481,109 +608,70 @@
 												<div class="cart-prod-desc">
 													<a href="javascript:;"><h5>Stitch</h5></a>
 													<p class="product-desc-bottom"><span style="display: inline-block;"><a href="javascript:;" style="color: #acacac;">Phone case</a></span> by</p>
+													<br class="invbr" />
 													<p class="small-link"><a href="javascript:;">Kanye Westfjksdfhjskdfhksdhfksdhfksdjfhkjsdfhksdjfhjkdsfhksjdfhksdjfhksdhfk</a></p>
 												</div>
 											</div>
-										</td>
-										<td class="cart-items-col2 tw2">
-											<p style="margin-top: 7px;"><b>&pound;<span>56</span></b></p>
-										</td>
-										<td class="cart-items-col3 tw3">
-											<input type="text" class="cart-product-quantity" name="product-quantity" value="1" style="height: 14px;"  id="cpq_3">
-										</td>
-										<td class="cart-items-col4 tw4">
-											<p style="margin-top: 7px;"><b>&pound;<span>56</span></b></p>
-										</td>
-										<td class="cart-items-col5 tw5">
-											<button><div class="cart-remove">x</div></button>
-										</td>
-									</tr>
-									<tr>
-										<td class="cart-items-col1 tw1">
-											<div style="overflow: hidden;">
-												<div style="float: left; margin-right: 15px;">
-													<div class="product-img2 my-prod-img">
-														<img class="cat-product-img" src="images/bp1.png">
+										</li>
+										<li class="cart-items-col2 tw2">
+											<div class="">
+												<div class="form-item form-item_full">
+													<div class="form-item form-item_third">
+														<label class="form-label">
+															PRICE
+														</label>
+													</div>
+													<div class="form-item form-item_half">
+														<p><b>&pound;<span>56</span></b></p>
+													</div>
+
+												</div>
+												<div class="form-item form-item_full">
+													<div class="form-item form-item_third">
+														<label class="form-label">
+															SHIPPING
+														</label>
+													</div>
+													<div class="form-item form-item_half">
+														<p style="float: left;"><b>&pound;<span class="cart-ship-spn">56</span></b></p>
+														<select id="shp-time" name="shp-time" class="form-input" style="width: auto;">
+															<option value="2 days">2 days</option>
+															<option value="4 days">4 days</option>
+															<option value="8 days">8 days</option>
+															<option value="14 days">14 days</option>
+														</select>
 													</div>
 												</div>
-												<div class="cart-prod-desc">
-													<a href="javascript:;"><h5>Stitch</h5></a>
-													<p class="product-desc-bottom"><span style="display: inline-block;"><a href="javascript:;" style="color: #acacac;">Phone case</a></span> by</p>
-													<p class="small-link"><a href="javascript:;">Kanye Westfjksdfhjskdfhksdhfksdhfksdjfhkjsdfhksdjfhjkdsfhksjdfhksdjfhksdhfk</a></p>
-												</div>
-											</div>
-										</td>
-										<td class="cart-items-col2 tw2">
-											<p style="margin-top: 7px;"><b>&pound;<span>56</span></b></p>
-										</td>
-										<td class="cart-items-col3 tw3">
-											<input type="text" class="cart-product-quantity" name="product-quantity" value="1" style="height: 14px;"  id="cpq_4">
-										</td>
-										<td class="cart-items-col4 tw4">
-											<p style="margin-top: 7px;"><b>&pound;<span>56</span></b></p>
-										</td>
-										<td class="cart-items-col5 tw5">
-											<button><div class="cart-remove">x</div></button>
-										</td>
-									</tr>
-									<tr>
-										<td class="cart-items-col1 tw1">
-											<div style="overflow: hidden;">
-												<div style="float: left; margin-right: 15px;">
-													<div class="product-img2 my-prod-img">
-														<img class="cat-product-img" src="images/bp1.png">
+												<div class="form-item form-item_full">
+													<div class="form-item form-item_third">
+														<label class="form-label">
+															QTY
+														</label>
+													</div>
+													<div class="form-item form-item_half">
+														<input type="text" class="cart-product-quantity" name="product-quantity" value="1" style="height: 14px;" id="cpq_4">
 													</div>
 												</div>
-												<div class="cart-prod-desc">
-													<a href="javascript:;"><h5>Stitch</h5></a>
-													<p class="product-desc-bottom"><span style="display: inline-block;"><a href="javascript:;" style="color: #acacac;">Phone case</a></span> by</p>
-													<p class="small-link"><a href="javascript:;">Kanye Westfjksdfhjskdfhksdhfksdhfksdjfhkjsdfhksdjfhjkdsfhksjdfhksdjfhksdhfk</a></p>
-												</div>
-											</div>
-										</td>
-										<td class="cart-items-col2 tw2">
-											<p style="margin-top: 7px;"><b>&pound;<span>56</span></b></p>
-										</td>
-										<td class="cart-items-col3 tw3">
-											<input type="text" class="cart-product-quantity" name="product-quantity" value="1" style="height: 14px;"  id="cpq_5">
-										</td>
-										<td class="cart-items-col4 tw4">
-											<p style="margin-top: 7px;"><b>&pound;<span>56</span></b></p>
-										</td>
-										<td class="cart-items-col5 tw5">
-											<button><div class="cart-remove">x</div></button>
-										</td>
-									</tr>
-									<tr>
-										<td class="cart-items-col1 tw1">
-											<div style="overflow: hidden;">
-												<div style="float: left; margin-right: 15px;">
-													<div class="product-img2 my-prod-img">
-														<img class="cat-product-img" src="images/bp1.png">
+												<div class="form-item form-item_full">
+													<div class="form-item form-item_third">
+														<label class="form-label">
+															SUBTOTAL
+														</label>
+													</div>
+													<div class="form-item form-item_half">
+														<p><b>&pound;<span>56</span></b></p>
 													</div>
 												</div>
-												<div class="cart-prod-desc">
-													<a href="javascript:;"><h5>Stitch</h5></a>
-													<p class="product-desc-bottom"><span style="display: inline-block;"><a href="javascript:;" style="color: #acacac;">Phone case</a></span> by</p>
-													<p class="small-link"><a href="javascript:;">Kanye Westfjksdfhjskdfhksdhfksdhfksdjfhkjsdfhksdjfhjkdsfhksjdfhksdjfhksdhfk</a></p>
-												</div>
 											</div>
-										</td>
-										<td class="cart-items-col2 tw2">
-											<p style="margin-top: 7px;"><b>&pound;<span>56</span></b></p>
-										</td>
-										<td class="cart-items-col3 tw3">
-											<input type="text" class="cart-product-quantity" name="product-quantity" value="1" style="height: 14px;"  id="cpq_6">
-										</td>
-										<td class="cart-items-col4 tw4">
-											<p style="margin-top: 7px;"><b>&pound;<span>56</span></b></p>
-										</td>
-										<td class="cart-items-col5 tw5">
+										</li>
+										<li class="cart-items-col5 tw3">
 											<button><div class="cart-remove">x</div></button>
-										</td>
-									</tr>
-								</tbody>
-							</table>
+										</li>
+									</ul>
+
+
+
+
 						</div>
 						<hr class="separator" />
 						<div style="width: 100%; overflow: hidden; margin-top: 20px;">
