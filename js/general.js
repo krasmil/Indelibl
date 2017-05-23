@@ -58,6 +58,9 @@ $(document).ready(function() {
     showSearchWlMsg();
     ccSpinner();
     changePayMethod();
+    generateMap();
+    colorSuppMap();
+
 });
 
 /******* Run functions when document resize **********/
@@ -107,6 +110,7 @@ $(window).resize(function() {
         resetRecentViews();
         scrollRecentViews();
     }, 500);
+
     if ($('.related-events-max-four').length) {
         calcRelatedEventsWidth();
     }
@@ -122,6 +126,10 @@ $(window).resize(function() {
     showProdCatButtonsMobileAll();
     resizeArtPrintPage();
     showSearchWlMobile();
+
+
+
+
     if ($('#artistProfession').is(":visible")) {
       resizeRegPasswordArtist();
     }
@@ -2723,4 +2731,177 @@ var changePayMethod = function() {
       $('#cc-method').hide();
     }
   });
+};
+
+var showSupInfo = function(e) {
+    var id = e.id;
+    id = id.replace("supp_", "");
+    $(".supporter-box").each(function() {
+        if ($(this).attr("id") != $("#suppbox_" + id)) {
+            $(this).hide();
+        }
+    });
+    $("#suppbox_" + id).parent().show();
+    $("#suppbox_" + id).show();
+
+
+};
+var hideSuppBox = function(e) {
+    $(e).parent().hide();
+    $(e).parent().parent().hide();
+    $('body').css('overflow', 'auto');
+    if ($(window).width() < 1000) {
+        $('body').css('overflow-y', 'visible');
+    }
+};
+
+var changeSupportersView = function(e) {
+	var view = document.getElementById("select-supporters-view").value;
+	if (view === "Supporters" ) {
+
+	  $('.view-follow-supporters').show();
+      $('.view-follow-graphs').hide();
+      calcViewFollowsHeight();
+	}
+	else if (view === "Graphs" ) {
+	  $('.view-follow-graphs').show();
+      $('.view-follow-supporters').hide();
+      $('#world-map').vectorMap('get', 'mapObject').updateSize();
+
+	}
+};
+
+var changeSuppTimeQuarter = function() {
+	var qval = document.getElementById("graphsSuppTimeQ").value;
+	if (qval === "Q1" ) {
+	  $('#q1').show();
+    $('#q2').hide();
+    $('#q3').hide();
+    $('#q4').hide();
+	}
+	else if (qval === "Q2" ) {
+    $('#q1').hide();
+    $('#q2').show();
+    $('#q3').hide();
+    $('#q4').hide();
+	}
+  else if (qval === "Q3" ) {
+    $('#q1').hide();
+    $('#q2').hide();
+    $('#q3').show();
+    $('#q4').hide();
+	}
+  else if (qval === "Q4" ) {
+    $('#q1').hide();
+    $('#q2').hide();
+    $('#q3').hide();
+    $('#q4').show();
+	}
+};
+
+var changeSuppViewQuarter = function() {
+	var qval = document.getElementById("suppViewsQ").value;
+  if (qval === "Q1" ) {
+	  $('#qv1').show();
+    $('#qv2').hide();
+    $('#qv3').hide();
+    $('#qv4').hide();
+	}
+	else if (qval === "Q2" ) {
+    $('#qv1').hide();
+    $('#qv2').show();
+    $('#qv3').hide();
+    $('#qv4').hide();
+	}
+  else if (qval === "Q3" ) {
+    $('#qv1').hide();
+    $('#qv2').hide();
+    $('#qv3').show();
+    $('#qv4').hide();
+	}
+  else if (qval === "Q4" ) {
+    $('#qv1').hide();
+    $('#qv2').hide();
+    $('#qv3').hide();
+    $('#qv4').show();
+	}
+};
+
+var changeSuppSpendQuarter = function() {
+	var qval = document.getElementById("suppSpendQ").value;
+  if (qval === "Q1" ) {
+    $('#qs1').show();
+    $('#qs2').hide();
+    $('#qs3').hide();
+    $('#qs4').hide();
+	}
+	else if (qval === "Q2" ) {
+    $('#qs1').hide();
+    $('#qs2').show();
+    $('#qs3').hide();
+    $('#qs4').hide();
+	}
+  else if (qval === "Q3" ) {
+    $('#qs1').hide();
+    $('#qs2').hide();
+    $('#qs3').show();
+    $('#qs4').hide();
+	}
+  else if (qval === "Q4" ) {
+    $('#qs1').hide();
+    $('#qs2').hide();
+    $('#qs3').hide();
+    $('#qs4').show();
+	}
+};
+
+var countries = ["RU", "US", "AU", "NG", "ZA"];
+
+var generateMap = function() {
+
+  if ($('#world-map').length) {
+
+  var cvalues = {};
+  jQuery.each(countries, function(idx, value){
+      cvalues[value] = "#e74c3c";
+  })
+
+  $('#world-map').vectorMap({map: 'world_mill', backgroundColor:  "#FFFFFF", zoomButtons : false, zoomOnScroll: false, regionStyle: {
+    initial: {
+      fill: 'white',
+      "fill-opacity": 1,
+      stroke: '#000',
+      "stroke-width": 0.5,
+      "stroke-opacity": 1
+    },
+    hover: {
+      "fill-opacity": 1,
+      cursor: 'pointer'
+    },
+    selected: {
+
+    },
+    selectedHover: {
+    }
+  },
+  series: {
+      regions: [{
+          values: cvalues,
+          attribute: 'fill'
+    }]}});
+  }
+};
+
+var colorSuppMap = function() {
+  if ($('#world-map').length) {
+    var map = $('#world-map').vectorMap('get', 'mapObject');
+    var countryList = [];
+    var cvalues = [];
+    jQuery.each(countries, function(idx, value){
+        countryList.push(map.getRegionName(value));
+    });
+    jQuery.each(countryList, function(idx, value){
+      $( "#topCountryList" ).append( '<li><div class="countryDot"></div><p>' + value + '</p></li>' );
+    });
+  }
 };
