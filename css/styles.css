@@ -1860,7 +1860,7 @@ ripple.ripple::after {
 
 .footer-bottom ul {
     text-align: left;
-    width: auto;
+    width: 25%;
     max-width: 300px;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -9100,7 +9100,9 @@ input#ccSpinner {
 	line-height: normal;
 }
 
-
+.footer .footer-top  .wrapper {
+	width: 100%;
+}
 
 
 
@@ -10937,7 +10939,7 @@ li.ui-timepicker-selected .ui-timepicker-duration,
     height: 400px;
   }
   .footer .wrapper {
-	width: 85%;
+	width: 80%;
   }
   .foot-indeliblis .column-4 {
     width: calc(25% - 22px);
