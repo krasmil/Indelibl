@@ -401,9 +401,7 @@
 						<div style="width: 100%; overflow: hidden;">
 							<input type="radio" name="booktype" value="paper" id="paperbook-radio" checked><label for="paperbook-radio">Paper book</label>
 						</div>
-						<div style="width: 100%; overflow: hidden;">
-							<input type="radio" name="booktype" value="ebook" id="ebook-radio"><label for="ebook-radio">E-book</label>
-						</div>
+						
 						<div id="paper-book-form">
 								<p>
 									<b>
@@ -463,82 +461,7 @@
 
 
 							</div>
-							<div id="ebook-form" style="display: none;">
-									<p>
-										<b>
-											Add genre *
-										</b>
-									</p>
-									<select id="ebook-genre" name="art-style" class="form-input">
-										<option value="" selected="true" disabled="disabled">Select</option>
-										<option value="Thriller">Thriller</option>
-										<option value="Non-Fiction">Non-Fiction</option>
-										<option value="Biography">Biography</option>
-										<option value="Art">Art</option>
-										<option value="Post Modern">Post Modern</option>
-									</select>
-									<input type="text" class="form-input" id="ebook-genre-other" name="book-genre-other" placeholder="Enter other">
-									<div class="errorMsg">
-										<div class="errorIcon"></div>Genre is required
-									</div>
-									<p>
-										<b>
-											Add language *
-										</b>
-									</p>
-									<select id="ebook-lang" name="ebook-lang" class="form-input">
-										<option value="" selected="true" disabled="disabled">Select</option>
-										<option value="English">English</option>
-										<option value="French">French</option>
-									</select>
-									<input type="text" class="form-input" id="ebook-lang-other" name="ebook-lang-other" placeholder="Enter other">
-									<div class="errorMsg">
-										<div class="errorIcon"></div>Language is required
-									</div>
-									<p>
-										<b>
-											Number of	pages *
-										</b>
-									</p>
-									<input type="text" class="form-input" id="ebook-pages" name="book-pages" placeholder="Pages">
-									<div class="errorMsg">
-										<div class="errorIcon"></div>Medium is required
-									</div>
-									<p>
-										<b>
-											Author *
-										</b>
-									</p>
-									<input type="text" class="form-input" id="ebook-author" name="book-author" placeholder="Author">
-									<div class="errorMsg">
-										<div class="errorIcon"></div>Author is required
-									</div>
-									<p>
-										<b>
-											Edition
-										</b>
-									</p>
-									<input type="text" class="form-input" id="ebook-edition" name="book-edition">
-
-									<label for="book-input" class="btn" id="add-art-btn">
-											Add book
-									</label>
-									<input id="book-input" type="file" accept="application/pdf, .epub" onchange="showBookMsg(this)" style="display: none;"/>
-
-									<p style="color: #acacac; font-size: 0.75em;">
-										Maximum upload file size for e-book file: 60MB.
-										<br />
-										PDF and EPUB files only.
-									</p>
-									<div class="errorMsg" style="width: 130px; margin: 0 auto; float: left;">
-										<div class="errorIcon"></div>Book file is required
-									</div>
-									<div class="book-added-msg-wrapper" style="display: none;">
-										<div id="book-added-msg"><div class="errorIcon"></div></div>
-									</div>
-								</div>
-
-
+							
 							</div>
 					<div class="add-art-main-wrapper white">
 									<div class="add-art-form-main add-book-form">
@@ -612,71 +535,7 @@
 												</div>
 
 											</div>
-											<div id="ebook-main-area" style="display: none;">
-												<div class="books-row">
-													<div class="book-page-preview-wrapper">
-														<div class="book-page-preview" id="book-page-7">
-															<p class="add-page-desc">Add cover page<br />(required)<br />PNG and JPG format only
-																<p class="errorMsg" style="margin-top: 160px;">
-																	<br /><img src="images/icons/error.png" class="errorImg-small"><span>Cover is required</span>
-																</p>
-															</p>
-														</div>
-														<div class="book-buttons-wrapper">
-															<label for="book-input-7" class="btn add-art-btn" id="book-input-1-button">
-																Add
-															</label>
-															<input id="book-input-7" type="file" accept="image/*" style="display: none;" onchange="showBookPage(this)"/>
-						  								<button class="btn" style="color: #e74c3c; background: #fff; border: 1px solid #e74c3c" onclick="removeBookImg(this)" id="remove-book-7">
-						  									Remove
-						  								</button>
-														</div>
-													</div>
-													<div class="book-page-preview-wrapper">
-														<div class="book-page-preview" id="book-page-8">
-															<p class="add-page-desc">Add back page<br />(required)<br />PNG and JPG format only
-																<p class="errorMsg" style="margin-top: 160px;">
-																	<br /><img src="images/icons/error.png" class="errorImg-small"><span>Back cover is required</span>
-																</p>
-															</p>
-														</div>
-														<div class="book-buttons-wrapper">
-															<label for="book-input-8" class="btn add-art-btn" id="book-input-8-button">
-																Add
-															</label>
-															<input id="book-input-8" type="file" accept="image/*" style="display: none;" onchange="showBookPage(this)"/>
-						  								<button class="btn" style="color: #e74c3c; background: #fff; border: 1px solid #e74c3c" onclick="removeBookImg(this)" id="remove-book-8">
-						  									Remove
-						  								</button>
-														</div>
-													</div>
-
-												</div>
-												<div class="books-row">
-
-													<div id="ebook-preview-added-msg" style="opacity: 0;">
-
-													</div>
-
-													<label for="ebook-preview-input" class="btn wide" id="add-ebook-preview-btn">
-															Add preview
-													</label>
-													<input id="ebook-preview-input" type="file" accept="application/pdf" onchange="showBookPreviewMsg(this)" style="display: none;"/>
-
-													<p style="color: #acacac; font-size: 0.75em;">
-														Preview file is required.
-														<br />
-														Maximum upload file size for preview file: 10MB.
-														<br />
-														Maximum number pages: 10. PDF files only.
-													</p>
-													<div class="errorMsg" style="width: 130px; margin: 0 auto;">
-														<div class="errorIcon"></div>Preview is required
-													</div>
-												</div>
-
-											</div>
-
+											
 
 
 										</div>
