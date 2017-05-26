@@ -60,7 +60,7 @@ $(document).ready(function() {
     changePayMethod();
     generateMap();
     colorSuppMap();
-
+	quantitySpinnerCartCards();
 });
 
 /******* Run functions when document resize **********/
@@ -860,7 +860,9 @@ function hideSizeError() {
 function hideExtError() {
     $('#ext-error').hide();
 }
-
+function hideShipError() {
+    $('#shipping-error').hide();
+}
 // get image orientation
 var getOrientation = function(file, callback) {
     var reader = new FileReader();
@@ -1926,6 +1928,19 @@ var quantitySpinnerCart = function() {
         });
     }
 };
+var quantitySpinnerCartCards = function() {
+    if ($('.cart-product-quantity-cards').length) {
+        $('[id^="cpqc_"]').each(function(index) {
+            var spinner = $(this).spinner({
+                min: 1,
+                max: 2,
+                stop: function(event, ui) {
+                    //addQuantity(this);
+                }
+            });
+        });
+    }
+};
 var initArtPrintSize = function() {
     if ($('#print-main').length) {
         $('#init-img-width').val($('#print-main').css("width"));
@@ -2904,4 +2919,54 @@ var colorSuppMap = function() {
       $( "#topCountryList" ).append( '<li><div class="countryDot"></div><p>' + value + '</p></li>' );
     });
   }
+};
+
+
+
+var showShipOptions = function(e) {
+    var id = e.id;
+    id = id.replace("shipbutt_", "");
+    $(".shipmtd-box").each(function() {
+        if ($(this).attr("id") != $("#shipbox_" + id)) {
+            $(this).hide();
+        }
+    });
+    $("#shipbox_" + id).parent().show();
+    $("#shipbox_" + id).show();
+
+
+};
+
+var selectShipOption = function(e) {
+	var id = e.id;
+    id = id.replace("slcship_", "");
+	
+	var shipBtn = $("#shipbutt_" + id);
+	shipBtn.parent().find('.selected-shipping').remove();
+	var options = $(e).parent().parent().find("input[name*='ship']:checked");
+	
+	options.each(function(){   
+		
+		var valsplit = $(this).val().split(' - ');
+		console.log(valsplit);
+		shipBtn.parent().prepend('<p class="selected-shipping" style="float: left;"><b>' + valsplit[0] + '</b> - ' + valsplit[1] + '</p>');
+		
+     });
+    shipBtn.html("Change");  
+	shipBtn.removeClass("bfr-tgle");
+	$(e).parent().parent().hide();
+    $(e).parent().parent().parent().hide();
+    $('body').css('overflow', 'auto');
+    if ($(window).width() < 1000) {
+        $('body').css('overflow-y', 'visible');
+    }
+}
+
+var hideShipbox = function(e) {   
+    $(e).parent().hide();
+    $(e).parent().parent().hide();
+    $('body').css('overflow', 'auto');
+    if ($(window).width() < 1000) {
+        $('body').css('overflow-y', 'visible');
+    }
 };
