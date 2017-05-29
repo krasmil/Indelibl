@@ -2970,3 +2970,81 @@ var hideShipbox = function(e) {
         $('body').css('overflow-y', 'visible');
     }
 };
+
+var editProdTitle = function(e) {
+
+	$(e).parent().find(".product-title-edit").attr('contentEditable', true).focus();
+	$(e).parent().find(".product-title-edit").css("padding-left", "10px");
+	$(e).parent().find(".product-title-edit").css("padding-right", "10px");
+	$(e).parent().find(".product-title-edit").css("cursor", "text");
+	$(e).parent().find(".title-edit-save").css("display", "inline-block");
+	$(e).hide();
+
+};
+
+var saveProdTitle = function(e) {
+
+	$(e).parent().find(".product-title-edit").attr('contentEditable', false)
+	$(e).parent().find(".product-title-edit").css("padding", "0");
+	$(e).parent().find(".product-title-edit").css("cursor", "default");
+	$(e).parent().find(".title-edit-btn").show();
+	$(e).hide();
+
+};
+
+var editProdDesc = function(e) {
+
+	$(e).parent().find(".product-about-text").attr('contentEditable', true).focus();
+	$(e).parent().find(".product-about-text").css("padding", "10px");
+	$(e).parent().find(".product-about-text").css("cursor", "text");
+	$(e).parent().find(".desc-edit-save").css("display", "inline-block");
+	$(e).hide();
+
+};
+var saveProdDesc = function(e) {
+
+	$(e).parent().find(".product-about-text").attr('contentEditable', false)
+	$(e).parent().find(".product-about-text").css("padding", "0");
+	$(e).parent().find(".product-about-text").css("cursor", "default");
+	$(e).parent().find(".desc-edit-btn").show();
+	$(e).hide();
+
+};
+
+var pswpElement2 = $('.pswp')[0];
+var openLightBoxMyInd = function(e) {
+	console.log(pswpElement2);
+    var $pic = $(e).parent().parent().find(".my-ind-oga-full"),
+        getItems = function() {
+            var items = [];
+            $pic.each(function() {
+                var $href = $(this).attr('src'),
+                    $width = $(this).width(),
+                    $height = $(this).height();
+                var item = {
+                    src: $href,
+                    w: $width,
+                    h: $height
+                };
+                items.push(item);
+            });
+            return items;
+        };
+		console.log($pic);
+    var items = getItems();
+    var options = {
+        index: 1,
+        bgOpacity: 0.7,
+        shareEl: false,
+        fullscreenEl: false,
+        showHideOpacity: true
+    };
+
+    var lightBox = new PhotoSwipe(pswpElement2, PhotoSwipeUI_Default, items, options);
+    lightBox.init();
+    return lightBox;
+	console.log("hee44546");
+};
+var reorderProduct = function(e) {
+    $(e).parent().parent().find('.cart-msg').fadeIn().delay(2000).fadeOut();
+};
