@@ -9230,14 +9230,15 @@ input#ccSpinner {
 	display: inline-block;
 	width: 20px;
     height: 20px;
-	margin-top: 10px;
-	vertical-align: top;
+	margin-top: 0;
+	
 }
 .saveTitle {
 	float: none;
 	display: none;
     line-height: 26px;
 	margin-left: 10px;
+	margin-top: 5px;
 }
 .product-about-title {
 	display: inline-block;
@@ -9274,11 +9275,22 @@ input#ccSpinner {
 .pdb-related-img.card-related:nth-of-type(3n+1){
   margin-right: 0;
 }
+#instafeed>a>img {
+    padding: 5px;
+}
+.og-cart .cart-items-col1 .product-img2.my-prod-img {
+    width: 520px;
+    height: 520px;
+}
 
-
-
-
-
+.og-cart .mctw {
+    float: left;
+    width: 550px;
+}
+.og-cart .tw1 .cart-prod-desc .small-link {
+    max-width: 380px;
+    width: 380px;
+}
 
 
 
@@ -11184,6 +11196,24 @@ li.ui-timepicker-selected .ui-timepicker-duration,
 	.box-product3 .overlay_product_delete h4, .box-product3 .overlay_product_delete h5 {
 		width: auto; 
 		max-width: 100%; 
+	}
+	.pdb-right .product-edit-btn {
+		
+		margin-top: 10px;
+		vertical-align: top;
+	}
+	.og-cart .cart-items-col1 .product-img2.my-prod-img {
+		width: 360px;
+		height: 360px;
+	}
+
+	.og-cart .mctw {
+		float: left;
+		width: 420px;
+	}
+	.og-cart .tw1 .cart-prod-desc .small-link {
+		max-width: 310px;
+		width: 310px;
 	}
 }
 
@@ -13714,6 +13744,25 @@ li.ui-timepicker-selected .ui-timepicker-duration,
 	.product-title-edit {
 		max-width: 300px;
 	}
+	.og-cart .cart-items-col1 .product-img2.my-prod-img {
+		width: 90px;
+		height: 90px;
+	}
+
+	.og-cart .mctw {
+		float: left;
+		width: 70%;
+	}
+	.og-cart .tw1 .cart-prod-desc .small-link {
+		max-width: 150px;
+		width: 150px;
+		
+	}
+	.og-cart .tw1 .cart-prod-desc {
+		width: 80%;
+		float: left;
+		padding-bottom: 10px;
+	}
 }
 
 
@@ -16132,8 +16181,8 @@ li.ui-timepicker-selected .ui-timepicker-duration,
       width: 20%;
     }
 	.tw1 .cart-prod-desc .small-link {
-	 max-width: 90px;
-     width: 90px;
+	 max-width: 70px;
+     width: 70px;
 	 float: left;
 	}
 	.invbr {
@@ -16467,9 +16516,24 @@ li.ui-timepicker-selected .ui-timepicker-duration,
 	}
 	.product-title-edit {
 		
-		max-width: 260px;
+		max-width: 220px;
 		
 	}
+	.og-cart .cart-items-col1 .product-img2.my-prod-img {
+		width: 60px;
+		height: 60px;
+	}
+
+	.og-cart .mctw {
+		float: none;
+		width: 100%;
+	}
+	.og-cart .tw1 .cart-prod-desc .small-link {
+		max-width: 70px;
+		width: 70px;
+		float: left;
+	}
+	
 }
 
 /* Custom, iPhone Retina */
