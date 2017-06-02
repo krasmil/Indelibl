@@ -6745,7 +6745,7 @@ input#product-year {
   margin-right: -5px;
 }
 .add-art-form-left input[type="radio"] {
-
+  margin-right: 5px;
   float: left;
   margin-bottom: 0;
   margin-left: 0;
@@ -9291,10 +9291,18 @@ input#ccSpinner {
     max-width: 380px;
     width: 380px;
 }
+.art-print-prices  .form-item_quarter.ap-prc-head {
+  margin-bottom: 20px;
+}
 
+.art-print-prices  .profile-form .form-input {
+	margin-bottom: 20px;
+	width: 40%;
+}
+.art-print-prices  .profile-form {
+	margin-left: 50px;
 
-
-
+}
 
 
 
@@ -11214,6 +11222,10 @@ li.ui-timepicker-selected .ui-timepicker-duration,
 	.og-cart .tw1 .cart-prod-desc .small-link {
 		max-width: 310px;
 		width: 310px;
+	}
+	.art-print-prices  .profile-form {
+		margin-left: 30px;
+
 	}
 }
 
